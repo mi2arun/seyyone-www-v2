@@ -146,55 +146,53 @@ const TechnologyProjects = () => {
               {[...Array(8)].map((_, i) => {
                 const angle = (i * Math.PI * 2) / 8
                 const radius = 35
-                const x = 50 + radius * Math.cos(angle)
-                const y = 50 + radius * Math.sin(angle)
+                const x = Math.round(50 + radius * Math.cos(angle))
+                const y = Math.round(50 + radius * Math.sin(angle))
                 return (
-                  <g key={i}>
-                    <motion.circle
-                      cx={x}
-                      cy={y}
-                      r="4"
+                  <motion.g 
+                    key={i}
+                    animate={{ 
+                      opacity: [0.3, 1, 0.3]
+                    }}
+                    transition={{ 
+                      duration: 2,
+                      repeat: Infinity,
+                      delay: i * 0.2
+                    }}
+                  >
+                    <circle
+                      cx={x || 50}
+                      cy={y || 50}
+                      r={4}
                       fill="white"
-                      animate={{ 
-                        opacity: [0.3, 1, 0.3],
-                        r: [3, 5, 3]
-                      }}
-                      transition={{ 
-                        duration: 2,
-                        repeat: Infinity,
-                        delay: i * 0.2
-                      }}
                     />
                     {/* Connection Lines */}
-                    <motion.line
-                      x1="50"
-                      y1="50"
-                      x2={x}
-                      y2={y}
+                    <line
+                      x1={50}
+                      y1={50}
+                      x2={x || 50}
+                      y2={y || 50}
                       stroke="white"
                       strokeWidth="0.5"
-                      animate={{ opacity: [0, 0.5, 0] }}
-                      transition={{ 
-                        duration: 2,
-                        repeat: Infinity,
-                        delay: i * 0.2
-                      }}
                     />
-                  </g>
+                  </motion.g>
                 )
               })}
               {/* Central AI Core */}
-              <motion.circle
-                cx="50"
-                cy="50"
-                r="8"
-                fill="white"
+              <motion.g
                 animate={{ 
-                  r: [6, 10, 6],
+                  scale: [0.75, 1.25, 0.75],
                   opacity: [0.5, 1, 0.5]
                 }}
                 transition={{ duration: 2, repeat: Infinity }}
-              />
+              >
+                <circle
+                  cx={50}
+                  cy={50}
+                  r={8}
+                  fill="white"
+                />
+              </motion.g>
             </svg>
             
             {/* DNA Helix Background */}
@@ -258,22 +256,20 @@ const TechnologyProjects = () => {
         return (
           <>
             {/* Financial Graph Lines */}
-            <svg className="absolute inset-0 w-full h-full opacity-20">
-              <motion.polyline
+            <motion.svg 
+              className="absolute inset-0 w-full h-full opacity-20"
+              animate={{ 
+                opacity: [0.2, 0.5, 0.2]
+              }}
+              transition={{ duration: 3, repeat: Infinity }}
+            >
+              <polyline
                 points="0,50 25,45 50,30 75,35 100,20"
                 stroke="white"
                 strokeWidth="2"
                 fill="none"
-                animate={{ 
-                  points: [
-                    "0,50 25,45 50,30 75,35 100,20",
-                    "0,45 25,35 50,40 75,25 100,30",
-                    "0,50 25,45 50,30 75,35 100,20"
-                  ]
-                }}
-                transition={{ duration: 3, repeat: Infinity }}
               />
-            </svg>
+            </motion.svg>
             {/* Floating Currency Symbols */}
             <motion.div
               className="absolute top-4 right-4 text-white/30 text-2xl font-bold"
@@ -308,14 +304,14 @@ const TechnologyProjects = () => {
             {/* Network Connections */}
             <svg className="absolute inset-0 w-full h-full opacity-15">
               <motion.line
-                x1="10" y1="10" x2="90" y2="90"
+                x1={10} y1={10} x2={90} y2={90}
                 stroke="white"
                 strokeWidth="1"
                 animate={{ opacity: [0, 1, 0] }}
                 transition={{ duration: 2, repeat: Infinity }}
               />
               <motion.line
-                x1="90" y1="10" x2="10" y2="90"
+                x1={90} y1={10} x2={10} y2={90}
                 stroke="white"
                 strokeWidth="1"
                 animate={{ opacity: [0, 1, 0] }}
@@ -459,7 +455,7 @@ const TechnologyProjects = () => {
           className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
         >
           {projects.map((project, index) => {
-            const IconComponent = project.icon
+            const IconComponent = project.icon || null
             return (
               <motion.div
                 key={project.title}
@@ -514,12 +510,12 @@ const TechnologyProjects = () => {
                                 repeat: Infinity
                               }}
                             >
-                              <IconComponent className="text-white drop-shadow-lg" size={40} />
+                              {IconComponent && <IconComponent className="text-white drop-shadow-lg" size={40} />}
                             </motion.div>
                           </div>
                           
                           {/* Enhanced Orbiting Icons */}
-                          {project.additionalIcons.map((AdditionalIcon, i) => (
+                          {project.additionalIcons && project.additionalIcons.map((AdditionalIcon, i) => (
                             <motion.div
                               key={i}
                               className="absolute"
@@ -557,7 +553,7 @@ const TechnologyProjects = () => {
                                   }
                                 }}
                               >
-                                <AdditionalIcon className="text-white drop-shadow-md" size={16} />
+                                {AdditionalIcon && <AdditionalIcon className="text-white drop-shadow-md" size={16} />}
                               </motion.div>
                             </motion.div>
                           ))}
@@ -667,7 +663,7 @@ const TechnologyProjects = () => {
                 { number: '15+', label: 'Years Experience', icon: Calendar },
                 { number: '24/7', label: 'Support Available', icon: TrendingUp }
               ].map((stat, index) => {
-                const IconComponent = stat.icon
+                const IconComponent = stat.icon || null
                 return (
                   <motion.div
                     key={stat.label}
@@ -678,7 +674,7 @@ const TechnologyProjects = () => {
                     className="text-center"
                   >
                     <div className="w-16 h-16 bg-gradient-to-r from-purple-600 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                      <IconComponent className="text-white" size={24} />
+                      {IconComponent && <IconComponent className="text-white" size={24} />}
                     </div>
                     <div className="text-3xl font-bold text-gray-900 mb-2">
                       {stat.number}

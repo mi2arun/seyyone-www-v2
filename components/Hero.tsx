@@ -67,7 +67,7 @@ const Hero = () => {
   )
 
   return (
-    <section className="min-h-screen flex items-center relative overflow-hidden pt-20 pb-16">
+    <section className="min-h-screen flex items-center relative overflow-hidden pt-16 sm:pt-20 pb-12 sm:pb-16 w-full">
       {/* Enhanced Background with Animated Gradients */}
       <div className="absolute inset-0">
         <motion.div 
@@ -111,14 +111,14 @@ const Hero = () => {
         />
       </div>
 
-      <div className="container relative z-10 py-8 mx-4 sm:mx-auto">
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-4 sm:py-8">
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-20 items-center">
           {/* Enhanced Content */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="space-y-8 lg:space-y-10 px-2 sm:px-4 lg:px-0 lg:pr-8"
+            className="space-y-6 sm:space-y-8 lg:space-y-10 lg:pr-8"
           >
             <div className="space-y-6">
               {/* Enhanced Badge */}
@@ -138,11 +138,11 @@ const Hero = () => {
               </motion.div>
               
               {/* Enhanced Main Title with Staggered Animation */}
-              <div className="space-y-2">
+              <div className="space-y-2 w-full max-w-4xl">
                 <motion.h1
                   initial={{ opacity: 0 }}
                   animate={titleControls}
-                  className="text-5xl md:text-7xl font-black leading-[1.1]"
+                  className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black leading-[1.1] w-full"
                 >
                   <motion.div
                     initial={{ opacity: 0, y: 30 }}
@@ -160,23 +160,25 @@ const Hero = () => {
                     />
                   </motion.div>
                   <br />
-                  <motion.span
-                    initial={{ opacity: 0, y: 30 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.8, duration: 0.8 }}
-                    className="bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent"
-                  >
-                    Healthcare
-                  </motion.span>
-                  <span className="text-gray-400 mx-4">&</span>
-                  <motion.span
-                    initial={{ opacity: 0, y: 30 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 1.0, duration: 0.8 }}
-                    className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent"
-                  >
-                    Technology
-                  </motion.span>
+                  <span className="whitespace-nowrap">
+                    <motion.span
+                      initial={{ opacity: 0, y: 30 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 0.8, duration: 0.8 }}
+                      className="bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent"
+                    >
+                      Healthcare
+                    </motion.span>
+                    <span className="text-gray-400 mx-3">&</span>
+                    <motion.span
+                      initial={{ opacity: 0, y: 30 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 1.0, duration: 0.8 }}
+                      className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent"
+                    >
+                      Technology
+                    </motion.span>
+                  </span>
                   <br />
                   <motion.span
                     initial={{ opacity: 0, y: 30 }}
@@ -199,7 +201,7 @@ const Hero = () => {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 1.6, duration: 0.8 }}
-                  className="text-xl text-gray-600 leading-relaxed max-w-2xl font-medium"
+                  className="text-base sm:text-lg md:text-xl text-gray-600 leading-relaxed max-w-2xl font-medium"
                 >
                   Empowering businesses with comprehensive{' '}
                   <motion.span
@@ -226,19 +228,19 @@ const Hero = () => {
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 1.8, duration: 0.8 }}
-                  className="grid md:grid-cols-2 gap-4 max-w-3xl"
+                  className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 w-full max-w-none sm:max-w-3xl"
                 >
                   <motion.div
                     whileHover={{ scale: 1.02, y: -2 }}
-                    className="bg-gradient-to-br from-blue-50 to-cyan-50 p-6 rounded-2xl border border-blue-100 hover:border-blue-200 transition-all duration-300"
+                    className="bg-gradient-to-br from-blue-50 to-cyan-50 p-3 sm:p-4 lg:p-6 rounded-lg sm:rounded-xl lg:rounded-2xl border border-blue-100 hover:border-blue-200 transition-all duration-300"
                   >
                     <div className="flex items-center space-x-3 mb-3">
                       <div className="w-10 h-10 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-xl flex items-center justify-center">
                         <Heart className="text-white" size={20} />
                       </div>
-                      <h3 className="text-lg font-bold text-blue-900">Healthcare & Medical</h3>
+                      <h3 className="text-base sm:text-lg font-bold text-blue-900">Healthcare & Medical</h3>
                     </div>
-                    <p className="text-sm text-blue-700 leading-relaxed mb-3">
+                    <p className="text-xs sm:text-sm text-blue-700 leading-relaxed mb-3">
                       HIPAA-compliant medical transcription, billing, coding, and comprehensive EHR support.
                     </p>
                     <div className="flex items-center space-x-2">
@@ -249,15 +251,15 @@ const Hero = () => {
 
                   <motion.div
                     whileHover={{ scale: 1.02, y: -2 }}
-                    className="bg-gradient-to-br from-purple-50 to-pink-50 p-6 rounded-2xl border border-purple-100 hover:border-purple-200 transition-all duration-300"
+                    className="bg-gradient-to-br from-purple-50 to-pink-50 p-3 sm:p-4 lg:p-6 rounded-lg sm:rounded-xl lg:rounded-2xl border border-purple-100 hover:border-purple-200 transition-all duration-300"
                   >
                     <div className="flex items-center space-x-3 mb-3">
                       <div className="w-10 h-10 bg-gradient-to-r from-purple-600 to-pink-600 rounded-xl flex items-center justify-center">
                         <Brain className="text-white" size={20} />
                       </div>
-                      <h3 className="text-lg font-bold text-purple-900">Technology & Software</h3>
+                      <h3 className="text-base sm:text-lg font-bold text-purple-900">Technology & Software</h3>
                     </div>
-                    <p className="text-sm text-purple-700 leading-relaxed mb-3">
+                    <p className="text-xs sm:text-sm text-purple-700 leading-relaxed mb-3">
                       AI/ML solutions, cloud services, mobile development, and custom software architecture.
                     </p>
                     <div className="flex items-center space-x-2">
@@ -307,7 +309,7 @@ const Hero = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 2.8, duration: 0.8 }}
-              className="flex flex-col sm:flex-row gap-4 sm:gap-6 w-full"
+              className="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full max-w-none"
             >
               <motion.div
                 whileHover={{ 
@@ -319,19 +321,21 @@ const Hero = () => {
               >
                 <Link 
                   href="/medical" 
-                  className="group relative inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold text-white bg-gradient-to-r from-blue-600 to-cyan-600 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden w-full sm:w-auto"
+                  className="group relative inline-flex items-center justify-center px-4 sm:px-6 py-3 text-sm sm:text-base font-semibold text-white bg-gradient-to-r from-blue-600 to-cyan-600 rounded-lg sm:rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden w-full sm:w-auto"
                 >
                   <motion.div
                     className="absolute inset-0 bg-gradient-to-r from-cyan-600 to-blue-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                   />
-                  <span className="relative z-10 flex items-center gap-3">
-                    <Stethoscope size={20} />
-                    Healthcare Services
+                  <span className="relative z-10 flex items-center gap-2 text-center justify-center">
+                    <Stethoscope size={16} className="sm:w-5 sm:h-5" />
+                    <span className="hidden xs:inline">Healthcare</span>
+                    <span className="hidden sm:inline"> Services</span>
+                    <span className="xs:hidden">Care</span>
                     <motion.div
                       animate={{ x: [0, 5, 0] }}
                       transition={{ duration: 1.5, repeat: Infinity }}
                     >
-                      <ArrowRight size={20} />
+                      <ArrowRight size={14} className="sm:w-4 sm:h-4" />
                     </motion.div>
                   </span>
                   
@@ -354,19 +358,21 @@ const Hero = () => {
               >
                 <Link 
                   href="/technology" 
-                  className="group relative inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold text-white bg-gradient-to-r from-purple-600 to-pink-600 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden w-full sm:w-auto"
+                  className="group relative inline-flex items-center justify-center px-4 sm:px-6 py-3 text-sm sm:text-base font-semibold text-white bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg sm:rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden w-full sm:w-auto"
                 >
                   <motion.div
                     className="absolute inset-0 bg-gradient-to-r from-pink-600 to-purple-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                   />
-                  <span className="relative z-10 flex items-center gap-3">
-                    <Code size={20} />
-                    Technology Solutions
+                  <span className="relative z-10 flex items-center gap-2 text-center justify-center">
+                    <Code size={16} className="sm:w-5 sm:h-5" />
+                    <span className="hidden xs:inline">Technology</span>
+                    <span className="hidden sm:inline"> Solutions</span>
+                    <span className="xs:hidden">Tech</span>
                     <motion.div
                       animate={{ x: [0, 5, 0] }}
                       transition={{ duration: 1.5, repeat: Infinity, delay: 0.5 }}
                     >
-                      <ArrowRight size={20} />
+                      <ArrowRight size={14} className="sm:w-4 sm:h-4" />
                     </motion.div>
                   </span>
                   
@@ -385,21 +391,21 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 3.2, duration: 0.8 }}
-              className="flex items-center justify-center sm:justify-start gap-4 sm:gap-6 md:gap-8 pt-8"
+              className="flex flex-wrap items-center justify-center sm:justify-start gap-2 sm:gap-3 md:gap-4 pt-6 sm:pt-8 w-full"
             >
               <motion.div 
                 initial={{ scale: 0 }}
                 animate={{ scale: 1 }}
                 transition={{ delay: 3.4, type: "spring", stiffness: 200 }}
-                className="group flex items-center space-x-3 bg-green-50 px-4 py-3 rounded-full border border-green-200 hover:shadow-lg transition-all duration-300"
+                className="group flex items-center space-x-2 sm:space-x-3 bg-green-50 px-3 sm:px-4 py-2 sm:py-3 rounded-full border border-green-200 hover:shadow-lg transition-all duration-300"
               >
                 <motion.div
                   animate={{ rotate: [0, 360] }}
                   transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
                 >
-                  <Shield className="text-green-600 group-hover:text-green-700" size={24} />
+                  <Shield className="text-green-600 group-hover:text-green-700" size={16} />
                 </motion.div>
-                <span className="text-sm font-semibold text-green-700 group-hover:text-green-800">
+                <span className="text-xs sm:text-sm font-semibold text-green-700 group-hover:text-green-800">
                   HIPAA Compliant
                 </span>
               </motion.div>
@@ -408,7 +414,7 @@ const Hero = () => {
                 initial={{ scale: 0 }}
                 animate={{ scale: 1 }}
                 transition={{ delay: 3.6, type: "spring", stiffness: 200 }}
-                className="group flex items-center space-x-3 bg-blue-50 px-4 py-3 rounded-full border border-blue-200 hover:shadow-lg transition-all duration-300"
+                className="group flex items-center space-x-2 sm:space-x-3 bg-blue-50 px-3 sm:px-4 py-2 sm:py-3 rounded-full border border-blue-200 hover:shadow-lg transition-all duration-300"
               >
                 <motion.div
                   animate={{ 
@@ -417,9 +423,9 @@ const Hero = () => {
                   }}
                   transition={{ duration: 3, repeat: Infinity }}
                 >
-                  <Globe className="text-blue-600 group-hover:text-blue-700" size={24} />
+                  <Globe className="text-blue-600 group-hover:text-blue-700" size={16} />
                 </motion.div>
-                <span className="text-sm font-semibold text-blue-700 group-hover:text-blue-800">
+                <span className="text-xs sm:text-sm font-semibold text-blue-700 group-hover:text-blue-800">
                   Global Reach
                 </span>
               </motion.div>
@@ -428,7 +434,7 @@ const Hero = () => {
                 initial={{ scale: 0 }}
                 animate={{ scale: 1 }}
                 transition={{ delay: 3.8, type: "spring", stiffness: 200 }}
-                className="group flex items-center space-x-3 bg-purple-50 px-4 py-3 rounded-full border border-purple-200 hover:shadow-lg transition-all duration-300"
+                className="group flex items-center space-x-2 sm:space-x-3 bg-purple-50 px-3 sm:px-4 py-2 sm:py-3 rounded-full border border-purple-200 hover:shadow-lg transition-all duration-300"
               >
                 <motion.div
                   animate={{ 
@@ -437,9 +443,9 @@ const Hero = () => {
                   }}
                   transition={{ duration: 2.5, repeat: Infinity }}
                 >
-                  <Award className="text-purple-600 group-hover:text-purple-700" size={24} />
+                  <Award className="text-purple-600 group-hover:text-purple-700" size={16} />
                 </motion.div>
-                <span className="text-sm font-semibold text-purple-700 group-hover:text-purple-800">
+                <span className="text-xs sm:text-sm font-semibold text-purple-700 group-hover:text-purple-800">
                   25+ Years
                 </span>
               </motion.div>

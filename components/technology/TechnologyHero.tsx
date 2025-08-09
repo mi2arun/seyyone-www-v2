@@ -95,7 +95,7 @@ const TechnologyHero = () => {
               className="grid grid-cols-2 gap-4"
             >
               {highlights.map((highlight, index) => {
-                const IconComponent = highlight.icon
+                const IconComponent = highlight.icon || null
                 return (
                   <motion.div
                     key={highlight.text}
@@ -104,7 +104,7 @@ const TechnologyHero = () => {
                     transition={{ delay: 0.8 + index * 0.1, duration: 0.6 }}
                     className="flex items-center space-x-3 p-4 bg-white rounded-xl shadow-sm border border-gray-100"
                   >
-                    <IconComponent size={24} className={highlight.color} />
+                    {IconComponent && <IconComponent size={24} className={highlight.color} />}
                     <span className="font-medium text-gray-800 text-sm">
                       {highlight.text}
                     </span>
@@ -230,7 +230,7 @@ const TechnologyHero = () => {
                     { icon: Smartphone, name: 'Mobile', color: 'text-blue-600' },
                     { icon: Cloud, name: 'Cloud', color: 'text-green-600' }
                   ].map((tech, index) => {
-                    const IconComponent = tech.icon
+                    const IconComponent = tech.icon || null
                     return (
                       <motion.div
                         key={tech.name}
@@ -239,7 +239,7 @@ const TechnologyHero = () => {
                         transition={{ delay: 2.5 + index * 0.1, duration: 0.6 }}
                         className="text-center p-3 bg-gray-50 rounded-lg"
                       >
-                        <IconComponent size={20} className={`${tech.color} mx-auto mb-1`} />
+                        {IconComponent && <IconComponent size={20} className={`${tech.color} mx-auto mb-1`} />}
                         <span className="text-xs text-gray-700">{tech.name}</span>
                       </motion.div>
                     )
