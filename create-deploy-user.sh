@@ -75,7 +75,16 @@ create_user() {
         
         # Set password
         print_status "Setting password for '$USERNAME'..."
-        passwd "$USERNAME"
+        
+        # Option 1: Generate random password
+        RANDOM_PASSWORD=$(openssl rand -base64 12)
+        echo "$USERNAME:$RANDOM_PASSWORD" | chpasswd
+        
+        print_success "Random password set for '$USERNAME': $RANDOM_PASSWORD"
+        print_warning "Save this password securely or set up SSH keys immediately!"
+        
+        # Option 2: Uncomment this to prompt for password instead
+        # passwd "$USERNAME"
     else
         print_status "User '$USERNAME' already exists, skipping creation..."
     fi
