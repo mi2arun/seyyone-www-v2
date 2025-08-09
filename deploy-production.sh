@@ -30,14 +30,27 @@ check_permissions() {
 deploy_nextjs() {
     print_status "🐳 Deploying Next.js Docker container..."
     
+    # Check which Docker Compose command to use
+    if command -v docker-compose &> /dev/null; then
+        DOCKER_COMPOSE="docker-compose"
+    elif docker compose version &> /dev/null 2>&1; then
+        DOCKER_COMPOSE="docker compose"
+    else
+        print_error "Neither 'docker-compose' nor 'docker compose' found!"
+        print_status "Please install Docker Compose"
+        exit 1
+    fi
+    
+    print_status "Using Docker Compose command: $DOCKER_COMPOSE"
+    
     # Stop existing Apache container if running
     if docker ps | grep -q seyyone-apache; then
         print_status "Stopping Docker Apache container..."
-        docker compose down apache 2>/dev/null || true
+        $DOCKER_COMPOSE down apache 2>/dev/null || true
     fi
     
     # Deploy Next.js container only
-    docker compose up -d nextjs-app
+    $DOCKER_COMPOSE up -d nextjs-app
     
     # Wait for health check
     print_status "Waiting for Next.js app to be healthy..."
@@ -131,7 +144,7 @@ show_status() {
     
     # Docker status
     echo "🐳 Docker Services:"
-    docker compose ps
+    $DOCKER_COMPOSE ps
     echo ""
     
     # Apache status

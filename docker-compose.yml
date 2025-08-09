@@ -1,6 +1,8 @@
 # 🐳 Simple Docker Setup for Seyyone Website (Next.js only)
 # Apache2 runs on host with Let's Encrypt
 
+version: '3.8'
+
 services:
   # Next.js Application
   nextjs-app:
