@@ -1,7 +1,7 @@
 'use client'
 
 import { motion, useAnimation } from 'framer-motion'
-import { ArrowRight, Shield, Globe, Award, Sparkles, TrendingUp, Stethoscope, Code, Heart, Brain } from 'lucide-react'
+import { ArrowRight, Shield, Globe, Award, Sparkles, TrendingUp, Stethoscope, Code, Heart, Brain, Mic, MicIcon, Volume2, Headphones, FileText, Waveform } from 'lucide-react'
 import Link from 'next/link'
 import { useEffect } from 'react'
 
@@ -68,7 +68,7 @@ const Hero = () => {
 
   return (
     <section className="min-h-screen flex items-center relative overflow-hidden pt-16 sm:pt-20 pb-12 sm:pb-16 w-full">
-      {/* Enhanced Background with Animated Gradients */}
+      {/* Enhanced Background with Animated Gradients and Color Lines */}
       <div className="absolute inset-0">
         <motion.div 
           animate={{
@@ -81,6 +81,780 @@ const Hero = () => {
           transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
           className="w-full h-full"
         />
+        
+        {/* Speech-to-Text Animation */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          {/* Speech-to-Text Process Animation - Top Left */}
+          <motion.div
+            className="absolute"
+            style={{ top: '20%', left: '8%' }}
+          >
+            {/* Microphone with pulse effect */}
+            <motion.div
+              className="relative"
+              animate={{
+                scale: [1, 1.1, 1],
+                opacity: [0.4, 0.8, 0.4]
+              }}
+              transition={{
+                duration: 3,
+                repeat: Infinity,
+                ease: "easeInOut"
+              }}
+            >
+              <Mic size={24} className="text-blue-400/60" />
+              
+              {/* Sound waves from microphone */}
+              <motion.div
+                className="absolute -right-8 top-1/2 transform -translate-y-1/2"
+                animate={{
+                  scale: [1, 1.5, 1],
+                  opacity: [0.6, 0, 0.6]
+                }}
+                transition={{
+                  duration: 2,
+                  repeat: Infinity,
+                  ease: "easeOut"
+                }}
+              >
+                <div className="w-3 h-3 border-2 border-blue-400/40 rounded-full"></div>
+              </motion.div>
+              <motion.div
+                className="absolute -right-12 top-1/2 transform -translate-y-1/2"
+                animate={{
+                  scale: [1, 1.8, 1],
+                  opacity: [0.4, 0, 0.4]
+                }}
+                transition={{
+                  duration: 2,
+                  repeat: Infinity,
+                  ease: "easeOut",
+                  delay: 0.3
+                }}
+              >
+                <div className="w-4 h-4 border-2 border-blue-400/30 rounded-full"></div>
+              </motion.div>
+            </motion.div>
+            
+            {/* Arrow pointing to processing */}
+            <motion.div
+              className="absolute top-8 left-6 text-gray-400/50"
+              animate={{
+                opacity: [0.3, 0.7, 0.3],
+                x: [0, 3, 0]
+              }}
+              transition={{
+                duration: 2,
+                repeat: Infinity,
+                delay: 1
+              }}
+            >
+              →
+            </motion.div>
+            
+            {/* AI Processing Brain */}
+            <motion.div
+              className="absolute top-6 left-12"
+              animate={{
+                scale: [1, 1.2, 1],
+                opacity: [0.4, 0.8, 0.4]
+              }}
+              transition={{
+                duration: 2.5,
+                repeat: Infinity,
+                delay: 1.5
+              }}
+            >
+              <Brain size={20} className="text-purple-400/60" />
+              
+              {/* Processing dots */}
+              <div className="absolute -bottom-6 left-1/2 transform -translate-x-1/2 flex space-x-1">
+                <motion.div
+                  className="w-1 h-1 bg-purple-400/50 rounded-full"
+                  animate={{ opacity: [0, 1, 0] }}
+                  transition={{ duration: 1, repeat: Infinity, delay: 0 }}
+                />
+                <motion.div
+                  className="w-1 h-1 bg-purple-400/50 rounded-full"
+                  animate={{ opacity: [0, 1, 0] }}
+                  transition={{ duration: 1, repeat: Infinity, delay: 0.3 }}
+                />
+                <motion.div
+                  className="w-1 h-1 bg-purple-400/50 rounded-full"
+                  animate={{ opacity: [0, 1, 0] }}
+                  transition={{ duration: 1, repeat: Infinity, delay: 0.6 }}
+                />
+              </div>
+            </motion.div>
+            
+            {/* Arrow to text output */}
+            <motion.div
+              className="absolute top-8 left-20 text-gray-400/50"
+              animate={{
+                opacity: [0.3, 0.7, 0.3],
+                x: [0, 3, 0]
+              }}
+              transition={{
+                duration: 2,
+                repeat: Infinity,
+                delay: 2
+              }}
+            >
+              →
+            </motion.div>
+            
+            {/* Text Output */}
+            <motion.div
+              className="absolute top-4 left-28"
+              animate={{
+                opacity: [0, 1, 1, 0],
+                scale: [0.8, 1, 1, 0.8]
+              }}
+              transition={{
+                duration: 4,
+                repeat: Infinity,
+                delay: 2.5
+              }}
+            >
+              <FileText size={22} className="text-green-400/60" />
+              <motion.div
+                className="absolute -bottom-8 -left-2 text-xs text-green-400/50 font-mono whitespace-nowrap"
+                animate={{
+                  opacity: [0, 1, 1, 0]
+                }}
+                transition={{
+                  duration: 4,
+                  repeat: Infinity,
+                  delay: 3
+                }}
+              >
+                "Patient presents with..."
+              </motion.div>
+            </motion.div>
+          </motion.div>
+          
+          {/* Speech Bubble Animation - Top Right */}
+          <motion.div
+            className="absolute"
+            style={{ top: '15%', right: '15%' }}
+          >
+            {/* Speech Bubble */}
+            <motion.div
+              className="relative"
+              animate={{
+                scale: [0, 1, 1, 0],
+                opacity: [0, 1, 1, 0]
+              }}
+              transition={{
+                duration: 6,
+                repeat: Infinity,
+                ease: "easeInOut"
+              }}
+            >
+              <div className="bg-blue-100/60 px-4 py-2 rounded-lg relative">
+                <motion.div
+                  className="text-xs text-blue-600/80 font-medium"
+                  animate={{
+                    opacity: [0, 1, 1, 0]
+                  }}
+                  transition={{
+                    duration: 6,
+                    repeat: Infinity,
+                    delay: 0.5
+                  }}
+                >
+                  "Blood pressure 120/80"
+                </motion.div>
+                {/* Speech bubble tail */}
+                <div className="absolute -bottom-2 left-4 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-blue-100/60"></div>
+              </div>
+              
+              {/* Transform arrow */}
+              <motion.div
+                className="absolute -right-8 top-1/2 transform -translate-y-1/2 text-gray-400/60"
+                animate={{
+                  opacity: [0, 1, 1, 0],
+                  x: [0, 5, 5, 0]
+                }}
+                transition={{
+                  duration: 6,
+                  repeat: Infinity,
+                  delay: 2
+                }}
+              >
+                →
+              </motion.div>
+              
+              {/* Text Document */}
+              <motion.div
+                className="absolute -right-16 -top-2"
+                animate={{
+                  scale: [0, 1, 1, 0],
+                  opacity: [0, 1, 1, 0]
+                }}
+                transition={{
+                  duration: 6,
+                  repeat: Infinity,
+                  delay: 3
+                }}
+              >
+                <div className="bg-green-100/60 px-3 py-2 rounded text-xs text-green-600/80 font-mono">
+                  BP: 120/80 mmHg
+                </div>
+              </motion.div>
+            </motion.div>
+          </motion.div>
+          
+          {/* Audio Waveform to Text Animation - Bottom Center */}
+          <motion.div
+            className="absolute"
+            style={{ bottom: '25%', left: '25%' }}
+          >
+            {/* Audio Waveform */}
+            <div className="flex items-end space-x-1">
+              {[...Array(8)].map((_, i) => (
+                <motion.div
+                  key={i}
+                  className="w-1 bg-purple-400/60 rounded-full"
+                  animate={{
+                    height: [8, 25, 12, 30, 8],
+                    opacity: [0.4, 1, 0.6, 1, 0.4]
+                  }}
+                  transition={{
+                    duration: 2,
+                    repeat: Infinity,
+                    delay: i * 0.1
+                  }}
+                />
+              ))}
+            </div>
+            
+            {/* Typing Animation */}
+            <motion.div
+              className="absolute -bottom-12 left-0"
+              animate={{
+                opacity: [0, 1, 1, 0]
+              }}
+              transition={{
+                duration: 4,
+                repeat: Infinity,
+                delay: 1
+              }}
+            >
+              <div className="text-xs text-gray-600/60 font-mono">
+                <motion.span
+                  animate={{ opacity: [0, 1] }}
+                  transition={{ duration: 0.1, repeat: Infinity, repeatType: "reverse" }}
+                >
+                  |
+                </motion.span>
+                <motion.div
+                  className="inline"
+                  animate={{ 
+                    width: ['0ch', '15ch', '15ch', '0ch']
+                  }}
+                  transition={{
+                    duration: 4,
+                    repeat: Infinity,
+                    delay: 1
+                  }}
+                  style={{ overflow: 'hidden', whiteSpace: 'nowrap' }}
+                >
+                  Transcribing...
+                </motion.div>
+              </div>
+            </motion.div>
+          </motion.div>
+          
+          {/* Medical Recording Process - Middle Left */}
+          <motion.div
+            className="absolute"
+            style={{ top: '50%', left: '5%' }}
+          >
+            {/* Doctor Icon */}
+            <motion.div
+              className="relative"
+              animate={{
+                opacity: [0.4, 0.8, 0.4]
+              }}
+              transition={{
+                duration: 3,
+                repeat: Infinity
+              }}
+            >
+              <Stethoscope size={20} className="text-cyan-400/60" />
+              
+              {/* Voice lines */}
+              <motion.div
+                className="absolute -right-6 top-1/2 transform -translate-y-1/2"
+                animate={{
+                  opacity: [0, 1, 0],
+                  scaleX: [0.5, 1.5, 0.5]
+                }}
+                transition={{
+                  duration: 1.5,
+                  repeat: Infinity
+                }}
+              >
+                <div className="flex space-x-1">
+                  <div className="w-0.5 h-2 bg-cyan-400/40 rounded-full"></div>
+                  <div className="w-0.5 h-3 bg-cyan-400/50 rounded-full"></div>
+                  <div className="w-0.5 h-2 bg-cyan-400/40 rounded-full"></div>
+                </div>
+              </motion.div>
+              
+              {/* Recording indicator */}
+              <motion.div
+                className="absolute -top-4 -left-2"
+                animate={{
+                  opacity: [0, 1, 0]
+                }}
+                transition={{
+                  duration: 1,
+                  repeat: Infinity
+                }}
+              >
+                <div className="w-2 h-2 bg-red-400/60 rounded-full"></div>
+              </motion.div>
+            </motion.div>
+          </motion.div>
+          
+          {/* Development Pipeline Animation - Middle Right */}
+          <motion.div
+            className="absolute"
+            style={{ top: '45%', right: '8%' }}
+          >
+            {/* Code Icon with typing effect */}
+            <motion.div
+              className="relative"
+              animate={{
+                scale: [1, 1.1, 1],
+                opacity: [0.4, 0.8, 0.4]
+              }}
+              transition={{
+                duration: 3,
+                repeat: Infinity
+              }}
+            >
+              <Code size={22} className="text-indigo-400/60" />
+              
+              {/* Code lines animation */}
+              <motion.div
+                className="absolute -right-12 -top-2 space-y-1"
+                animate={{
+                  opacity: [0, 1, 1, 0]
+                }}
+                transition={{
+                  duration: 4,
+                  repeat: Infinity,
+                  delay: 0.5
+                }}
+              >
+                <motion.div
+                  className="h-1 bg-indigo-400/50 rounded-full"
+                  animate={{
+                    width: ['0px', '20px', '20px', '0px']
+                  }}
+                  transition={{
+                    duration: 4,
+                    repeat: Infinity,
+                    delay: 1
+                  }}
+                />
+                <motion.div
+                  className="h-1 bg-indigo-400/40 rounded-full"
+                  animate={{
+                    width: ['0px', '16px', '16px', '0px']
+                  }}
+                  transition={{
+                    duration: 4,
+                    repeat: Infinity,
+                    delay: 1.2
+                  }}
+                />
+                <motion.div
+                  className="h-1 bg-indigo-400/50 rounded-full"
+                  animate={{
+                    width: ['0px', '24px', '24px', '0px']
+                  }}
+                  transition={{
+                    duration: 4,
+                    repeat: Infinity,
+                    delay: 1.4
+                  }}
+                />
+              </motion.div>
+              
+              {/* Build arrow */}
+              <motion.div
+                className="absolute -right-16 top-4 text-gray-400/50"
+                animate={{
+                  opacity: [0, 1, 0],
+                  x: [0, 3, 0]
+                }}
+                transition={{
+                  duration: 2,
+                  repeat: Infinity,
+                  delay: 2
+                }}
+              >
+                ↓
+              </motion.div>
+            </motion.div>
+            
+            {/* Build Process */}
+            <motion.div
+              className="absolute -right-8 top-12"
+              animate={{
+                scale: [1, 1.1, 1],
+                opacity: [0.3, 0.7, 0.3]
+              }}
+              transition={{
+                duration: 2.5,
+                repeat: Infinity,
+                delay: 2.5
+              }}
+            >
+              <div className="relative">
+                <div className="w-4 h-4 border-2 border-orange-400/50 rounded-sm"></div>
+                
+                {/* Build progress bars */}
+                <motion.div
+                  className="absolute -bottom-6 -left-2 space-y-1"
+                  animate={{
+                    opacity: [0, 1, 0]
+                  }}
+                  transition={{
+                    duration: 3,
+                    repeat: Infinity,
+                    delay: 3
+                  }}
+                >
+                  <motion.div
+                    className="h-0.5 bg-orange-400/60 rounded-full"
+                    animate={{
+                      width: ['0px', '16px', '16px', '0px']
+                    }}
+                    transition={{
+                      duration: 3,
+                      repeat: Infinity,
+                      delay: 3.2
+                    }}
+                  />
+                  <motion.div
+                    className="h-0.5 bg-green-400/60 rounded-full"
+                    animate={{
+                      width: ['0px', '14px', '14px', '0px']
+                    }}
+                    transition={{
+                      duration: 3,
+                      repeat: Infinity,
+                      delay: 3.5
+                    }}
+                  />
+                </motion.div>
+              </div>
+              
+              {/* Deploy arrow */}
+              <motion.div
+                className="absolute -right-6 top-2 text-gray-400/50"
+                animate={{
+                  opacity: [0, 1, 0],
+                  x: [0, 3, 0]
+                }}
+                transition={{
+                  duration: 2,
+                  repeat: Infinity,
+                  delay: 4
+                }}
+              >
+                →
+              </motion.div>
+            </motion.div>
+            
+            {/* Deployment Success */}
+            <motion.div
+              className="absolute -right-16 top-10"
+              animate={{
+                scale: [0, 1, 1, 0],
+                opacity: [0, 1, 1, 0]
+              }}
+              transition={{
+                duration: 4,
+                repeat: Infinity,
+                delay: 4.5
+              }}
+            >
+              <div className="w-3 h-3 bg-green-400/60 rounded-full flex items-center justify-center">
+                <div className="w-1 h-1 bg-white rounded-full"></div>
+              </div>
+              <motion.div
+                className="absolute -bottom-4 -left-4 text-xs text-green-400/50 font-mono whitespace-nowrap"
+                animate={{
+                  opacity: [0, 1, 1, 0]
+                }}
+                transition={{
+                  duration: 4,
+                  repeat: Infinity,
+                  delay: 5
+                }}
+              >
+                ✓ Deployed
+              </motion.div>
+            </motion.div>
+          </motion.div>
+          
+          {/* CI/CD Pipeline Animation - Bottom Right */}
+          <motion.div
+            className="absolute"
+            style={{ bottom: '15%', right: '20%' }}
+          >
+            {/* Git Commit */}
+            <motion.div
+              className="relative"
+              animate={{
+                opacity: [0.4, 0.8, 0.4]
+              }}
+              transition={{
+                duration: 3,
+                repeat: Infinity
+              }}
+            >
+              <div className="w-3 h-3 border-2 border-blue-400/60 rounded-full">
+                <motion.div
+                  className="w-full h-full bg-blue-400/40 rounded-full"
+                  animate={{
+                    scale: [0, 1, 0]
+                  }}
+                  transition={{
+                    duration: 1,
+                    repeat: Infinity
+                  }}
+                />
+              </div>
+              
+              {/* Commit message */}
+              <motion.div
+                className="absolute -top-6 -left-6 text-xs text-blue-400/50 font-mono"
+                animate={{
+                  opacity: [0, 1, 0]
+                }}
+                transition={{
+                  duration: 2,
+                  repeat: Infinity,
+                  delay: 0.5
+                }}
+              >
+                git commit
+              </motion.div>
+              
+              {/* Pipeline stages */}
+              <div className="absolute left-6 top-1 flex items-center space-x-2">
+                {/* Test stage */}
+                <motion.div
+                  className="relative"
+                  animate={{
+                    opacity: [0, 1, 0]
+                  }}
+                  transition={{
+                    duration: 3,
+                    repeat: Infinity,
+                    delay: 1
+                  }}
+                >
+                  <div className="w-2 h-2 bg-yellow-400/60 rounded-full"></div>
+                  <motion.div
+                    className="absolute -top-4 -left-2 text-xs text-yellow-400/50"
+                    animate={{
+                      opacity: [0, 1, 0]
+                    }}
+                    transition={{
+                      duration: 2,
+                      repeat: Infinity,
+                      delay: 1.2
+                    }}
+                  >
+                    Test
+                  </motion.div>
+                </motion.div>
+                
+                {/* Build stage */}
+                <motion.div
+                  className="relative"
+                  animate={{
+                    opacity: [0, 1, 0]
+                  }}
+                  transition={{
+                    duration: 3,
+                    repeat: Infinity,
+                    delay: 2
+                  }}
+                >
+                  <div className="w-2 h-2 bg-orange-400/60 rounded-full"></div>
+                  <motion.div
+                    className="absolute -top-4 -left-2 text-xs text-orange-400/50"
+                    animate={{
+                      opacity: [0, 1, 0]
+                    }}
+                    transition={{
+                      duration: 2,
+                      repeat: Infinity,
+                      delay: 2.2
+                    }}
+                  >
+                    Build
+                  </motion.div>
+                </motion.div>
+                
+                {/* Deploy stage */}
+                <motion.div
+                  className="relative"
+                  animate={{
+                    opacity: [0, 1, 0]
+                  }}
+                  transition={{
+                    duration: 3,
+                    repeat: Infinity,
+                    delay: 3
+                  }}
+                >
+                  <div className="w-2 h-2 bg-green-400/60 rounded-full"></div>
+                  <motion.div
+                    className="absolute -top-4 -left-2 text-xs text-green-400/50"
+                    animate={{
+                      opacity: [0, 1, 0]
+                    }}
+                    transition={{
+                      duration: 2,
+                      repeat: Infinity,
+                      delay: 3.2
+                    }}
+                  >
+                    Deploy
+                  </motion.div>
+                </motion.div>
+              </div>
+            </motion.div>
+          </motion.div>
+          
+          {/* API Development Animation - Top Center */}
+          <motion.div
+            className="absolute"
+            style={{ top: '12%', left: '60%' }}
+          >
+            {/* API Icon */}
+            <motion.div
+              className="relative"
+              animate={{
+                scale: [1, 1.15, 1],
+                opacity: [0.4, 0.7, 0.4]
+              }}
+              transition={{
+                duration: 4,
+                repeat: Infinity
+              }}
+            >
+              <div className="w-4 h-4 border border-purple-400/60 rounded flex items-center justify-center">
+                <div className="text-xs text-purple-400/60 font-bold">API</div>
+              </div>
+              
+              {/* Data flow */}
+              <motion.div
+                className="absolute -right-8 top-1/2 transform -translate-y-1/2"
+                animate={{
+                  opacity: [0, 1, 0],
+                  x: [0, 10, 0]
+                }}
+                transition={{
+                  duration: 2,
+                  repeat: Infinity,
+                  delay: 1
+                }}
+              >
+                <div className="flex space-x-1">
+                  <div className="w-1 h-1 bg-purple-400/60 rounded-full"></div>
+                  <div className="w-1 h-1 bg-purple-400/60 rounded-full"></div>
+                  <div className="w-1 h-1 bg-purple-400/60 rounded-full"></div>
+                </div>
+              </motion.div>
+              
+              {/* Response */}
+              <motion.div
+                className="absolute -right-16 -top-2"
+                animate={{
+                  scale: [0, 1, 0],
+                  opacity: [0, 1, 0]
+                }}
+                transition={{
+                  duration: 3,
+                  repeat: Infinity,
+                  delay: 2
+                }}
+              >
+                <div className="bg-green-100/60 px-2 py-1 rounded text-xs text-green-600/80 font-mono">
+                  200 OK
+                </div>
+              </motion.div>
+            </motion.div>
+          </motion.div>
+          
+          {/* Cloud Deployment Animation - Bottom Left */}
+          <motion.div
+            className="absolute"
+            style={{ bottom: '30%', left: '12%' }}
+          >
+            {/* Cloud Icon */}
+            <motion.div
+              className="relative"
+              animate={{
+                y: [-3, 3, -3],
+                opacity: [0.4, 0.7, 0.4]
+              }}
+              transition={{
+                duration: 4,
+                repeat: Infinity,
+                ease: "easeInOut"
+              }}
+            >
+              <svg width="24" height="16" viewBox="0 0 24 16" className="text-blue-400/60">
+                <path
+                  fill="currentColor"
+                  d="M19 8c1.1 0 2-.9 2-2s-.9-2-2-2c0-2.2-1.8-4-4-4-1.5 0-2.8.8-3.5 2C10.3 1.4 9 2.5 9 4c-1.7 0-3 1.3-3 3s1.3 3 3 3h10z"
+                />
+              </svg>
+              
+              {/* Upload animation */}
+              <motion.div
+                className="absolute -top-6 left-1/2 transform -translate-x-1/2"
+                animate={{
+                  y: [5, -5, 5],
+                  opacity: [0, 1, 0]
+                }}
+                transition={{
+                  duration: 2,
+                  repeat: Infinity
+                }}
+              >
+                <div className="text-xs text-blue-400/60">↑</div>
+              </motion.div>
+              
+              {/* Status indicator */}
+              <motion.div
+                className="absolute -bottom-4 left-1/2 transform -translate-x-1/2"
+                animate={{
+                  opacity: [0, 1, 0]
+                }}
+                transition={{
+                  duration: 3,
+                  repeat: Infinity,
+                  delay: 1.5
+                }}
+              >
+                <div className="text-xs text-green-400/50 font-mono">Live</div>
+              </motion.div>
+            </motion.div>
+          </motion.div>
+        </div>
         
         {/* Floating Geometric Shapes - Adjusted positions to avoid borders */}
         <motion.div
