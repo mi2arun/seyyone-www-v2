@@ -1,7 +1,7 @@
 'use client'
 
 import { motion, useAnimation } from 'framer-motion'
-import { ArrowRight, Shield, Globe, Award, Sparkles, TrendingUp, Stethoscope, Code, Heart, Brain, Mic, MicIcon, Volume2, Headphones, FileText, Waveform } from 'lucide-react'
+import { ArrowRight, Shield, Globe, Award, Sparkles, TrendingUp, Stethoscope, Code, Heart, Brain, Mic, Volume2, Headphones, FileText } from 'lucide-react'
 import Link from 'next/link'
 import { useEffect } from 'react'
 
