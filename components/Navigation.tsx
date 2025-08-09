@@ -146,8 +146,7 @@ const Navigation = () => {
                         : 'text-gray-700'
                     }`}
                     style={{ 
-                      color: pathname !== item.href ? undefined : 'white',
-                      '--hover-color': '#0095d9'
+                      color: pathname !== item.href ? undefined : 'white'
                     }}
                     onMouseEnter={(e) => {
                       if (pathname !== item.href) {
