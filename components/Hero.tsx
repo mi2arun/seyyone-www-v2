@@ -228,7 +228,7 @@ const Hero = () => {
                   delay: 3
                 }}
               >
-                "Patient presents with..."
+                &quot;Patient presents with...&quot;
               </motion.div>
             </motion.div>
           </motion.div>
@@ -263,7 +263,7 @@ const Hero = () => {
                     delay: 0.5
                   }}
                 >
-                  "Blood pressure 120/80"
+                  &quot;Blood pressure 120/80&quot;
                 </motion.div>
                 {/* Speech bubble tail */}
                 <div className="absolute -bottom-2 left-4 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-blue-100/60"></div>
