@@ -1,0 +1,47 @@
+version: '3.8'
+
+services:
+  seyyone-web:
+    build: .
+    container_name: seyyone-website
+    ports:
+      - "3000:3000"
+    restart: unless-stopped
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+      - HOSTNAME=0.0.0.0
+    healthcheck:
+      test: ["CMD", "node", "-e", "require('http').get('http://localhost:3000/', (r) => {r.statusCode === 200 ? process.exit(0) : process.exit(1)})"]
+      interval: 30s
+      timeout: 3s
+      retries: 3
+      start_period: 40s
+    networks:
+      - seyyone-network
+    volumes:
+      # Uncomment if you need persistent logs
+      # - ./logs:/app/logs
+      - /app/node_modules
+      - /app/.next
+
+  # Optional: Add Nginx as reverse proxy
+  nginx:
+    image: nginx:alpine
+    container_name: seyyone-nginx
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+      # Add SSL certificates
+      # - ./ssl:/etc/nginx/ssl:ro
+    depends_on:
+      - seyyone-web
+    networks:
+      - seyyone-network
+    restart: unless-stopped
+
+networks:
+  seyyone-network:
+    driver: bridge
