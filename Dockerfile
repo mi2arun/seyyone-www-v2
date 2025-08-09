@@ -1,55 +1,34 @@
-# Production Dockerfile for Seyyone Website
-FROM node:18-alpine AS base
+# 🐳 Simple Docker Setup for Seyyone Website
+FROM node:18-alpine
 
-# Install dependencies only when needed
-FROM base AS deps
-RUN apk add --no-cache libc6-compat
+# Set working directory
 WORKDIR /app
 
-# Copy package files
-COPY package.json package-lock.json* ./
-RUN npm ci --omit=dev
+# Copy package files first (for better caching)
+COPY package*.json ./
 
-# Rebuild the source code only when needed
-FROM base AS builder
-WORKDIR /app
-COPY --from=deps /app/node_modules ./node_modules
+# Install all dependencies (needed for build)
+RUN npm ci
+
+# Copy application files
 COPY . .
 
 # Build the application
 RUN npm run build
 
-# Production image, copy all the files and run next
-FROM base AS runner
-WORKDIR /app
+# Copy static assets to standalone build
+RUN cp -r public .next/standalone/ && \
+    cp -r .next/static .next/standalone/.next/
 
-ENV NODE_ENV production
-ENV NEXT_TELEMETRY_DISABLED 1
+# Switch to standalone directory for execution
+WORKDIR /app/.next/standalone
 
-# Create non-root user
-RUN addgroup --system --gid 1001 nodejs
-RUN adduser --system --uid 1001 nextjs
-
-# Copy public assets
-COPY --from=builder /app/public ./public
-
-# Set the correct permission for prerender cache
-RUN mkdir .next
-RUN chown nextjs:nodejs .next
-
-# Copy standalone application
-COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
-COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
-
-USER nextjs
-
+# Expose port 3000
 EXPOSE 3000
 
-ENV PORT 3000
-ENV HOSTNAME "0.0.0.0"
+# Set environment variables
+ENV NODE_ENV=production
+ENV PORT=3000
 
-# Health check
-HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
-  CMD node -e "require('http').get('http://localhost:3000/api/health', (r) => {r.statusCode === 200 ? process.exit(0) : process.exit(1)})" || exit 1
-
+# Start the application
 CMD ["node", "server.js"]
