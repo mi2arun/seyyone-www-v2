@@ -60,11 +60,12 @@ export default function ContactPage() {
       color: 'from-blue-500 to-cyan-500',
       items: [
         'Medical Transcription',
-        'Medical Billing & Coding',
-        'Remote Medical Scribe',
-        'EHR/EMR Support',
+        'Medical Billing',
         'Medical Record Summarization',
-        'APS Summary'
+        'Medical Scribe',
+        'APS Summary',
+        'Peer Review Summary',
+        'EHR/EMR'
       ]
     },
     {
@@ -72,12 +73,13 @@ export default function ContactPage() {
       icon: Brain,
       color: 'from-purple-500 to-pink-500',
       items: [
-        'Custom Software Development',
-        'AI/ML Solutions',
-        'Mobile App Development',
         'Cloud Solutions',
-        'Analytics & BI',
-        'Digital Transformation'
+        'Software Services',
+        'Talent Management',
+        'AI/ML Solutions',
+        'Mobile Solutions',
+        'Remote Hardware Infra',
+        'Analytics & Reporting'
       ]
     }
   ]
@@ -88,9 +90,7 @@ export default function ContactPage() {
     { flag: '🇨🇦', country: 'Canada', cities: 'Toronto, Vancouver' },
     { flag: '🇦🇺', country: 'Australia', cities: 'Sydney, Melbourne' },
     { flag: '🇮🇪', country: 'Ireland', cities: 'Dublin, Cork' },
-    { flag: '🇩🇪', country: 'Germany', cities: 'Berlin, Munich' },
-    { flag: '🇳🇱', country: 'Netherlands', cities: 'Amsterdam, Rotterdam' },
-    { flag: '🇮🇳', country: 'India', cities: 'Coimbatore (HQ)' }
+    { flag: '🇩🇪', country: 'Germany', cities: 'Berlin, Munich' }
   ]
 
   const testimonials = [
@@ -155,7 +155,7 @@ export default function ContactPage() {
                 <Mail size={18} className="mr-2" />
                 Get In Touch
               </motion.div>
-              
+
               <motion.h1
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -164,18 +164,18 @@ export default function ContactPage() {
               >
                 <span className="text-gray-900">Let&rsquo;s Transform</span>
                 <br />
-                <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
                   Your Business Together
                 </span>
               </motion.h1>
-              
+
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4, duration: 0.8 }}
                 className="text-xl text-gray-600 leading-relaxed mb-12 max-w-4xl mx-auto"
               >
-                Ready to streamline your healthcare operations or accelerate your digital transformation? 
+                Ready to streamline your healthcare operations or accelerate your digital transformation?
                 Our expert team of 150+ professionals is here to deliver exceptional results.
               </motion.p>
 
@@ -247,7 +247,7 @@ export default function ContactPage() {
                       </div>
                       <h3 className="text-2xl font-bold text-gray-900">{service.category}</h3>
                     </div>
-                    
+
                     <div className="grid grid-cols-2 gap-3">
                       {service.items.map((item, idx) => (
                         <motion.div
@@ -290,7 +290,7 @@ export default function ContactPage() {
                       Send Us a Message
                     </h3>
                   </div>
-                  
+
                   <form onSubmit={handleSubmit} className="space-y-6">
                     <div className="grid md:grid-cols-2 gap-6">
                       <div>
@@ -371,7 +371,7 @@ export default function ContactPage() {
                       <label className="block text-sm font-semibold text-gray-700 mb-2">
                         Services Interested In
                       </label>
-                      <select 
+                      <select
                         name="service"
                         value={selectedService || formData.service}
                         onChange={handleInputChange}
@@ -519,12 +519,12 @@ export default function ContactPage() {
                 </h2>
               </div>
               <p className="text-blue-100 text-xl max-w-3xl mx-auto">
-                We serve clients across 8 countries with comprehensive Healthcare KPO 
+                We serve clients across 6 countries with comprehensive Healthcare KPO
                 and Software Development solutions tailored to local market needs.
               </p>
             </motion.div>
 
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-6xl mx-auto">
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
               {regions.map((region, index) => (
                 <motion.div
                   key={region.country}
@@ -553,7 +553,7 @@ export default function ContactPage() {
                   Ready to Get Started?
                 </h3>
                 <p className="text-blue-100 mb-6">
-                  Join 150+ satisfied clients who trust Seyyone with their critical business operations. 
+                  Join 150+ satisfied clients who trust Seyyone with their critical business operations.
                   Experience the difference that 25+ years of expertise can make.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">

@@ -1,5 +1,5 @@
 import Navigation from '@/components/Navigation'
-import Contact from '@/components/Contact'
+import ContactInfo from '@/components/ContactInfo'
 import Footer from '@/components/Footer'
 
 export const metadata = {
@@ -291,7 +291,7 @@ export default function CareerPage() {
           </div>
         </section>
 
-        <Contact />
+        <ContactInfo />
       </main>
       <Footer />
     </>

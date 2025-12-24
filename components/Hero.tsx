@@ -8,7 +8,7 @@ import { useEffect } from 'react'
 const Hero = () => {
   const titleControls = useAnimation()
   const subtitleControls = useAnimation()
-  
+
   useEffect(() => {
     const animateText = async () => {
       await titleControls.start({
@@ -16,14 +16,14 @@ const Hero = () => {
         y: 0,
         transition: { duration: 0.8, ease: "easeOut" }
       })
-      
+
       await subtitleControls.start({
         opacity: 1,
         y: 0,
         transition: { duration: 0.8, ease: "easeOut", delay: 0.2 }
       })
     }
-    
+
     animateText()
   }, [titleControls, subtitleControls])
 
@@ -70,7 +70,7 @@ const Hero = () => {
     <section className="min-h-screen flex items-center relative overflow-hidden pt-16 sm:pt-20 pb-12 sm:pb-16 w-full">
       {/* Enhanced Background with Animated Gradients and Color Lines */}
       <div className="absolute inset-0">
-        <motion.div 
+        <motion.div
           animate={{
             background: [
               "linear-gradient(45deg, #f0f9ff, #ffffff, #f8fafc)",
@@ -81,13 +81,13 @@ const Hero = () => {
           transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
           className="w-full h-full"
         />
-        
+
         {/* Speech-to-Text Animation */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           {/* Speech-to-Text Process Animation - Top Left */}
           <motion.div
             className="absolute"
-            style={{ top: '20%', left: '8%' }}
+            style={{ display: 'none' }}
           >
             {/* Microphone with pulse effect */}
             <motion.div
@@ -103,7 +103,7 @@ const Hero = () => {
               }}
             >
               <Mic size={24} className="text-blue-400/60" />
-              
+
               {/* Sound waves from microphone */}
               <motion.div
                 className="absolute -right-8 top-1/2 transform -translate-y-1/2"
@@ -135,7 +135,7 @@ const Hero = () => {
                 <div className="w-4 h-4 border-2 border-blue-400/30 rounded-full"></div>
               </motion.div>
             </motion.div>
-            
+
             {/* Arrow pointing to processing */}
             <motion.div
               className="absolute top-8 left-6 text-gray-400/50"
@@ -151,7 +151,7 @@ const Hero = () => {
             >
               →
             </motion.div>
-            
+
             {/* AI Processing Brain */}
             <motion.div
               className="absolute top-6 left-12"
@@ -166,7 +166,7 @@ const Hero = () => {
               }}
             >
               <Brain size={20} className="text-purple-400/60" />
-              
+
               {/* Processing dots */}
               <div className="absolute -bottom-6 left-1/2 transform -translate-x-1/2 flex space-x-1">
                 <motion.div
@@ -186,7 +186,7 @@ const Hero = () => {
                 />
               </div>
             </motion.div>
-            
+
             {/* Arrow to text output */}
             <motion.div
               className="absolute top-8 left-20 text-gray-400/50"
@@ -202,7 +202,7 @@ const Hero = () => {
             >
               →
             </motion.div>
-            
+
             {/* Text Output */}
             <motion.div
               className="absolute top-4 left-28"
@@ -232,11 +232,11 @@ const Hero = () => {
               </motion.div>
             </motion.div>
           </motion.div>
-          
+
           {/* Speech Bubble Animation - Top Right */}
           <motion.div
             className="absolute"
-            style={{ top: '15%', right: '15%' }}
+            style={{ display: 'none' }}
           >
             {/* Speech Bubble */}
             <motion.div
@@ -268,7 +268,7 @@ const Hero = () => {
                 {/* Speech bubble tail */}
                 <div className="absolute -bottom-2 left-4 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-blue-100/60"></div>
               </div>
-              
+
               {/* Transform arrow */}
               <motion.div
                 className="absolute -right-8 top-1/2 transform -translate-y-1/2 text-gray-400/60"
@@ -284,7 +284,7 @@ const Hero = () => {
               >
                 →
               </motion.div>
-              
+
               {/* Text Document */}
               <motion.div
                 className="absolute -right-16 -top-2"
@@ -304,11 +304,11 @@ const Hero = () => {
               </motion.div>
             </motion.div>
           </motion.div>
-          
+
           {/* Audio Waveform to Text Animation - Bottom Center */}
           <motion.div
             className="absolute"
-            style={{ bottom: '25%', left: '25%' }}
+            style={{ display: 'none' }}
           >
             {/* Audio Waveform */}
             <div className="flex items-end space-x-1">
@@ -328,7 +328,7 @@ const Hero = () => {
                 />
               ))}
             </div>
-            
+
             {/* Typing Animation */}
             <motion.div
               className="absolute -bottom-12 left-0"
@@ -350,7 +350,7 @@ const Hero = () => {
                 </motion.span>
                 <motion.div
                   className="inline"
-                  animate={{ 
+                  animate={{
                     width: ['0ch', '15ch', '15ch', '0ch']
                   }}
                   transition={{
@@ -365,11 +365,11 @@ const Hero = () => {
               </div>
             </motion.div>
           </motion.div>
-          
+
           {/* Medical Recording Process - Middle Left */}
           <motion.div
             className="absolute"
-            style={{ top: '50%', left: '5%' }}
+            style={{ display: 'none' }}
           >
             {/* Doctor Icon */}
             <motion.div
@@ -383,7 +383,7 @@ const Hero = () => {
               }}
             >
               <Stethoscope size={20} className="text-cyan-400/60" />
-              
+
               {/* Voice lines */}
               <motion.div
                 className="absolute -right-6 top-1/2 transform -translate-y-1/2"
@@ -402,7 +402,7 @@ const Hero = () => {
                   <div className="w-0.5 h-2 bg-cyan-400/40 rounded-full"></div>
                 </div>
               </motion.div>
-              
+
               {/* Recording indicator */}
               <motion.div
                 className="absolute -top-4 -left-2"
@@ -418,11 +418,11 @@ const Hero = () => {
               </motion.div>
             </motion.div>
           </motion.div>
-          
+
           {/* Development Pipeline Animation - Middle Right */}
           <motion.div
             className="absolute"
-            style={{ top: '45%', right: '8%' }}
+            style={{ display: 'none' }}
           >
             {/* Code Icon with typing effect */}
             <motion.div
@@ -437,7 +437,7 @@ const Hero = () => {
               }}
             >
               <Code size={22} className="text-indigo-400/60" />
-              
+
               {/* Code lines animation */}
               <motion.div
                 className="absolute -right-12 -top-2 space-y-1"
@@ -484,7 +484,7 @@ const Hero = () => {
                   }}
                 />
               </motion.div>
-              
+
               {/* Build arrow */}
               <motion.div
                 className="absolute -right-16 top-4 text-gray-400/50"
@@ -501,7 +501,7 @@ const Hero = () => {
                 ↓
               </motion.div>
             </motion.div>
-            
+
             {/* Build Process */}
             <motion.div
               className="absolute -right-8 top-12"
@@ -517,7 +517,7 @@ const Hero = () => {
             >
               <div className="relative">
                 <div className="w-4 h-4 border-2 border-orange-400/50 rounded-sm"></div>
-                
+
                 {/* Build progress bars */}
                 <motion.div
                   className="absolute -bottom-6 -left-2 space-y-1"
@@ -554,7 +554,7 @@ const Hero = () => {
                   />
                 </motion.div>
               </div>
-              
+
               {/* Deploy arrow */}
               <motion.div
                 className="absolute -right-6 top-2 text-gray-400/50"
@@ -571,7 +571,7 @@ const Hero = () => {
                 →
               </motion.div>
             </motion.div>
-            
+
             {/* Deployment Success */}
             <motion.div
               className="absolute -right-16 top-10"
@@ -603,11 +603,11 @@ const Hero = () => {
               </motion.div>
             </motion.div>
           </motion.div>
-          
+
           {/* CI/CD Pipeline Animation - Bottom Right */}
           <motion.div
             className="absolute"
-            style={{ bottom: '15%', right: '20%' }}
+            style={{ display: 'none' }}
           >
             {/* Git Commit */}
             <motion.div
@@ -632,7 +632,7 @@ const Hero = () => {
                   }}
                 />
               </div>
-              
+
               {/* Commit message */}
               <motion.div
                 className="absolute -top-6 -left-6 text-xs text-blue-400/50 font-mono"
@@ -647,7 +647,7 @@ const Hero = () => {
               >
                 git commit
               </motion.div>
-              
+
               {/* Pipeline stages */}
               <div className="absolute left-6 top-1 flex items-center space-x-2">
                 {/* Test stage */}
@@ -677,7 +677,7 @@ const Hero = () => {
                     Test
                   </motion.div>
                 </motion.div>
-                
+
                 {/* Build stage */}
                 <motion.div
                   className="relative"
@@ -705,7 +705,7 @@ const Hero = () => {
                     Build
                   </motion.div>
                 </motion.div>
-                
+
                 {/* Deploy stage */}
                 <motion.div
                   className="relative"
@@ -736,11 +736,11 @@ const Hero = () => {
               </div>
             </motion.div>
           </motion.div>
-          
+
           {/* API Development Animation - Top Center */}
           <motion.div
             className="absolute"
-            style={{ top: '12%', left: '60%' }}
+            style={{ display: 'none' }}
           >
             {/* API Icon */}
             <motion.div
@@ -757,7 +757,7 @@ const Hero = () => {
               <div className="w-4 h-4 border border-purple-400/60 rounded flex items-center justify-center">
                 <div className="text-xs text-purple-400/60 font-bold">API</div>
               </div>
-              
+
               {/* Data flow */}
               <motion.div
                 className="absolute -right-8 top-1/2 transform -translate-y-1/2"
@@ -777,7 +777,7 @@ const Hero = () => {
                   <div className="w-1 h-1 bg-purple-400/60 rounded-full"></div>
                 </div>
               </motion.div>
-              
+
               {/* Response */}
               <motion.div
                 className="absolute -right-16 -top-2"
@@ -797,11 +797,11 @@ const Hero = () => {
               </motion.div>
             </motion.div>
           </motion.div>
-          
+
           {/* Cloud Deployment Animation - Bottom Left */}
           <motion.div
             className="absolute"
-            style={{ bottom: '30%', left: '12%' }}
+            style={{ display: 'none' }}
           >
             {/* Cloud Icon */}
             <motion.div
@@ -822,7 +822,7 @@ const Hero = () => {
                   d="M19 8c1.1 0 2-.9 2-2s-.9-2-2-2c0-2.2-1.8-4-4-4-1.5 0-2.8.8-3.5 2C10.3 1.4 9 2.5 9 4c-1.7 0-3 1.3-3 3s1.3 3 3 3h10z"
                 />
               </svg>
-              
+
               {/* Upload animation */}
               <motion.div
                 className="absolute -top-6 left-1/2 transform -translate-x-1/2"
@@ -837,7 +837,7 @@ const Hero = () => {
               >
                 <div className="text-xs text-blue-400/60">↑</div>
               </motion.div>
-              
+
               {/* Status indicator */}
               <motion.div
                 className="absolute -bottom-4 left-1/2 transform -translate-x-1/2"
@@ -855,10 +855,10 @@ const Hero = () => {
             </motion.div>
           </motion.div>
         </div>
-        
+
         {/* Floating Geometric Shapes - Adjusted positions to avoid borders */}
         <motion.div
-          animate={{ 
+          animate={{
             x: [0, 80, 0],
             y: [0, -40, 0],
             rotate: [0, 180, 360]
@@ -867,7 +867,7 @@ const Hero = () => {
           className="absolute top-32 right-24 w-24 h-24 bg-primary-100 rounded-full opacity-20"
         />
         <motion.div
-          animate={{ 
+          animate={{
             x: [0, -60, 0],
             y: [0, 40, 0],
             rotate: [0, -180, -360]
@@ -876,7 +876,7 @@ const Hero = () => {
           className="absolute bottom-40 left-20 w-20 h-20 bg-secondary-200 rounded-lg opacity-30"
         />
         <motion.div
-          animate={{ 
+          animate={{
             scale: [1, 1.2, 1],
             opacity: [0.1, 0.3, 0.1]
           }}
@@ -885,9 +885,87 @@ const Hero = () => {
         />
       </div>
 
-      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-4 sm:py-8">
-        <div className="grid lg:grid-cols-2 gap-16 lg:gap-20 items-center">
-          {/* Enhanced Content */}
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-4 sm:py-8 space-y-12">
+        {/* Centered Title Section */}
+
+
+        <div className="grid lg:grid-cols-2 gap-16 lg:gap-20 items-start">
+          {/* Enhanced Badge - Left Column */}
+          <div className="space-y-6">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.2, duration: 0.6, ease: "backOut" }}
+              className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-primary-100 to-primary-50 text-primary-700 rounded-full text-sm font-semibold border border-primary-200 shadow-lg"
+            >
+              <motion.div
+                animate={{ rotate: 360 }}
+                transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
+              >
+                <Sparkles size={18} className="mr-3" />
+              </motion.div>
+              <AnimatedText text="Over 25 Years of Excellence" delay={0.5} />
+            </motion.div>
+          </div>
+
+          {/* Right Column Placeholder */}
+          <div></div>
+
+          {/* Enhanced Main Title - Spans Full Width Below Badge */}
+          <div className="lg:col-span-2 w-full text-center space-y-2">
+            <motion.h1
+              initial={{ opacity: 0 }}
+              animate={titleControls}
+              className="font-outfit text-xl xs:text-2xl sm:text-3xl md:text-3xl lg:text-4xl xl:text-5xl font-black leading-[1.1] w-full text-center"
+            >
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.6, duration: 0.8 }}
+                className="relative inline-block"
+              >
+                <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                  Excellence in
+                </span>
+                <motion.div
+                  animate={{ width: ["0%", "100%"] }}
+                  transition={{ delay: 1.2, duration: 0.8 }}
+                  className="absolute bottom-0 left-0 h-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full"
+                />
+              </motion.div>
+              <br />
+              <span className="whitespace-nowrap">
+                <motion.span
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.8, duration: 0.8 }}
+                  className="bg-gradient-to-r from-blue-700 to-blue-500 bg-clip-text text-transparent"
+                >
+                  Healthcare
+                </motion.span>
+                <span className="text-gray-400 mx-3">&</span>
+                <motion.span
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 1.0, duration: 0.8 }}
+                  className="bg-gradient-to-r from-purple-700 to-purple-500 bg-clip-text text-transparent"
+                >
+                  Technology
+                </motion.span>
+              </span>
+              <br />
+              <motion.span
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 1.2, duration: 0.8 }}
+                className="text-gray-700"
+              >
+                Solutions
+              </motion.span>
+            </motion.h1>
+          </div>
+
+          {/* Enhanced Content - Left Column */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -895,76 +973,6 @@ const Hero = () => {
             className="space-y-6 sm:space-y-8 lg:space-y-10 lg:pr-8"
           >
             <div className="space-y-6">
-              {/* Enhanced Badge */}
-              <motion.div
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 0.2, duration: 0.6, ease: "backOut" }}
-                className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-primary-100 to-primary-50 text-primary-700 rounded-full text-sm font-semibold border border-primary-200 shadow-lg"
-              >
-                <motion.div
-                  animate={{ rotate: 360 }}
-                  transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
-                >
-                  <Sparkles size={18} className="mr-3" />
-                </motion.div>
-                <AnimatedText text="Over 25 Years of Excellence" delay={0.5} />
-              </motion.div>
-              
-              {/* Enhanced Main Title with Staggered Animation */}
-              <div className="space-y-2 w-full max-w-4xl">
-                <motion.h1
-                  initial={{ opacity: 0 }}
-                  animate={titleControls}
-                  className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black leading-[1.1] w-full"
-                >
-                  <motion.div
-                    initial={{ opacity: 0, y: 30 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.6, duration: 0.8 }}
-                    className="relative inline-block"
-                  >
-                    <span className="bg-gradient-to-r from-blue-600 via-cyan-600 to-purple-600 bg-clip-text text-transparent">
-                      Excellence in
-                    </span>
-                    <motion.div
-                      animate={{ width: ["0%", "100%"] }}
-                      transition={{ delay: 1.2, duration: 0.8 }}
-                      className="absolute bottom-0 left-0 h-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full"
-                    />
-                  </motion.div>
-                  <br />
-                  <span className="whitespace-nowrap">
-                    <motion.span
-                      initial={{ opacity: 0, y: 30 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: 0.8, duration: 0.8 }}
-                      className="bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent"
-                    >
-                      Healthcare
-                    </motion.span>
-                    <span className="text-gray-400 mx-3">&</span>
-                    <motion.span
-                      initial={{ opacity: 0, y: 30 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: 1.0, duration: 0.8 }}
-                      className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent"
-                    >
-                      Technology
-                    </motion.span>
-                  </span>
-                  <br />
-                  <motion.span
-                    initial={{ opacity: 0, y: 30 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 1.2, duration: 0.8 }}
-                    className="text-gray-700"
-                  >
-                    Solutions
-                  </motion.span>
-                </motion.h1>
-              </div>
-              
               {/* Enhanced Description with Typewriter Effect */}
               <motion.div
                 initial={{ opacity: 0 }}
@@ -974,6 +982,7 @@ const Hero = () => {
                 <motion.p
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 1.6, duration: 0.8 }}
                   transition={{ delay: 1.6, duration: 0.8 }}
                   className="text-base sm:text-lg md:text-xl text-gray-600 leading-relaxed max-w-2xl font-medium"
                 >
@@ -996,10 +1005,12 @@ const Hero = () => {
                     Software Development
                   </motion.span>
                 </motion.p>
-                
+
                 {/* Domain Cards */}
                 <motion.div
                   initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 1.8, duration: 0.8 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 1.8, duration: 0.8 }}
                   className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 w-full max-w-none sm:max-w-3xl"
@@ -1015,7 +1026,7 @@ const Hero = () => {
                       <h3 className="text-base sm:text-lg font-bold text-blue-900">Healthcare & Medical</h3>
                     </div>
                     <p className="text-xs sm:text-sm text-blue-700 leading-relaxed mb-3">
-                      HIPAA-compliant medical transcription, billing, coding, and comprehensive EHR support.
+                      Medical transcription, billing, record summarization, medical scribe, APS & peer review, EHR/EMR support.
                     </p>
                     <div className="flex items-center space-x-2">
                       <Shield size={14} className="text-green-600" />
@@ -1034,7 +1045,7 @@ const Hero = () => {
                       <h3 className="text-base sm:text-lg font-bold text-purple-900">Technology & Software</h3>
                     </div>
                     <p className="text-xs sm:text-sm text-purple-700 leading-relaxed mb-3">
-                      AI/ML solutions, cloud services, mobile development, and custom software architecture.
+                      Cloud solutions, software services, talent management, AI/ML, mobile solutions, remote hardware, analytics & reporting.
                     </p>
                     <div className="flex items-center space-x-2">
                       <Code size={14} className="text-purple-600" />
@@ -1045,6 +1056,8 @@ const Hero = () => {
 
                 <motion.p
                   initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 2.2, duration: 0.8 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 2.2, duration: 0.8 }}
                   className="text-lg text-gray-500 leading-relaxed max-w-2xl"
@@ -1083,18 +1096,20 @@ const Hero = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 2.8, duration: 0.8 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 2.8, duration: 0.8 }}
               className="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full max-w-none"
             >
               <motion.div
-                whileHover={{ 
+                whileHover={{
                   scale: 1.05,
                   boxShadow: "0 20px 40px rgba(59, 130, 246, 0.3)"
                 }}
                 whileTap={{ scale: 0.98 }}
                 transition={{ type: "spring", stiffness: 400, damping: 17 }}
               >
-                <Link 
-                  href="/medical" 
+                <Link
+                  href="/medical"
                   className="group relative inline-flex items-center justify-center px-4 sm:px-6 py-3 text-sm sm:text-base font-semibold text-white bg-gradient-to-r from-blue-600 to-cyan-600 rounded-lg sm:rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden w-full sm:w-auto"
                 >
                   <motion.div
@@ -1112,7 +1127,7 @@ const Hero = () => {
                       <ArrowRight size={14} className="sm:w-4 sm:h-4" />
                     </motion.div>
                   </span>
-                  
+
                   {/* Shimmer Effect */}
                   <motion.div
                     animate={{ x: [-100, 300] }}
@@ -1123,15 +1138,15 @@ const Hero = () => {
               </motion.div>
 
               <motion.div
-                whileHover={{ 
+                whileHover={{
                   scale: 1.05,
                   boxShadow: "0 20px 40px rgba(147, 51, 234, 0.3)"
                 }}
                 whileTap={{ scale: 0.98 }}
                 transition={{ type: "spring", stiffness: 400, damping: 17 }}
               >
-                <Link 
-                  href="/technology" 
+                <Link
+                  href="/technology"
                   className="group relative inline-flex items-center justify-center px-4 sm:px-6 py-3 text-sm sm:text-base font-semibold text-white bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg sm:rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden w-full sm:w-auto"
                 >
                   <motion.div
@@ -1149,7 +1164,7 @@ const Hero = () => {
                       <ArrowRight size={14} className="sm:w-4 sm:h-4" />
                     </motion.div>
                   </span>
-                  
+
                   {/* Shimmer Effect */}
                   <motion.div
                     animate={{ x: [-100, 300] }}
@@ -1165,9 +1180,12 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 3.2, duration: 0.8 }}
-              className="flex flex-wrap items-center justify-center sm:justify-start gap-2 sm:gap-3 md:gap-4 pt-6 sm:pt-8 w-full"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 3.2, duration: 0.8 }}
+              className="flex flex-wrap items-center justify-center sm:justify-start gap-2 sm:gap-3 md:gap-4 pt-6 sm:pt-8"
             >
-              <motion.div 
+              <motion.div
                 initial={{ scale: 0 }}
                 animate={{ scale: 1 }}
                 transition={{ delay: 3.4, type: "spring", stiffness: 200 }}
@@ -1184,14 +1202,14 @@ const Hero = () => {
                 </span>
               </motion.div>
 
-              <motion.div 
+              <motion.div
                 initial={{ scale: 0 }}
                 animate={{ scale: 1 }}
                 transition={{ delay: 3.6, type: "spring", stiffness: 200 }}
                 className="group flex items-center space-x-2 sm:space-x-3 bg-blue-50 px-3 sm:px-4 py-2 sm:py-3 rounded-full border border-blue-200 hover:shadow-lg transition-all duration-300"
               >
                 <motion.div
-                  animate={{ 
+                  animate={{
                     rotate: [0, 10, -10, 0],
                     scale: [1, 1.1, 1]
                   }}
@@ -1204,14 +1222,14 @@ const Hero = () => {
                 </span>
               </motion.div>
 
-              <motion.div 
+              <motion.div
                 initial={{ scale: 0 }}
                 animate={{ scale: 1 }}
                 transition={{ delay: 3.8, type: "spring", stiffness: 200 }}
                 className="group flex items-center space-x-2 sm:space-x-3 bg-purple-50 px-3 sm:px-4 py-2 sm:py-3 rounded-full border border-purple-200 hover:shadow-lg transition-all duration-300"
               >
                 <motion.div
-                  animate={{ 
+                  animate={{
                     y: [0, -5, 0],
                     rotate: [0, 15, -15, 0]
                   }}
@@ -1231,25 +1249,27 @@ const Hero = () => {
             initial={{ opacity: 0, scale: 0.8, rotateY: -15 }}
             animate={{ opacity: 1, scale: 1, rotateY: 0 }}
             transition={{ delay: 0.8, duration: 1.2, ease: "backOut" }}
+            animate={{ opacity: 1, scale: 1, rotateY: 0 }}
+            transition={{ delay: 0.8, duration: 1.2, ease: "backOut" }}
             className="relative perspective-1000 mt-12 lg:mt-0 px-4 lg:px-8"
           >
             <div className="relative">
               {/* Dual Domain Showcase Cards */}
               <div className="space-y-6">
                 {/* Healthcare Card */}
-                <motion.div 
+                <motion.div
                   initial={{ opacity: 0, x: 50 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 1.2, duration: 0.8 }}
-                  whileHover={{ 
+                  whileHover={{
                     scale: 1.02,
-                    boxShadow: "0 20px 40px rgba(59, 130, 246, 0.2)" 
+                    boxShadow: "0 20px 40px rgba(59, 130, 246, 0.2)"
                   }}
                   className="bg-gradient-to-br from-blue-50 via-white to-cyan-50 rounded-2xl shadow-xl p-6 border border-blue-100 backdrop-blur-sm"
                 >
                   <div className="flex items-center justify-between mb-4">
                     <div className="flex items-center space-x-3">
-                      <motion.div 
+                      <motion.div
                         animate={{ rotate: [0, 360] }}
                         transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
                         className="w-10 h-10 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-xl flex items-center justify-center shadow-lg"
@@ -1269,9 +1289,9 @@ const Hero = () => {
                       99.8% Accuracy
                     </motion.div>
                   </div>
-                  
+
                   <div className="grid grid-cols-2 gap-3">
-                    {['Medical Transcription', 'Medical Billing', 'EHR Support', 'Medical Coding'].map((service, idx) => (
+                    {['Medical Transcription', 'Medical Billing', 'Medical Scribe', 'Record Summarization', 'APS Summary', 'Peer Review', 'EHR/EMR'].map((service, idx) => (
                       <motion.div
                         key={service}
                         initial={{ opacity: 0, scale: 0.8 }}
@@ -1286,20 +1306,20 @@ const Hero = () => {
                 </motion.div>
 
                 {/* Technology Card */}
-                <motion.div 
+                <motion.div
                   initial={{ opacity: 0, x: -50 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 1.6, duration: 0.8 }}
-                  whileHover={{ 
+                  whileHover={{
                     scale: 1.02,
-                    boxShadow: "0 20px 40px rgba(147, 51, 234, 0.2)" 
+                    boxShadow: "0 20px 40px rgba(147, 51, 234, 0.2)"
                   }}
                   className="bg-gradient-to-br from-purple-50 via-white to-pink-50 rounded-2xl shadow-xl p-6 border border-purple-100 backdrop-blur-sm"
                 >
                   <div className="flex items-center justify-between mb-4">
                     <div className="flex items-center space-x-3">
-                      <motion.div 
-                        animate={{ 
+                      <motion.div
+                        animate={{
                           rotate: [0, 180, 360],
                           scale: [1, 1.1, 1]
                         }}
@@ -1310,7 +1330,7 @@ const Hero = () => {
                       </motion.div>
                       <div>
                         <h3 className="font-bold text-lg text-purple-900">Technology Solutions</h3>
-                        <p className="text-sm text-purple-600">AI/ML & Cloud Services</p>
+                        <p className="text-sm text-purple-600">Software & Cloud Services</p>
                       </div>
                     </div>
                     <motion.div
@@ -1321,9 +1341,9 @@ const Hero = () => {
                       100+ Projects
                     </motion.div>
                   </div>
-                  
+
                   <div className="grid grid-cols-2 gap-3">
-                    {['AI/ML Solutions', 'Mobile Apps', 'Cloud Services', 'Custom Software'].map((service, idx) => (
+                    {['Cloud Solutions', 'Software Services', 'Talent Management', 'AI/ML Solutions', 'Mobile Solutions', 'Remote Hardware', 'Analytics & Reporting'].map((service, idx) => (
                       <motion.div
                         key={service}
                         initial={{ opacity: 0, scale: 0.8 }}
@@ -1343,25 +1363,25 @@ const Hero = () => {
                 initial={{ opacity: 0, scale: 0, y: -50 }}
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 transition={{ delay: 1.8, type: "spring", stiffness: 200 }}
-                className="absolute -top-4 -right-4"
+                className="absolute -top-8 -right-4 sm:-top-4 sm:-right-4"
               >
                 <motion.div
-                  animate={{ 
-                    y: [-12, 12, -12],
+                  animate={{
+                    y: [-8, 8, -8],
                     rotate: [-2, 2, -2]
                   }}
                   transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
                   whileHover={{ scale: 1.1, rotate: 10 }}
-                  className="bg-gradient-to-br from-primary-600 to-primary-700 text-white p-5 rounded-2xl shadow-xl border-4 border-white"
+                  className="bg-gradient-to-br from-primary-600 to-primary-700 text-white p-3 rounded-xl shadow-lg border-2 border-white"
                 >
-                  <motion.div 
-                    className="text-2xl font-black mb-1"
+                  <motion.div
+                    className="text-lg font-black mb-0.5"
                     animate={{ scale: [1, 1.1, 1] }}
                     transition={{ duration: 2, repeat: Infinity }}
                   >
                     25+
                   </motion.div>
-                  <div className="text-xs opacity-90 font-medium">Years</div>
+                  <div className="text-[10px] opacity-90 font-medium">Years</div>
                 </motion.div>
               </motion.div>
 
@@ -1372,22 +1392,22 @@ const Hero = () => {
                 className="absolute -bottom-4 -left-4"
               >
                 <motion.div
-                  animate={{ 
-                    y: [12, -12, 12],
+                  animate={{
+                    y: [8, -8, 8],
                     rotate: [2, -2, 2]
                   }}
                   transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 3 }}
                   whileHover={{ scale: 1.1, rotate: -10 }}
-                  className="bg-white border-4 border-primary-200 p-5 rounded-2xl shadow-xl"
+                  className="bg-white border-2 border-primary-200 p-3 rounded-xl shadow-lg"
                 >
-                  <motion.div 
-                    className="text-2xl font-black text-primary-600 mb-1"
+                  <motion.div
+                    className="text-lg font-black text-primary-600 mb-0.5"
                     animate={{ scale: [1, 1.1, 1] }}
                     transition={{ duration: 2, repeat: Infinity, delay: 1 }}
                   >
                     150+
                   </motion.div>
-                  <div className="text-xs text-gray-600 font-medium">Employees</div>
+                  <div className="text-[10px] text-gray-600 font-medium">Employees</div>
                 </motion.div>
               </motion.div>
 
@@ -1399,7 +1419,7 @@ const Hero = () => {
                 className="absolute top-20 -left-6"
               >
                 <motion.div
-                  animate={{ 
+                  animate={{
                     rotate: [0, 360],
                     scale: [1, 1.2, 1]
                   }}
@@ -1423,7 +1443,7 @@ const Hero = () => {
                 className="absolute bottom-24 right-6"
               >
                 <motion.div
-                  animate={{ 
+                  animate={{
                     y: [-8, 8, -8],
                     rotate: [0, 180, 360]
                   }}

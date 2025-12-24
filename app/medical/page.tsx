@@ -2,7 +2,7 @@ import Navigation from '@/components/Navigation'
 import MedicalHero from '@/components/medical/MedicalHero'
 import MedicalServices from '@/components/medical/MedicalServices'
 import MedicalTestimonials from '@/components/medical/MedicalTestimonials'
-import Contact from '@/components/Contact'
+import ContactInfo from '@/components/ContactInfo'
 import Footer from '@/components/Footer'
 
 export const metadata = {
@@ -19,7 +19,7 @@ export default function MedicalPage() {
         <MedicalHero />
         <MedicalServices />
         <MedicalTestimonials />
-        <Contact />
+        <ContactInfo />
       </main>
       <Footer />
     </>

@@ -1,8 +1,7 @@
 import Navigation from '@/components/Navigation'
 import TechnologyHero from '@/components/technology/TechnologyHero'
 import TechnologyServices from '@/components/technology/TechnologyServices'
-import TechnologyProjects from '@/components/technology/TechnologyProjects'
-import Contact from '@/components/Contact'
+import ContactInfo from '@/components/ContactInfo'
 import Footer from '@/components/Footer'
 
 export const metadata = {
@@ -18,8 +17,7 @@ export default function TechnologyPage() {
       <main>
         <TechnologyHero />
         <TechnologyServices />
-        <TechnologyProjects />
-        <Contact />
+        <ContactInfo />
       </main>
       <Footer />
     </>

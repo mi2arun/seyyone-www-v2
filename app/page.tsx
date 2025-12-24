@@ -1,6 +1,6 @@
 import Navigation from '@/components/Navigation'
 import Hero from '@/components/Hero'
-import Contact from '@/components/Contact'
+import ContactInfo from '@/components/ContactInfo'
 import Footer from '@/components/Footer'
 
 export default function Home() {
@@ -9,7 +9,7 @@ export default function Home() {
       <Navigation />
       <main>
         <Hero />
-        <Contact />
+        <ContactInfo />
       </main>
       <Footer />
     </>

@@ -1,7 +1,8 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Mail, Phone, MapPin, Clock, Send, Globe } from 'lucide-react'
+import { Mail, Phone, MapPin, Clock, Send } from 'lucide-react'
+import GlobalPresence from './GlobalPresence'
 
 const Contact = () => {
   const contactInfo = [
@@ -33,17 +34,6 @@ const Contact = () => {
       description: 'We work in your timezone',
       href: '#'
     }
-  ]
-
-  const regions = [
-    { flag: '🇺🇸', country: 'USA', cities: 'Healthcare & Software Solutions' },
-    { flag: '🇬🇧', country: 'UK', cities: 'Healthcare & Software Solutions' },
-    { flag: '🇨🇦', country: 'Canada', cities: 'Healthcare & Software Solutions' },
-    { flag: '🇦🇺', country: 'Australia', cities: 'Healthcare & Software Solutions' },
-    { flag: '🇮🇪', country: 'Ireland', cities: 'Healthcare & Software Solutions' },
-    { flag: '🇩🇪', country: 'Germany', cities: 'Healthcare & Software Solutions' },
-    { flag: '🇳🇱', country: 'Netherlands', cities: 'Healthcare & Software Solutions' },
-    { flag: '🇮🇳', country: 'India', cities: 'Headquarters & Operations' }
   ]
 
   return (
@@ -229,43 +219,8 @@ const Contact = () => {
               })}
             </div>
 
-            {/* Global Presence */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.4, duration: 0.6 }}
-              className="bg-gradient-to-r from-primary-600 to-primary-700 rounded-2xl p-8 text-white"
-            >
-              <div className="flex items-center space-x-2 mb-6">
-                <Globe className="text-white" size={24} />
-                <h3 className="text-xl font-bold">Global Presence</h3>
-              </div>
-              
-              <p className="text-primary-100 mb-6">
-                We serve clients across 8 countries with comprehensive 
-                Healthcare KPO and Software Development solutions.
-              </p>
-
-              <div className="grid grid-cols-2 gap-3">
-                {regions.map((region, index) => (
-                  <motion.div
-                    key={region.country}
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: index * 0.1, duration: 0.6 }}
-                    className="flex items-center space-x-3 p-3 bg-white/10 rounded-lg"
-                  >
-                    <span className="text-xl">{region.flag}</span>
-                    <div>
-                      <div className="font-semibold text-sm">{region.country}</div>
-                      <div className="text-xs text-primary-100">{region.cities}</div>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-            </motion.div>
+            {/* Global Presence Component */}
+            <GlobalPresence />
           </motion.div>
         </div>
       </div>

@@ -1,11 +1,11 @@
 'use client'
 
 import Navigation from '@/components/Navigation'
-import Contact from '@/components/Contact'
+import ContactInfo from '@/components/ContactInfo'
 import Footer from '@/components/Footer'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
-import { Monitor, Coffee, BookOpen, Laptop, Phone, Clock, Award, Target } from 'lucide-react'
+import { Monitor, Coffee, BookOpen, Laptop, Phone, Clock, Award, Target, ShieldCheck, Lightbulb, Users, FileText, Lock, GraduationCap } from 'lucide-react'
 
 // Metadata removed for client component
 
@@ -94,7 +94,7 @@ export default function AboutPage() {
             </motion.div>
 
             {/* Office Decorations */}
-            <motion.div 
+            <motion.div
               className="absolute top-40 left-20"
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
@@ -102,19 +102,7 @@ export default function AboutPage() {
             >
               <div className="bg-white/80 backdrop-blur-sm p-3 shadow-lg transform -rotate-3">
                 <Award className="text-blue-600 mx-auto" size={32} />
-                <p className="text-xs mt-1 text-gray-600">ISO Certified</p>
-              </div>
-            </motion.div>
-
-            <motion.div 
-              className="absolute bottom-40 right-32"
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.9, duration: 0.6 }}
-            >
-              <div className="bg-white/80 backdrop-blur-sm p-3 shadow-lg transform rotate-3">
-                <Target className="text-green-600 mx-auto" size={32} />
-                <p className="text-xs mt-1 text-gray-600">Vision 2025</p>
+                <p className="text-xs mt-1 text-gray-600">HIPAA Compliant</p>
               </div>
             </motion.div>
 
@@ -186,7 +174,7 @@ export default function AboutPage() {
                 </div>
               </motion.div>
               
-              <motion.div 
+              <motion.div
                 className="grid grid-cols-2 gap-6"
                 initial={{ opacity: 0, x: 50 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -226,47 +214,75 @@ export default function AboutPage() {
               </p>
             </div>
             
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
               {[
+                {
+                  title: 'Excellence',
+                  description: 'We strive for the highest quality in everything we do, exceeding expectations consistently.',
+                  gradient: 'from-orange-500 to-orange-600',
+                  icon: Award
+                },
                 {
                   title: 'Integrity',
                   description: 'We conduct business with honesty, transparency, and ethical practices in all our interactions.',
-                  color: 'blue'
+                  gradient: 'from-blue-500 to-blue-600',
+                  icon: ShieldCheck
                 },
                 {
                   title: 'Innovation',
                   description: 'We continuously explore new technologies and methodologies to deliver cutting-edge solutions.',
-                  color: 'purple'
+                  gradient: 'from-purple-500 to-purple-600',
+                  icon: Lightbulb
+                },
+                {
+                  title: 'Client Focus',
+                  description: 'We prioritize our clients needs and work tirelessly to deliver value and satisfaction.',
+                  gradient: 'from-red-500 to-red-600',
+                  icon: Target
                 },
                 {
                   title: 'Collaboration',
                   description: 'We work closely with our clients and team members to achieve shared goals and success.',
-                  color: 'green'
+                  gradient: 'from-green-500 to-green-600',
+                  icon: Users
                 },
                 {
-                  title: 'Excellence',
-                  description: 'We strive for the highest quality in everything we do, exceeding expectations consistently.',
-                  color: 'orange'
+                  title: 'Compliance',
+                  description: 'We adhere to all regulatory requirements and industry standards, ensuring HIPAA compliance and data protection.',
+                  gradient: 'from-indigo-500 to-indigo-600',
+                  icon: FileText
                 },
                 {
-                  title: 'Customer Focus',
-                  description: 'We prioritize our clients needs and work tirelessly to deliver value and satisfaction.',
-                  color: 'red'
+                  title: 'Security',
+                  description: 'We implement robust security measures to protect sensitive data and maintain confidentiality.',
+                  gradient: 'from-cyan-500 to-cyan-600',
+                  icon: Lock
                 },
                 {
-                  title: 'Accountability',
-                  description: 'We take responsibility for our actions and deliver on our commitments with reliability.',
-                  color: 'indigo'
+                  title: 'Expertise',
+                  description: 'We bring deep domain knowledge and technical skills to deliver exceptional solutions.',
+                  gradient: 'from-teal-500 to-teal-600',
+                  icon: GraduationCap
                 }
-              ].map((value, index) => (
-                <div key={value.title} className="bg-white p-8 rounded-2xl shadow-lg">
-                  <div className={`w-12 h-12 bg-${value.color}-100 rounded-xl flex items-center justify-center mb-6`}>
-                    <div className={`w-6 h-6 bg-${value.color}-600 rounded-full`}></div>
-                  </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-4">{value.title}</h3>
-                  <p className="text-gray-600 leading-relaxed">{value.description}</p>
-                </div>
-              ))}
+              ].map((value, index) => {
+                const IconComponent = value.icon
+                return (
+                  <motion.div
+                    key={value.title}
+                    className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.1, duration: 0.6 }}
+                  >
+                    <div className={`w-16 h-16 bg-gradient-to-r ${value.gradient} rounded-xl flex items-center justify-center mb-6 shadow-lg`}>
+                      <IconComponent className="text-white" size={28} />
+                    </div>
+                    <h3 className="text-xl font-bold text-gray-900 mb-4">{value.title}</h3>
+                    <p className="text-gray-600 leading-relaxed">{value.description}</p>
+                  </motion.div>
+                )
+              })}
             </div>
           </div>
         </section>
@@ -280,9 +296,9 @@ export default function AboutPage() {
               </h2>
               <div className="bg-gradient-to-r from-blue-50 to-purple-50 p-8 rounded-2xl">
                 <blockquote className="text-lg text-gray-700 leading-relaxed italic mb-6">
-                  &ldquo;At Seyyone, we believe in the power of technology and expertise to transform businesses. 
-                  Our commitment to excellence, innovation, and client success has been the driving force 
-                  behind our 25+ year journey. We&rsquo;re not just a service provider; we&rsquo;re a strategic partner 
+                  &ldquo;At Seyyone, we believe in the power of technology and expertise to transform businesses.
+                  Our commitment to excellence, innovation, and client success has been the driving force
+                  behind our 25+ year journey. We&rsquo;re not just a service provider; we&rsquo;re a strategic partner
                   dedicated to your growth and success.&rdquo;
                 </blockquote>
                 <div className="text-center">
@@ -294,7 +310,84 @@ export default function AboutPage() {
           </div>
         </section>
 
-        <Contact />
+        {/* Moments at Seyyone */}
+        <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+          <div className="container">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                Moments at Seyyone
+              </h2>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                Celebrating our journey, achievements, and the memorable moments that define our culture.
+              </p>
+            </motion.div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {[
+                {
+                  title: 'Team Collaboration',
+                  description: 'Working together towards excellence',
+                  image: '/moments/team-collaboration.jpg'
+                },
+                {
+                  title: 'Annual Celebration',
+                  description: 'Celebrating our achievements together',
+                  image: '/moments/annual-celebration.jpg'
+                },
+                {
+                  title: 'Innovation Workshop',
+                  description: 'Exploring new technologies and ideas',
+                  image: '/moments/innovation-workshop.jpg'
+                },
+                {
+                  title: 'Client Success',
+                  description: 'Delivering exceptional results',
+                  image: '/moments/client-success.jpg'
+                },
+                {
+                  title: 'Team Building',
+                  description: 'Building stronger connections',
+                  image: '/moments/team-building.jpg'
+                },
+                {
+                  title: 'Milestone Achievement',
+                  description: 'Celebrating 25+ years of excellence',
+                  image: '/moments/milestone.jpg'
+                }
+              ].map((moment, index) => (
+                <motion.div
+                  key={moment.title}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1, duration: 0.6 }}
+                  className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300"
+                >
+                  <div className="relative h-64 bg-gradient-to-br from-blue-100 to-purple-100">
+                    <Image
+                      src="/Seyyone-Group-Photo-Updated.png"
+                      alt={moment.title}
+                      fill
+                      className="object-cover group-hover:scale-110 transition-transform duration-500"
+                    />
+                  </div>
+                  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">
+                    <h3 className="text-lg font-bold text-white mb-1">{moment.title}</h3>
+                    <p className="text-sm text-gray-200">{moment.description}</p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <ContactInfo />
       </main>
       <Footer />
     </>

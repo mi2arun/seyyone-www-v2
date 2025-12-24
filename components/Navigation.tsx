@@ -11,12 +11,12 @@ const Navigation = () => {
   const [scrolled, setScrolled] = useState(false)
   const { scrollY } = useScroll()
   const pathname = usePathname()
-  
+
   // Handle scroll effects
   useMotionValueEvent(scrollY, "change", (latest) => {
     setScrolled(latest > 50)
   })
-  
+
   // Close mobile menu on route change
   useEffect(() => {
     setIsOpen(false)
@@ -57,10 +57,11 @@ const Navigation = () => {
   ]
 
   const insightsItems = [
-    { name: 'Blogs', href: '/blogs' },
-    { name: 'Articles', href: '/articles' },
-    { name: 'Infographics', href: '/infographics' },
-    { name: 'Case Study', href: '/case-study' },
+    { name: 'Blogs', href: '/insights#blogs' },
+    { name: 'Articles', href: '/insights#articles' },
+    { name: 'Whitepapers', href: '/insights#whitepapers' },
+    { name: 'Testimonials', href: '/insights#testimonials' },
+    { name: 'Case Studies', href: '/insights#case-studies' },
   ]
 
   const navItems = [
@@ -68,6 +69,7 @@ const Navigation = () => {
     { name: 'About', href: '/about' },
     { name: 'Healthcare', href: '/medical' },
     { name: 'Technology', href: '/technology' },
+    { name: 'Insights', href: '/insights' },
     { name: 'Careers', href: '/career' },
     { name: 'Contact', href: '/contact' }
   ]
@@ -77,14 +79,14 @@ const Navigation = () => {
       {/* Scroll Progress Indicator */}
       <motion.div
         className="fixed top-0 left-0 right-0 h-1 z-50 origin-left"
-        style={{ 
+        style={{
           scaleX: scrollY,
           backgroundColor: '#0095d9'
         }}
         initial={{ scaleX: 0 }}
       />
-      
-      <motion.nav 
+
+      <motion.nav
         className="fixed top-0 w-full z-40 transition-all duration-300 bg-white"
         style={{
           backgroundColor: 'rgb(255, 255, 255)',
@@ -104,10 +106,10 @@ const Navigation = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <motion.img 
-                  src="/logo-blue.png" 
-                  alt="Seyyone Logo" 
-                  className="w-24 h-24 object-contain cursor-pointer"
+                <motion.img
+                  src="/logo-blue.png"
+                  alt="Seyyone Logo"
+                  className="w-32 h-32 object-contain cursor-pointer"
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.6 }}
@@ -138,14 +140,13 @@ const Navigation = () => {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1, duration: 0.5 }}
                 >
-                  <Link 
+                  <Link
                     href={item.href}
-                    className={`relative px-4 py-2 text-sm font-medium transition-all duration-300 rounded-lg group ${
-                      pathname === item.href 
-                        ? 'text-white' 
-                        : 'text-gray-700'
-                    }`}
-                    style={{ 
+                    className={`relative px-4 py-2 text-sm font-medium transition-all duration-300 rounded-lg group ${pathname === item.href
+                      ? 'text-white'
+                      : 'text-gray-700'
+                      }`}
+                    style={{
                       color: pathname !== item.href ? undefined : 'white'
                     }}
                     onMouseEnter={(e) => {
@@ -168,16 +169,16 @@ const Navigation = () => {
                         transition={{ type: "spring", stiffness: 300, damping: 30 }}
                       />
                     )}
-                    
+
                     {/* Hover background */}
                     <motion.div
                       className="absolute inset-0 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                       style={{ backgroundColor: 'rgba(0, 149, 217, 0.1)' }}
                       whileHover={{ scale: 1.05 }}
                     />
-                    
+
                     <span className="relative z-10">{item.name}</span>
-                    
+
                     {/* Underline indicator */}
                     <motion.div
                       className="absolute bottom-0 left-1/2 w-0 h-0.5 group-hover:w-8 group-hover:left-1/2 group-hover:-translate-x-1/2 transition-all duration-300"
@@ -186,7 +187,7 @@ const Navigation = () => {
                   </Link>
                 </motion.div>
               ))}
-              
+
               {/* Enhanced CTA Button */}
               <motion.div
                 initial={{ opacity: 0, scale: 0.8 }}
@@ -198,7 +199,7 @@ const Navigation = () => {
                   <motion.div
                     className="relative inline-flex items-center px-6 py-3 text-sm font-semibold text-white rounded-full shadow-lg overflow-hidden"
                     style={{ backgroundColor: '#0095d9' }}
-                    whileHover={{ 
+                    whileHover={{
                       scale: 1.05,
                       boxShadow: "0 20px 40px rgba(0, 149, 217, 0.4)"
                     }}
@@ -208,7 +209,7 @@ const Navigation = () => {
                       <span>Get Started</span>
                       <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
                     </span>
-                    
+
                     {/* Button shine effect */}
                     <motion.div
                       className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent skew-x-12"
@@ -230,7 +231,7 @@ const Navigation = () => {
             <motion.button
               onClick={() => setIsOpen(!isOpen)}
               className="lg:hidden relative p-3 text-gray-700 bg-white rounded-xl shadow-lg border border-gray-200/60"
-              style={{ 
+              style={{
                 color: '#374151'
               }}
               onMouseEnter={(e) => {
@@ -254,7 +255,7 @@ const Navigation = () => {
           {/* Enhanced Mobile Navigation */}
           <motion.div
             initial={{ opacity: 0, height: 0 }}
-            animate={{ 
+            animate={{
               opacity: isOpen ? 1 : 0,
               height: isOpen ? 'auto' : 0
             }}
@@ -267,22 +268,21 @@ const Navigation = () => {
                   <motion.div
                     key={item.name}
                     initial={{ opacity: 0, x: -20 }}
-                    animate={{ 
+                    animate={{
                       opacity: isOpen ? 1 : 0,
                       x: isOpen ? 0 : -20
                     }}
-                    transition={{ 
+                    transition={{
                       delay: isOpen ? index * 0.1 : 0,
                       duration: 0.3
                     }}
                   >
                     <Link
                       href={item.href}
-                      className={`flex items-center justify-between p-4 rounded-xl transition-all duration-300 group ${
-                        pathname === item.href
-                          ? 'text-white shadow-lg'
-                          : 'text-gray-700'
-                      }`}
+                      className={`flex items-center justify-between p-4 rounded-xl transition-all duration-300 group ${pathname === item.href
+                        ? 'text-white shadow-lg'
+                        : 'text-gray-700'
+                        }`}
                       style={{
                         backgroundColor: pathname === item.href ? '#0095d9' : 'transparent'
                       }}
@@ -310,11 +310,11 @@ const Navigation = () => {
                     </Link>
                   </motion.div>
                 ))}
-                
+
                 {/* Mobile CTA Button */}
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
-                  animate={{ 
+                  animate={{
                     opacity: isOpen ? 1 : 0,
                     y: isOpen ? 0 : 20
                   }}
@@ -331,7 +331,7 @@ const Navigation = () => {
                     <ArrowRight size={18} />
                   </Link>
                 </motion.div>
-                
+
                 {/* Contact Info */}
                 <motion.div
                   initial={{ opacity: 0 }}

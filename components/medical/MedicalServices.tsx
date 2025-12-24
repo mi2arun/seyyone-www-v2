@@ -1,12 +1,13 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { 
-  FileText, 
-  CreditCard, 
-  Code, 
-  UserCheck, 
-  Database, 
+import Link from 'next/link'
+import {
+  FileText,
+  CreditCard,
+  Code,
+  UserCheck,
+  Database,
   FileCheck,
   Stethoscope,
   Shield,
@@ -21,42 +22,56 @@ const MedicalServices = () => {
       title: 'Medical Transcription',
       description: 'Accurate voice-to-text conversion of medical dictations with 99.8% accuracy rate and quick turnaround times.',
       features: ['Voice Recognition Technology', '24/7 Availability', 'Multi-specialty Support', 'Quality Assurance'],
-      highlight: 'Most Popular'
+      highlight: 'Most Popular',
+      href: '/medical/medical-transcription'
     },
     {
       icon: CreditCard,
       title: 'Medical Billing',
       description: 'Comprehensive revenue cycle management to maximize reimbursements and reduce claim denials.',
       features: ['Claims Processing', 'Denial Management', 'Payment Posting', 'A/R Follow-up'],
-      highlight: 'Revenue Focused'
-    },
-    {
-      icon: Code,
-      title: 'Medical Coding',
-      description: 'Expert ICD-10, CPT, and HCPCS coding services ensuring compliance and optimal reimbursement.',
-      features: ['ICD-10 Coding', 'CPT Coding', 'Audit Support', 'Compliance Review'],
-      highlight: 'Certified Coders'
-    },
-    {
-      icon: UserCheck,
-      title: 'Remote Medical Scribe',
-      description: 'Real-time documentation support allowing physicians to focus on patient care.',
-      features: ['Real-time Support', 'EHR Integration', 'Specialty-specific', 'HIPAA Trained'],
-      highlight: 'Real-time'
-    },
-    {
-      icon: Database,
-      title: 'EHR/EMR Support',
-      description: 'Comprehensive electronic health record management and optimization services.',
-      features: ['Data Entry', 'System Optimization', 'Training Support', 'Migration Assistance'],
-      highlight: 'Tech Support'
+      highlight: 'Revenue Focused',
+      href: '/medical/medical-billing'
     },
     {
       icon: FileCheck,
       title: 'Medical Record Summarization',
       description: 'Concise, accurate medical record summaries for legal, insurance, and clinical purposes.',
       features: ['Chronological Summaries', 'Legal Compliance', 'Custom Formats', 'Quick Delivery'],
-      highlight: 'Legal Ready'
+      highlight: 'Legal Ready',
+      href: '/medical/medical-record-summarization'
+    },
+    {
+      icon: UserCheck,
+      title: 'Medical Scribe',
+      description: 'Real-time documentation support allowing physicians to focus on patient care.',
+      features: ['Real-time Support', 'EHR Integration', 'Specialty-specific', 'HIPAA Trained'],
+      highlight: 'Real-time',
+      href: '/medical/medical-scribe'
+    },
+    {
+      icon: Shield,
+      title: 'APS Summary',
+      description: 'Comprehensive Attending Physician Statement summaries for insurance underwriting and claims review.',
+      features: ['Detailed Analysis', 'Quick Turnaround', 'Insurance Ready', 'Quality Assurance'],
+      highlight: 'Insurance',
+      href: '/medical/aps-summary'
+    },
+    {
+      icon: Stethoscope,
+      title: 'Peer Review Summary',
+      description: 'Expert peer review documentation and analysis for quality assurance and compliance.',
+      features: ['Clinical Review', 'Compliance Check', 'Detailed Reports', 'Expert Analysis'],
+      highlight: 'Quality Focus',
+      href: '/medical/peer-review-summary'
+    },
+    {
+      icon: Database,
+      title: 'EHR/EMR',
+      description: 'Comprehensive electronic health record management and optimization services.',
+      features: ['Data Entry', 'System Optimization', 'Training Support', 'Migration Assistance'],
+      highlight: 'Tech Support',
+      href: '/medical/ehr-emr'
     }
   ]
 
@@ -157,13 +172,16 @@ const MedicalServices = () => {
                   </div>
 
                   {/* CTA */}
-                  <button className="group/btn inline-flex items-center text-blue-600 font-semibold hover:text-blue-700 transition-colors">
+                  <Link
+                    href={service.href}
+                    className="group/btn inline-flex items-center text-blue-600 font-semibold hover:text-blue-700 transition-colors"
+                  >
                     Learn More
-                    <ArrowRight 
-                      size={16} 
-                      className="ml-2 transition-transform group-hover/btn:translate-x-1" 
+                    <ArrowRight
+                      size={16}
+                      className="ml-2 transition-transform group-hover/btn:translate-x-1"
                     />
-                  </button>
+                  </Link>
                 </div>
               </motion.div>
             )

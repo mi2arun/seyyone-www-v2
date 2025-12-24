@@ -6,21 +6,23 @@ import { Phone, Mail, MapPin, ArrowUp } from 'lucide-react'
 
 const Footer = () => {
   const healthcareKPO = [
-    { name: 'EHR/EMR Virtual Assistance', href: '/medical#services' },
-    { name: 'Medical Transcription', href: '/medical#services' },
-    { name: 'Medical Scribe', href: '/medical#services' },
+    { name: 'Peer Review Summary', href: '/medical#services' },
+    { name: 'Medical Record Summarization', href: '/medical#services' },
     { name: 'Medical Billing', href: '/medical#services' },
-    { name: 'Remote Medical Scribe Services', href: '/medical#services' },
-    { name: 'Medical Record Summarization', href: '/medical#services' }
+    { name: 'Medical Transcription', href: '/medical#services' },
+    { name: 'APS Summary', href: '/medical#services' },
+    { name: 'Medical Scribe', href: '/medical#services' },
+    { name: 'EHR/EMR', href: '/medical#services' }
   ]
 
   const softwareSolutions = [
-    { name: 'Software Services', href: '/technology#services' },
-    { name: 'Mobile Solutions', href: '/technology#services' },
     { name: 'Cloud Solutions', href: '/technology#services' },
+    { name: 'Software Services', href: '/technology#services' },
+    { name: 'Talent Management', href: '/technology#services' },
     { name: 'AI/ML Solutions', href: '/technology#services' },
-    { name: 'Analytical and Reporting', href: '/technology#services' },
-    { name: 'Talent Management', href: '/technology#services' }
+    { name: 'Mobile Solutions', href: '/technology#services' },
+    { name: 'Remote Hardware Infra', href: '/technology#services' },
+    { name: 'Analytics & Reporting', href: '/technology#services' }
   ]
 
   const quickLinks = [
@@ -50,33 +52,33 @@ const Footer = () => {
           {/* Company Info */}
           <div className="lg:col-span-2 md:col-span-3">
             <div className="flex items-center mb-6">
-              <motion.img 
-                src="/logo-blue.png" 
-                alt="Seyyone Logo" 
-                className="w-28 h-28 object-contain"
+              <motion.img
+                src="/logo-blue.png"
+                alt="Seyyone Logo"
+                className="w-32 h-32 object-contain"
                 initial={{ opacity: 0, y: 20 }}
-                whileInView={{ 
-                  opacity: 1, 
+                whileInView={{
+                  opacity: 1,
                   y: 0,
                   scale: [1, 1.05, 1]
                 }}
                 viewport={{ once: true }}
-                transition={{ 
+                transition={{
                   opacity: { duration: 0.6 },
                   y: { duration: 0.6 },
                   scale: { duration: 2, repeat: Infinity, repeatDelay: 4 }
                 }}
-                whileHover={{ 
+                whileHover={{
                   scale: 1.1,
                   transition: { duration: 0.3 }
                 }}
               />
             </div>
-            
+
             <p className="text-gray-300 mb-6 leading-relaxed">
-              Transforming businesses through technology and expertise since 1999. 
-              Delivering innovative Healthcare KPO and Software Development solutions 
-              to 70+ clients across 8 countries with our team of 150+ professionals.
+              Transforming businesses through technology and expertise since 1999.
+              Delivering innovative Healthcare KPO and Software Development solutions
+              to 70+ clients across 6 countries with our team of 150+ professionals.
             </p>
 
             <div className="space-y-3">
@@ -108,7 +110,7 @@ const Footer = () => {
             <ul className="space-y-3">
               {healthcareKPO.map((service) => (
                 <li key={service.name}>
-                  <Link 
+                  <Link
                     href={service.href}
                     className="text-gray-300 hover:text-primary-400 transition-colors text-sm"
                   >
@@ -125,7 +127,7 @@ const Footer = () => {
             <ul className="space-y-3">
               {softwareSolutions.map((service) => (
                 <li key={service.name}>
-                  <Link 
+                  <Link
                     href={service.href}
                     className="text-gray-300 hover:text-primary-400 transition-colors text-sm"
                   >
@@ -142,7 +144,7 @@ const Footer = () => {
             <ul className="space-y-3">
               {quickLinks.map((link) => (
                 <li key={link.name}>
-                  <Link 
+                  <Link
                     href={link.href}
                     className="text-gray-300 hover:text-primary-400 transition-colors text-sm"
                   >
@@ -159,7 +161,7 @@ const Footer = () => {
             <ul className="space-y-3 mb-6">
               {insights.map((item) => (
                 <li key={item.name}>
-                  <Link 
+                  <Link
                     href={item.href}
                     className="text-gray-300 hover:text-primary-400 transition-colors text-sm"
                   >
@@ -168,17 +170,19 @@ const Footer = () => {
                 </li>
               ))}
             </ul>
-            
-            <div className="bg-secondary-800 rounded-lg p-4">
-              <h4 className="font-semibold text-green-400 mb-2 text-sm">
-                HIPAA Compliant
-              </h4>
-              <p className="text-xs text-gray-300">
-                Ensuring highest standards of data security and compliance.
-              </p>
-            </div>
 
-            <Link 
+            <Link href="/hipaa-compliance">
+              <div className="bg-secondary-800 rounded-lg p-4 hover:bg-secondary-700 transition-colors cursor-pointer">
+                <h4 className="font-semibold text-green-400 mb-2 text-sm">
+                  HIPAA Compliant
+                </h4>
+                <p className="text-xs text-gray-300">
+                  Ensuring highest standards of data security and compliance.
+                </p>
+              </div>
+            </Link>
+
+            <Link
               href="/contact"
               className="bg-primary-600 text-white px-4 py-2 rounded-lg font-medium hover:bg-primary-700 transition-colors inline-block text-center w-full mt-4 text-sm"
             >
@@ -193,9 +197,9 @@ const Footer = () => {
             <div className="text-gray-400 text-sm">
               © 2024 Seyyone. All rights reserved. | Transforming Businesses Since 1999
             </div>
-            
+
             <div className="flex items-center space-x-6">
-              <span className="text-gray-400 text-sm">Serving 8 Countries:</span>
+              <span className="text-gray-400 text-sm">Serving 6 Countries:</span>
               <div className="flex space-x-2 text-lg">
                 <span title="USA">🇺🇸</span>
                 <span title="UK">🇬🇧</span>
@@ -203,10 +207,8 @@ const Footer = () => {
                 <span title="Australia">🇦🇺</span>
                 <span title="Ireland">🇮🇪</span>
                 <span title="Germany">🇩🇪</span>
-                <span title="Netherlands">🇳🇱</span>
-                <span title="India">🇮🇳</span>
               </div>
-              
+
               <button
                 onClick={scrollToTop}
                 className="bg-primary-600 hover:bg-primary-700 p-2 rounded-lg transition-colors"
