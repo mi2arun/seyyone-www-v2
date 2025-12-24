@@ -983,7 +983,6 @@ const Hero = () => {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 1.6, duration: 0.8 }}
-                  transition={{ delay: 1.6, duration: 0.8 }}
                   className="text-base sm:text-lg md:text-xl text-gray-600 leading-relaxed max-w-2xl font-medium"
                 >
                   Empowering businesses with comprehensive{' '}
@@ -1009,8 +1008,6 @@ const Hero = () => {
                 {/* Domain Cards */}
                 <motion.div
                   initial={{ opacity: 0, y: 30 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 1.8, duration: 0.8 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 1.8, duration: 0.8 }}
                   className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 w-full max-w-none sm:max-w-3xl"
@@ -1058,8 +1055,6 @@ const Hero = () => {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 2.2, duration: 0.8 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 2.2, duration: 0.8 }}
                   className="text-lg text-gray-500 leading-relaxed max-w-2xl"
                 >
                   Trusted by{' '}
@@ -1094,8 +1089,6 @@ const Hero = () => {
             {/* Enhanced CTA Buttons */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 2.8, duration: 0.8 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 2.8, duration: 0.8 }}
               className="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full max-w-none"
@@ -1180,9 +1173,6 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 3.2, duration: 0.8 }}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 3.2, duration: 0.8 }}
               className="flex flex-wrap items-center justify-center sm:justify-start gap-2 sm:gap-3 md:gap-4 pt-6 sm:pt-8"
             >
               <motion.div
@@ -1247,8 +1237,6 @@ const Hero = () => {
           {/* Enhanced Visual Element */}
           <motion.div
             initial={{ opacity: 0, scale: 0.8, rotateY: -15 }}
-            animate={{ opacity: 1, scale: 1, rotateY: 0 }}
-            transition={{ delay: 0.8, duration: 1.2, ease: "backOut" }}
             animate={{ opacity: 1, scale: 1, rotateY: 0 }}
             transition={{ delay: 0.8, duration: 1.2, ease: "backOut" }}
             className="relative perspective-1000 mt-12 lg:mt-0 px-4 lg:px-8"
