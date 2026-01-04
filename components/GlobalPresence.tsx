@@ -5,12 +5,12 @@ import { Globe } from 'lucide-react'
 
 const GlobalPresence = () => {
   const regions = [
-    { flag: '🇺🇸', country: 'USA', cities: 'Healthcare & Software Solutions' },
-    { flag: '🇬🇧', country: 'UK', cities: 'Healthcare & Software Solutions' },
-    { flag: '🇨🇦', country: 'Canada', cities: 'Healthcare & Software Solutions' },
-    { flag: '🇦🇺', country: 'Australia', cities: 'Healthcare & Software Solutions' },
-    { flag: '🇮🇪', country: 'Ireland', cities: 'Healthcare & Software Solutions' },
-    { flag: '🇩🇪', country: 'Germany', cities: 'Healthcare & Software Solutions' }
+    { flag: '🇺🇸', country: 'USA' },
+    { flag: '🇬🇧', country: 'UK' },
+    { flag: '🇨🇦', country: 'Canada' },
+    { flag: '🇦🇺', country: 'Australia' },
+    { flag: '🇮🇪', country: 'Ireland' },
+    { flag: '🇩🇪', country: 'Germany' }
   ]
 
   return (
@@ -39,13 +39,10 @@ const GlobalPresence = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: index * 0.1, duration: 0.6 }}
-            className="flex items-center space-x-3 p-3 bg-white/10 rounded-lg"
+            className="flex items-center justify-center space-x-2 p-3 bg-white/10 rounded-lg w-32"
           >
             <span className="text-xl">{region.flag}</span>
-            <div>
-              <div className="font-semibold text-sm">{region.country}</div>
-              <div className="text-xs text-primary-100">{region.cities}</div>
-            </div>
+            <div className="font-semibold text-sm">{region.country}</div>
           </motion.div>
         ))}
       </div>

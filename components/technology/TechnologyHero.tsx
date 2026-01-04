@@ -81,8 +81,8 @@ const TechnologyHero = () => {
                 transition={{ delay: 0.4, duration: 0.8 }}
                 className="text-xl text-gray-600 leading-relaxed max-w-2xl"
               >
-                Cutting-edge technology solutions including AI/ML development, cloud services, 
-                mobile applications, and custom software. Transform your business with scalable, 
+                Cutting-edge technology solutions including AI/ML development, cloud services,
+                mobile applications, and custom software. Transform your business with scalable,
                 modern technology architecture.
               </motion.p>
             </div>
@@ -248,24 +248,24 @@ const TechnologyHero = () => {
               </div>
             </div>
 
-            {/* Floating Stats */}
-            <motion.div
+            {/* Floating Stats - Hidden (uncomment to enable) */}
+            {/* <motion.div
               animate={{ y: [-10, 10, -10] }}
               transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute -top-4 -right-4 bg-purple-600 text-white p-4 rounded-2xl shadow-xl"
+              className="absolute -top-4 -right-4 bg-purple-600 text-white p-3 rounded-xl shadow-lg"
             >
-              <div className="text-2xl font-bold">100+</div>
+              <div className="text-lg font-bold">100+</div>
               <div className="text-xs opacity-90">Projects</div>
             </motion.div>
 
             <motion.div
               animate={{ y: [10, -10, 10] }}
               transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-              className="absolute -bottom-4 -left-4 bg-white border-2 border-purple-200 p-4 rounded-2xl shadow-xl"
+              className="absolute -bottom-4 -left-4 bg-white border-2 border-purple-200 p-3 rounded-xl shadow-lg"
             >
-              <div className="text-2xl font-bold text-purple-600">15+</div>
+              <div className="text-lg font-bold text-purple-600">15+</div>
               <div className="text-xs text-gray-600">Years</div>
-            </motion.div>
+            </motion.div> */}
           </motion.div>
         </div>
       </div>

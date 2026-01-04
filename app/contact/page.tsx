@@ -85,12 +85,12 @@ export default function ContactPage() {
   ]
 
   const regions = [
-    { flag: '🇺🇸', country: 'USA', cities: 'New York, California, Texas' },
-    { flag: '🇬🇧', country: 'UK', cities: 'London, Manchester' },
-    { flag: '🇨🇦', country: 'Canada', cities: 'Toronto, Vancouver' },
-    { flag: '🇦🇺', country: 'Australia', cities: 'Sydney, Melbourne' },
-    { flag: '🇮🇪', country: 'Ireland', cities: 'Dublin, Cork' },
-    { flag: '🇩🇪', country: 'Germany', cities: 'Berlin, Munich' }
+    { flag: '🇺🇸', country: 'USA' },
+    { flag: '🇬🇧', country: 'UK' },
+    { flag: '🇨🇦', country: 'Canada' },
+    { flag: '🇦🇺', country: 'Australia' },
+    { flag: '🇮🇪', country: 'Ireland' },
+    { flag: '🇩🇪', country: 'Germany' }
   ]
 
   const testimonials = [
@@ -146,16 +146,6 @@ export default function ContactPage() {
 
           <div className="container relative z-10">
             <div className="max-w-5xl mx-auto text-center">
-              <motion.div
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.6 }}
-                className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-100 to-purple-100 text-blue-700 rounded-full text-sm font-semibold mb-6"
-              >
-                <Mail size={18} className="mr-2" />
-                Get In Touch
-              </motion.div>
-
               <motion.h1
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -524,7 +514,7 @@ export default function ContactPage() {
               </p>
             </motion.div>
 
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            <div className="flex flex-wrap justify-center gap-6 max-w-6xl mx-auto">
               {regions.map((region, index) => (
                 <motion.div
                   key={region.country}
@@ -532,11 +522,10 @@ export default function ContactPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1, duration: 0.6 }}
-                  className="bg-white/20 backdrop-blur-sm p-6 rounded-2xl hover:bg-white/30 transition-all duration-300 text-center"
+                  className="bg-white/20 backdrop-blur-sm p-6 rounded-2xl hover:bg-white/30 transition-all duration-300 text-center w-40"
                 >
                   <div className="text-4xl mb-4">{region.flag}</div>
-                  <div className="font-bold text-white text-lg mb-2">{region.country}</div>
-                  <div className="text-blue-100 text-sm">{region.cities}</div>
+                  <div className="font-bold text-white text-lg">{region.country}</div>
                 </motion.div>
               ))}
             </div>

@@ -76,8 +76,8 @@ const MedicalHero = () => {
                 transition={{ delay: 0.4, duration: 0.8 }}
                 className="text-xl text-gray-600 leading-relaxed max-w-2xl"
               >
-                HIPAA-compliant healthcare back office services with 25+ years of experience. 
-                Trusted by healthcare providers worldwide for medical transcription, billing, 
+                HIPAA-compliant healthcare back office services with 25+ years of experience.
+                Trusted by healthcare providers worldwide for medical transcription, billing,
                 coding, and comprehensive EHR support.
               </motion.p>
             </div>
@@ -216,8 +216,8 @@ const MedicalHero = () => {
               </div>
             </div>
 
-            {/* Floating Stats */}
-            <motion.div
+            {/* Floating Stats - Hidden (uncomment lines 220-236 to enable) */}
+            {/* <motion.div
               animate={{ y: [-10, 10, -10] }}
               transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
               className="absolute -top-4 -right-4 bg-blue-600 text-white p-4 rounded-2xl shadow-xl"
@@ -233,7 +233,7 @@ const MedicalHero = () => {
             >
               <div className="text-2xl font-bold text-blue-600">50+</div>
               <div className="text-xs text-gray-600">Clients</div>
-            </motion.div>
+            </motion.div> */}
           </motion.div>
         </div>
       </div>

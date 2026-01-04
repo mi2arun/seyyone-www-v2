@@ -875,14 +875,15 @@ const Hero = () => {
           transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
           className="absolute bottom-40 left-20 w-20 h-20 bg-secondary-200 rounded-lg opacity-30"
         />
-        <motion.div
+        {/* Zooming Circle - Hidden (uncomment lines 878-885 to enable) */}
+        {/* <motion.div
           animate={{
             scale: [1, 1.2, 1],
             opacity: [0.1, 0.3, 0.1]
           }}
           transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
           className="absolute top-1/3 left-1/4 w-16 h-16 bg-primary-300 rounded-full"
-        />
+        /> */}
       </div>
 
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-4 sm:py-8 space-y-12">
@@ -1079,7 +1080,7 @@ const Hero = () => {
                     transition={{ duration: 3, repeat: Infinity, delay: 1 }}
                     className="font-bold"
                   >
-                    8 countries
+                    6 countries
                   </motion.span>
                   .
                 </motion.p>
@@ -1346,8 +1347,8 @@ const Hero = () => {
                 </motion.div>
               </div>
 
-              {/* Enhanced Floating Cards - Adjusted positions */}
-              <motion.div
+              {/* Enhanced Floating Cards - Hidden (uncomment lines 1351-1401 to enable) */}
+              {/* <motion.div
                 initial={{ opacity: 0, scale: 0, y: -50 }}
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 transition={{ delay: 1.8, type: "spring", stiffness: 200 }}
@@ -1397,7 +1398,7 @@ const Hero = () => {
                   </motion.div>
                   <div className="text-[10px] text-gray-600 font-medium">Employees</div>
                 </motion.div>
-              </motion.div>
+              </motion.div> */}
 
               {/* Additional Floating Elements - Repositioned */}
               <motion.div
