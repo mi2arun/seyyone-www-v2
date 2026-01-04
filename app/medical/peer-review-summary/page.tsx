@@ -211,7 +211,7 @@ export default function PeerReviewSummaryPage() {
                 <span className="bg-gradient-to-r from-teal-600 to-emerald-600 bg-clip-text text-transparent"> Peer Reviews</span>
               </h2>
               <p className="text-xl text-gray-600">
-                Flexible peer review services tailored to your organization's quality assurance needs.
+                Flexible peer review services tailored to your organization&apos;s quality assurance needs.
               </p>
             </motion.div>
 

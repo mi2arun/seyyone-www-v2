@@ -330,7 +330,7 @@ export default function MobileSolutionsPage() {
                 Ready to Build Your Mobile App?
               </h2>
               <p className="text-xl text-blue-100 mb-8">
-                Let's create a mobile experience that delights your users. Get a free mobile app consultation today.
+                Let&apos;s create a mobile experience that delights your users. Get a free mobile app consultation today.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link

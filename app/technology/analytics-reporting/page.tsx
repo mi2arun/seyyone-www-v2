@@ -379,7 +379,7 @@ export default function AnalyticsReportingPage() {
               className="max-w-4xl mx-auto text-center text-white"
             >
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                Ready to Unlock Your Data's Potential?
+                Ready to Unlock Your Data&apos;s Potential?
               </h2>
               <p className="text-xl text-indigo-100 mb-8">
                 Transform your data into actionable insights with powerful analytics and reporting solutions.

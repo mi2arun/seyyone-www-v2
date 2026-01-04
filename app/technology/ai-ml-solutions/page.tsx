@@ -329,7 +329,7 @@ export default function AIMLSolutionsPage() {
                 Ready to Harness the Power of AI?
               </h2>
               <p className="text-xl text-purple-100 mb-8">
-                Let's explore how AI and machine learning can transform your business. Schedule a consultation with our AI experts today.
+                Let&apos;s explore how AI and machine learning can transform your business. Schedule a consultation with our AI experts today.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link
