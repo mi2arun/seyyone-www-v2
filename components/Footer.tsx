@@ -48,14 +48,14 @@ const Footer = () => {
     <footer className="bg-secondary-900 text-white">
       <div className="container">
         {/* Main Footer Content */}
-        <div className="py-16 grid lg:grid-cols-6 md:grid-cols-3 gap-8">
+        <div className="py-6 grid lg:grid-cols-6 md:grid-cols-3 gap-8">
           {/* Company Info */}
           <div className="lg:col-span-2 md:col-span-3">
-            <div className="flex items-center mb-6">
+            <div className="flex items-center mb-4">
               <motion.img
                 src="/logo-blue.png"
                 alt="Seyyone Logo"
-                className="w-32 h-32 object-contain"
+                className="w-20 h-20 object-contain"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{
                   opacity: 1,
@@ -75,7 +75,7 @@ const Footer = () => {
               />
             </div>
 
-            <p className="text-gray-300 mb-6 leading-relaxed">
+            <p className="text-gray-300 mb-4 leading-relaxed">
               Transforming businesses through technology and expertise since 1999.
               Delivering innovative Healthcare KPO and Software Development solutions
               to 70+ clients across 6 countries with our team of 150+ professionals.
@@ -106,8 +106,8 @@ const Footer = () => {
 
           {/* Healthcare KPO */}
           <div>
-            <h3 className="text-lg font-semibold mb-6">Healthcare KPO</h3>
-            <ul className="space-y-3">
+            <h3 className="text-lg font-semibold mb-4">Healthcare KPO</h3>
+            <ul className="space-y-2">
               {healthcareKPO.map((service) => (
                 <li key={service.name}>
                   <Link
@@ -123,8 +123,8 @@ const Footer = () => {
 
           {/* Software Solutions */}
           <div>
-            <h3 className="text-lg font-semibold mb-6">Software Solutions</h3>
-            <ul className="space-y-3">
+            <h3 className="text-lg font-semibold mb-4">Software Solutions</h3>
+            <ul className="space-y-2">
               {softwareSolutions.map((service) => (
                 <li key={service.name}>
                   <Link
@@ -140,8 +140,8 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-lg font-semibold mb-6">Company</h3>
-            <ul className="space-y-3">
+            <h3 className="text-lg font-semibold mb-4">Company</h3>
+            <ul className="space-y-2">
               {quickLinks.map((link) => (
                 <li key={link.name}>
                   <Link
@@ -157,8 +157,8 @@ const Footer = () => {
 
           {/* Insights */}
           <div>
-            <h3 className="text-lg font-semibold mb-6">Insights</h3>
-            <ul className="space-y-3 mb-6">
+            <h3 className="text-lg font-semibold mb-4">Insights</h3>
+            <ul className="space-y-2 mb-6">
               {insights.map((item) => (
                 <li key={item.name}>
                   <Link
@@ -192,7 +192,7 @@ const Footer = () => {
         </div>
 
         {/* Bottom Footer */}
-        <div className="border-t border-secondary-800 py-8">
+        <div className="border-t border-secondary-800 py-3">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="text-gray-400 text-sm">
               © 2024 Seyyone. All rights reserved. | Transforming Businesses Since 1999

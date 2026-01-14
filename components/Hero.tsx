@@ -890,8 +890,8 @@ const Hero = () => {
         {/* Centered Title Section */}
 
 
-        <div className="grid lg:grid-cols-2 gap-16 lg:gap-20 items-start">
-          {/* Enhanced Badge - Left Column */}
+        <div className="space-y-12">
+          {/* Enhanced Badge */}
           <div className="space-y-6">
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
@@ -909,11 +909,8 @@ const Hero = () => {
             </motion.div>
           </div>
 
-          {/* Right Column Placeholder */}
-          <div></div>
-
-          {/* Enhanced Main Title - Spans Full Width Below Badge */}
-          <div className="lg:col-span-2 w-full text-center space-y-2">
+          {/* Enhanced Main Title - Full Width */}
+          <div className="w-full text-center space-y-2">
             <motion.h1
               initial={{ opacity: 0 }}
               animate={titleControls}
@@ -928,11 +925,7 @@ const Hero = () => {
                 <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
                   Excellence in
                 </span>
-                <motion.div
-                  animate={{ width: ["0%", "100%"] }}
-                  transition={{ delay: 1.2, duration: 0.8 }}
-                  className="absolute bottom-0 left-0 h-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full"
-                />
+
               </motion.div>
               <br />
               <span className="whitespace-nowrap">
@@ -966,12 +959,12 @@ const Hero = () => {
             </motion.h1>
           </div>
 
-          {/* Enhanced Content - Left Column */}
+          {/* Enhanced Content - Full Width */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="space-y-6 sm:space-y-8 lg:space-y-10 lg:pr-8"
+            className="space-y-6 sm:space-y-8 lg:space-y-10"
           >
             <div className="space-y-6">
               {/* Enhanced Description with Typewriter Effect */}
@@ -984,14 +977,14 @@ const Hero = () => {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 1.6, duration: 0.8 }}
-                  className="text-base sm:text-lg md:text-xl text-gray-600 leading-relaxed max-w-2xl font-medium"
+                  className="py-1 text-base sm:text-lg md:text-xl text-gray-600 leading-relaxed max-w-4xl font-medium"
                 >
                   Empowering businesses with comprehensive{' '}
                   <motion.span
                     initial={{ backgroundColor: "transparent" }}
                     animate={{ backgroundColor: ["transparent", "#e0f2fe", "transparent"] }}
                     transition={{ delay: 2, duration: 2, repeat: Infinity }}
-                    className="px-2 py-1 rounded font-semibold text-blue-700"
+                    className="py-1 rounded font-semibold text-blue-700"
                   >
                     Healthcare KPO Services
                   </motion.span>{' '}
@@ -1000,7 +993,7 @@ const Hero = () => {
                     initial={{ backgroundColor: "transparent" }}
                     animate={{ backgroundColor: ["transparent", "#fdf4ff", "transparent"] }}
                     transition={{ delay: 2.5, duration: 2, repeat: Infinity }}
-                    className="px-2 py-1 rounded font-semibold text-purple-700"
+                    className="py-1 rounded font-semibold text-purple-700"
                   >
                     Software Development
                   </motion.span>
@@ -1011,7 +1004,7 @@ const Hero = () => {
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 1.8, duration: 0.8 }}
-                  className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 w-full max-w-none sm:max-w-3xl"
+                  className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 w-full"
                 >
                   <motion.div
                     whileHover={{ scale: 1.02, y: -2 }}
@@ -1056,7 +1049,7 @@ const Hero = () => {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 2.2, duration: 0.8 }}
-                  className="text-lg text-gray-500 leading-relaxed max-w-2xl"
+                  className="text-lg text-gray-500 leading-relaxed max-w-4xl"
                 >
                   Trusted by{' '}
                   <motion.span
@@ -1112,8 +1105,8 @@ const Hero = () => {
                   <span className="relative z-10 flex items-center gap-2 text-center justify-center">
                     <Stethoscope size={16} className="sm:w-5 sm:h-5" />
                     <span className="hidden xs:inline">Healthcare</span>
-                    <span className="hidden sm:inline"> Services</span>
-                    <span className="xs:hidden">Care</span>
+                    <span className="hidden sm:inline"> Healthcare</span>
+                    <span className="xs:hidden">KPO</span>
                     <motion.div
                       animate={{ x: [0, 5, 0] }}
                       transition={{ duration: 1.5, repeat: Infinity }}
@@ -1148,9 +1141,9 @@ const Hero = () => {
                   />
                   <span className="relative z-10 flex items-center gap-2 text-center justify-center">
                     <Code size={16} className="sm:w-5 sm:h-5" />
-                    <span className="hidden xs:inline">Technology</span>
-                    <span className="hidden sm:inline"> Solutions</span>
-                    <span className="xs:hidden">Tech</span>
+                    <span className="hidden xs:inline">Software</span>
+                    <span className="hidden sm:inline"> Software</span>
+                    <span className="xs:hidden">Solutions</span>
                     <motion.div
                       animate={{ x: [0, 5, 0] }}
                       transition={{ duration: 1.5, repeat: Infinity, delay: 0.5 }}
@@ -1235,218 +1228,118 @@ const Hero = () => {
             </motion.div>
           </motion.div>
 
-          {/* Enhanced Visual Element */}
+          {/* Service Showcase Cards - Full Width Below */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.8, rotateY: -15 }}
-            animate={{ opacity: 1, scale: 1, rotateY: 0 }}
-            transition={{ delay: 0.8, duration: 1.2, ease: "backOut" }}
-            className="relative perspective-1000 mt-12 lg:mt-0 px-4 lg:px-8"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="w-full pt-8"
           >
-            <div className="relative">
-              {/* Dual Domain Showcase Cards */}
-              <div className="space-y-6">
-                {/* Healthcare Card */}
-                <motion.div
-                  initial={{ opacity: 0, x: 50 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 1.2, duration: 0.8 }}
-                  whileHover={{
-                    scale: 1.02,
-                    boxShadow: "0 20px 40px rgba(59, 130, 246, 0.2)"
-                  }}
-                  className="bg-gradient-to-br from-blue-50 via-white to-cyan-50 rounded-2xl shadow-xl p-6 border border-blue-100 backdrop-blur-sm"
-                >
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="flex items-center space-x-3">
-                      <motion.div
-                        animate={{ rotate: [0, 360] }}
-                        transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
-                        className="w-10 h-10 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-xl flex items-center justify-center shadow-lg"
-                      >
-                        <Heart className="text-white" size={20} />
-                      </motion.div>
-                      <div>
-                        <h3 className="font-bold text-lg text-blue-900">Healthcare KPO</h3>
-                        <p className="text-sm text-blue-600">HIPAA Compliant Services</p>
-                      </div>
-                    </div>
-                    <motion.div
-                      animate={{ opacity: [0.5, 1, 0.5] }}
-                      transition={{ duration: 2, repeat: Infinity }}
-                      className="px-3 py-1 bg-green-100 text-green-800 rounded-full text-xs font-semibold"
-                    >
-                      99.8% Accuracy
-                    </motion.div>
-                  </div>
-
-                  <div className="grid grid-cols-2 gap-3">
-                    {['Medical Transcription', 'Medical Billing', 'Medical Scribe', 'Record Summarization', 'APS Summary', 'Peer Review', 'EHR/EMR'].map((service, idx) => (
-                      <motion.div
-                        key={service}
-                        initial={{ opacity: 0, scale: 0.8 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        transition={{ delay: 1.5 + idx * 0.1, duration: 0.4 }}
-                        className="bg-blue-100 px-3 py-2 rounded-lg text-center"
-                      >
-                        <span className="text-xs font-semibold text-blue-700">{service}</span>
-                      </motion.div>
-                    ))}
-                  </div>
-                </motion.div>
-
-                {/* Technology Card */}
-                <motion.div
-                  initial={{ opacity: 0, x: -50 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 1.6, duration: 0.8 }}
-                  whileHover={{
-                    scale: 1.02,
-                    boxShadow: "0 20px 40px rgba(147, 51, 234, 0.2)"
-                  }}
-                  className="bg-gradient-to-br from-purple-50 via-white to-pink-50 rounded-2xl shadow-xl p-6 border border-purple-100 backdrop-blur-sm"
-                >
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="flex items-center space-x-3">
-                      <motion.div
-                        animate={{
-                          rotate: [0, 180, 360],
-                          scale: [1, 1.1, 1]
-                        }}
-                        transition={{ duration: 6, repeat: Infinity, ease: "linear" }}
-                        className="w-10 h-10 bg-gradient-to-r from-purple-600 to-pink-600 rounded-xl flex items-center justify-center shadow-lg"
-                      >
-                        <Brain className="text-white" size={20} />
-                      </motion.div>
-                      <div>
-                        <h3 className="font-bold text-lg text-purple-900">Technology Solutions</h3>
-                        <p className="text-sm text-purple-600">Software & Cloud Services</p>
-                      </div>
-                    </div>
-                    <motion.div
-                      animate={{ opacity: [0.5, 1, 0.5] }}
-                      transition={{ duration: 2, repeat: Infinity, delay: 0.5 }}
-                      className="px-3 py-1 bg-orange-100 text-orange-800 rounded-full text-xs font-semibold"
-                    >
-                      100+ Projects
-                    </motion.div>
-                  </div>
-
-                  <div className="grid grid-cols-2 gap-3">
-                    {['Cloud Solutions', 'Software Services', 'Talent Management', 'AI/ML Solutions', 'Mobile Solutions', 'Remote Hardware', 'Analytics & Reporting'].map((service, idx) => (
-                      <motion.div
-                        key={service}
-                        initial={{ opacity: 0, scale: 0.8 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        transition={{ delay: 1.9 + idx * 0.1, duration: 0.4 }}
-                        className="bg-purple-100 px-3 py-2 rounded-lg text-center"
-                      >
-                        <span className="text-xs font-semibold text-purple-700">{service}</span>
-                      </motion.div>
-                    ))}
-                  </div>
-                </motion.div>
-              </div>
-
-              {/* Enhanced Floating Cards - Hidden (uncomment lines 1351-1401 to enable) */}
-              {/* <motion.div
-                initial={{ opacity: 0, scale: 0, y: -50 }}
-                animate={{ opacity: 1, scale: 1, y: 0 }}
-                transition={{ delay: 1.8, type: "spring", stiffness: 200 }}
-                className="absolute -top-8 -right-4 sm:-top-4 sm:-right-4"
+            <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
+              {/* Healthcare Card */}
+              <motion.div
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8 }}
+                whileHover={{
+                  scale: 1.02,
+                  boxShadow: "0 20px 40px rgba(59, 130, 246, 0.2)"
+                }}
+                className="bg-gradient-to-br from-blue-50 via-white to-cyan-50 rounded-2xl shadow-xl p-6 border border-blue-100 backdrop-blur-sm"
               >
-                <motion.div
-                  animate={{
-                    y: [-8, 8, -8],
-                    rotate: [-2, 2, -2]
-                  }}
-                  transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-                  whileHover={{ scale: 1.1, rotate: 10 }}
-                  className="bg-gradient-to-br from-primary-600 to-primary-700 text-white p-3 rounded-xl shadow-lg border-2 border-white"
-                >
+                <div className="flex items-center justify-between mb-4">
+                  <div className="flex items-center space-x-3">
+                    <motion.div
+                      animate={{ rotate: [0, 360] }}
+                      transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
+                      className="w-10 h-10 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-xl flex items-center justify-center shadow-lg"
+                    >
+                      <Heart className="text-white" size={20} />
+                    </motion.div>
+                    <div>
+                      <h3 className="font-bold text-lg text-blue-900">Healthcare KPO</h3>
+                      <p className="text-sm text-blue-600">HIPAA Compliant Services</p>
+                    </div>
+                  </div>
                   <motion.div
-                    className="text-lg font-black mb-0.5"
-                    animate={{ scale: [1, 1.1, 1] }}
+                    animate={{ opacity: [0.5, 1, 0.5] }}
                     transition={{ duration: 2, repeat: Infinity }}
+                    className="px-3 py-1 bg-green-100 text-green-800 rounded-full text-xs font-semibold"
                   >
-                    25+
+                    99.8% Accuracy
                   </motion.div>
-                  <div className="text-[10px] opacity-90 font-medium">Years</div>
-                </motion.div>
+                </div>
+
+                <div className="grid grid-cols-2 gap-3">
+                  {['Medical Transcription', 'Medical Billing', 'Medical Scribe', 'Record Summarization', 'APS Summary', 'Peer Review', 'EHR/EMR'].map((service, idx) => (
+                    <motion.div
+                      key={service}
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: 0.1 + idx * 0.05, duration: 0.4 }}
+                      className="bg-blue-100 px-3 py-2 rounded-lg text-center"
+                    >
+                      <span className="text-xs font-semibold text-blue-700">{service}</span>
+                    </motion.div>
+                  ))}
+                </div>
               </motion.div>
 
+              {/* Technology Card */}
               <motion.div
-                initial={{ opacity: 0, scale: 0, y: 50 }}
-                animate={{ opacity: 1, scale: 1, y: 0 }}
-                transition={{ delay: 2.2, type: "spring", stiffness: 200 }}
-                className="absolute -bottom-4 -left-4"
+                initial={{ opacity: 0, x: 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8 }}
+                whileHover={{
+                  scale: 1.02,
+                  boxShadow: "0 20px 40px rgba(147, 51, 234, 0.2)"
+                }}
+                className="bg-gradient-to-br from-purple-50 via-white to-pink-50 rounded-2xl shadow-xl p-6 border border-purple-100 backdrop-blur-sm"
               >
-                <motion.div
-                  animate={{
-                    y: [8, -8, 8],
-                    rotate: [2, -2, 2]
-                  }}
-                  transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 3 }}
-                  whileHover={{ scale: 1.1, rotate: -10 }}
-                  className="bg-white border-2 border-primary-200 p-3 rounded-xl shadow-lg"
-                >
+                <div className="flex items-center justify-between mb-4">
+                  <div className="flex items-center space-x-3">
+                    <motion.div
+                      animate={{
+                        rotate: [0, 180, 360],
+                        scale: [1, 1.1, 1]
+                      }}
+                      transition={{ duration: 6, repeat: Infinity, ease: "linear" }}
+                      className="w-10 h-10 bg-gradient-to-r from-purple-600 to-pink-600 rounded-xl flex items-center justify-center shadow-lg"
+                    >
+                      <Brain className="text-white" size={20} />
+                    </motion.div>
+                    <div>
+                      <h3 className="font-bold text-lg text-purple-900">Technology Solutions</h3>
+                      <p className="text-sm text-purple-600">Software & Cloud Services</p>
+                    </div>
+                  </div>
                   <motion.div
-                    className="text-lg font-black text-primary-600 mb-0.5"
-                    animate={{ scale: [1, 1.1, 1] }}
-                    transition={{ duration: 2, repeat: Infinity, delay: 1 }}
+                    animate={{ opacity: [0.5, 1, 0.5] }}
+                    transition={{ duration: 2, repeat: Infinity, delay: 0.5 }}
+                    className="px-3 py-1 bg-orange-100 text-orange-800 rounded-full text-xs font-semibold"
                   >
-                    150+
+                    100+ Projects
                   </motion.div>
-                  <div className="text-[10px] text-gray-600 font-medium">Employees</div>
-                </motion.div>
-              </motion.div> */}
+                </div>
 
-              {/* Additional Floating Elements - Repositioned */}
-              <motion.div
-                initial={{ opacity: 0, scale: 0 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 2.6, type: "spring" }}
-                className="absolute top-20 -left-6"
-              >
-                <motion.div
-                  animate={{
-                    rotate: [0, 360],
-                    scale: [1, 1.2, 1]
-                  }}
-                  transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
-                  className="w-10 h-10 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full flex items-center justify-center shadow-lg"
-                >
-                  <motion.span
-                    animate={{ rotate: [0, -360] }}
-                    transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
-                    className="text-white font-bold text-sm"
-                  >
-                    ✦
-                  </motion.span>
-                </motion.div>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, scale: 0 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 3, type: "spring" }}
-                className="absolute bottom-24 right-6"
-              >
-                <motion.div
-                  animate={{
-                    y: [-8, 8, -8],
-                    rotate: [0, 180, 360]
-                  }}
-                  transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
-                  className="w-7 h-7 bg-gradient-to-r from-yellow-400 to-orange-400 rounded-lg flex items-center justify-center shadow-lg"
-                >
-                  <motion.span
-                    animate={{ scale: [1, 1.3, 1] }}
-                    transition={{ duration: 2, repeat: Infinity }}
-                    className="text-white text-xs font-bold"
-                  >
-                    ⚡
-                  </motion.span>
-                </motion.div>
+                <div className="grid grid-cols-2 gap-3">
+                  {['Cloud Solutions', 'Software Services', 'Talent Management', 'AI/ML Solutions', 'Mobile Solutions', 'Remote Hardware', 'Analytics & Reporting'].map((service, idx) => (
+                    <motion.div
+                      key={service}
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: 0.1 + idx * 0.05, duration: 0.4 }}
+                      className="bg-purple-100 px-3 py-2 rounded-lg text-center"
+                    >
+                      <span className="text-xs font-semibold text-purple-700">{service}</span>
+                    </motion.div>
+                  ))}
+                </div>
               </motion.div>
             </div>
           </motion.div>
