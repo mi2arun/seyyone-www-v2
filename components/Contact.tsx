@@ -53,11 +53,10 @@ const Contact = () => {
           </div>
           <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">
             Ready to Transform Your
-            <span className="gradient-text"> Healthcare Operations?</span>
+            <span className="gradient-text"> Business?</span>
           </h2>
           <p className="text-xl text-gray-600">
-            Contact our healthcare BPO experts today to discuss your requirements 
-            and discover how we can help streamline your operations.
+            Schedule a no-obligation consultation to discuss your unique needs and how Seyyone can help streamline your operations and technology solutions.
           </p>
         </motion.div>
 
@@ -73,7 +72,7 @@ const Contact = () => {
               <h3 className="text-2xl font-bold text-gray-900 mb-6">
                 Send Us a Message
               </h3>
-              
+
               <form className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>

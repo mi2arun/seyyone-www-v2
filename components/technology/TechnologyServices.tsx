@@ -122,7 +122,7 @@ const TechnologyServices = () => {
             <br />Solutions Portfolio
           </h2>
           <p className="text-xl text-gray-600">
-            From AI/ML development to cloud solutions, we deliver cutting-edge technology 
+            From AI/ML development to cloud solutions, we deliver cutting-edge technology
             services that drive digital transformation and business growth.
           </p>
         </motion.div>
@@ -153,9 +153,9 @@ const TechnologyServices = () => {
 
                   {/* Icon */}
                   <div className={`flex items-center justify-center w-16 h-16 bg-gradient-to-r ${service.gradient} rounded-2xl mb-6 group-hover:shadow-lg transition-all duration-300`}>
-                    <IconComponent 
-                      size={28} 
-                      className="text-white" 
+                    <IconComponent
+                      size={28}
+                      className="text-white"
                     />
                   </div>
 
@@ -163,7 +163,7 @@ const TechnologyServices = () => {
                   <h3 className="text-xl font-bold text-gray-900 mb-4 group-hover:text-purple-600 transition-colors">
                     {service.title}
                   </h3>
-                  
+
                   <p className="text-gray-600 mb-6 leading-relaxed">
                     {service.description}
                   </p>
@@ -212,18 +212,18 @@ const TechnologyServices = () => {
               Ready to Transform Your Business with Technology?
             </h3>
             <p className="text-purple-100 mb-6 max-w-2xl mx-auto">
-              Join 100+ companies who trust Seyyone with their digital transformation journey. 
+              Join 100+ companies who trust Seyyone with their digital transformation journey.
               Let&apos;s build the future together with cutting-edge technology solutions.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a 
+              <a
                 href="/contact"
                 className="bg-white text-purple-600 px-8 py-3 rounded-xl font-semibold hover:bg-gray-100 transition-colors shadow-lg inline-flex items-center justify-center space-x-2"
               >
                 <span>Start Your Project</span>
                 <ArrowRight size={20} />
               </a>
-              <a 
+              <a
                 href="#projects"
                 className="border-2 border-white text-white px-8 py-3 rounded-xl font-semibold hover:bg-white hover:text-purple-600 transition-colors inline-flex items-center justify-center space-x-2"
               >

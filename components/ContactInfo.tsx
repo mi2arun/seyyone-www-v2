@@ -3,7 +3,6 @@
 import { motion } from 'framer-motion'
 import { Mail } from 'lucide-react'
 import Link from 'next/link'
-import GlobalPresence from './GlobalPresence'
 
 const ContactInfo = () => {
   return (
@@ -25,16 +24,13 @@ const ContactInfo = () => {
           </Link>
           <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">
             Ready to Transform Your
-            <span className="gradient-text"> Healthcare Operations?</span>
+            <span className="gradient-text"> Business?</span>
           </h2>
           <p className="text-xl text-gray-600">
-            Contact our healthcare BPO experts today to discuss your requirements
-            and discover how we can help streamline your operations.
+            Schedule a no-obligation consultation to discuss your unique needs and how Seyyone can help streamline your operations and technology solutions.
           </p>
         </motion.div>
 
-        {/* Global Presence Component */}
-        <GlobalPresence />
       </div>
     </section>
   )
