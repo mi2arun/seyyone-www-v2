@@ -183,10 +183,10 @@ const Footer = () => {
             </Link>
 
             <Link
-              href="/contact"
-              className="bg-primary-600 text-white px-3 py-1.5 rounded-lg font-medium hover:bg-primary-700 transition-colors inline-block text-center w-full mt-3 text-xs"
+              href="/contact#contact-form"
+              className="bg-primary-600 text-white px-3 py-1.5 rounded-lg font-medium hover:bg-primary-700 transition-colors inline-block text-center w-full mt-3 text-sm"
             >
-              Get Started Today
+              Get In Touch
             </Link>
           </div>
         </div>

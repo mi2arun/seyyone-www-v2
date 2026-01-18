@@ -1,7 +1,7 @@
 'use client'
 
 import { motion, useAnimation } from 'framer-motion'
-import { ArrowRight, Shield, Globe, Award, Sparkles, TrendingUp, Stethoscope, Code, Heart, Brain, Mic, Volume2, Headphones, FileText } from 'lucide-react'
+import { ArrowRight, Shield, Globe, Award, Sparkles, TrendingUp, Stethoscope, Code, Heart, Brain, Mic, Volume2, Headphones, FileText, Clock, CheckCircle, Search, Database, Activity, Clipboard } from 'lucide-react'
 import Link from 'next/link'
 import { useEffect } from 'react'
 
@@ -1237,136 +1237,203 @@ const Hero = () => {
               transition={{ duration: 0.8 }}
               className="w-full pt-8"
             >
-              <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
-                {/* Healthcare Card */}
+              <div className="flex flex-col gap-6 lg:gap-8">
+                {/* Healthcare KPO Card */}
                 <motion.div
-                  initial={{ opacity: 0, x: -50 }}
-                  whileInView={{ opacity: 1, x: 0 }}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.8 }}
-                  whileHover={{
-                    scale: 1.02,
-                    boxShadow: "0 20px 40px rgba(59, 130, 246, 0.2)"
-                  }}
-                  className="bg-gradient-to-br from-blue-50 via-white to-cyan-50 rounded-2xl shadow-xl p-6 border border-blue-100 backdrop-blur-sm"
+                  className="bg-gradient-to-br from-blue-50 via-white to-cyan-50 rounded-2xl shadow-xl p-6 sm:p-8 border border-blue-100 backdrop-blur-sm"
                 >
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="flex items-center space-x-3">
-                      <motion.div
-                        animate={{ rotate: [0, 360] }}
-                        transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
-                        className="w-10 h-10 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-xl flex items-center justify-center shadow-lg"
-                      >
-                        <Heart className="text-white" size={20} />
-                      </motion.div>
+                  <div className="flex items-center justify-between mb-8">
+                    <div className="flex items-center space-x-4">
+                      <div className="w-12 h-12 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-xl flex items-center justify-center shadow-lg">
+                        <Heart className="text-white" size={24} />
+                      </div>
                       <div>
-                        <h3 className="font-bold text-lg text-blue-900">Healthcare KPO</h3>
-                        <p className="text-sm text-blue-600">HIPAA Compliant Services</p>
+                        <h3 className="font-bold text-2xl text-blue-900">Healthcare KPO</h3>
+                        <p className="text-sm text-blue-600 font-medium tracking-wide uppercase">HIPAA Compliant Services</p>
                       </div>
                     </div>
-                    <motion.div
-                      animate={{ opacity: [0.5, 1, 0.5] }}
-                      transition={{ duration: 2, repeat: Infinity }}
-                      className="px-3 py-1 bg-green-100 text-green-800 rounded-full text-xs font-semibold"
-                    >
-                      99.8% Accuracy
-                    </motion.div>
+                    <div className="hidden sm:block">
+                      <motion.div
+                        animate={{ scale: [1, 1.05, 1] }}
+                        transition={{ duration: 2, repeat: Infinity }}
+                        className="px-4 py-2 bg-green-50 text-green-700 rounded-xl text-sm font-bold border border-green-100 shadow-sm flex items-center space-x-2"
+                      >
+                        <CheckCircle size={16} />
+                        <span>99.8% Accuracy</span>
+                      </motion.div>
+                    </div>
                   </div>
 
-                  <div className="grid grid-cols-2 gap-3">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
                     {[
-                      { name: 'Medical Transcription', href: '/medical/medical-transcription' },
-                      { name: 'Medical Billing', href: '/medical/medical-billing' },
-                      { name: 'Medical Scribe', href: '/medical/medical-scribe' },
-                      { name: 'Record Summarization', href: '/medical/medical-record-summarization' },
-                      { name: 'APS Summary', href: '/medical/aps-summary' },
-                      { name: 'Peer Review', href: '/medical/peer-review-summary' },
-                      { name: 'EHR/EMR', href: '/medical/ehr-emr' }
+                      {
+                        name: 'Medical Transcription',
+                        summary: 'Accurate voice-to-text conversion of medical dictations.',
+                        points: ['99.8% Accuracy', 'Quick Turnaround'],
+                        href: '/medical/medical-transcription'
+                      },
+                      {
+                        name: 'Medical Billing',
+                        summary: 'End-to-end revenue cycle management and claims processing.',
+                        points: ['Reduced Denials', 'Faster Payments'],
+                        href: '/medical/medical-billing'
+                      },
+                      {
+                        name: 'Medical Scribe',
+                        summary: 'Real-time clinical documentation support for clinicians.',
+                        points: ['Enhanced Workflow', 'Patient Focus'],
+                        href: '/medical/medical-scribe'
+                      },
+                      {
+                        name: 'Record Summarization',
+                        summary: 'Concise summaries of complex medical history.',
+                        points: ['Chronological Order', 'Rapid Review'],
+                        href: '/medical/medical-record-summarization'
+                      },
+                      {
+                        name: 'APS Summary',
+                        summary: 'Attending Physician Statement summaries for underwriting.',
+                        points: ['Risk Assessment', 'Clear Insights'],
+                        href: '/medical/aps-summary'
+                      },
+                      {
+                        name: 'Peer Review',
+                        summary: 'Independent clinical review and analysis by experts.',
+                        points: ['Evidence-based', 'Quality Control'],
+                        href: '/medical/peer-review-summary'
+                      },
+                      {
+                        name: 'EHR/EMR Support',
+                        summary: 'Comprehensive management and support for clinical systems.',
+                        points: ['System Optimization', 'User Support'],
+                        href: '/medical/ehr-emr'
+                      }
                     ].map((service, idx) => (
                       <motion.div
                         key={service.name}
-                        initial={{ opacity: 0, scale: 0.8 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: 0.1 + idx * 0.05, duration: 0.4 }}
-                        className="bg-blue-100/50 hover:bg-blue-100 transition-colors rounded-lg text-center overflow-hidden"
+                        whileHover={{ scale: 1.02, y: -2 }}
+                        className="bg-white/80 backdrop-blur-sm p-5 rounded-xl border border-blue-100/50 shadow-sm hover:shadow-md hover:border-blue-300 transition-all flex flex-col h-full"
                       >
-                        <Link
-                          href={service.href}
-                          className="block px-3 py-2 w-full h-full"
-                        >
-                          <span className="text-xs font-semibold text-blue-700 block truncate hover:text-blue-800 transition-colors">
+                        <Link href={service.href} className="flex-grow flex flex-col">
+                          <h4 className="text-lg font-bold text-blue-900 mb-2 leading-tight">
                             {service.name}
-                          </span>
+                          </h4>
+                          <p className="text-sm text-gray-600 mb-4 line-clamp-2 leading-relaxed">
+                            {service.summary}
+                          </p>
+                          <div className="mt-auto space-y-1.5 border-t border-blue-50 pt-3">
+                            {service.points.map((point) => (
+                              <div key={point} className="flex items-center space-x-2">
+                                <span className="w-1.5 h-1.5 bg-blue-500 rounded-full shrink-0" />
+                                <span className="text-xs font-semibold text-gray-700">{point}</span>
+                              </div>
+                            ))}
+                          </div>
                         </Link>
                       </motion.div>
                     ))}
                   </div>
                 </motion.div>
 
-                {/* Technology Card */}
+                {/* Technology Solutions Card */}
                 <motion.div
-                  initial={{ opacity: 0, x: 50 }}
-                  whileInView={{ opacity: 1, x: 0 }}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.8 }}
-                  whileHover={{
-                    scale: 1.02,
-                    boxShadow: "0 20px 40px rgba(147, 51, 234, 0.2)"
-                  }}
-                  className="bg-gradient-to-br from-purple-50 via-white to-pink-50 rounded-2xl shadow-xl p-6 border border-purple-100 backdrop-blur-sm"
+                  className="bg-gradient-to-br from-purple-50 via-white to-pink-50 rounded-2xl shadow-xl p-6 sm:p-8 border border-purple-100 backdrop-blur-sm"
                 >
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="flex items-center space-x-3">
-                      <motion.div
-                        animate={{
-                          rotate: [0, 180, 360],
-                          scale: [1, 1.1, 1]
-                        }}
-                        transition={{ duration: 6, repeat: Infinity, ease: "linear" }}
-                        className="w-10 h-10 bg-gradient-to-r from-purple-600 to-pink-600 rounded-xl flex items-center justify-center shadow-lg"
-                      >
-                        <Brain className="text-white" size={20} />
-                      </motion.div>
+                  <div className="flex items-center justify-between mb-8">
+                    <div className="flex items-center space-x-4">
+                      <div className="w-12 h-12 bg-gradient-to-r from-purple-600 to-pink-600 rounded-xl flex items-center justify-center shadow-lg">
+                        <Brain className="text-white" size={24} />
+                      </div>
                       <div>
-                        <h3 className="font-bold text-lg text-purple-900">Technology Solutions</h3>
-                        <p className="text-sm text-purple-600">Software & Cloud Services</p>
+                        <h3 className="font-bold text-2xl text-purple-900">Technology Solutions</h3>
+                        <p className="text-sm text-purple-600 font-medium tracking-wide uppercase">Software & Cloud Services</p>
                       </div>
                     </div>
-                    <motion.div
-                      animate={{ opacity: [0.5, 1, 0.5] }}
-                      transition={{ duration: 2, repeat: Infinity, delay: 0.5 }}
-                      className="px-3 py-1 bg-orange-100 text-orange-800 rounded-full text-xs font-semibold"
-                    >
-                      100+ Projects
-                    </motion.div>
+                    <div className="hidden sm:block">
+                      <motion.div
+                        animate={{ scale: [1, 1.05, 1] }}
+                        transition={{ duration: 2, repeat: Infinity, delay: 0.5 }}
+                        className="px-4 py-2 bg-orange-50 text-orange-700 rounded-xl text-sm font-bold border border-orange-100 shadow-sm flex items-center space-x-2"
+                      >
+                        <Sparkles size={16} />
+                        <span>100+ Projects</span>
+                      </motion.div>
+                    </div>
                   </div>
 
-                  <div className="grid grid-cols-2 gap-3">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
                     {[
-                      { name: 'Cloud Solutions', href: '/technology/cloud-solutions' },
-                      { name: 'Software Services', href: '/technology/software-services' },
-                      { name: 'Talent Management', href: '/technology/talent-management' },
-                      { name: 'AI/ML Solutions', href: '/technology/ai-ml-solutions' },
-                      { name: 'Mobile Solutions', href: '/technology/mobile-solutions' },
-                      { name: 'Remote Hardware', href: '/technology/remote-hardware-infra' },
-                      { name: 'Analytics & Reporting', href: '/technology/analytics-reporting' }
+                      {
+                        name: 'Cloud Solutions',
+                        summary: 'Scalable cloud infrastructure and migration services.',
+                        points: ['AWS/Azure/GCP', 'Cloud Migration'],
+                        href: '/technology/cloud-solutions'
+                      },
+                      {
+                        name: 'Software Services',
+                        summary: 'Custom software development and maintenance.',
+                        points: ['Legacy Modernization', 'API Integration'],
+                        href: '/technology/software-services'
+                      },
+                      {
+                        name: 'Talent Management',
+                        summary: 'Dedicated technical staffing and offshore teams.',
+                        points: ['Expert Hiring', 'Team Augmentation'],
+                        href: '/technology/talent-management'
+                      },
+                      {
+                        name: 'AI/ML Solutions',
+                        summary: 'Cutting-edge artificial intelligence and machine learning.',
+                        points: ['Predictive Analytics', 'Natural Language'],
+                        href: '/technology/ai-ml-solutions'
+                      },
+                      {
+                        name: 'Mobile Solutions',
+                        summary: 'Native and cross-platform mobile application development.',
+                        points: ['iOS & Android', 'UX/UI Design'],
+                        href: '/technology/mobile-solutions'
+                      },
+                      {
+                        name: 'Remote Hardware',
+                        summary: 'Virtual hardware and remote infrastructure management.',
+                        points: ['Cloud Desktop', 'Secure Access'],
+                        href: '/technology/remote-hardware-infra'
+                      },
+                      {
+                        name: 'Analytics & Reporting',
+                        summary: 'Data-driven business intelligence and visualization.',
+                        points: ['Custom Dashboards', 'Data Mining'],
+                        href: '/technology/analytics-reporting'
+                      }
                     ].map((service, idx) => (
                       <motion.div
                         key={service.name}
-                        initial={{ opacity: 0, scale: 0.8 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: 0.1 + idx * 0.05, duration: 0.4 }}
-                        className="bg-purple-100/50 hover:bg-purple-100 transition-colors rounded-lg text-center overflow-hidden"
+                        whileHover={{ scale: 1.02, y: -2 }}
+                        className="bg-white/80 backdrop-blur-sm p-5 rounded-xl border border-purple-100/50 shadow-sm hover:shadow-md hover:border-purple-300 transition-all flex flex-col h-full"
                       >
-                        <Link
-                          href={service.href}
-                          className="block px-3 py-2 w-full h-full"
-                        >
-                          <span className="text-xs font-semibold text-purple-700 block truncate hover:text-purple-800 transition-colors">
+                        <Link href={service.href} className="flex-grow flex flex-col">
+                          <h4 className="text-lg font-bold text-purple-900 mb-2 leading-tight">
                             {service.name}
-                          </span>
+                          </h4>
+                          <p className="text-sm text-gray-600 mb-4 line-clamp-2 leading-relaxed">
+                            {service.summary}
+                          </p>
+                          <div className="mt-auto space-y-1.5 border-t border-purple-50 pt-3">
+                            {service.points.map((point) => (
+                              <div key={point} className="flex items-center space-x-2">
+                                <span className="w-1.5 h-1.5 bg-purple-500 rounded-full shrink-0" />
+                                <span className="text-xs font-semibold text-gray-700">{point}</span>
+                              </div>
+                            ))}
+                          </div>
                         </Link>
                       </motion.div>
                     ))}

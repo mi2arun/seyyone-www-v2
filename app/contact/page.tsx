@@ -261,7 +261,7 @@ export default function ContactPage() {
         </section>
 
         {/* Enhanced Contact Form & Info */}
-        <section className="py-20 bg-white">
+        <section id="contact-form" className="py-20 bg-white">
           <div className="container">
             <div className="grid lg:grid-cols-2 gap-16">
               {/* Enhanced Contact Form */}

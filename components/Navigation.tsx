@@ -32,8 +32,12 @@ const Navigation = () => {
     },
     {
       name: 'About',
-      type: 'link',
-      href: '/about'
+      type: 'dropdown',
+      href: '/about',
+      items: [
+        { name: 'Life at Seyyone', href: '/about#life-at-seyyone' },
+        { name: 'Testimonials', href: '/about#testimonials' },
+      ]
     },
     {
       name: 'Healthcare',
@@ -70,17 +74,12 @@ const Navigation = () => {
       items: [
         { name: 'Blogs', href: '/insights#blogs' },
         { name: 'Articles', href: '/insights#articles' },
-        { name: 'Whitepapers', href: '/insights#whitepapers' },
-        { name: 'Testimonials', href: '/insights#testimonials' },
         { name: 'Case Studies', href: '/insights#case-studies' },
       ]
     },
     {
       name: 'Careers',
       type: 'dropdown',
-      // No main page explicitly requested for Careers parent, but defaulting to /career seems safe or could link to # if unsure. 
-      // User said "creries doupdonw in careind dop down is current openings".
-      // I'll make it /career to be consistent, as it was there before.
       href: '/career',
       items: [
         { name: 'Current Openings', href: '/open-positions' },
@@ -209,7 +208,7 @@ const Navigation = () => {
                 transition={{ delay: 0.6, duration: 0.5 }}
                 className="ml-6"
               >
-                <Link href="/contact" className="group relative">
+                <Link href="/contact#contact-form" className="group relative">
                   <motion.div
                     className="relative inline-flex items-center px-6 py-3 text-sm font-semibold text-white rounded-full shadow-lg overflow-hidden"
                     style={{ backgroundColor: '#0095d9' }}
@@ -220,7 +219,7 @@ const Navigation = () => {
                     whileTap={{ scale: 0.98 }}
                   >
                     <span className="relative z-10 flex items-center space-x-2">
-                      <span>Get Started</span>
+                      <span>Get In Touch</span>
                       <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
                     </span>
                     <motion.div
@@ -327,12 +326,12 @@ const Navigation = () => {
                       className="pt-4 border-t border-gray-200/50 mt-4"
                     >
                       <Link
-                        href="/contact"
+                        href="/contact#contact-form"
                         className="flex items-center justify-center space-x-2 w-full p-4 text-white rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
                         style={{ backgroundColor: '#0095d9' }}
                         onClick={() => setIsOpen(false)}
                       >
-                        <span>Get Started</span>
+                        <span>Get In Touch</span>
                         <ArrowRight size={18} />
                       </Link>
                     </motion.div>
