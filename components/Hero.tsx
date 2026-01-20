@@ -1,7 +1,7 @@
 'use client'
 
 import { motion, useAnimation } from 'framer-motion'
-import { ArrowRight, Shield, Globe, Award, Sparkles, TrendingUp, Stethoscope, Code, Heart, Brain, Mic, Volume2, Headphones, FileText, Clock, CheckCircle, Search, Database, Activity, Clipboard } from 'lucide-react'
+import { ArrowRight, Shield, Globe, Award, Sparkles, TrendingUp, Stethoscope, Code, Heart, Brain, Mic, Volume2, Headphones, FileText, Clock, CheckCircle, Search, Database, Activity, Clipboard, Users, Briefcase, Rocket } from 'lucide-react'
 import Link from 'next/link'
 import { useEffect } from 'react'
 
@@ -917,45 +917,31 @@ const Hero = () => {
                 animate={titleControls}
                 className="font-outfit text-xl xs:text-2xl sm:text-3xl md:text-3xl lg:text-4xl xl:text-5xl font-black leading-[1.1] w-full text-center"
               >
-                <motion.div
+                <motion.span
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.6, duration: 0.8 }}
-                  className="relative inline-block"
+                  className="text-gray-700"
                 >
-                  <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                    Excellence in
-                  </span>
-
-                </motion.div>
-                <br />
-                <span className="whitespace-nowrap">
-                  <motion.span
-                    initial={{ opacity: 0, y: 30 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.8, duration: 0.8 }}
-                    className="bg-gradient-to-r from-blue-700 to-blue-500 bg-clip-text text-transparent"
-                  >
-                    Healthcare
-                  </motion.span>
-                  <span className="text-gray-400 mx-3">&</span>
-                  <motion.span
-                    initial={{ opacity: 0, y: 30 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 1.0, duration: 0.8 }}
-                    className="bg-gradient-to-r from-purple-700 to-purple-500 bg-clip-text text-transparent"
-                  >
-                    Technology
-                  </motion.span>
-                </span>
+                  Transforming Businesses
+                </motion.span>
                 <br />
                 <motion.span
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 1.2, duration: 0.8 }}
+                  transition={{ delay: 0.8, duration: 0.8 }}
                   className="text-gray-700"
                 >
-                  Solutions
+                  Through
+                </motion.span>
+                {' '}
+                <motion.span
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 1.0, duration: 0.8 }}
+                  className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"
+                >
+                  Technology & Expertise
                 </motion.span>
               </motion.h1>
             </div>
@@ -972,32 +958,42 @@ const Hero = () => {
                 <motion.div
                   initial={{ opacity: 0 }}
                   animate={subtitleControls}
-                  className="space-y-6"
+                  className="space-y-4"
                 >
                   <motion.p
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 1.6, duration: 0.8 }}
-                    className="py-1 text-base sm:text-lg md:text-xl text-gray-600 leading-relaxed max-w-4xl font-medium"
+                    className="py-1 text-base sm:text-lg md:text-xl text-gray-600 leading-relaxed font-medium italic"
                   >
-                    Empowering businesses with comprehensive{' '}
+                    For over 25 years, Seyyone has been delivering innovative solutions in{' '}
                     <motion.span
                       initial={{ backgroundColor: "transparent" }}
                       animate={{ backgroundColor: ["transparent", "#e0f2fe", "transparent"] }}
                       transition={{ delay: 2, duration: 2, repeat: Infinity }}
                       className="py-1 rounded font-semibold text-blue-700"
                     >
-                      Healthcare KPO Services
+                      Healthcare KPO
                     </motion.span>{' '}
-                    and cutting-edge{' '}
+                    and{' '}
                     <motion.span
                       initial={{ backgroundColor: "transparent" }}
                       animate={{ backgroundColor: ["transparent", "#fdf4ff", "transparent"] }}
-                      transition={{ delay: 2.5, duration: 2, repeat: Infinity }}
+                      transition={{ delay: 2.3, duration: 2, repeat: Infinity }}
                       className="py-1 rounded font-semibold text-purple-700"
                     >
                       Software Development
-                    </motion.span>
+                    </motion.span>{' '}
+                    to clients worldwide. Our{' '}
+                    <motion.span
+                      initial={{ backgroundColor: "transparent" }}
+                      animate={{ backgroundColor: ["transparent", "#dcfce7", "transparent"] }}
+                      transition={{ delay: 2.6, duration: 2, repeat: Infinity }}
+                      className="py-1 rounded font-semibold text-green-700"
+                    >
+                      HIPAA-compliant services
+                    </motion.span>{' '}
+                    and cutting-edge technology solutions help businesses achieve operational excellence.
                   </motion.p>
 
                   {/* Domain Cards */}
@@ -1015,14 +1011,78 @@ const Hero = () => {
                         <div className="w-10 h-10 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-xl flex items-center justify-center">
                           <Heart className="text-white" size={20} />
                         </div>
-                        <h3 className="text-base sm:text-lg font-bold text-blue-900">Healthcare & Medical</h3>
+                        <h3 className="text-base sm:text-lg font-bold text-blue-900">Healthcare KPO</h3>
                       </div>
-                      <p className="text-xs sm:text-sm text-blue-700 leading-relaxed mb-3">
-                        Medical transcription, billing, record summarization, medical scribe, APS & peer review, EHR/EMR support.
+                      <p className="text-[13px] sm:text-[15px] text-blue-700 leading-relaxed mb-3">
+                        Our HIPAA-compliant healthcare knowledge process outsourcing services help medical facilities streamline operations, reduce costs, and improve patient care. With over 25 years of experience, we deliver accurate and timely solutions.
                       </p>
-                      <div className="flex items-center space-x-2">
-                        <Shield size={14} className="text-green-600" />
-                        <span className="text-xs font-semibold text-green-700">99.8% Accuracy</span>
+                      <div className="grid grid-cols-2 gap-3 mb-3">
+                        {/* First Column - 4 items */}
+                        <div className="space-y-2">
+                          {[
+                            "Medical transcription",
+                            "Medical Billing",
+                            "Record summarization",
+                            "Medical scribe"
+                          ].map((item) => (
+                            <motion.div
+                              key={item}
+                              whileHover={{ y: -2, scale: 1.02 }}
+                              className="bg-white/60 hover:bg-blue-50 px-3 py-2 rounded-lg border border-blue-100 hover:border-blue-300 hover:shadow-md transition-all duration-300 group cursor-default"
+                            >
+                              <span className="text-[13px] font-semibold text-blue-700 group-hover:text-blue-900 flex items-center">
+                                <Shield size={13} className="text-blue-400 mr-2 group-hover:scale-110 transition-transform" />
+                                {item}
+                              </span>
+                            </motion.div>
+                          ))}
+                        </div>
+                        {/* Second Column - 3 items */}
+                        <div className="space-y-2">
+                          {[
+                            "APS Summary",
+                            "Peer Review",
+                            "EHR/EMR support"
+                          ].map((item) => (
+                            <motion.div
+                              key={item}
+                              whileHover={{ y: -2, scale: 1.02 }}
+                              className="bg-white/60 hover:bg-blue-50 px-3 py-2 rounded-lg border border-blue-100 hover:border-blue-300 hover:shadow-md transition-all duration-300 group cursor-default"
+                            >
+                              <span className="text-[13px] font-semibold text-blue-700 group-hover:text-blue-900 flex items-center">
+                                <Shield size={13} className="text-blue-400 mr-2 group-hover:scale-110 transition-transform" />
+                                {item}
+                              </span>
+                            </motion.div>
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* Divider Line */}
+                      <div className="h-px bg-blue-100/60 my-2" />
+
+                      {/* Footer Link */}
+                      <div className="flex justify-center pt-4">
+                        <motion.div
+                          whileHover={{ scale: 1.05, boxShadow: "0 10px 20px rgba(59, 130, 246, 0.2)" }}
+                          whileTap={{ scale: 0.98 }}
+                        >
+                          <Link href="/medical" className="group relative inline-flex items-center justify-center px-8 py-3 text-sm font-bold text-white bg-gradient-to-r from-blue-600 to-cyan-600 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 overflow-hidden">
+                            <motion.div
+                              className="absolute inset-0 bg-gradient-to-r from-cyan-600 to-blue-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                            />
+                            <span className="relative z-10 flex items-center gap-2">
+                              <Stethoscope size={18} />
+                              <span>Healthcare KPO</span>
+                              <motion.div
+                                animate={{ x: [0, 4, 0] }}
+                                transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+                              >
+                                <ArrowRight size={16} />
+                              </motion.div>
+                            </span>
+                          </Link>
+                        </motion.div>
                       </div>
                     </motion.div>
 
@@ -1034,14 +1094,78 @@ const Hero = () => {
                         <div className="w-10 h-10 bg-gradient-to-r from-purple-600 to-pink-600 rounded-xl flex items-center justify-center">
                           <Brain className="text-white" size={20} />
                         </div>
-                        <h3 className="text-base sm:text-lg font-bold text-purple-900">Technology & Software</h3>
+                        <h3 className="text-base sm:text-lg font-bold text-purple-900">Software Solutions</h3>
                       </div>
-                      <p className="text-xs sm:text-sm text-purple-700 leading-relaxed mb-3">
-                        Cloud solutions, software services, talent management, AI/ML, mobile solutions, remote hardware, analytics & reporting.
+                      <p className="text-[13px] sm:text-[15px] text-purple-700 leading-relaxed mb-3">
+                        Our software development team creates custom solutions tailored to your specific business needs. We specialize in healthcare software, web applications, mobile apps, and enterprise solutions that drive efficiency and growth.
                       </p>
-                      <div className="flex items-center space-x-2">
-                        <Code size={14} className="text-purple-600" />
-                        <span className="text-xs font-semibold text-purple-700">100+ Projects</span>
+                      <div className="grid grid-cols-2 gap-3 mb-3">
+                        {/* First Column - 4 items */}
+                        <div className="space-y-2">
+                          {[
+                            "Cloud solutions",
+                            "Software services",
+                            "Talent management",
+                            "AI/ML solutions"
+                          ].map((item) => (
+                            <motion.div
+                              key={item}
+                              whileHover={{ y: -2, scale: 1.02 }}
+                              className="bg-white/60 hover:bg-purple-50 px-3 py-2 rounded-lg border border-purple-100 hover:border-purple-300 hover:shadow-md transition-all duration-300 group cursor-default"
+                            >
+                              <span className="text-[13px] font-semibold text-purple-700 group-hover:text-purple-900 flex items-center">
+                                <Shield size={13} className="text-blue-400 mr-2 group-hover:scale-110 transition-transform" />
+                                {item}
+                              </span>
+                            </motion.div>
+                          ))}
+                        </div>
+                        {/* Second Column - 3 items */}
+                        <div className="space-y-2">
+                          {[
+                            "Mobile solutions",
+                            "Remote hardware",
+                            "Analytics & reporting"
+                          ].map((item) => (
+                            <motion.div
+                              key={item}
+                              whileHover={{ y: -2, scale: 1.02 }}
+                              className="bg-white/60 hover:bg-purple-50 px-3 py-2 rounded-lg border border-purple-100 hover:border-purple-300 hover:shadow-md transition-all duration-300 group cursor-default"
+                            >
+                              <span className="text-[13px] font-semibold text-purple-700 group-hover:text-purple-900 flex items-center">
+                                <Shield size={13} className="text-blue-400 mr-2 group-hover:scale-110 transition-transform" />
+                                {item}
+                              </span>
+                            </motion.div>
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* Divider Line */}
+                      <div className="h-px bg-purple-100/60 my-2" />
+
+                      {/* Footer Link */}
+                      <div className="flex justify-center pt-4">
+                        <motion.div
+                          whileHover={{ scale: 1.05, boxShadow: "0 10px 20px rgba(147, 51, 234, 0.2)" }}
+                          whileTap={{ scale: 0.98 }}
+                        >
+                          <Link href="/technology" className="group relative inline-flex items-center justify-center px-8 py-3 text-sm font-bold text-white bg-gradient-to-r from-purple-600 to-pink-600 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 overflow-hidden">
+                            <motion.div
+                              className="absolute inset-0 bg-gradient-to-r from-pink-600 to-purple-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                            />
+                            <span className="relative z-10 flex items-center gap-2">
+                              <Brain size={18} />
+                              <span>Software Solutions</span>
+                              <motion.div
+                                animate={{ x: [0, 4, 0] }}
+                                transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+                              >
+                                <ArrowRight size={16} />
+                              </motion.div>
+                            </span>
+                          </Link>
+                        </motion.div>
                       </div>
                     </motion.div>
                   </motion.div>
@@ -1081,7 +1205,8 @@ const Hero = () => {
                 </motion.div>
               </div>
 
-              {/* Enhanced CTA Buttons */}
+              {/* Enhanced CTA Buttons - Hidden in favor of internal card buttons */}
+              {/* 
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -1116,7 +1241,6 @@ const Hero = () => {
                       </motion.div>
                     </span>
 
-                    {/* Shimmer Effect */}
                     <motion.div
                       animate={{ x: [-100, 300] }}
                       transition={{ duration: 2, repeat: Infinity, repeatDelay: 3 }}
@@ -1153,7 +1277,6 @@ const Hero = () => {
                       </motion.div>
                     </span>
 
-                    {/* Shimmer Effect */}
                     <motion.div
                       animate={{ x: [-100, 300] }}
                       transition={{ duration: 2, repeat: Infinity, repeatDelay: 3, delay: 0.5 }}
@@ -1162,19 +1285,20 @@ const Hero = () => {
                   </Link>
                 </motion.div>
               </motion.div>
+              */}
 
               {/* Enhanced Trust Indicators */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 3.2, duration: 0.8 }}
-                className="flex flex-wrap items-center justify-center sm:justify-start gap-2 sm:gap-3 md:gap-4 pt-6 sm:pt-8"
+                className="flex flex-wrap items-center justify-center sm:justify-start gap-2 sm:gap-3 md:gap-4 pt-2 sm:pt-4"
               >
                 <motion.div
                   initial={{ scale: 0 }}
                   animate={{ scale: 1 }}
                   transition={{ delay: 3.4, type: "spring", stiffness: 200 }}
-                  className="group flex items-center space-x-2 sm:space-x-3 bg-green-50 px-3 sm:px-4 py-2 sm:py-3 rounded-full border border-green-200 hover:shadow-lg transition-all duration-300"
+                  className="group flex items-center justify-center space-x-2 bg-green-50 px-4 py-2.5 rounded-full border border-green-200 hover:shadow-lg transition-all duration-300 w-56"
                 >
                   <motion.div
                     animate={{ rotate: [0, 360] }}
@@ -1182,7 +1306,7 @@ const Hero = () => {
                   >
                     <Shield className="text-green-600 group-hover:text-green-700" size={16} />
                   </motion.div>
-                  <span className="text-xs sm:text-sm font-semibold text-green-700 group-hover:text-green-800">
+                  <span className="text-sm font-semibold text-green-700 group-hover:text-green-800">
                     HIPAA Compliant
                   </span>
                 </motion.div>
@@ -1191,27 +1315,7 @@ const Hero = () => {
                   initial={{ scale: 0 }}
                   animate={{ scale: 1 }}
                   transition={{ delay: 3.6, type: "spring", stiffness: 200 }}
-                  className="group flex items-center space-x-2 sm:space-x-3 bg-blue-50 px-3 sm:px-4 py-2 sm:py-3 rounded-full border border-blue-200 hover:shadow-lg transition-all duration-300"
-                >
-                  <motion.div
-                    animate={{
-                      rotate: [0, 10, -10, 0],
-                      scale: [1, 1.1, 1]
-                    }}
-                    transition={{ duration: 3, repeat: Infinity }}
-                  >
-                    <Globe className="text-blue-600 group-hover:text-blue-700" size={16} />
-                  </motion.div>
-                  <span className="text-xs sm:text-sm font-semibold text-blue-700 group-hover:text-blue-800">
-                    Global Reach
-                  </span>
-                </motion.div>
-
-                <motion.div
-                  initial={{ scale: 0 }}
-                  animate={{ scale: 1 }}
-                  transition={{ delay: 3.8, type: "spring", stiffness: 200 }}
-                  className="group flex items-center space-x-2 sm:space-x-3 bg-purple-50 px-3 sm:px-4 py-2 sm:py-3 rounded-full border border-purple-200 hover:shadow-lg transition-all duration-300"
+                  className="group flex items-center justify-center space-x-2 bg-purple-50 px-4 py-2.5 rounded-full border border-purple-200 hover:shadow-lg transition-all duration-300 w-56"
                 >
                   <motion.div
                     animate={{
@@ -1222,8 +1326,68 @@ const Hero = () => {
                   >
                     <Award className="text-purple-600 group-hover:text-purple-700" size={16} />
                   </motion.div>
-                  <span className="text-xs sm:text-sm font-semibold text-purple-700 group-hover:text-purple-800">
-                    25+ Years
+                  <span className="text-sm font-semibold text-purple-700 group-hover:text-purple-800">
+                    25+ Years Experience
+                  </span>
+                </motion.div>
+
+                <motion.div
+                  initial={{ scale: 0 }}
+                  animate={{ scale: 1 }}
+                  transition={{ delay: 3.8, type: "spring", stiffness: 200 }}
+                  className="group flex items-center justify-center space-x-2 bg-orange-50 px-4 py-2.5 rounded-full border border-orange-200 hover:shadow-lg transition-all duration-300 w-56"
+                >
+                  <motion.div
+                    animate={{
+                      scale: [1, 1.2, 1],
+                      rotate: [0, 5, -5, 0]
+                    }}
+                    transition={{ duration: 3, repeat: Infinity }}
+                  >
+                    <Users className="text-orange-600 group-hover:text-orange-700" size={16} />
+                  </motion.div>
+                  <span className="text-sm font-semibold text-orange-700 group-hover:text-orange-800">
+                    500+ Global Clients
+                  </span>
+                </motion.div>
+
+                <motion.div
+                  initial={{ scale: 0 }}
+                  animate={{ scale: 1 }}
+                  transition={{ delay: 4.0, type: "spring", stiffness: 200 }}
+                  className="group flex items-center justify-center space-x-2 bg-cyan-50 px-4 py-2.5 rounded-full border border-cyan-200 hover:shadow-lg transition-all duration-300 w-56"
+                >
+                  <motion.div
+                    animate={{
+                      y: [0, -3, 0],
+                      scale: [1, 1.1, 1]
+                    }}
+                    transition={{ duration: 2, repeat: Infinity }}
+                  >
+                    <Briefcase className="text-cyan-600 group-hover:text-cyan-700" size={16} />
+                  </motion.div>
+                  <span className="text-sm font-semibold text-cyan-700 group-hover:text-cyan-800">
+                    1000+ Team Members
+                  </span>
+                </motion.div>
+
+                <motion.div
+                  initial={{ scale: 0 }}
+                  animate={{ scale: 1 }}
+                  transition={{ delay: 4.2, type: "spring", stiffness: 200 }}
+                  className="group flex items-center justify-center space-x-2 bg-pink-50 px-4 py-2.5 rounded-full border border-pink-200 hover:shadow-lg transition-all duration-300 w-56"
+                >
+                  <motion.div
+                    animate={{
+                      rotate: [0, 360],
+                      scale: [1, 1.15, 1]
+                    }}
+                    transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                  >
+                    <Rocket className="text-pink-600 group-hover:text-pink-700" size={16} />
+                  </motion.div>
+                  <span className="text-sm font-semibold text-pink-700 group-hover:text-pink-800">
+                    50k+ Projects Delivered
                   </span>
                 </motion.div>
               </motion.div>
@@ -1235,7 +1399,7 @@ const Hero = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="w-full pt-8"
+              className="w-full pt-4"
             >
               <div className="flex flex-col gap-6 lg:gap-8">
                 {/* Healthcare KPO Card */}
@@ -1353,7 +1517,7 @@ const Hero = () => {
                         <Brain className="text-white" size={24} />
                       </div>
                       <div>
-                        <h3 className="font-bold text-2xl text-purple-900">Technology Solutions</h3>
+                        <h3 className="font-bold text-2xl text-purple-900">Software Solutions</h3>
                         <p className="text-sm text-purple-600 font-medium tracking-wide uppercase">Software & Cloud Services</p>
                       </div>
                     </div>

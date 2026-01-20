@@ -54,7 +54,7 @@ const Navigation = () => {
       ]
     },
     {
-      name: 'Technology',
+      name: 'Software',
       type: 'dropdown',
       href: '/technology',
       items: [
