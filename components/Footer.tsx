@@ -48,32 +48,30 @@ const Footer = () => {
     <footer className="bg-secondary-900 text-white">
       <div className="container">
         {/* Main Footer Content */}
-        <div className="py-4 grid lg:grid-cols-6 md:grid-cols-3 gap-6">
+        <div className="py-4 grid lg:grid-cols-6 md:grid-cols-3 gap-6 items-start">
           {/* Company Info */}
           <div className="lg:col-span-2 md:col-span-3">
-            <div className="flex items-center mb-4">
-              <motion.img
-                src="/logo-blue.png"
-                alt="Seyyone Logo"
-                className="w-32 h-32 object-contain"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{
-                  opacity: 1,
-                  y: 0,
-                  scale: [1, 1.05, 1]
-                }}
-                viewport={{ once: true }}
-                transition={{
-                  opacity: { duration: 0.6 },
-                  y: { duration: 0.6 },
-                  scale: { duration: 2, repeat: Infinity, repeatDelay: 4 }
-                }}
-                whileHover={{
-                  scale: 1.1,
-                  transition: { duration: 0.3 }
-                }}
-              />
-            </div>
+            <motion.img
+              src="/logo-blue-small.png"
+              alt="Seyyone Logo"
+              className="object-contain mb-3"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{
+                opacity: 1,
+                y: 0,
+                scale: [1, 1.05, 1]
+              }}
+              viewport={{ once: true }}
+              transition={{
+                opacity: { duration: 0.6 },
+                y: { duration: 0.6 },
+                scale: { duration: 2, repeat: Infinity, repeatDelay: 4 }
+              }}
+              whileHover={{
+                scale: 1.1,
+                transition: { duration: 0.3 }
+              }}
+            />
 
             <p className="text-gray-300 mb-3 leading-relaxed text-sm">
               Transforming businesses through technology and expertise since 1999.

@@ -1,7 +1,7 @@
 'use client'
 
 import { motion, useAnimation } from 'framer-motion'
-import { ArrowRight, Shield, Globe, Award, Sparkles, TrendingUp, Stethoscope, Code, Heart, Brain, Mic, Volume2, Headphones, FileText, Clock, CheckCircle, Search, Database, Activity, Clipboard, Users, Briefcase, Rocket } from 'lucide-react'
+import { ArrowRight, Shield, Globe, Award, Sparkles, TrendingUp, Stethoscope, Code, Heart, Brain, Mic, Volume2, Headphones, FileText, Clock, CheckCircle, Search, Database, Activity, Clipboard, Users, Briefcase, Rocket, UserCheck, CreditCard, FileCheck } from 'lucide-react'
 import Link from 'next/link'
 import { useEffect } from 'react'
 
@@ -997,12 +997,7 @@ const Hero = () => {
                   </motion.p>
 
                   {/* Domain Cards */}
-                  <motion.div
-                    initial={{ opacity: 0, y: 30 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 1.8, duration: 0.8 }}
-                    className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 w-full"
-                  >
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 w-full">
                     <motion.div
                       whileHover={{ scale: 1.02, y: -2 }}
                       className="bg-gradient-to-br from-blue-50 to-cyan-50 p-3 sm:p-4 lg:p-6 rounded-lg sm:rounded-xl lg:rounded-2xl border border-blue-100 hover:border-blue-200 transition-all duration-300"
@@ -1011,78 +1006,17 @@ const Hero = () => {
                         <div className="w-10 h-10 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-xl flex items-center justify-center">
                           <Heart className="text-white" size={20} />
                         </div>
-                        <h3 className="text-base sm:text-lg font-bold text-blue-900">Healthcare KPO</h3>
+                        <div>
+                          <h3 className="text-base sm:text-lg font-bold text-blue-900 leading-tight">Healthcare KPO</h3>
+                          <p className="text-[10px] sm:text-xs font-semibold text-blue-600 uppercase tracking-wider">HIPAA Compliant Services</p>
+                        </div>
                       </div>
-                      <p className="text-[13px] sm:text-[15px] text-blue-700 leading-relaxed mb-3">
-                        Our HIPAA-compliant healthcare knowledge process outsourcing services help medical facilities streamline operations, reduce costs, and improve patient care. With over 25 years of experience, we deliver accurate and timely solutions.
+                      <p className="text-xs sm:text-sm text-blue-700 leading-relaxed mb-3">
+                        Medical transcription, billing, record summarization, medical scribe, APS & peer review, EHR/EMR support.
                       </p>
-                      <div className="grid grid-cols-2 gap-3 mb-3">
-                        {/* First Column - 4 items */}
-                        <div className="space-y-2">
-                          {[
-                            "Medical transcription",
-                            "Medical Billing",
-                            "Record summarization",
-                            "Medical scribe"
-                          ].map((item) => (
-                            <motion.div
-                              key={item}
-                              whileHover={{ y: -2, scale: 1.02 }}
-                              className="bg-white/60 hover:bg-blue-50 px-3 py-2 rounded-lg border border-blue-100 hover:border-blue-300 hover:shadow-md transition-all duration-300 group cursor-default"
-                            >
-                              <span className="text-[13px] font-semibold text-blue-700 group-hover:text-blue-900 flex items-center">
-                                <Shield size={13} className="text-blue-400 mr-2 group-hover:scale-110 transition-transform" />
-                                {item}
-                              </span>
-                            </motion.div>
-                          ))}
-                        </div>
-                        {/* Second Column - 3 items */}
-                        <div className="space-y-2">
-                          {[
-                            "APS Summary",
-                            "Peer Review",
-                            "EHR/EMR support"
-                          ].map((item) => (
-                            <motion.div
-                              key={item}
-                              whileHover={{ y: -2, scale: 1.02 }}
-                              className="bg-white/60 hover:bg-blue-50 px-3 py-2 rounded-lg border border-blue-100 hover:border-blue-300 hover:shadow-md transition-all duration-300 group cursor-default"
-                            >
-                              <span className="text-[13px] font-semibold text-blue-700 group-hover:text-blue-900 flex items-center">
-                                <Shield size={13} className="text-blue-400 mr-2 group-hover:scale-110 transition-transform" />
-                                {item}
-                              </span>
-                            </motion.div>
-                          ))}
-                        </div>
-                      </div>
-
-                      {/* Divider Line */}
-                      <div className="h-px bg-blue-100/60 my-2" />
-
-                      {/* Footer Link */}
-                      <div className="flex justify-center pt-4">
-                        <motion.div
-                          whileHover={{ scale: 1.05, boxShadow: "0 10px 20px rgba(59, 130, 246, 0.2)" }}
-                          whileTap={{ scale: 0.98 }}
-                        >
-                          <Link href="/medical" className="group relative inline-flex items-center justify-center px-8 py-3 text-sm font-bold text-white bg-gradient-to-r from-blue-600 to-cyan-600 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 overflow-hidden">
-                            <motion.div
-                              className="absolute inset-0 bg-gradient-to-r from-cyan-600 to-blue-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                            />
-                            <span className="relative z-10 flex items-center gap-2">
-                              <Stethoscope size={18} />
-                              <span>Healthcare KPO</span>
-                              <motion.div
-                                animate={{ x: [0, 4, 0] }}
-                                transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-                              >
-                                <ArrowRight size={16} />
-                              </motion.div>
-                            </span>
-                          </Link>
-                        </motion.div>
+                      <div className="flex items-center space-x-2">
+                        <Shield size={14} className="text-green-600" />
+                        <span className="text-xs font-semibold text-green-700">99.8% Accuracy</span>
                       </div>
                     </motion.div>
 
@@ -1094,81 +1028,20 @@ const Hero = () => {
                         <div className="w-10 h-10 bg-gradient-to-r from-purple-600 to-pink-600 rounded-xl flex items-center justify-center">
                           <Brain className="text-white" size={20} />
                         </div>
-                        <h3 className="text-base sm:text-lg font-bold text-purple-900">Software Solutions</h3>
+                        <div>
+                          <h3 className="text-base sm:text-lg font-bold text-purple-900 leading-tight">Technology & Software</h3>
+                          <p className="text-[10px] sm:text-xs font-semibold text-purple-600 uppercase tracking-wider">Innovative Solutions</p>
+                        </div>
                       </div>
-                      <p className="text-[13px] sm:text-[15px] text-purple-700 leading-relaxed mb-3">
-                        Our software development team creates custom solutions tailored to your specific business needs. We specialize in healthcare software, web applications, mobile apps, and enterprise solutions that drive efficiency and growth.
+                      <p className="text-xs sm:text-sm text-purple-700 leading-relaxed mb-3">
+                        Cloud solutions, software services, talent management, AI/ML, mobile solutions, remote hardware, analytics & reporting.
                       </p>
-                      <div className="grid grid-cols-2 gap-3 mb-3">
-                        {/* First Column - 4 items */}
-                        <div className="space-y-2">
-                          {[
-                            "Cloud solutions",
-                            "Software services",
-                            "Talent management",
-                            "AI/ML solutions"
-                          ].map((item) => (
-                            <motion.div
-                              key={item}
-                              whileHover={{ y: -2, scale: 1.02 }}
-                              className="bg-white/60 hover:bg-purple-50 px-3 py-2 rounded-lg border border-purple-100 hover:border-purple-300 hover:shadow-md transition-all duration-300 group cursor-default"
-                            >
-                              <span className="text-[13px] font-semibold text-purple-700 group-hover:text-purple-900 flex items-center">
-                                <Shield size={13} className="text-blue-400 mr-2 group-hover:scale-110 transition-transform" />
-                                {item}
-                              </span>
-                            </motion.div>
-                          ))}
-                        </div>
-                        {/* Second Column - 3 items */}
-                        <div className="space-y-2">
-                          {[
-                            "Mobile solutions",
-                            "Remote hardware",
-                            "Analytics & reporting"
-                          ].map((item) => (
-                            <motion.div
-                              key={item}
-                              whileHover={{ y: -2, scale: 1.02 }}
-                              className="bg-white/60 hover:bg-purple-50 px-3 py-2 rounded-lg border border-purple-100 hover:border-purple-300 hover:shadow-md transition-all duration-300 group cursor-default"
-                            >
-                              <span className="text-[13px] font-semibold text-purple-700 group-hover:text-purple-900 flex items-center">
-                                <Shield size={13} className="text-blue-400 mr-2 group-hover:scale-110 transition-transform" />
-                                {item}
-                              </span>
-                            </motion.div>
-                          ))}
-                        </div>
-                      </div>
-
-                      {/* Divider Line */}
-                      <div className="h-px bg-purple-100/60 my-2" />
-
-                      {/* Footer Link */}
-                      <div className="flex justify-center pt-4">
-                        <motion.div
-                          whileHover={{ scale: 1.05, boxShadow: "0 10px 20px rgba(147, 51, 234, 0.2)" }}
-                          whileTap={{ scale: 0.98 }}
-                        >
-                          <Link href="/technology" className="group relative inline-flex items-center justify-center px-8 py-3 text-sm font-bold text-white bg-gradient-to-r from-purple-600 to-pink-600 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 overflow-hidden">
-                            <motion.div
-                              className="absolute inset-0 bg-gradient-to-r from-pink-600 to-purple-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                            />
-                            <span className="relative z-10 flex items-center gap-2">
-                              <Brain size={18} />
-                              <span>Software Solutions</span>
-                              <motion.div
-                                animate={{ x: [0, 4, 0] }}
-                                transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-                              >
-                                <ArrowRight size={16} />
-                              </motion.div>
-                            </span>
-                          </Link>
-                        </motion.div>
+                      <div className="flex items-center space-x-2">
+                        <Code size={14} className="text-purple-600" />
+                        <span className="text-xs font-semibold text-purple-700">100+ Projects</span>
                       </div>
                     </motion.div>
-                  </motion.div>
+                  </div>
 
                   <motion.p
                     initial={{ opacity: 0, y: 20 }}
@@ -1205,8 +1078,7 @@ const Hero = () => {
                 </motion.div>
               </div>
 
-              {/* Enhanced CTA Buttons - Hidden in favor of internal card buttons */}
-              {/* 
+              {/* Enhanced CTA Buttons */}
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -1241,6 +1113,7 @@ const Hero = () => {
                       </motion.div>
                     </span>
 
+                    {/* Shimmer Effect */}
                     <motion.div
                       animate={{ x: [-100, 300] }}
                       transition={{ duration: 2, repeat: Infinity, repeatDelay: 3 }}
@@ -1277,6 +1150,7 @@ const Hero = () => {
                       </motion.div>
                     </span>
 
+                    {/* Shimmer Effect */}
                     <motion.div
                       animate={{ x: [-100, 300] }}
                       transition={{ duration: 2, repeat: Infinity, repeatDelay: 3, delay: 0.5 }}
@@ -1285,111 +1159,90 @@ const Hero = () => {
                   </Link>
                 </motion.div>
               </motion.div>
-              */}
 
               {/* Enhanced Trust Indicators */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 3.2, duration: 0.8 }}
-                className="flex flex-wrap items-center justify-center sm:justify-start gap-2 sm:gap-3 md:gap-4 pt-2 sm:pt-4"
+                className="flex flex-wrap items-center justify-center sm:justify-start gap-2 sm:gap-3 md:gap-4 pt-4 sm:pt-6"
               >
-                <motion.div
-                  initial={{ scale: 0 }}
-                  animate={{ scale: 1 }}
-                  transition={{ delay: 3.4, type: "spring", stiffness: 200 }}
-                  className="group flex items-center justify-center space-x-2 bg-green-50 px-4 py-2.5 rounded-full border border-green-200 hover:shadow-lg transition-all duration-300 w-56"
-                >
+                {[
+                  {
+                    label: 'HIPAA Compliant',
+                    icon: Shield,
+                    bg: 'bg-green-50',
+                    border: 'border-green-200',
+                    text: 'text-green-700',
+                    hoverText: 'group-hover:text-green-800',
+                    iconColor: 'text-green-600',
+                    anim: { rotate: [0, 360] },
+                    delay: 3.4
+                  },
+                  {
+                    label: '25+ Years Experience',
+                    icon: Award,
+                    bg: 'bg-purple-50',
+                    border: 'border-purple-200',
+                    text: 'text-purple-700',
+                    hoverText: 'group-hover:text-purple-800',
+                    iconColor: 'text-purple-600',
+                    anim: { y: [0, -4, 0], rotate: [0, 10, -10, 0] },
+                    delay: 3.6
+                  },
+                  {
+                    label: '500+ Global Clients',
+                    icon: Users,
+                    bg: 'bg-orange-50',
+                    border: 'border-orange-200',
+                    text: 'text-orange-700',
+                    hoverText: 'group-hover:text-orange-800',
+                    iconColor: 'text-orange-600',
+                    anim: { scale: [1, 1.15, 1], rotate: [0, 5, -5, 0] },
+                    delay: 3.8
+                  },
+                  {
+                    label: '1000+ Team Members',
+                    icon: Briefcase,
+                    bg: 'bg-cyan-50',
+                    border: 'border-cyan-200',
+                    text: 'text-cyan-700',
+                    hoverText: 'group-hover:text-cyan-800',
+                    iconColor: 'text-cyan-600',
+                    anim: { translateY: [0, -3, 0], scale: [1, 1.1, 1] },
+                    delay: 4.0
+                  },
+                  {
+                    label: '50k+ Projects Delivered',
+                    icon: Rocket,
+                    bg: 'bg-pink-50',
+                    border: 'border-pink-200',
+                    text: 'text-pink-700',
+                    hoverText: 'group-hover:text-pink-800',
+                    iconColor: 'text-pink-600',
+                    anim: { scale: [1, 1.1, 1], rotate: [0, 20, -20, 0] },
+                    delay: 4.2
+                  }
+                ].map((badge, i) => (
                   <motion.div
-                    animate={{ rotate: [0, 360] }}
-                    transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
+                    key={badge.label}
+                    initial={{ scale: 0, opacity: 0 }}
+                    animate={{ scale: 1, opacity: 1 }}
+                    transition={{ delay: badge.delay, type: "spring", stiffness: 200 }}
+                    whileHover={{ y: -2 }}
+                    className={`group flex items-center justify-center space-x-2 ${badge.bg} px-4 py-2.5 rounded-full border ${badge.border} hover:shadow-lg transition-all duration-300 w-56`}
                   >
-                    <Shield className="text-green-600 group-hover:text-green-700" size={16} />
+                    <motion.div
+                      animate={badge.anim}
+                      transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                    >
+                      <badge.icon className={`${badge.iconColor}`} size={16} />
+                    </motion.div>
+                    <span className={`text-sm font-semibold ${badge.text} ${badge.hoverText}`}>
+                      {badge.label}
+                    </span>
                   </motion.div>
-                  <span className="text-sm font-semibold text-green-700 group-hover:text-green-800">
-                    HIPAA Compliant
-                  </span>
-                </motion.div>
-
-                <motion.div
-                  initial={{ scale: 0 }}
-                  animate={{ scale: 1 }}
-                  transition={{ delay: 3.6, type: "spring", stiffness: 200 }}
-                  className="group flex items-center justify-center space-x-2 bg-purple-50 px-4 py-2.5 rounded-full border border-purple-200 hover:shadow-lg transition-all duration-300 w-56"
-                >
-                  <motion.div
-                    animate={{
-                      y: [0, -5, 0],
-                      rotate: [0, 15, -15, 0]
-                    }}
-                    transition={{ duration: 2.5, repeat: Infinity }}
-                  >
-                    <Award className="text-purple-600 group-hover:text-purple-700" size={16} />
-                  </motion.div>
-                  <span className="text-sm font-semibold text-purple-700 group-hover:text-purple-800">
-                    25+ Years Experience
-                  </span>
-                </motion.div>
-
-                <motion.div
-                  initial={{ scale: 0 }}
-                  animate={{ scale: 1 }}
-                  transition={{ delay: 3.8, type: "spring", stiffness: 200 }}
-                  className="group flex items-center justify-center space-x-2 bg-orange-50 px-4 py-2.5 rounded-full border border-orange-200 hover:shadow-lg transition-all duration-300 w-56"
-                >
-                  <motion.div
-                    animate={{
-                      scale: [1, 1.2, 1],
-                      rotate: [0, 5, -5, 0]
-                    }}
-                    transition={{ duration: 3, repeat: Infinity }}
-                  >
-                    <Users className="text-orange-600 group-hover:text-orange-700" size={16} />
-                  </motion.div>
-                  <span className="text-sm font-semibold text-orange-700 group-hover:text-orange-800">
-                    500+ Global Clients
-                  </span>
-                </motion.div>
-
-                <motion.div
-                  initial={{ scale: 0 }}
-                  animate={{ scale: 1 }}
-                  transition={{ delay: 4.0, type: "spring", stiffness: 200 }}
-                  className="group flex items-center justify-center space-x-2 bg-cyan-50 px-4 py-2.5 rounded-full border border-cyan-200 hover:shadow-lg transition-all duration-300 w-56"
-                >
-                  <motion.div
-                    animate={{
-                      y: [0, -3, 0],
-                      scale: [1, 1.1, 1]
-                    }}
-                    transition={{ duration: 2, repeat: Infinity }}
-                  >
-                    <Briefcase className="text-cyan-600 group-hover:text-cyan-700" size={16} />
-                  </motion.div>
-                  <span className="text-sm font-semibold text-cyan-700 group-hover:text-cyan-800">
-                    1000+ Team Members
-                  </span>
-                </motion.div>
-
-                <motion.div
-                  initial={{ scale: 0 }}
-                  animate={{ scale: 1 }}
-                  transition={{ delay: 4.2, type: "spring", stiffness: 200 }}
-                  className="group flex items-center justify-center space-x-2 bg-pink-50 px-4 py-2.5 rounded-full border border-pink-200 hover:shadow-lg transition-all duration-300 w-56"
-                >
-                  <motion.div
-                    animate={{
-                      rotate: [0, 360],
-                      scale: [1, 1.15, 1]
-                    }}
-                    transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                  >
-                    <Rocket className="text-pink-600 group-hover:text-pink-700" size={16} />
-                  </motion.div>
-                  <span className="text-sm font-semibold text-pink-700 group-hover:text-pink-800">
-                    50k+ Projects Delivered
-                  </span>
-                </motion.div>
+                ))}
               </motion.div>
             </motion.div>
 
@@ -1432,7 +1285,7 @@ const Hero = () => {
                     </div>
                   </div>
 
-                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                     {[
                       {
                         name: 'Medical Transcription',
@@ -1476,30 +1329,39 @@ const Hero = () => {
                         points: ['System Optimization', 'User Support'],
                         href: '/medical/ehr-emr'
                       }
-                    ].map((service, idx) => (
-                      <motion.div
-                        key={service.name}
-                        whileHover={{ scale: 1.02, y: -2 }}
-                        className="bg-white/80 backdrop-blur-sm p-5 rounded-xl border border-blue-100/50 shadow-sm hover:shadow-md hover:border-blue-300 transition-all flex flex-col h-full"
-                      >
-                        <Link href={service.href} className="flex-grow flex flex-col">
-                          <h4 className="text-lg font-bold text-blue-900 mb-2 leading-tight">
-                            {service.name}
-                          </h4>
-                          <p className="text-sm text-gray-600 mb-4 line-clamp-2 leading-relaxed">
-                            {service.summary}
-                          </p>
-                          <div className="mt-auto space-y-1.5 border-t border-blue-50 pt-3">
-                            {service.points.map((point) => (
-                              <div key={point} className="flex items-center space-x-2">
-                                <span className="w-1.5 h-1.5 bg-blue-500 rounded-full shrink-0" />
-                                <span className="text-xs font-semibold text-gray-700">{point}</span>
+                    ]
+                      .map((service, idx) => {
+                        return (
+                          <motion.div
+                            key={service.name}
+                            whileHover={{ y: -5 }}
+                            className="group relative h-full"
+                          >
+                            <Link href={service.href} className="block h-full">
+                              <div className="h-full bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 group-hover:border-blue-200 flex flex-col">
+                                {/* Content */}
+                                <h4 className="text-lg font-bold text-blue-900 mb-2 group-hover:text-blue-600 transition-colors">
+                                  {service.name}
+                                </h4>
+
+                                <p className="text-sm text-gray-600 mb-4 leading-relaxed line-clamp-2">
+                                  {service.summary}
+                                </p>
+
+                                {/* Points */}
+                                <div className="mt-auto space-y-1.5 border-t border-blue-50 pt-3">
+                                  {service.points.map((point) => (
+                                    <div key={point} className="flex items-center space-x-2">
+                                      <span className="w-1.5 h-1.5 bg-blue-500 rounded-full shrink-0" />
+                                      <span className="text-xs font-semibold text-gray-700">{point}</span>
+                                    </div>
+                                  ))}
+                                </div>
                               </div>
-                            ))}
-                          </div>
-                        </Link>
-                      </motion.div>
-                    ))}
+                            </Link>
+                          </motion.div>
+                        )
+                      })}
                   </div>
                 </motion.div>
 
@@ -1580,23 +1442,26 @@ const Hero = () => {
                     ].map((service, idx) => (
                       <motion.div
                         key={service.name}
-                        whileHover={{ scale: 1.02, y: -2 }}
-                        className="bg-white/80 backdrop-blur-sm p-5 rounded-xl border border-purple-100/50 shadow-sm hover:shadow-md hover:border-purple-300 transition-all flex flex-col h-full"
+                        whileHover={{ y: -5 }}
+                        className="group relative h-full"
                       >
-                        <Link href={service.href} className="flex-grow flex flex-col">
-                          <h4 className="text-lg font-bold text-purple-900 mb-2 leading-tight">
-                            {service.name}
-                          </h4>
-                          <p className="text-sm text-gray-600 mb-4 line-clamp-2 leading-relaxed">
-                            {service.summary}
-                          </p>
-                          <div className="mt-auto space-y-1.5 border-t border-purple-50 pt-3">
-                            {service.points.map((point) => (
-                              <div key={point} className="flex items-center space-x-2">
-                                <span className="w-1.5 h-1.5 bg-purple-500 rounded-full shrink-0" />
-                                <span className="text-xs font-semibold text-gray-700">{point}</span>
-                              </div>
-                            ))}
+                        <Link href={service.href} className="block h-full">
+                          <div className="h-full bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 group-hover:border-purple-200 flex flex-col">
+                            {/* Content */}
+                            <h4 className="text-lg font-bold text-purple-900 mb-2 group-hover:text-purple-600 transition-colors">
+                              {service.name}
+                            </h4>
+                            <p className="text-sm text-gray-600 mb-4 line-clamp-2 leading-relaxed">
+                              {service.summary}
+                            </p>
+                            <div className="mt-auto space-y-1.5 border-t border-purple-50 pt-3">
+                              {service.points.map((point) => (
+                                <div key={point} className="flex items-center space-x-2">
+                                  <span className="w-1.5 h-1.5 bg-purple-500 rounded-full shrink-0" />
+                                  <span className="text-xs font-semibold text-gray-700">{point}</span>
+                                </div>
+                              ))}
+                            </div>
                           </div>
                         </Link>
                       </motion.div>
@@ -1639,17 +1504,16 @@ const Hero = () => {
                 {[...Array(2)].map((_, setIndex) => (
                   <div key={setIndex} className="flex space-x-8 shrink-0">
                     {[
-                      { name: 'Epic', img: 'https://seyyone.com/wp-content/themes/seyyone/assets/images/seyyone_clients/220px-Epic.png' },
-                      { name: 'Salesforce', img: 'https://seyyone.com/wp-content/themes/seyyone/assets/images/seyyone_clients/salesforce.png' },
-                      { name: 'Cerner', img: 'https://seyyone.com/wp-content/themes/seyyone/assets/images/seyyone_clients/220px-Cerner.png' },
-                      { name: 'Meditech', img: 'https://seyyone.com/wp-content/themes/seyyone/assets/images/seyyone_clients/220px-Meditech.png' },
-                      { name: 'Athenahealth', img: 'https://seyyone.com/wp-content/themes/seyyone/assets/images/seyyone_clients/220px-Athenahealth.png' },
-                      { name: 'eClinicalWorks', img: 'https://seyyone.com/wp-content/themes/seyyone/assets/images/seyyone_clients/220px-eClinicalWorks.png' },
-                      { name: 'NextGen', img: 'https://seyyone.com/wp-content/themes/seyyone/assets/images/seyyone_clients/220px-NextGen.png' },
-                      { name: 'Allscripts', img: 'https://seyyone.com/wp-content/themes/seyyone/assets/images/seyyone_clients/220px-Allscripts.png' },
-                      { name: 'DrChrono', img: 'https://seyyone.com/wp-content/themes/seyyone/assets/images/seyyone_clients/220px-DrChrono.png' },
-                      { name: 'Practice Fusion', img: 'https://seyyone.com/wp-content/themes/seyyone/assets/images/seyyone_clients/220px-PracticeFusion.png' },
-                      { name: 'Kareo', img: 'https://seyyone.com/wp-content/themes/seyyone/assets/images/seyyone_clients/220px-Kareo.png' },
+                      { name: "Seyyone Color Logo", img: "https://seyyone.com/wp-content/themes/seyyone/assets/images/seyyone_clients/logo-color.png" },
+                      { name: "Workday", img: "https://seyyone.com/wp-content/themes/seyyone/assets/images/seyyone_clients/Workday.png" },
+                      { name: "Epic", img: "https://seyyone.com/wp-content/themes/seyyone/assets/images/seyyone_clients/220px-Epic.png" },
+                      { name: "Caretracker Harris 1", img: "https://seyyone.com/wp-content/themes/seyyone/assets/images/seyyone_clients/bkg-login-CaretrackerHarris-1.png" },
+                      { name: "Caretracker Harris 2", img: "https://seyyone.com/wp-content/themes/seyyone/assets/images/seyyone_clients/bkg-login-CaretrackerHarris.png" },
+                      { name: "CureMD", img: "https://seyyone.com/wp-content/themes/seyyone/assets/images/seyyone_clients/curemd-142-52.png" },
+                      { name: "Salesforce", img: "https://seyyone.com/wp-content/themes/seyyone/assets/images/seyyone_clients/salesforce.png" },
+                      { name: "Main Logo", img: "https://seyyone.com/wp-content/themes/seyyone/assets/images/seyyone_clients/main-logo.png" },
+                      { name: "NetSuite", img: "https://seyyone.com/wp-content/themes/seyyone/assets/images/seyyone_clients/netsuite.png" },
+                      { name: "NextGen", img: "https://seyyone.com/wp-content/themes/seyyone/assets/images/seyyone_clients/nextgen-logo-color.png" },
                     ].map((client, idx) => (
                       <div
                         key={`${setIndex}-${idx}`}
@@ -1762,8 +1626,6 @@ const Hero = () => {
                   { name: 'United Kingdom', top: '23%', left: '47%' },
                   { name: 'Ireland', top: '27%', left: '45%' },
                   { name: 'Germany', top: '28%', left: '50%' },
-                  { name: 'Netherlands', top: '26%', left: '49%' },
-                  { name: 'India', top: '48%', left: '60%' },
                   { name: 'Australia', top: '72%', left: '70%' },
                 ].map((location, idx) => (
                   <motion.div
@@ -1789,34 +1651,48 @@ const Hero = () => {
               </div>
             </div>
 
-            {/* Countries List - Desktop */}
             <div className="hidden md:flex flex-wrap justify-center gap-4">
-              {['USA', 'UK', 'Canada', 'Australia', 'Ireland', 'Germany', 'Netherlands', 'India'].map((country, idx) => (
+              {[
+                { name: 'USA', flag: '🇺🇸' },
+                { name: 'UK', flag: '🇬🇧' },
+                { name: 'Canada', flag: '🇨🇦' },
+                { name: 'Australia', flag: '🇦🇺' },
+                { name: 'Ireland', flag: '🇮🇪' },
+                { name: 'Germany', flag: '🇩🇪' }
+              ].map((country, idx) => (
                 <motion.div
-                  key={country}
+                  key={country.name}
                   initial={{ opacity: 0, y: 10 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: idx * 0.05 }}
-                  className="text-white font-medium text-sm px-4 py-2 bg-gray-800 rounded-lg"
+                  className="text-white font-medium text-sm px-4 py-2 bg-gray-800 rounded-lg flex items-center gap-2"
                 >
-                  {country}
+                  <span>{country.flag}</span>
+                  <span>{country.name}</span>
                 </motion.div>
               ))}
             </div>
 
-            {/* Countries Grid - Mobile */}
             <div className="md:hidden grid grid-cols-2 gap-3">
-              {['USA', 'UK', 'Canada', 'Australia', 'Ireland', 'Germany', 'Netherlands', 'India'].map((country, idx) => (
+              {[
+                { name: 'USA', flag: '🇺🇸' },
+                { name: 'UK', flag: '🇬🇧' },
+                { name: 'Canada', flag: '🇨🇦' },
+                { name: 'Australia', flag: '🇦🇺' },
+                { name: 'Ireland', flag: '🇮🇪' },
+                { name: 'Germany', flag: '🇩🇪' }
+              ].map((country, idx) => (
                 <motion.div
-                  key={country}
+                  key={country.name}
                   initial={{ opacity: 0, scale: 0.9 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ delay: idx * 0.05 }}
-                  className="bg-gray-800 text-white text-center py-3 px-4 rounded-lg text-sm font-medium"
+                  className="text-white font-medium text-sm px-4 py-3 bg-gray-800 rounded-lg flex items-center justify-center gap-3"
                 >
-                  {country}
+                  <span className="text-xl">{country.flag}</span>
+                  <span>{country.name}</span>
                 </motion.div>
               ))}
             </div>
@@ -1825,7 +1701,7 @@ const Hero = () => {
       </section>
 
       {/* Marquee Animation Styles */}
-      <style jsx>{`
+      < style jsx > {`
         @keyframes marquee {
           0% {
             transform: translateX(0);
@@ -1837,7 +1713,7 @@ const Hero = () => {
         .animate-marquee {
           animation: marquee 25s linear infinite;
         }
-      `}</style>
+      `}</style >
     </>
   )
 }
