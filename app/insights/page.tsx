@@ -7,24 +7,39 @@ import Footer from '@/components/Footer'
 import { motion, AnimatePresence } from 'framer-motion'
 import { BookOpen, FileText, FileCheck, MessageSquare, Award, Calendar, ArrowRight, User } from 'lucide-react'
 import Link from 'next/link'
+import { useSearchParams } from 'next/navigation'
 
 export default function InsightsPage() {
   const [activeCategory, setActiveCategory] = useState('all')
+  const searchParams = useSearchParams()
 
   // Handle hash-based category filtering from navigation dropdown
   useEffect(() => {
-    const hash = window.location.hash.replace('#', '')
-    if (hash && ['blogs', 'articles', 'whitepapers', 'testimonials', 'case-studies'].includes(hash)) {
-      setActiveCategory(hash)
+    const handleHashChange = () => {
+      const hash = window.location.hash.replace('#', '')
+      if (hash && ['blogs', 'articles', 'case-studies'].includes(hash)) {
+        setActiveCategory(hash)
+      } else if (!hash) {
+        setActiveCategory('all')
+      }
     }
-  }, [])
+
+    // Set initial category and handle same-page navigation
+    handleHashChange()
+
+    window.addEventListener('hashchange', handleHashChange)
+    window.addEventListener('popstate', handleHashChange)
+
+    return () => {
+      window.removeEventListener('hashchange', handleHashChange)
+      window.removeEventListener('popstate', handleHashChange)
+    }
+  }, [searchParams])
 
   const categories = [
     { id: 'all', name: 'All Insights', icon: BookOpen },
     { id: 'blogs', name: 'Blogs', icon: FileText },
     { id: 'articles', name: 'Articles', icon: FileCheck },
-    { id: 'whitepapers', name: 'Whitepapers', icon: FileText },
-    { id: 'testimonials', name: 'Testimonials', icon: MessageSquare },
     { id: 'case-studies', name: 'Case Studies', icon: Award }
   ]
 
@@ -71,48 +86,6 @@ export default function InsightsPage() {
       readTime: '12 min read',
       image: '/insights/article-2.jpg'
     },
-    // Whitepapers
-    {
-      id: 5,
-      category: 'whitepapers',
-      title: 'Healthcare Digital Transformation Guide',
-      excerpt: 'A comprehensive whitepaper on implementing digital transformation in healthcare organizations.',
-      author: 'Research Team',
-      date: 'November 20, 2024',
-      readTime: '20 min read',
-      image: '/insights/whitepaper-1.jpg'
-    },
-    {
-      id: 6,
-      category: 'whitepapers',
-      title: 'EHR/EMR Implementation Best Practices',
-      excerpt: 'Strategic insights on successful electronic health record system implementation.',
-      author: 'Research Team',
-      date: 'November 15, 2024',
-      readTime: '25 min read',
-      image: '/insights/whitepaper-2.jpg'
-    },
-    // Testimonials
-    {
-      id: 7,
-      category: 'testimonials',
-      title: 'Transforming Medical Billing Operations',
-      excerpt: '"Seyyone has been instrumental in streamlining our billing processes. Their expertise and commitment to quality are unmatched."',
-      author: 'Dr. Sarah Johnson, Regional Medical Center',
-      date: 'December 1, 2024',
-      readTime: '3 min read',
-      image: '/insights/testimonial-1.jpg'
-    },
-    {
-      id: 8,
-      category: 'testimonials',
-      title: 'Exceptional Software Development Partnership',
-      excerpt: '"The team at Seyyone delivered beyond our expectations. Their technical expertise and dedication to our success were remarkable."',
-      author: 'Michael Chen, TechCorp Solutions',
-      date: 'November 25, 2024',
-      readTime: '3 min read',
-      image: '/insights/testimonial-2.jpg'
-    },
     // Case Studies
     {
       id: 9,
@@ -144,8 +117,6 @@ export default function InsightsPage() {
     const colors: { [key: string]: string } = {
       blogs: 'from-blue-500 to-blue-600',
       articles: 'from-purple-500 to-purple-600',
-      whitepapers: 'from-green-500 to-green-600',
-      testimonials: 'from-orange-500 to-orange-600',
       'case-studies': 'from-red-500 to-red-600'
     }
     return colors[category] || 'from-gray-500 to-gray-600'
@@ -199,7 +170,7 @@ export default function InsightsPage() {
                 </h1>
 
                 <p className="text-xl text-gray-700 leading-relaxed mb-12 max-w-3xl mx-auto bg-white/60 backdrop-blur-sm p-6 rounded-2xl shadow-lg">
-                  Explore our collection of blogs, articles, whitepapers, testimonials, and case studies
+                  Explore our collection of blogs, articles, and case studies
                   covering healthcare KPO and technology solutions.
                 </p>
 
@@ -216,11 +187,10 @@ export default function InsightsPage() {
                       <button
                         key={category.id}
                         onClick={() => setActiveCategory(category.id)}
-                        className={`flex items-center space-x-1.5 px-4 py-2 rounded-full text-sm font-semibold transition-all duration-300 shadow-md ${
-                          activeCategory === category.id
-                            ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white scale-105'
-                            : 'bg-white text-gray-700 hover:bg-gray-50'
-                        }`}
+                        className={`flex items-center space-x-1.5 px-4 py-2 rounded-full text-sm font-semibold transition-all duration-300 shadow-md ${activeCategory === category.id
+                          ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white scale-105'
+                          : 'bg-white text-gray-700 hover:bg-gray-50'
+                          }`}
                       >
                         <IconComponent size={14} />
                         <span>{category.name}</span>

@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion'
 import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer'
-import { Mail, Phone, MapPin, Clock, Send, Globe, Shield, Award, Users, CheckCircle, ArrowRight, Heart, Brain, Star } from 'lucide-react'
+import { Mail, Phone, MapPin, Clock, Send, Globe, Shield, Award, Users, ArrowRight, Star } from 'lucide-react'
 import { useState } from 'react'
 
 export default function ContactPage() {
@@ -30,9 +30,9 @@ export default function ContactPage() {
     {
       icon: Mail,
       title: 'Email',
-      details: 'contact@seyyone.com',
+      details: 'info@seyyone.com',
       description: 'Send us your detailed requirements',
-      href: 'mailto:contact@seyyone.com',
+      href: 'mailto:info@seyyone.com',
       color: 'green'
     },
     {
@@ -53,36 +53,6 @@ export default function ContactPage() {
     }
   ]
 
-  const services = [
-    {
-      category: 'Healthcare KPO',
-      icon: Heart,
-      color: 'from-blue-500 to-cyan-500',
-      items: [
-        'Medical Transcription',
-        'Medical Billing',
-        'Medical Record Summarization',
-        'Medical Scribe',
-        'APS Summary',
-        'Peer Review Summary',
-        'EHR/EMR'
-      ]
-    },
-    {
-      category: 'Technology Solutions',
-      icon: Brain,
-      color: 'from-purple-500 to-pink-500',
-      items: [
-        'Cloud Solutions',
-        'Software Services',
-        'Talent Management',
-        'AI/ML Solutions',
-        'Mobile Solutions',
-        'Remote Hardware Infra',
-        'Analytics & Reporting'
-      ]
-    }
-  ]
 
   const regions = [
     { flag: '🇺🇸', country: 'USA' },
@@ -129,7 +99,7 @@ export default function ContactPage() {
       <Navigation />
       <main>
         {/* Enhanced Hero Section */}
-        <section className="min-h-screen flex items-center relative overflow-hidden pt-20 pb-16 bg-gradient-to-br from-blue-50 via-white to-purple-50">
+        <section className="relative overflow-hidden pt-32 pb-0 bg-gradient-to-br from-blue-50 via-white to-purple-50">
           {/* Animated Background Elements */}
           <div className="absolute inset-0">
             <motion.div
@@ -150,7 +120,7 @@ export default function ContactPage() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2, duration: 0.8 }}
-                className="text-5xl md:text-7xl font-bold mb-8"
+                className="text-5xl md:text-7xl font-bold mb-2"
               >
                 <span className="text-gray-900">Let&rsquo;s Transform</span>
                 <br />
@@ -163,105 +133,19 @@ export default function ContactPage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4, duration: 0.8 }}
-                className="text-xl text-gray-600 leading-relaxed mb-12 max-w-4xl mx-auto"
+                className="text-xl text-gray-600 leading-relaxed mb-0 max-w-4xl mx-auto"
               >
                 Ready to streamline your healthcare operations or accelerate your digital transformation?
                 Our expert team of 150+ professionals is here to deliver exceptional results.
               </motion.p>
 
-              {/* Quick Stats */}
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.6, duration: 0.8 }}
-                className="grid grid-cols-2 lg:grid-cols-4 gap-8 max-w-4xl mx-auto mb-12"
-              >
-                {[
-                  { number: '25+', label: 'Years Experience', icon: Award },
-                  { number: '150+', label: 'Professionals', icon: Users },
-                  { number: '8', label: 'Countries Served', icon: Globe },
-                  { number: '99.8%', label: 'Accuracy Rate', icon: CheckCircle }
-                ].map((stat, index) => {
-                  const IconComponent = stat.icon
-                  return (
-                    <motion.div
-                      key={stat.label}
-                      initial={{ opacity: 0, scale: 0.8 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      transition={{ delay: 0.8 + index * 0.1, duration: 0.6 }}
-                      className="bg-white/80 backdrop-blur-sm p-6 rounded-2xl shadow-lg border border-gray-100"
-                    >
-                      <IconComponent className="w-8 h-8 text-blue-600 mx-auto mb-3" />
-                      <div className="text-3xl font-bold text-gray-900 mb-1">{stat.number}</div>
-                      <div className="text-sm text-gray-600">{stat.label}</div>
-                    </motion.div>
-                  )
-                })}
-              </motion.div>
             </div>
           </div>
         </section>
 
-        {/* Service Selection */}
-        <section className="py-20 bg-gray-50">
-          <div className="container">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-center mb-16"
-            >
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-                What Can We Help You With?
-              </h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                Choose the service you&rsquo;re interested in to get personalized assistance from our experts.
-              </p>
-            </motion.div>
-
-            <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-              {services.map((service, index) => {
-                const IconComponent = service.icon
-                return (
-                  <motion.div
-                    key={service.category}
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: index * 0.2, duration: 0.6 }}
-                    className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300"
-                  >
-                    <div className="flex items-center space-x-4 mb-6">
-                      <div className={`w-16 h-16 bg-gradient-to-r ${service.color} rounded-2xl flex items-center justify-center`}>
-                        <IconComponent className="text-white" size={28} />
-                      </div>
-                      <h3 className="text-2xl font-bold text-gray-900">{service.category}</h3>
-                    </div>
-
-                    <div className="grid grid-cols-2 gap-3">
-                      {service.items.map((item, idx) => (
-                        <motion.div
-                          key={item}
-                          initial={{ opacity: 0, scale: 0.8 }}
-                          whileInView={{ opacity: 1, scale: 1 }}
-                          viewport={{ once: true }}
-                          transition={{ delay: 0.4 + idx * 0.1, duration: 0.4 }}
-                          className="bg-gray-50 px-3 py-2 rounded-lg text-center hover:bg-blue-50 transition-colors cursor-pointer"
-                          onClick={() => setSelectedService(item)}
-                        >
-                          <span className="text-sm font-medium text-gray-700">{item}</span>
-                        </motion.div>
-                      ))}
-                    </div>
-                  </motion.div>
-                )
-              })}
-            </div>
-          </div>
-        </section>
 
         {/* Enhanced Contact Form & Info */}
-        <section id="contact-form" className="py-20 bg-white">
+        <section id="contact-form" className="pt-2 pb-20 bg-white">
           <div className="container">
             <div className="grid lg:grid-cols-2 gap-16">
               {/* Enhanced Contact Form */}
@@ -554,7 +438,7 @@ export default function ContactPage() {
                     <span>Call Now</span>
                   </a>
                   <a
-                    href="mailto:contact@seyyone.com"
+                    href="mailto:info@seyyone.com"
                     className="border-2 border-white text-white px-8 py-3 rounded-xl font-semibold hover:bg-white hover:text-blue-600 transition-colors inline-flex items-center justify-center space-x-2"
                   >
                     <Mail size={20} />

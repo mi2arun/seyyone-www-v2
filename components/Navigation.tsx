@@ -12,6 +12,18 @@ const Navigation = () => {
   const [mobileSubmenu, setMobileSubmenu] = useState<string | null>(null)
   const { scrollY } = useScroll()
   const pathname = usePathname()
+  const [currentHash, setCurrentHash] = useState('')
+
+  useEffect(() => {
+    setCurrentHash(window.location.hash)
+    const handleHashChange = () => setCurrentHash(window.location.hash)
+    window.addEventListener('hashchange', handleHashChange)
+    window.addEventListener('popstate', handleHashChange)
+    return () => {
+      window.removeEventListener('hashchange', handleHashChange)
+      window.removeEventListener('popstate', handleHashChange)
+    }
+  }, [])
 
   // Handle scroll effects
   useMotionValueEvent(scrollY, "change", (latest) => {
@@ -44,12 +56,12 @@ const Navigation = () => {
       type: 'dropdown',
       href: '/medical',
       items: [
-        { name: 'Peer Review Summary', href: '/medical/peer-review-summary' },
-        { name: 'Medical Record Summarization', href: '/medical/medical-record-summarization' },
-        { name: 'Medical Billing', href: '/medical/medical-billing' },
-        { name: 'Medical Transcription', href: '/medical/medical-transcription' },
-        { name: 'APS Summary', href: '/medical/aps-summary' },
         { name: 'Medical Scribe', href: '/medical/medical-scribe' },
+        { name: 'Medical Record Summarization', href: '/medical/medical-record-summarization' },
+        { name: 'Medical Transcription', href: '/medical/medical-transcription' },
+        { name: 'Peer Review Summary', href: '/medical/peer-review-summary' },
+        { name: 'Medical Billing', href: '/medical/medical-billing' },
+        { name: 'APS Summary', href: '/medical/aps-summary' },
         { name: 'EHR/EMR', href: '/medical/ehr-emr' },
       ]
     },
@@ -58,11 +70,11 @@ const Navigation = () => {
       type: 'dropdown',
       href: '/technology',
       items: [
-        { name: 'Cloud Solutions', href: '/technology/cloud-solutions' },
         { name: 'Software Services', href: '/technology/software-services' },
-        { name: 'Talent Management', href: '/technology/talent-management' },
+        { name: 'Cloud Solutions', href: '/technology/cloud-solutions' },
         { name: 'AI/ML Solutions', href: '/technology/ai-ml-solutions' },
         { name: 'Mobile Solutions', href: '/technology/mobile-solutions' },
+        { name: 'Talent Management', href: '/technology/talent-management' },
         { name: 'Remote Hardware Infra', href: '/technology/remote-hardware-infra' },
         { name: 'Analytics & Reporting', href: '/technology/analytics-reporting' },
       ]
@@ -187,7 +199,7 @@ const Navigation = () => {
                             <Link
                               key={subItem.name}
                               href={subItem.href}
-                              className={`block px-4 py-2 text-sm transition-colors hover:bg-gray-50 hover:text-primary-600 ${pathname === subItem.href ? 'text-primary-600 bg-gray-50 font-medium' : 'text-gray-600'
+                              className={`block px-4 py-2 text-sm transition-colors hover:bg-gray-50 hover:text-primary-600 ${pathname === subItem.href || (pathname + currentHash) === subItem.href ? 'text-primary-600 bg-gray-50 font-medium' : 'text-gray-600'
                                 }`}
                             >
                               {subItem.name}
@@ -208,7 +220,7 @@ const Navigation = () => {
                 transition={{ delay: 0.6, duration: 0.5 }}
                 className="ml-6"
               >
-                <Link href="/contact#contact-form" className="group relative">
+                <Link href="/contact" className="group relative">
                   <motion.div
                     className="relative inline-flex items-center px-6 py-3 text-sm font-semibold text-white rounded-full shadow-lg overflow-hidden"
                     style={{ backgroundColor: '#0095d9' }}
@@ -303,7 +315,7 @@ const Navigation = () => {
                                     <Link
                                       key={subItem.name}
                                       href={subItem.href}
-                                      className={`block px-8 py-3 text-sm text-gray-600 hover:text-primary-600 ${pathname === subItem.href ? 'text-primary-600 font-medium' : ''
+                                      className={`block px-8 py-3 text-sm text-gray-600 hover:text-primary-600 ${pathname === subItem.href || (pathname + currentHash) === subItem.href ? 'text-primary-600 font-medium' : ''
                                         }`}
                                       onClick={() => setIsOpen(false)}
                                     >
@@ -326,7 +338,7 @@ const Navigation = () => {
                       className="pt-4 border-t border-gray-200/50 mt-4"
                     >
                       <Link
-                        href="/contact#contact-form"
+                        href="/contact"
                         className="flex items-center justify-center space-x-2 w-full p-4 text-white rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
                         style={{ backgroundColor: '#0095d9' }}
                         onClick={() => setIsOpen(false)}
@@ -344,7 +356,7 @@ const Navigation = () => {
                       </div>
                       <div className="flex items-center space-x-3 text-sm text-gray-600">
                         <Mail size={16} className="text-primary-600" />
-                        <span>contact@seyyone.com</span>
+                        <span>info@seyyone.com</span>
                       </div>
                     </div>
                   </div>

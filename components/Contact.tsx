@@ -16,9 +16,9 @@ const Contact = () => {
     {
       icon: Mail,
       title: 'Email',
-      details: 'contact@seyyone.com',
+      details: 'info@seyyone.com',
       description: 'Send us your requirements',
-      href: 'mailto:contact@seyyone.com'
+      href: 'mailto:info@seyyone.com'
     },
     {
       icon: MapPin,

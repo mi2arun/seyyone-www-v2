@@ -88,8 +88,8 @@ const Footer = () => {
               </div>
               <div className="flex items-center space-x-2 text-gray-300 text-sm">
                 <Mail size={14} className="text-primary-400" />
-                <a href="mailto:contact@seyyone.com" className="hover:text-primary-400 transition-colors">
-                  contact@seyyone.com
+                <a href="mailto:info@seyyone.com" className="hover:text-primary-400 transition-colors">
+                  info@seyyone.com
                 </a>
               </div>
               <div className="flex items-start space-x-2 text-gray-300 text-sm">
@@ -181,7 +181,7 @@ const Footer = () => {
             </Link>
 
             <Link
-              href="/contact#contact-form"
+              href="/contact"
               className="bg-primary-600 text-white px-3 py-1.5 rounded-lg font-medium hover:bg-primary-700 transition-colors inline-block text-center w-full mt-3 text-sm"
             >
               Get In Touch
