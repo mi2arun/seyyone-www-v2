@@ -1700,6 +1700,91 @@ const Hero = () => {
         </div>
       </section>
 
+      {/* Latest Insights & Resources Section */}
+      <section className="bg-[#ccd6eb] py-24 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-20 pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
+        <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            {/* Header */}
+            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-10">
+              <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4 sm:mb-0">
+                Latest Insights & Resources
+              </h2>
+              <Link
+                href="/insights"
+                className="inline-flex items-center gap-2 px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-medium transition-colors text-sm shadow-md"
+              >
+                View More
+                <ArrowRight size={16} />
+              </Link>
+            </div>
+
+            {/* Insight Cards */}
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {[
+                {
+                  title: "Case Studies",
+                  icon: Award,
+                  description: "Discover how we solve complex challenges for our global clients with data-driven solutions and operational excellence.",
+                  href: "/insights#case-studies",
+                  color: "text-blue-600"
+                },
+                {
+                  title: "Blogs",
+                  icon: FileText,
+                  description: "Stay updated with the latest trends, expert opinions, and industry news in Healthcare KPO and Technology.",
+                  href: "/insights#blogs",
+                  color: "text-blue-600"
+                },
+                {
+                  title: "Articles",
+                  icon: FileCheck,
+                  description: "In-depth analysis and technical insights from our industry experts on digital transformation and healthcare trends.",
+                  href: "/insights#articles",
+                  color: "text-blue-600"
+                }
+              ].map((insight, idx) => {
+                const Icon = insight.icon;
+                return (
+                  <motion.div
+                    key={idx}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: idx * 0.1, duration: 0.5 }}
+                    className="bg-white/80 backdrop-blur-sm border border-blue-100 rounded-2xl p-6 flex flex-col h-full hover:shadow-xl transition-all duration-300 group"
+                  >
+                    <div className="flex items-center space-x-4 mb-6">
+                      <div className={`w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center group-hover:bg-blue-600 transition-colors`}>
+                        <Icon className={`${insight.color} group-hover:text-white transition-colors`} size={24} />
+                      </div>
+                      <h3 className="text-xl font-bold text-gray-900">{insight.title}</h3>
+                    </div>
+                    <p className="text-gray-700 leading-relaxed flex-grow mb-6">
+                      {insight.description}
+                    </p>
+                    <div className="pt-6 border-t border-blue-50">
+                      <Link
+                        href={insight.href}
+                        className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-800 font-semibold transition-colors text-sm"
+                      >
+                        <span>View {insight.title}</span>
+                        <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
+                      </Link>
+                    </div>
+                  </motion.div>
+                );
+              })}
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Marquee Animation Styles */}
       < style jsx > {`
         @keyframes marquee {

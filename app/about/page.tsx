@@ -5,9 +5,8 @@ import ContactInfo from '@/components/ContactInfo'
 import Footer from '@/components/Footer'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
-import { Monitor, Coffee, BookOpen, Laptop, Phone, Clock, Award, Target, ShieldCheck, Lightbulb, Users, FileText, Lock, GraduationCap } from 'lucide-react'
-
-// Metadata removed for client component
+import { Monitor, Coffee, BookOpen, Laptop, Phone, Clock, Award, Target, ShieldCheck, Lightbulb, Users, FileText, Lock, GraduationCap, ArrowRight, Star } from 'lucide-react'
+import Link from 'next/link'
 
 export default function AboutPage() {
   return (
@@ -32,16 +31,16 @@ export default function AboutPage() {
 
           <div className="relative z-10 min-h-screen flex items-center">
             {/* Team Photo - Framed on Wall with Hanging Thread */}
-            <motion.div 
+            <motion.div
               className="absolute top-28 right-20"
               initial={{ opacity: 0, y: -50 }}
-              animate={{ 
-                opacity: 1, 
+              animate={{
+                opacity: 1,
                 y: 0,
                 rotate: [0, 1, -1, 0.5, 0]
               }}
-              transition={{ 
-                delay: 0.5, 
+              transition={{
+                delay: 0.5,
                 duration: 2,
                 rotate: {
                   duration: 4,
@@ -54,25 +53,19 @@ export default function AboutPage() {
             >
               {/* Hanging Thread/Wire */}
               <div className="absolute left-1/2 -top-28 transform -translate-x-1/2">
-                {/* Nail/Hook */}
                 <div className="w-2 h-2 bg-gradient-to-b from-gray-600 to-gray-800 rounded-full shadow-md" />
-                {/* Thread/Wire */}
                 <div className="w-px h-28 bg-gradient-to-b from-gray-400 to-gray-600 mx-auto" />
-                {/* Thread Shadow */}
                 <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-px h-28 bg-black/10 blur-sm translate-x-0.5" />
               </div>
-              
-              {/* Frame Shadow */}
+
               <div className="absolute inset-0 bg-black/20 blur-xl transform translate-y-4" />
-              
-              {/* Photo Frame */}
+
               <div className="relative bg-gradient-to-br from-amber-800 via-amber-700 to-amber-900 p-4 shadow-2xl">
-                {/* Frame Hook/Mount Point */}
                 <div className="absolute -top-2 left-1/2 transform -translate-x-1/2">
-                  <div className="w-4 h-2 bg-gradient-to-b from-brass-500 to-brass-700 rounded-t-full" 
-                       style={{ background: 'linear-gradient(to bottom, #B8860B, #8B6914)' }} />
+                  <div className="w-4 h-2 bg-gradient-to-b from-brass-500 to-brass-700 rounded-t-full"
+                    style={{ background: 'linear-gradient(to bottom, #B8860B, #8B6914)' }} />
                 </div>
-                
+
                 <div className="relative bg-gradient-to-br from-amber-600 to-amber-700 p-2">
                   <div className="bg-white p-4">
                     <div className="relative w-64 h-40 overflow-hidden">
@@ -108,13 +101,13 @@ export default function AboutPage() {
 
             {/* Hero Content */}
             <div className="container">
-              <motion.div 
+              <motion.div
                 className="max-w-4xl mx-auto text-center"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
               >
-                <motion.div 
+                <motion.div
                   className="inline-flex items-center px-6 py-3 bg-white/80 backdrop-blur-sm text-blue-700 rounded-full text-sm font-semibold mb-6 shadow-lg"
                   initial={{ scale: 0 }}
                   animate={{ scale: 1 }}
@@ -122,7 +115,7 @@ export default function AboutPage() {
                 >
                   About Seyyone
                 </motion.div>
-                
+
                 <h1 className="text-5xl md:text-7xl font-bold mb-8">
                   <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
                     25+ Years
@@ -130,9 +123,9 @@ export default function AboutPage() {
                   <br />
                   <span className="text-gray-900">of Excellence</span>
                 </h1>
-                
+
                 <p className="text-xl text-gray-700 leading-relaxed mb-12 max-w-3xl mx-auto bg-white/60 backdrop-blur-sm p-6 rounded-2xl shadow-lg">
-                  Since 1999, Seyyone has been transforming businesses through innovative Healthcare KPO services 
+                  Since 1999, Seyyone has been transforming businesses through innovative Healthcare KPO services
                   and cutting-edge Software Development solutions. We are your trusted partner in digital transformation.
                 </p>
               </motion.div>
@@ -155,25 +148,25 @@ export default function AboutPage() {
                 </h2>
                 <div className="space-y-6 text-gray-600 leading-relaxed">
                   <p>
-                    Founded in Coimbatore, India, Seyyone began with a vision to bridge the gap between 
-                    healthcare providers and technology solutions. Over two decades, we have evolved into 
-                    a comprehensive service provider serving clients across USA, Canada, Australia, Ireland, 
+                    Founded in Coimbatore, India, Seyyone began with a vision to bridge the gap between
+                    healthcare providers and technology solutions. Over two decades, we have evolved into
+                    a comprehensive service provider serving clients across USA, Canada, Australia, Ireland,
                     Germany, Netherlands, UK, and India.
                   </p>
                   <p>
-                    Our journey started with a focus on healthcare back-office services, recognizing the 
-                    critical need for HIPAA-compliant, accurate medical transcription and billing services. 
-                    Today, we&rsquo;ve expanded our expertise to include cutting-edge software development, 
+                    Our journey started with a focus on healthcare back-office services, recognizing the
+                    critical need for HIPAA-compliant, accurate medical transcription and billing services.
+                    Today, we&rsquo;ve expanded our expertise to include cutting-edge software development,
                     AI/ML solutions, and cloud services.
                   </p>
                   <p>
-                    With a team of 150+ dedicated professionals, we&rsquo;ve successfully completed over 100+ 
-                    projects, maintaining our commitment to integrity, innovation, collaboration, excellence, 
+                    With a team of 150+ dedicated professionals, we&rsquo;ve successfully completed over 100+
+                    projects, maintaining our commitment to integrity, innovation, collaboration, excellence,
                     customer focus, and accountability.
                   </p>
                 </div>
               </motion.div>
-              
+
               <motion.div
                 className="grid grid-cols-2 gap-6"
                 initial={{ opacity: 0, x: 50 }}
@@ -213,57 +206,17 @@ export default function AboutPage() {
                 These values guide everything we do, from client relationships to internal operations.
               </p>
             </div>
-            
+
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
               {[
-                {
-                  title: 'Excellence',
-                  description: 'We strive for the highest quality in everything we do, exceeding expectations consistently.',
-                  gradient: 'from-orange-500 to-orange-600',
-                  icon: Award
-                },
-                {
-                  title: 'Integrity',
-                  description: 'We conduct business with honesty, transparency, and ethical practices in all our interactions.',
-                  gradient: 'from-blue-500 to-blue-600',
-                  icon: ShieldCheck
-                },
-                {
-                  title: 'Innovation',
-                  description: 'We continuously explore new technologies and methodologies to deliver cutting-edge solutions.',
-                  gradient: 'from-purple-500 to-purple-600',
-                  icon: Lightbulb
-                },
-                {
-                  title: 'Client Focus',
-                  description: 'We prioritize our clients needs and work tirelessly to deliver value and satisfaction.',
-                  gradient: 'from-red-500 to-red-600',
-                  icon: Target
-                },
-                {
-                  title: 'Collaboration',
-                  description: 'We work closely with our clients and team members to achieve shared goals and success.',
-                  gradient: 'from-green-500 to-green-600',
-                  icon: Users
-                },
-                {
-                  title: 'Compliance',
-                  description: 'We adhere to all regulatory requirements and industry standards, ensuring HIPAA compliance and data protection.',
-                  gradient: 'from-indigo-500 to-indigo-600',
-                  icon: FileText
-                },
-                {
-                  title: 'Security',
-                  description: 'We implement robust security measures to protect sensitive data and maintain confidentiality.',
-                  gradient: 'from-cyan-500 to-cyan-600',
-                  icon: Lock
-                },
-                {
-                  title: 'Expertise',
-                  description: 'We bring deep domain knowledge and technical skills to deliver exceptional solutions.',
-                  gradient: 'from-teal-500 to-teal-600',
-                  icon: GraduationCap
-                }
+                { title: 'Excellence', description: 'We strive for the highest quality in everything we do.', gradient: 'from-orange-500 to-orange-600', icon: Award },
+                { title: 'Integrity', description: 'We conduct business with honesty and transparency.', gradient: 'from-blue-500 to-blue-600', icon: ShieldCheck },
+                { title: 'Innovation', description: 'We continuously explore new technologies.', gradient: 'from-purple-500 to-purple-600', icon: Lightbulb },
+                { title: 'Client Focus', description: 'We prioritize our clients needs and satisfaction.', gradient: 'from-red-500 to-red-600', icon: Target },
+                { title: 'Collaboration', description: 'We work closely with clients and team members.', gradient: 'from-green-500 to-green-600', icon: Users },
+                { title: 'Compliance', description: 'Ensuring HIPAA compliance and data protection.', gradient: 'from-indigo-500 to-indigo-600', icon: FileText },
+                { title: 'Security', description: 'Implementing robust security measures.', gradient: 'from-cyan-500 to-cyan-600', icon: Lock },
+                { title: 'Expertise', description: 'Deep domain knowledge and technical skills.', gradient: 'from-teal-500 to-teal-600', icon: GraduationCap }
               ].map((value, index) => {
                 const IconComponent = value.icon
                 return (
@@ -298,8 +251,7 @@ export default function AboutPage() {
                 <blockquote className="text-lg text-gray-700 leading-relaxed italic mb-6">
                   &ldquo;At Seyyone, we believe in the power of technology and expertise to transform businesses.
                   Our commitment to excellence, innovation, and client success has been the driving force
-                  behind our 25+ year journey. We&rsquo;re not just a service provider; we&rsquo;re a strategic partner
-                  dedicated to your growth and success.&rdquo;
+                  behind our 25+ year journey.&rdquo;
                 </blockquote>
                 <div className="text-center">
                   <div className="font-semibold text-gray-900">Seyyone Leadership Team</div>
@@ -310,8 +262,54 @@ export default function AboutPage() {
           </div>
         </section>
 
+        {/* Testimonials Preview Section */}
+        <section className="py-20 bg-gray-50 border-y border-gray-100">
+          <div className="container">
+            <div className="flex flex-col md:flex-row justify-between items-end mb-12">
+              <div className="max-w-2xl">
+                <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                  Client Trust
+                </h2>
+                <p className="text-xl text-gray-600">
+                  Hear what healthcare professionals worldwide say about their partnership with Seyyone.
+                </p>
+              </div>
+              <Link
+                href="/about/testimonials"
+                className="mt-6 md:mt-0 inline-flex items-center gap-2 text-blue-600 font-bold hover:text-blue-700 group transition-colors"
+              >
+                <span>Read all Testimonials</span>
+                <ArrowRight size={20} className="transition-transform group-hover:translate-x-1" />
+              </Link>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-8">
+              <div className="bg-white p-8 rounded-2xl border border-gray-100 italic text-gray-700 text-lg leading-relaxed relative shadow-md">
+                <div className="absolute -top-4 -left-4 w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white shadow-lg">
+                  <Star fill="currentColor" size={20} />
+                </div>
+                &ldquo;We feel your company is trustworthy and would like to give you the business instead of looking elsewhere.&rdquo;
+                <div className="mt-6 pt-6 border-t border-gray-200 not-italic">
+                  <div className="font-bold text-gray-900">Orthopedic Physician</div>
+                  <div className="text-sm text-gray-500">Australia</div>
+                </div>
+              </div>
+              <div className="bg-white p-8 rounded-2xl border border-gray-100 italic text-gray-700 text-lg leading-relaxed relative shadow-md">
+                <div className="absolute -top-4 -left-4 w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center text-white shadow-lg">
+                  <Star fill="currentColor" size={20} />
+                </div>
+                &ldquo;Thank you for continuing to do a wonderful job with our transcription! Great job! I&rsquo;m impressed.&rdquo;
+                <div className="mt-6 pt-6 border-t border-gray-200 not-italic">
+                  <div className="font-bold text-gray-900">Office Manager, Oregon Eye Clinic</div>
+                  <div className="text-sm text-gray-500">USA</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Moments at Seyyone */}
-        <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+        <section className="py-20 bg-white">
           <div className="container">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -323,43 +321,23 @@ export default function AboutPage() {
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
                 Moments at Seyyone
               </h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              <p className="max-w-3xl mx-auto text-xl text-gray-600 mb-8">
                 Celebrating our journey, achievements, and the memorable moments that define our culture.
               </p>
+              <Link
+                href="/about/life-at-seyyone"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-medium transition-all hover:shadow-lg"
+              >
+                <span>Explore Life at Seyyone</span>
+                <ArrowRight size={18} />
+              </Link>
             </motion.div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {[
-                {
-                  title: 'Team Collaboration',
-                  description: 'Working together towards excellence',
-                  image: '/moments/team-collaboration.jpg'
-                },
-                {
-                  title: 'Annual Celebration',
-                  description: 'Celebrating our achievements together',
-                  image: '/moments/annual-celebration.jpg'
-                },
-                {
-                  title: 'Innovation Workshop',
-                  description: 'Exploring new technologies and ideas',
-                  image: '/moments/innovation-workshop.jpg'
-                },
-                {
-                  title: 'Client Success',
-                  description: 'Delivering exceptional results',
-                  image: '/moments/client-success.jpg'
-                },
-                {
-                  title: 'Team Building',
-                  description: 'Building stronger connections',
-                  image: '/moments/team-building.jpg'
-                },
-                {
-                  title: 'Milestone Achievement',
-                  description: 'Celebrating 25+ years of excellence',
-                  image: '/moments/milestone.jpg'
-                }
+                { title: 'Team Collaboration', description: 'Working together towards excellence', image: '/perks/team-collaboration.jpg' },
+                { title: 'Annual Celebration', description: 'Celebrating our achievements together', image: '/perks/annual-celebration.jpg' },
+                { title: 'Team Building', description: 'Building stronger connections', image: '/perks/team-building.jpg' }
               ].map((moment, index) => (
                 <motion.div
                   key={moment.title}
@@ -367,9 +345,9 @@ export default function AboutPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1, duration: 0.6 }}
-                  className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300"
+                  className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 h-64"
                 >
-                  <div className="relative h-64 bg-gradient-to-br from-blue-100 to-purple-100">
+                  <div className="relative h-full w-full bg-blue-100">
                     <Image
                       src="/Seyyone-Group-Photo-Updated.png"
                       alt={moment.title}

@@ -47,8 +47,8 @@ const Navigation = () => {
       type: 'dropdown',
       href: '/about',
       items: [
-        { name: 'Life at Seyyone', href: '/about#life-at-seyyone' },
-        { name: 'Testimonials', href: '/about#testimonials' },
+        { name: 'Life at Seyyone', href: '/about/life-at-seyyone' },
+        { name: 'Testimonials', href: '/about/testimonials' },
       ]
     },
     {
