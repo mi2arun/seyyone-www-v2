@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, Suspense } from 'react'
 import Navigation from '@/components/Navigation'
 import ContactInfo from '@/components/ContactInfo'
 import Footer from '@/components/Footer'
@@ -9,7 +9,7 @@ import { BookOpen, FileText, FileCheck, MessageSquare, Award, Calendar, ArrowRig
 import Link from 'next/link'
 import { useSearchParams } from 'next/navigation'
 
-export default function InsightsPage() {
+function InsightsContent() {
   const [activeCategory, setActiveCategory] = useState('all')
   const searchParams = useSearchParams()
 
@@ -326,5 +326,13 @@ export default function InsightsPage() {
       </main>
       <Footer />
     </>
+  )
+}
+
+export default function InsightsPage() {
+  return (
+    <Suspense fallback={<div className="min-h-screen flex items-center justify-center">Loading insights...</div>}>
+      <InsightsContent />
+    </Suspense>
   )
 }
