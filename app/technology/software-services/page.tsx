@@ -7,7 +7,11 @@ import { motion } from 'framer-motion'
 import { Code, CheckCircle, Layers, Shield, Zap, ArrowRight, Database, Globe, Award, TrendingUp } from 'lucide-react'
 import Link from 'next/link'
 
+import { useState } from 'react'
+import TechnologyContactModal from '@/components/technology/TechnologyContactModal'
+
 export default function SoftwareServicesPage() {
+  const [isModalOpen, setIsModalOpen] = useState(false)
   const features = [
     {
       icon: Code,
@@ -137,21 +141,7 @@ export default function SoftwareServicesPage() {
                   From custom applications to enterprise systems, we deliver scalable software that drives business growth.
                 </p>
 
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Link
-                    href="/contact"
-                    className="bg-gradient-to-r from-orange-600 to-red-600 text-white px-8 py-4 rounded-xl font-semibold hover:shadow-lg transition-all duration-300 inline-flex items-center justify-center space-x-2"
-                  >
-                    <span>Get Started</span>
-                    <ArrowRight size={20} />
-                  </Link>
-                  <Link
-                    href="#features"
-                    className="border-2 border-orange-600 text-orange-600 px-8 py-4 rounded-xl font-semibold hover:bg-orange-50 transition-colors inline-flex items-center justify-center space-x-2"
-                  >
-                    <span>Learn More</span>
-                  </Link>
-                </div>
+
               </motion.div>
             </div>
           </div>
@@ -379,13 +369,13 @@ export default function SoftwareServicesPage() {
                 Let&apos;s create software that transforms your business. Schedule a free consultation with our development team today.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link
-                  href="/contact"
+                <button
+                  onClick={() => setIsModalOpen(true)}
                   className="bg-white text-orange-600 px-8 py-4 rounded-xl font-semibold hover:bg-gray-100 transition-colors shadow-lg inline-flex items-center justify-center space-x-2"
                 >
                   <span>Schedule Consultation</span>
                   <ArrowRight size={20} />
-                </Link>
+                </button>
                 <Link
                   href="/technology"
                   className="border-2 border-white text-white px-8 py-4 rounded-xl font-semibold hover:bg-white hover:text-orange-600 transition-colors inline-flex items-center justify-center space-x-2"
@@ -399,6 +389,11 @@ export default function SoftwareServicesPage() {
 
         <ContactInfo />
       </main>
+      <TechnologyContactModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        initialService="Software Services"
+      />
       <Footer />
     </>
   )

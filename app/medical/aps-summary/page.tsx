@@ -7,7 +7,11 @@ import { motion } from 'framer-motion'
 import { Shield, CheckCircle, Clock, FileText, Award, ArrowRight, Search, Target, BarChart3 } from 'lucide-react'
 import Link from 'next/link'
 
+import { useState } from 'react'
+import MedicalContactModal from '@/components/medical/MedicalContactModal'
+
 export default function APSSummaryPage() {
+  const [isModalOpen, setIsModalOpen] = useState(false)
   const features = [
     {
       icon: FileText,
@@ -129,21 +133,7 @@ export default function APSSummaryPage() {
                   Our expert analysts extract critical medical information to support informed underwriting decisions.
                 </p>
 
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Link
-                    href="/contact"
-                    className="bg-gradient-to-r from-orange-600 to-amber-600 text-white px-8 py-4 rounded-xl font-semibold hover:shadow-lg transition-all duration-300 inline-flex items-center justify-center space-x-2"
-                  >
-                    <span>Get Started</span>
-                    <ArrowRight size={20} />
-                  </Link>
-                  <Link
-                    href="#features"
-                    className="border-2 border-orange-600 text-orange-600 px-8 py-4 rounded-xl font-semibold hover:bg-orange-50 transition-colors inline-flex items-center justify-center space-x-2"
-                  >
-                    <span>Learn More</span>
-                  </Link>
-                </div>
+
               </motion.div>
             </div>
           </div>
@@ -366,13 +356,13 @@ export default function APSSummaryPage() {
                 Get a free sample summary today.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link
-                  href="/contact"
+                <button
+                  onClick={() => setIsModalOpen(true)}
                   className="bg-white text-orange-600 px-8 py-4 rounded-xl font-semibold hover:bg-gray-100 transition-colors shadow-lg inline-flex items-center justify-center space-x-2"
                 >
                   <span>Request Sample Summary</span>
                   <ArrowRight size={20} />
-                </Link>
+                </button>
                 <Link
                   href="/medical"
                   className="border-2 border-white text-white px-8 py-4 rounded-xl font-semibold hover:bg-white hover:text-orange-600 transition-colors inline-flex items-center justify-center space-x-2"
@@ -386,6 +376,11 @@ export default function APSSummaryPage() {
 
         <ContactInfo />
       </main>
+      <MedicalContactModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        initialService="Medical Record Summarization"
+      />
       <Footer />
     </>
   )

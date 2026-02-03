@@ -7,7 +7,11 @@ import { motion } from 'framer-motion'
 import { BarChart3, CheckCircle, PieChart, TrendingUp, Database, ArrowRight, Eye, Layers, Target, Award } from 'lucide-react'
 import Link from 'next/link'
 
+import { useState } from 'react'
+import TechnologyContactModal from '@/components/technology/TechnologyContactModal'
+
 export default function AnalyticsReportingPage() {
+  const [isModalOpen, setIsModalOpen] = useState(false)
   const features = [
     {
       icon: PieChart,
@@ -152,21 +156,7 @@ export default function AnalyticsReportingPage() {
                   Transform raw data into actionable intelligence with powerful visualizations and real-time dashboards.
                 </p>
 
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Link
-                    href="/contact"
-                    className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-8 py-4 rounded-xl font-semibold hover:shadow-lg transition-all duration-300 inline-flex items-center justify-center space-x-2"
-                  >
-                    <span>Get Started</span>
-                    <ArrowRight size={20} />
-                  </Link>
-                  <Link
-                    href="#features"
-                    className="border-2 border-indigo-600 text-indigo-600 px-8 py-4 rounded-xl font-semibold hover:bg-indigo-50 transition-colors inline-flex items-center justify-center space-x-2"
-                  >
-                    <span>Learn More</span>
-                  </Link>
-                </div>
+
               </motion.div>
             </div>
           </div>
@@ -386,13 +376,13 @@ export default function AnalyticsReportingPage() {
                 Get a free analytics consultation today.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link
-                  href="/contact"
+                <button
+                  onClick={() => setIsModalOpen(true)}
                   className="bg-white text-indigo-600 px-8 py-4 rounded-xl font-semibold hover:bg-gray-100 transition-colors shadow-lg inline-flex items-center justify-center space-x-2"
                 >
                   <span>Request Consultation</span>
                   <ArrowRight size={20} />
-                </Link>
+                </button>
                 <Link
                   href="/technology"
                   className="border-2 border-white text-white px-8 py-4 rounded-xl font-semibold hover:bg-white hover:text-indigo-600 transition-colors inline-flex items-center justify-center space-x-2"
@@ -406,6 +396,11 @@ export default function AnalyticsReportingPage() {
 
         <ContactInfo />
       </main>
+      <TechnologyContactModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        initialService="Analytics & Reporting"
+      />
       <Footer />
     </>
   )

@@ -284,7 +284,7 @@ export default function AboutPage() {
             </div>
 
             <div className="grid md:grid-cols-2 gap-8">
-              <div className="bg-white p-8 rounded-2xl border border-gray-100 italic text-gray-700 text-lg leading-relaxed relative shadow-md">
+              <div className="bg-white p-8 rounded-2xl border border-gray-100 italic text-gray-700 text-lg leading-relaxed relative shadow-[0_4px_20px_-10px_rgba(0,0,0,0.1)] hover:shadow-[0_25px_50px_-12px_rgba(0,0,0,0.2)] transition-all duration-500 hover:-translate-y-1">
                 <div className="absolute -top-4 -left-4 w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white shadow-lg">
                   <Star fill="currentColor" size={20} />
                 </div>
@@ -294,7 +294,7 @@ export default function AboutPage() {
                   <div className="text-sm text-gray-500">Australia</div>
                 </div>
               </div>
-              <div className="bg-white p-8 rounded-2xl border border-gray-100 italic text-gray-700 text-lg leading-relaxed relative shadow-md">
+              <div className="bg-white p-8 rounded-2xl border border-gray-100 italic text-gray-700 text-lg leading-relaxed relative shadow-[0_4px_20px_-10px_rgba(0,0,0,0.1)] hover:shadow-[0_25px_50px_-12px_rgba(0,0,0,0.2)] transition-all duration-500 hover:-translate-y-1">
                 <div className="absolute -top-4 -left-4 w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center text-white shadow-lg">
                   <Star fill="currentColor" size={20} />
                 </div>

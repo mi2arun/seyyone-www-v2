@@ -1,10 +1,11 @@
 'use client'
 
+import { useState } from 'react'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { Code, Smartphone, Cloud, Brain, Zap, Users, Award, Globe } from 'lucide-react'
 
-const TechnologyHero = () => {
+const TechnologyHero = ({ onOpenModal }: { onOpenModal: () => void }) => {
   const highlights = [
     { icon: Brain, text: 'AI/ML Solutions', color: 'text-purple-600' },
     { icon: Cloud, text: 'Cloud-Native', color: 'text-blue-600' },
@@ -145,18 +146,13 @@ const TechnologyHero = () => {
               transition={{ delay: 1.2, duration: 0.8 }}
               className="flex flex-col sm:flex-row gap-4"
             >
-              <Link
-                href="/contact"
+              <button
+                onClick={onOpenModal}
                 className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
               >
                 Start Your Project
-              </Link>
-              <Link
-                href="#services"
-                className="inline-flex items-center justify-center px-8 py-4 bg-white text-purple-600 border-2 border-purple-200 font-semibold rounded-xl shadow-lg hover:shadow-xl hover:bg-purple-50 transition-all duration-300"
-              >
-                Explore Services
-              </Link>
+              </button>
+
             </motion.div>
           </motion.div>
 
@@ -247,25 +243,6 @@ const TechnologyHero = () => {
                 </div>
               </div>
             </div>
-
-            {/* Floating Stats - Hidden (uncomment to enable) */}
-            {/* <motion.div
-              animate={{ y: [-10, 10, -10] }}
-              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute -top-4 -right-4 bg-purple-600 text-white p-3 rounded-xl shadow-lg"
-            >
-              <div className="text-lg font-bold">100+</div>
-              <div className="text-xs opacity-90">Projects</div>
-            </motion.div>
-
-            <motion.div
-              animate={{ y: [10, -10, 10] }}
-              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-              className="absolute -bottom-4 -left-4 bg-white border-2 border-purple-200 p-3 rounded-xl shadow-lg"
-            >
-              <div className="text-lg font-bold text-purple-600">15+</div>
-              <div className="text-xs text-gray-600">Years</div>
-            </motion.div> */}
           </motion.div>
         </div>
       </div>

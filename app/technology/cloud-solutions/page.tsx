@@ -7,7 +7,11 @@ import { motion } from 'framer-motion'
 import { Cloud, CheckCircle, Server, Shield, Zap, ArrowRight, Code, Lock, TrendingUp, Award } from 'lucide-react'
 import Link from 'next/link'
 
+import { useState } from 'react'
+import TechnologyContactModal from '@/components/technology/TechnologyContactModal'
+
 export default function CloudSolutionsPage() {
+  const [isModalOpen, setIsModalOpen] = useState(false)
   const features = [
     {
       icon: Server,
@@ -137,21 +141,7 @@ export default function CloudSolutionsPage() {
                   Transform your infrastructure with cloud-native solutions built for performance, security, and growth.
                 </p>
 
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Link
-                    href="/contact"
-                    className="bg-gradient-to-r from-green-600 to-teal-600 text-white px-8 py-4 rounded-xl font-semibold hover:shadow-lg transition-all duration-300 inline-flex items-center justify-center space-x-2"
-                  >
-                    <span>Get Started</span>
-                    <ArrowRight size={20} />
-                  </Link>
-                  <Link
-                    href="#features"
-                    className="border-2 border-green-600 text-green-600 px-8 py-4 rounded-xl font-semibold hover:bg-green-50 transition-colors inline-flex items-center justify-center space-x-2"
-                  >
-                    <span>Learn More</span>
-                  </Link>
-                </div>
+
               </motion.div>
             </div>
           </div>
@@ -379,13 +369,13 @@ export default function CloudSolutionsPage() {
                 Transform your infrastructure with Seyyone&apos;s cloud solutions. Get a free cloud readiness assessment today.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link
-                  href="/contact"
+                <button
+                  onClick={() => setIsModalOpen(true)}
                   className="bg-white text-green-600 px-8 py-4 rounded-xl font-semibold hover:bg-gray-100 transition-colors shadow-lg inline-flex items-center justify-center space-x-2"
                 >
                   <span>Request Assessment</span>
                   <ArrowRight size={20} />
-                </Link>
+                </button>
                 <Link
                   href="/technology"
                   className="border-2 border-white text-white px-8 py-4 rounded-xl font-semibold hover:bg-white hover:text-green-600 transition-colors inline-flex items-center justify-center space-x-2"
@@ -399,6 +389,11 @@ export default function CloudSolutionsPage() {
 
         <ContactInfo />
       </main>
+      <TechnologyContactModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        initialService="Cloud Solutions"
+      />
       <Footer />
     </>
   )

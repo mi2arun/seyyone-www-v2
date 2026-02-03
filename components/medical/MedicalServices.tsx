@@ -115,7 +115,7 @@ const MedicalServices = () => {
             <br />Back Office Solutions
           </h2>
           <p className="text-xl text-gray-600">
-            HIPAA-compliant medical services designed to streamline your healthcare operations 
+            HIPAA-compliant medical services designed to streamline your healthcare operations
             and improve patient care efficiency.
           </p>
         </motion.div>
@@ -146,9 +146,9 @@ const MedicalServices = () => {
 
                   {/* Icon */}
                   <div className="flex items-center justify-center w-16 h-16 bg-gradient-to-r from-blue-100 to-cyan-100 rounded-2xl mb-6 group-hover:from-blue-600 group-hover:to-cyan-600 transition-all duration-300">
-                    <IconComponent 
-                      size={28} 
-                      className="text-blue-600 group-hover:text-white transition-colors duration-300" 
+                    <IconComponent
+                      size={28}
+                      className="text-blue-600 group-hover:text-white transition-colors duration-300"
                     />
                   </div>
 
@@ -156,7 +156,7 @@ const MedicalServices = () => {
                   <h3 className="text-xl font-bold text-gray-900 mb-4 group-hover:text-blue-600 transition-colors">
                     {service.title}
                   </h3>
-                  
+
                   <p className="text-gray-600 mb-6 leading-relaxed">
                     {service.description}
                   </p>
@@ -188,36 +188,7 @@ const MedicalServices = () => {
           })}
         </motion.div>
 
-        {/* Bottom CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.4, duration: 0.6 }}
-          className="text-center mt-16"
-        >
-          <div className="bg-gradient-to-r from-blue-600 to-cyan-600 rounded-2xl p-8 text-white shadow-2xl">
-            <div className="flex items-center justify-center space-x-2 mb-4">
-              <Clock className="text-blue-200" size={24} />
-              <Shield className="text-green-300" size={24} />
-            </div>
-            <h3 className="text-2xl font-bold mb-4">
-              Ready to Streamline Your Healthcare Operations?
-            </h3>
-            <p className="text-blue-100 mb-6 max-w-2xl mx-auto">
-              Join 50+ healthcare providers who trust Seyyone with their critical 
-              back office operations. HIPAA-compliant, secure, and reliable.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-white text-blue-600 px-8 py-3 rounded-xl font-semibold hover:bg-blue-50 transition-colors shadow-lg">
-                Get Free Consultation
-              </button>
-              <button className="border-2 border-white text-white px-8 py-3 rounded-xl font-semibold hover:bg-white hover:text-blue-600 transition-colors">
-                View Case Studies
-              </button>
-            </div>
-          </div>
-        </motion.div>
+
       </div>
     </section>
   )

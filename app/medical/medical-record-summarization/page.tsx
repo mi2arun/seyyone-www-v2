@@ -7,7 +7,11 @@ import { motion } from 'framer-motion'
 import { FileCheck, CheckCircle, Clock, Shield, Scale, ArrowRight, FileText, BookOpen, AlertCircle } from 'lucide-react'
 import Link from 'next/link'
 
+import { useState } from 'react'
+import MedicalContactModal from '@/components/medical/MedicalContactModal'
+
 export default function MedicalRecordSummarizationPage() {
+  const [isModalOpen, setIsModalOpen] = useState(false)
   const features = [
     {
       icon: FileCheck,
@@ -133,21 +137,7 @@ export default function MedicalRecordSummarizationPage() {
                   Transform hundreds of pages into clear, actionable summaries that save time and support decision-making.
                 </p>
 
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Link
-                    href="/contact"
-                    className="bg-gradient-to-r from-purple-600 to-indigo-600 text-white px-8 py-4 rounded-xl font-semibold hover:shadow-lg transition-all duration-300 inline-flex items-center justify-center space-x-2"
-                  >
-                    <span>Get Started</span>
-                    <ArrowRight size={20} />
-                  </Link>
-                  <Link
-                    href="#features"
-                    className="border-2 border-purple-600 text-purple-600 px-8 py-4 rounded-xl font-semibold hover:bg-purple-50 transition-colors inline-flex items-center justify-center space-x-2"
-                  >
-                    <span>Learn More</span>
-                  </Link>
-                </div>
+
               </motion.div>
             </div>
           </div>
@@ -368,13 +358,13 @@ export default function MedicalRecordSummarizationPage() {
                 Get a free sample summary for your next case.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link
-                  href="/contact"
+                <button
+                  onClick={() => setIsModalOpen(true)}
                   className="bg-white text-purple-600 px-8 py-4 rounded-xl font-semibold hover:bg-gray-100 transition-colors shadow-lg inline-flex items-center justify-center space-x-2"
                 >
                   <span>Request Sample Summary</span>
                   <ArrowRight size={20} />
-                </Link>
+                </button>
                 <Link
                   href="/medical"
                   className="border-2 border-white text-white px-8 py-4 rounded-xl font-semibold hover:bg-white hover:text-purple-600 transition-colors inline-flex items-center justify-center space-x-2"
@@ -388,6 +378,11 @@ export default function MedicalRecordSummarizationPage() {
 
         <ContactInfo />
       </main>
+      <MedicalContactModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        initialService="Medical Record Summarization"
+      />
       <Footer />
     </>
   )

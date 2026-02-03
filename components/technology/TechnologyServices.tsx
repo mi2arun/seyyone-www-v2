@@ -15,7 +15,7 @@ import {
   Zap
 } from 'lucide-react'
 
-const TechnologyServices = () => {
+const TechnologyServices = ({ onOpenModal }: { onOpenModal: () => void }) => {
   const services = [
     {
       icon: Cloud,
@@ -216,13 +216,13 @@ const TechnologyServices = () => {
               Let&apos;s build the future together with cutting-edge technology solutions.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href="/contact"
+              <button
+                onClick={onOpenModal}
                 className="bg-white text-purple-600 px-8 py-3 rounded-xl font-semibold hover:bg-gray-100 transition-colors shadow-lg inline-flex items-center justify-center space-x-2"
               >
                 <span>Start Your Project</span>
                 <ArrowRight size={20} />
-              </a>
+              </button>
               <a
                 href="#projects"
                 className="border-2 border-white text-white px-8 py-3 rounded-xl font-semibold hover:bg-white hover:text-purple-600 transition-colors inline-flex items-center justify-center space-x-2"

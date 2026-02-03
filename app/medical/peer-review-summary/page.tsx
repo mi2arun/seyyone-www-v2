@@ -7,7 +7,11 @@ import { motion } from 'framer-motion'
 import { Stethoscope, CheckCircle, FileCheck, Shield, Award, ArrowRight, BookOpen, AlertCircle, TrendingUp } from 'lucide-react'
 import Link from 'next/link'
 
+import { useState } from 'react'
+import MedicalContactModal from '@/components/medical/MedicalContactModal'
+
 export default function PeerReviewSummaryPage() {
+  const [isModalOpen, setIsModalOpen] = useState(false)
   const features = [
     {
       icon: FileCheck,
@@ -133,21 +137,7 @@ export default function PeerReviewSummaryPage() {
                   Our board-certified physicians provide objective clinical evaluations to support quality improvement initiatives.
                 </p>
 
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Link
-                    href="/contact"
-                    className="bg-gradient-to-r from-teal-600 to-emerald-600 text-white px-8 py-4 rounded-xl font-semibold hover:shadow-lg transition-all duration-300 inline-flex items-center justify-center space-x-2"
-                  >
-                    <span>Get Started</span>
-                    <ArrowRight size={20} />
-                  </Link>
-                  <Link
-                    href="#features"
-                    className="border-2 border-teal-600 text-teal-600 px-8 py-4 rounded-xl font-semibold hover:bg-teal-50 transition-colors inline-flex items-center justify-center space-x-2"
-                  >
-                    <span>Learn More</span>
-                  </Link>
-                </div>
+
               </motion.div>
             </div>
           </div>
@@ -368,13 +358,13 @@ export default function PeerReviewSummaryPage() {
                 Request a consultation today.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link
-                  href="/contact"
+                <button
+                  onClick={() => setIsModalOpen(true)}
                   className="bg-white text-teal-600 px-8 py-4 rounded-xl font-semibold hover:bg-gray-100 transition-colors shadow-lg inline-flex items-center justify-center space-x-2"
                 >
                   <span>Request Consultation</span>
                   <ArrowRight size={20} />
-                </Link>
+                </button>
                 <Link
                   href="/medical"
                   className="border-2 border-white text-white px-8 py-4 rounded-xl font-semibold hover:bg-white hover:text-teal-600 transition-colors inline-flex items-center justify-center space-x-2"
@@ -388,6 +378,11 @@ export default function PeerReviewSummaryPage() {
 
         <ContactInfo />
       </main>
+      <MedicalContactModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        initialService="Medical Peer Review"
+      />
       <Footer />
     </>
   )

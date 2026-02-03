@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 import { Quote, Star, Building, User, CheckCircle, ArrowRight } from 'lucide-react'
 import Link from 'next/link'
 
-const MedicalTestimonials = () => {
+const MedicalTestimonials = ({ onOpenModal }: { onOpenModal: () => void }) => {
   const testimonials = [
     {
       name: "Dr. Sarah Johnson",
@@ -138,7 +138,7 @@ const MedicalTestimonials = () => {
                 variants={itemVariants}
                 className="group"
               >
-                <div className="h-full bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 group-hover:border-blue-200">
+                <div className="h-full bg-white rounded-2xl p-8 shadow-[0_4px_20px_-10px_rgba(0,0,0,0.1)] hover:shadow-[0_25px_50px_-12px_rgba(0,0,0,0.2)] transition-all duration-500 border border-gray-100 hover:border-blue-200 group-hover:-translate-y-1">
                   {/* Rating */}
                   <div className="flex items-center space-x-1 mb-6">
                     {[...Array(testimonial.rating)].map((_, i) => (
@@ -217,13 +217,13 @@ const MedicalTestimonials = () => {
               Schedule a no-obligation consultation to discuss your unique needs and how Seyyone can help streamline your operations and technology solutions.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                href="/contact"
+              <button
+                onClick={onOpenModal}
                 className="bg-white text-blue-600 px-8 py-3 rounded-xl font-semibold hover:bg-blue-50 transition-colors shadow-lg inline-flex items-center justify-center group"
               >
                 <span>Schedule Free Consultation</span>
                 <ArrowRight size={20} className="ml-2 transition-transform group-hover:translate-x-1" />
-              </Link>
+              </button>
               <Link
                 href="/medical"
                 className="border-2 border-white text-white px-8 py-3 rounded-xl font-semibold hover:bg-white hover:text-blue-600 transition-colors inline-flex items-center justify-center"

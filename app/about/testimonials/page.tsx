@@ -123,10 +123,10 @@ export default function TestimonialsPage() {
                                     whileInView={{ opacity: 1, y: 0 }}
                                     viewport={{ once: true }}
                                     transition={{ delay: index * 0.1, duration: 0.6 }}
-                                    className="relative p-8 transition-all duration-300 bg-gray-50 border border-gray-100 rounded-3xl hover:bg-white hover:shadow-2xl group flex flex-col"
+                                    className="relative p-8 transition-all duration-500 bg-white border border-gray-100 rounded-3xl shadow-[0_4px_20px_-10px_rgba(0,0,0,0.1)] hover:shadow-[0_25px_50px_-12px_rgba(0,0,0,0.2)] group flex flex-col hover:-translate-y-1"
                                 >
-                                    <div className="absolute top-8 right-8 text-blue-100 transition-colors group-hover:text-blue-50">
-                                        <Quote size={64} fill="currentColor" />
+                                    <div className="absolute top-6 right-6 text-blue-100/50 transition-colors group-hover:text-blue-100/80">
+                                        <Quote size={32} fill="currentColor" />
                                     </div>
 
                                     <div className="relative z-10 flex flex-col h-full">

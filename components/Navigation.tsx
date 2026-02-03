@@ -94,7 +94,7 @@ const Navigation = () => {
       type: 'dropdown',
       href: '/career',
       items: [
-        { name: 'Current Openings', href: '/open-positions' },
+        { name: 'Current Openings', href: '/career#open-positions' },
       ]
     }
   ]

@@ -20,7 +20,7 @@ export default function CareerPage() {
               <div className="inline-flex items-center px-6 py-3 bg-purple-100 text-purple-700 rounded-full text-sm font-semibold mb-6">
                 Join Our Team
               </div>
-              
+
               <h1 className="text-5xl md:text-7xl font-bold mb-8">
                 <span className="text-gray-900">Innovators &</span>
                 <br />
@@ -28,9 +28,9 @@ export default function CareerPage() {
                   Problem Solvers
                 </span>
               </h1>
-              
+
               <p className="text-xl text-gray-600 leading-relaxed mb-12 max-w-3xl mx-auto">
-                Join our team of passionate technology professionals dedicated to delivering exceptional 
+                Join our team of passionate technology professionals dedicated to delivering exceptional
                 IT solutions and Healthcare KPO services. Be part of something extraordinary.
               </p>
             </div>
@@ -48,7 +48,7 @@ export default function CareerPage() {
                 We foster an inclusive workplace that values diverse perspectives and empowers individual growth.
               </p>
             </div>
-            
+
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {[
                 {
@@ -106,7 +106,7 @@ export default function CareerPage() {
                 <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
                   Why Choose Seyyone?
                 </h2>
-                
+
                 <div className="space-y-6">
                   {[
                     {
@@ -146,10 +146,10 @@ export default function CareerPage() {
                   ))}
                 </div>
               </div>
-              
+
               <div className="bg-white p-8 rounded-2xl shadow-xl">
                 <h3 className="text-2xl font-bold text-gray-900 mb-6">Company Overview</h3>
-                
+
                 <div className="space-y-4">
                   <div className="flex justify-between items-center py-3 border-b border-gray-100">
                     <span className="text-gray-600">Experience</span>
@@ -178,7 +178,7 @@ export default function CareerPage() {
         </section>
 
         {/* Current Openings */}
-        <section className="py-20 bg-white">
+        <section id="open-positions" className="py-20 bg-white">
           <div className="container">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
@@ -188,7 +188,7 @@ export default function CareerPage() {
                 Join our growing team and make a difference in Healthcare and Technology sectors.
               </p>
             </div>
-            
+
             <div className="max-w-4xl mx-auto space-y-8">
               {[
                 {
@@ -258,9 +258,9 @@ export default function CareerPage() {
                       Apply Now
                     </button>
                   </div>
-                  
+
                   <p className="text-gray-700 mb-6 leading-relaxed">{job.description}</p>
-                  
+
                   <div>
                     <h4 className="font-semibold text-gray-900 mb-3">Requirements:</h4>
                     <ul className="space-y-2">
@@ -275,12 +275,12 @@ export default function CareerPage() {
                 </div>
               ))}
             </div>
-            
+
             <div className="text-center mt-12">
               <div className="bg-gradient-to-r from-purple-600 to-blue-600 text-white p-8 rounded-2xl max-w-2xl mx-auto">
                 <h3 className="text-2xl font-bold mb-4">Don&rsquo;t See Your Role?</h3>
                 <p className="mb-6">
-                  We&rsquo;re always looking for talented individuals to join our team. 
+                  We&rsquo;re always looking for talented individuals to join our team.
                   Send us your resume and let us know how you can contribute to our success.
                 </p>
                 <button className="bg-white text-purple-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">

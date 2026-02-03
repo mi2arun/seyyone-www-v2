@@ -7,7 +7,11 @@ import { motion } from 'framer-motion'
 import { Database, CheckCircle, Server, Shield, Clock, ArrowRight, Monitor, Settings, AlertCircle, Award } from 'lucide-react'
 import Link from 'next/link'
 
+import { useState } from 'react'
+import TechnologyContactModal from '@/components/technology/TechnologyContactModal'
+
 export default function RemoteHardwareInfraPage() {
+  const [isModalOpen, setIsModalOpen] = useState(false)
   const features = [
     {
       icon: Monitor,
@@ -137,21 +141,7 @@ export default function RemoteHardwareInfraPage() {
                   24/7 monitoring, maintenance, and support to keep your infrastructure running optimally.
                 </p>
 
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Link
-                    href="/contact"
-                    className="bg-gradient-to-r from-teal-600 to-green-600 text-white px-8 py-4 rounded-xl font-semibold hover:shadow-lg transition-all duration-300 inline-flex items-center justify-center space-x-2"
-                  >
-                    <span>Get Started</span>
-                    <ArrowRight size={20} />
-                  </Link>
-                  <Link
-                    href="#features"
-                    className="border-2 border-teal-600 text-teal-600 px-8 py-4 rounded-xl font-semibold hover:bg-teal-50 transition-colors inline-flex items-center justify-center space-x-2"
-                  >
-                    <span>Learn More</span>
-                  </Link>
-                </div>
+
               </motion.div>
             </div>
           </div>
@@ -334,13 +324,13 @@ export default function RemoteHardwareInfraPage() {
                 Get a free infrastructure assessment today.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link
-                  href="/contact"
+                <button
+                  onClick={() => setIsModalOpen(true)}
                   className="bg-white text-teal-600 px-8 py-4 rounded-xl font-semibold hover:bg-gray-100 transition-colors shadow-lg inline-flex items-center justify-center space-x-2"
                 >
                   <span>Request Assessment</span>
                   <ArrowRight size={20} />
-                </Link>
+                </button>
                 <Link
                   href="/technology"
                   className="border-2 border-white text-white px-8 py-4 rounded-xl font-semibold hover:bg-white hover:text-teal-600 transition-colors inline-flex items-center justify-center space-x-2"
@@ -354,6 +344,11 @@ export default function RemoteHardwareInfraPage() {
 
         <ContactInfo />
       </main>
+      <TechnologyContactModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        initialService="Remote Hardware Infrastructure"
+      />
       <Footer />
     </>
   )

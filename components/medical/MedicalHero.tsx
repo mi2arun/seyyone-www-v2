@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { Stethoscope, Shield, Award, Users, Clock, CheckCircle } from 'lucide-react'
 
-const MedicalHero = () => {
+const MedicalHero = ({ onOpenModal }: { onOpenModal: () => void }) => {
   const highlights = [
     { icon: Shield, text: 'HIPAA Compliant', color: 'text-green-600' },
     { icon: Award, text: '25+ Years Experience', color: 'text-blue-600' },
@@ -115,18 +115,13 @@ const MedicalHero = () => {
               transition={{ delay: 1.0, duration: 0.8 }}
               className="flex flex-col sm:flex-row gap-4"
             >
-              <Link
-                href="/contact"
+              <button
+                onClick={onOpenModal}
                 className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-blue-600 to-cyan-600 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
               >
                 Get Healthcare Services
-              </Link>
-              <Link
-                href="#services"
-                className="inline-flex items-center justify-center px-8 py-4 bg-white text-blue-600 border-2 border-blue-200 font-semibold rounded-xl shadow-lg hover:shadow-xl hover:bg-blue-50 transition-all duration-300"
-              >
-                View All Services
-              </Link>
+              </button>
+
             </motion.div>
           </motion.div>
 
