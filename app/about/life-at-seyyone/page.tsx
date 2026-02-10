@@ -115,7 +115,7 @@ export default function LifeAtSeyyonePage() {
                                         whileInView={{ opacity: 1, y: 0 }}
                                         viewport={{ once: true }}
                                         transition={{ delay: index * 0.1 }}
-                                        className="p-8 transition-all duration-300 border border-gray-100 bg-gray-50 rounded-2xl hover:bg-white hover:shadow-xl group"
+                                        className="p-8 transition-all duration-300 border border-gray-100 bg-gray-50 rounded-2xl shadow-md hover:bg-white hover:shadow-xl group"
                                     >
                                         <div className="flex items-center justify-center mb-6 transition-colors bg-white shadow-sm w-14 h-14 rounded-xl group-hover:bg-blue-600">
                                             <Icon className="text-blue-600 group-hover:text-white" size={28} />
@@ -193,7 +193,6 @@ export default function LifeAtSeyyonePage() {
                     </div>
                 </section>
 
-                <ContactInfo />
             </main>
             <Footer />
         </>

@@ -1,7 +1,7 @@
 'use client'
 
 import Navigation from '@/components/Navigation'
-import ContactInfo from '@/components/ContactInfo'
+
 import Footer from '@/components/Footer'
 import { motion } from 'framer-motion'
 import { Code, CheckCircle, Layers, Shield, Zap, ArrowRight, Database, Globe, Award, TrendingUp } from 'lucide-react'
@@ -103,47 +103,45 @@ export default function SoftwareServicesPage() {
       <Navigation />
       <main>
         {/* Hero Section */}
-        <section className="min-h-screen relative overflow-hidden pt-20 bg-gradient-to-b from-orange-50 to-white">
+        <section className="relative pt-32 pb-20 overflow-hidden bg-gradient-to-b from-orange-50 to-white">
           <div className="absolute inset-0">
             <div className="absolute inset-0 bg-gradient-to-b from-orange-100 to-white" />
             <div className="absolute top-20 right-0 w-96 h-96 bg-gradient-to-br from-orange-200 to-red-100 opacity-30 rounded-full blur-3xl" />
             <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-red-200 to-orange-100 opacity-30 rounded-full blur-3xl" />
           </div>
 
-          <div className="relative z-10 min-h-screen flex items-center">
-            <div className="container">
+          <div className="container relative z-10">
+            <motion.div
+              className="max-w-4xl mx-auto text-center"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+            >
               <motion.div
-                className="max-w-4xl mx-auto text-center"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8 }}
+                className="inline-flex items-center px-6 py-3 bg-white/80 backdrop-blur-sm text-orange-700 rounded-full text-sm font-semibold mb-6 shadow-lg"
+                initial={{ scale: 0 }}
+                animate={{ scale: 1 }}
+                transition={{ delay: 0.2, type: 'spring' }}
               >
-                <motion.div
-                  className="inline-flex items-center px-6 py-3 bg-white/80 backdrop-blur-sm text-orange-700 rounded-full text-sm font-semibold mb-6 shadow-lg"
-                  initial={{ scale: 0 }}
-                  animate={{ scale: 1 }}
-                  transition={{ delay: 0.2, type: 'spring' }}
-                >
-                  <Code size={18} className="mr-2" />
-                  Bespoke Solutions
-                </motion.div>
-
-                <h1 className="text-5xl md:text-7xl font-bold mb-8">
-                  <span className="bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent">
-                    Software Services
-                  </span>
-                  <br />
-                  <span className="text-gray-900">& Development</span>
-                </h1>
-
-                <p className="text-xl text-gray-700 leading-relaxed mb-12 max-w-3xl mx-auto">
-                  Tailored software solutions built with modern technologies and best practices.
-                  From custom applications to enterprise systems, we deliver scalable software that drives business growth.
-                </p>
-
-
+                <Code size={18} className="mr-2" />
+                Bespoke Solutions
               </motion.div>
-            </div>
+
+              <h1 className="text-5xl md:text-7xl font-bold mb-8">
+                <span className="bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent">
+                  Software Services
+                </span>
+                <br />
+                <span className="text-gray-900">& Development</span>
+              </h1>
+
+              <p className="text-xl text-gray-700 leading-relaxed mb-12 max-w-3xl mx-auto">
+                Tailored software solutions built with modern technologies and best practices.
+                From custom applications to enterprise systems, we deliver scalable software that drives business growth.
+              </p>
+
+
+            </motion.div>
           </div>
         </section>
 
@@ -176,7 +174,7 @@ export default function SoftwareServicesPage() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: index * 0.1, duration: 0.6 }}
-                    className="bg-gradient-to-br from-orange-50 to-red-50 rounded-2xl p-8 hover:shadow-xl transition-all duration-300"
+                    className="bg-gradient-to-br from-orange-50 to-red-50 rounded-2xl p-8 shadow-md hover:shadow-xl transition-all duration-300"
                   >
                     <div className="w-16 h-16 bg-gradient-to-r from-orange-600 to-red-600 rounded-2xl flex items-center justify-center mb-6 shadow-lg">
                       <IconComponent className="text-white" size={28} />
@@ -365,7 +363,7 @@ export default function SoftwareServicesPage() {
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
                 Ready to Build Your Custom Software?
               </h2>
-              <p className="text-xl text-orange-100 mb-8">
+              <p className="text-xl   mb-8">
                 Let&apos;s create software that transforms your business. Schedule a free consultation with our development team today.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -387,7 +385,7 @@ export default function SoftwareServicesPage() {
           </div>
         </section>
 
-        <ContactInfo />
+
       </main>
       <TechnologyContactModal
         isOpen={isModalOpen}

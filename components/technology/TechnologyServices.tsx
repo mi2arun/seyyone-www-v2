@@ -195,44 +195,7 @@ const TechnologyServices = ({ onOpenModal }: { onOpenModal: () => void }) => {
           })}
         </motion.div>
 
-        {/* Bottom CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.6, duration: 0.6 }}
-          className="text-center mt-16"
-        >
-          <div className="bg-gradient-to-r from-purple-600 to-blue-600 rounded-2xl p-8 text-white shadow-2xl">
-            <div className="flex items-center justify-center space-x-2 mb-4">
-              <Zap className="text-yellow-300" size={24} />
-              <Shield className="text-green-300" size={24} />
-            </div>
-            <h3 className="text-2xl font-bold mb-4">
-              Ready to Transform Your Business with Technology?
-            </h3>
-            <p className="text-purple-100 mb-6 max-w-2xl mx-auto">
-              Join 100+ companies who trust Seyyone with their digital transformation journey.
-              Let&apos;s build the future together with cutting-edge technology solutions.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button
-                onClick={onOpenModal}
-                className="bg-white text-purple-600 px-8 py-3 rounded-xl font-semibold hover:bg-gray-100 transition-colors shadow-lg inline-flex items-center justify-center space-x-2"
-              >
-                <span>Start Your Project</span>
-                <ArrowRight size={20} />
-              </button>
-              <a
-                href="#projects"
-                className="border-2 border-white text-white px-8 py-3 rounded-xl font-semibold hover:bg-white hover:text-purple-600 transition-colors inline-flex items-center justify-center space-x-2"
-              >
-                <span>View Portfolio</span>
-                <ArrowRight size={20} />
-              </a>
-            </div>
-          </div>
-        </motion.div>
+
       </div>
     </section>
   )

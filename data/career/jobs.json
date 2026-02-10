@@ -1,0 +1,138 @@
+[
+    {
+        "id": "1",
+        "slug": "it-consultant",
+        "title": "IT Consultant",
+        "department": "Technology",
+        "type": "Full-time",
+        "location": "Coimbatore, India",
+        "description": "We are seeking an experienced IT Consultant to assess client IT needs and develop strategic roadmaps for digital transformation projects. You will work closely with stakeholders to understand business objectives and recommend technology solutions that drive efficiency and growth.",
+        "experience": "5+ years",
+        "requirements": [
+            "Bachelor's degree in Computer Science, Information Technology, or related field",
+            "Strong analytical and problem-solving skills",
+            "Proven experience in IT strategy and consulting",
+            "Excellent communication and presentation skills",
+            "Knowledge of cloud computing (AWS/Azure) and enterprise architecture",
+            "Ability to manage multiple projects simultaneously"
+        ],
+        "responsibilities": [
+            "Analyze client business processes and identify areas for technology improvement",
+            "Develop comprehensive IT strategies and implementation roadmaps",
+            "Collaborate with technical teams to ensure successful project delivery",
+            "Provide expert advice on technology trends and best practices",
+            "Conduct risk assessments and recommend security enhancements",
+            "Facilitate workshops and training sessions for client teams"
+        ],
+        "benefits": [
+            "Competitive salary and performance bonuses",
+            "Health insurance coverage",
+            "Professional development opportunities",
+            "Flexible work arrangements",
+            "Collaborative and innovative work environment"
+        ],
+        "postedDate": "2024-02-15"
+    },
+    {
+        "id": "2",
+        "slug": "help-desk-technician",
+        "title": "Help Desk Technician",
+        "department": "Support",
+        "type": "Full-time",
+        "location": "Coimbatore, India",
+        "description": "Join our support team as a Help Desk Technician, providing technical assistance to clients and resolving IT-related issues efficiently. You will be the first point of contact for technical support, ensuring high customer satisfaction through timely and effective problem resolution.",
+        "experience": "2+ years",
+        "requirements": [
+            "Strong communication and analytical skills",
+            "Experience in technical support or help desk role",
+            "Knowledge of common software (Office 365, Windows) and hardware issues",
+            "Customer service oriented mindset",
+            "Basic networking knowledge (TCP/IP, DNS, DHCP)",
+            "Certification in CompTIA A+ or similar is a plus"
+        ],
+        "responsibilities": [
+            "Respond to user inquiries via phone, email, and ticketing system",
+            "Diagnose and resolve technical hardware and software issues",
+            "Install, configure, and upgrade PC software and operating systems",
+            "Document support activities and resolutions in the ticketing system",
+            "Escalate complex issues to senior technical staff as needed",
+            "Provide basic user training on hardware and software usage"
+        ],
+        "benefits": [
+            "Comprehensive training program",
+            "Medical and dental insurance",
+            "Paid time off",
+            "Career advancement opportunities",
+            "Team building events"
+        ],
+        "postedDate": "2024-02-18"
+    },
+    {
+        "id": "3",
+        "slug": "medical-transcriptionist",
+        "title": "Medical Transcriptionist",
+        "department": "Healthcare KPO",
+        "type": "Full-time",
+        "location": "Coimbatore, India",
+        "description": "We are looking for skilled Medical Transcriptionists to convert audio recordings of medical dictations into accurate written reports. Accuracy and attention to detail are paramount in this role to ensure high-quality patient documentation.",
+        "experience": "2+ years",
+        "requirements": [
+            "Knowledge of medical terminology, anatomy, and physiology",
+            "Excellent typing skills (minimum 60 WPM) with high accuracy",
+            "Attention to detail and ability to spot errors",
+            "Healthcare background or certification in medical transcription",
+            "Good listening skills and familiarity with various accents",
+            "Proficiency with transcription software and tools"
+        ],
+        "responsibilities": [
+            "Listen to recorded dictations from healthcare professionals",
+            "Transcribe recordings into accurate medical reports and documents",
+            "Review and edit transcriptions for clarity and grammar",
+            "Ensure compliance with HIPAA regulations and patient confidentiality",
+            "Meet daily productivity and quality targets",
+            "Collaborate with quality assurance team for feedback and improvement"
+        ],
+        "benefits": [
+            "Performance-based incentives",
+            "Health and wellness programs",
+            "Flexible shift timings",
+            "Work-from-home options (for experienced candidates)",
+            "Continuous learning resources"
+        ],
+        "postedDate": "2024-02-20"
+    },
+    {
+        "id": "4",
+        "slug": "software-developer",
+        "title": "Software Developer",
+        "department": "Technology",
+        "type": "Full-time",
+        "location": "Coimbatore, India",
+        "description": "Seyyone is hiring talented Software Developers to design, develop, and maintain software applications using modern technologies. You will be part of an agile team building scalable solutions for our clients in healthcare and other industries.",
+        "experience": "3+ years",
+        "requirements": [
+            "Proficiency in programming languages (Java, Python, or JavaScript/TypeScript)",
+            "Experience with web development frameworks (React, Node.js, Spring Boot)",
+            "Strong understanding of database systems (SQL and NoSQL)",
+            "Familiarity with version control (Git) and CI/CD pipelines",
+            "Strong problem-solving abilities and logical thinking",
+            "Bachelor's degree in Computer Science or Engineering"
+        ],
+        "responsibilities": [
+            "Write clean, maintainable, and efficient code",
+            "Design and implement new features and functionality",
+            "Debug and resolve software defects and performance issues",
+            "Participate in code reviews and contribute to team knowledge sharing",
+            "Collaborate with designers and product managers to define requirements",
+            "Stay updated with emerging technologies and industry trends"
+        ],
+        "benefits": [
+            "Competitive compensation package",
+            "Remote work flexibility",
+            "Latest hardware and software tools",
+            "Stock options (for eligible roles)",
+            "Annual retreat and social gatherings"
+        ],
+        "postedDate": "2024-02-22"
+    }
+]

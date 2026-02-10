@@ -2,7 +2,7 @@
 
 import { useState, useEffect, Suspense } from 'react'
 import Navigation from '@/components/Navigation'
-import ContactInfo from '@/components/ContactInfo'
+
 import Footer from '@/components/Footer'
 import { motion, AnimatePresence } from 'framer-motion'
 import { BookOpen, FileText, FileCheck, MessageSquare, Award, Calendar, ArrowRight, User } from 'lucide-react'
@@ -127,7 +127,7 @@ function InsightsContent() {
       <Navigation />
       <main>
         {/* Hero Section */}
-        <section className="min-h-screen relative overflow-hidden pt-20 bg-gradient-to-b from-gray-50 to-gray-100">
+        <section className="relative pt-32 pb-20 overflow-hidden bg-gradient-to-b from-gray-50 to-gray-100">
           {/* Office Background */}
           <div className="absolute inset-0">
             <div className="absolute inset-0 bg-gradient-to-b from-gray-100 to-gray-200" />
@@ -142,64 +142,61 @@ function InsightsContent() {
             <div className="absolute left-0 top-0 w-1/2 h-full bg-gradient-to-r from-yellow-50/20 via-transparent to-transparent" />
           </div>
 
-          <div className="relative z-10 min-h-screen flex items-center">
-            {/* Hero Content */}
-            <div className="container">
+          <div className="container relative z-10">
+            <motion.div
+              className="max-w-4xl mx-auto text-center"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+            >
               <motion.div
-                className="max-w-4xl mx-auto text-center"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8 }}
+                className="inline-flex items-center px-6 py-3 bg-white/80 backdrop-blur-sm text-blue-700 rounded-full text-sm font-semibold mb-6 shadow-lg"
+                initial={{ scale: 0 }}
+                animate={{ scale: 1 }}
+                transition={{ delay: 0.2, type: "spring" }}
               >
-                <motion.div
-                  className="inline-flex items-center px-6 py-3 bg-white/80 backdrop-blur-sm text-blue-700 rounded-full text-sm font-semibold mb-6 shadow-lg"
-                  initial={{ scale: 0 }}
-                  animate={{ scale: 1 }}
-                  transition={{ delay: 0.2, type: "spring" }}
-                >
-                  <BookOpen size={18} className="mr-2" />
-                  Knowledge Center
-                </motion.div>
-
-                <h1 className="text-5xl md:text-7xl font-bold mb-8">
-                  <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                    Insights
-                  </span>
-                  <br />
-                  <span className="text-gray-900">& Resources</span>
-                </h1>
-
-                <p className="text-xl text-gray-700 leading-relaxed mb-12 max-w-3xl mx-auto bg-white/60 backdrop-blur-sm p-6 rounded-2xl shadow-lg">
-                  Explore our collection of blogs, articles, and case studies
-                  covering healthcare KPO and technology solutions.
-                </p>
-
-                {/* Category Navigation */}
-                <motion.div
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.6, duration: 0.8 }}
-                  className="flex flex-wrap justify-center gap-2"
-                >
-                  {categories.map((category) => {
-                    const IconComponent = category.icon
-                    return (
-                      <button
-                        key={category.id}
-                        onClick={() => setActiveCategory(category.id)}
-                        className={`flex items-center space-x-1.5 px-4 py-2 rounded-full text-sm font-semibold transition-all duration-300 shadow-md ${activeCategory === category.id
-                          ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white scale-105'
-                          : 'bg-white text-gray-700 hover:bg-gray-50'
-                          }`}
-                      >
-                        <IconComponent size={14} />
-                        <span>{category.name}</span>
-                      </button>
-                    )
-                  })}
-                </motion.div>
+                <BookOpen size={18} className="mr-2" />
+                Knowledge Center
               </motion.div>
-            </div>
+
+              <h1 className="text-5xl md:text-7xl font-bold mb-8">
+                <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                  Insights
+                </span>
+                <br />
+                <span className="text-gray-900">& Resources</span>
+              </h1>
+
+              <p className="text-xl text-gray-700 leading-relaxed mb-12 max-w-3xl mx-auto bg-white/60 backdrop-blur-sm p-6 rounded-2xl shadow-lg">
+                Explore our collection of blogs, articles, and case studies
+                covering healthcare KPO and technology solutions.
+              </p>
+
+              {/* Category Navigation */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.6, duration: 0.8 }}
+                className="flex flex-wrap justify-center gap-2"
+              >
+                {categories.map((category) => {
+                  const IconComponent = category.icon
+                  return (
+                    <button
+                      key={category.id}
+                      onClick={() => setActiveCategory(category.id)}
+                      className={`flex items-center space-x-1.5 px-4 py-2 rounded-full text-sm font-semibold transition-all duration-300 shadow-md ${activeCategory === category.id
+                        ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white scale-105'
+                        : 'bg-white text-gray-700 hover:bg-gray-50'
+                        }`}
+                    >
+                      <IconComponent size={14} />
+                      <span>{category.name}</span>
+                    </button>
+                  )
+                })}
+              </motion.div>
+            </motion.div>
           </div>
         </section>
 
@@ -322,7 +319,7 @@ function InsightsContent() {
           </div>
         </section>
 
-        <ContactInfo />
+
       </main>
       <Footer />
     </>

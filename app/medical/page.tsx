@@ -6,6 +6,8 @@ import MedicalHero from '@/components/medical/MedicalHero'
 import MedicalServices from '@/components/medical/MedicalServices'
 import MedicalTestimonials from '@/components/medical/MedicalTestimonials'
 import MedicalContactModal from '@/components/medical/MedicalContactModal'
+import MedicalInsights from '@/components/medical/MedicalInsights'
+import MedicalCTA from '@/components/medical/MedicalCTA'
 import Footer from '@/components/Footer'
 
 export default function MedicalPage() {
@@ -18,6 +20,8 @@ export default function MedicalPage() {
         <MedicalHero onOpenModal={() => setIsModalOpen(true)} />
         <MedicalServices />
         <MedicalTestimonials onOpenModal={() => setIsModalOpen(true)} />
+        <MedicalInsights />
+        <MedicalCTA onOpenModal={() => setIsModalOpen(true)} />
       </main>
       <MedicalContactModal
         isOpen={isModalOpen}

@@ -1,7 +1,7 @@
 'use client'
 
 import Navigation from '@/components/Navigation'
-import ContactInfo from '@/components/ContactInfo'
+
 import Footer from '@/components/Footer'
 import { motion } from 'framer-motion'
 import { Stethoscope, CheckCircle, FileCheck, Shield, Award, ArrowRight, BookOpen, AlertCircle, TrendingUp } from 'lucide-react'
@@ -99,52 +99,50 @@ export default function PeerReviewSummaryPage() {
       <Navigation />
       <main>
         {/* Hero Section */}
-        <section className="min-h-screen relative overflow-hidden pt-20 bg-gradient-to-b from-teal-50 to-white">
+        <section className="relative pt-32 pb-20 overflow-hidden bg-gradient-to-b from-teal-50 to-white">
           <div className="absolute inset-0">
             <div className="absolute inset-0 bg-gradient-to-b from-teal-100 to-white" />
             <div className="absolute top-20 right-0 w-96 h-96 bg-gradient-to-br from-teal-200 to-emerald-100 opacity-30 rounded-full blur-3xl" />
             <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-emerald-200 to-teal-100 opacity-30 rounded-full blur-3xl" />
           </div>
 
-          <div className="relative z-10 min-h-screen flex items-center">
-            <div className="container">
+          <div className="container relative z-10">
+            <motion.div
+              className="max-w-4xl mx-auto text-center"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+            >
               <motion.div
-                className="max-w-4xl mx-auto text-center"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8 }}
+                className="inline-flex items-center px-6 py-3 bg-white/80 backdrop-blur-sm text-teal-700 rounded-full text-sm font-semibold mb-6 shadow-lg"
+                initial={{ scale: 0 }}
+                animate={{ scale: 1 }}
+                transition={{ delay: 0.2, type: 'spring' }}
               >
-                <motion.div
-                  className="inline-flex items-center px-6 py-3 bg-white/80 backdrop-blur-sm text-teal-700 rounded-full text-sm font-semibold mb-6 shadow-lg"
-                  initial={{ scale: 0 }}
-                  animate={{ scale: 1 }}
-                  transition={{ delay: 0.2, type: 'spring' }}
-                >
-                  <Stethoscope size={18} className="mr-2" />
-                  Quality Assurance & Compliance
-                </motion.div>
-
-                <h1 className="text-5xl md:text-7xl font-bold mb-8">
-                  <span className="bg-gradient-to-r from-teal-600 to-emerald-600 bg-clip-text text-transparent">
-                    Peer Review
-                  </span>
-                  <br />
-                  <span className="text-gray-900">Summary Services</span>
-                </h1>
-
-                <p className="text-xl text-gray-700 leading-relaxed mb-12 max-w-3xl mx-auto">
-                  Expert peer review documentation and analysis for quality assurance and compliance.
-                  Our board-certified physicians provide objective clinical evaluations to support quality improvement initiatives.
-                </p>
-
-
+                <Stethoscope size={18} className="mr-2" />
+                Quality Assurance & Compliance
               </motion.div>
-            </div>
+
+              <h1 className="text-5xl md:text-7xl font-bold mb-8">
+                <span className="bg-gradient-to-r from-teal-600 to-emerald-600 bg-clip-text text-transparent">
+                  Peer Review
+                </span>
+                <br />
+                <span className="text-gray-900">Summary Services</span>
+              </h1>
+
+              <p className="text-xl text-gray-700 leading-relaxed mb-12 max-w-3xl mx-auto">
+                Expert peer review documentation and analysis for quality assurance and compliance.
+                Our board-certified physicians provide objective clinical evaluations to support quality improvement initiatives.
+              </p>
+
+
+            </motion.div>
           </div>
         </section>
 
         {/* Features Section */}
-        <section id="features" className="py-20 bg-white">
+        <section id="features" className="pt-12 pb-20 bg-white">
           <div className="container">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -172,7 +170,7 @@ export default function PeerReviewSummaryPage() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: index * 0.1, duration: 0.6 }}
-                    className="bg-gradient-to-br from-teal-50 to-emerald-50 rounded-2xl p-8 hover:shadow-xl transition-all duration-300"
+                    className="bg-gradient-to-br from-teal-50 to-emerald-50 rounded-2xl p-8 shadow-md hover:shadow-xl transition-all duration-300"
                   >
                     <div className="w-16 h-16 bg-gradient-to-r from-teal-600 to-emerald-600 rounded-2xl flex items-center justify-center mb-6 shadow-lg">
                       <IconComponent className="text-white" size={28} />
@@ -353,7 +351,7 @@ export default function PeerReviewSummaryPage() {
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
                 Ready to Enhance Your Quality Assurance Program?
               </h2>
-              <p className="text-xl text-teal-100 mb-8">
+              <p className="text-xl   mb-8">
                 Partner with Seyyone for expert peer review services that support clinical excellence and regulatory compliance.
                 Request a consultation today.
               </p>
@@ -376,7 +374,7 @@ export default function PeerReviewSummaryPage() {
           </div>
         </section>
 
-        <ContactInfo />
+
       </main>
       <MedicalContactModal
         isOpen={isModalOpen}

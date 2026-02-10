@@ -1,7 +1,7 @@
 'use client'
 
 import Navigation from '@/components/Navigation'
-import ContactInfo from '@/components/ContactInfo'
+
 import Footer from '@/components/Footer'
 import { motion } from 'framer-motion'
 import { Database, CheckCircle, Server, Shield, Clock, ArrowRight, Monitor, Settings, AlertCircle, Award } from 'lucide-react'
@@ -103,47 +103,45 @@ export default function RemoteHardwareInfraPage() {
       <Navigation />
       <main>
         {/* Hero */}
-        <section className="min-h-screen relative overflow-hidden pt-20 bg-gradient-to-b from-teal-50 to-white">
+        <section className="relative pt-32 pb-20 overflow-hidden bg-gradient-to-b from-teal-50 to-white">
           <div className="absolute inset-0">
             <div className="absolute inset-0 bg-gradient-to-b from-teal-100 to-white" />
             <div className="absolute top-20 right-0 w-96 h-96 bg-gradient-to-br from-teal-200 to-green-100 opacity-30 rounded-full blur-3xl" />
             <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-green-200 to-teal-100 opacity-30 rounded-full blur-3xl" />
           </div>
 
-          <div className="relative z-10 min-h-screen flex items-center">
-            <div className="container">
+          <div className="container relative z-10">
+            <motion.div
+              className="max-w-4xl mx-auto text-center"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+            >
               <motion.div
-                className="max-w-4xl mx-auto text-center"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8 }}
+                className="inline-flex items-center px-6 py-3 bg-white/80 backdrop-blur-sm text-teal-700 rounded-full text-sm font-semibold mb-6 shadow-lg"
+                initial={{ scale: 0 }}
+                animate={{ scale: 1 }}
+                transition={{ delay: 0.2, type: 'spring' }}
               >
-                <motion.div
-                  className="inline-flex items-center px-6 py-3 bg-white/80 backdrop-blur-sm text-teal-700 rounded-full text-sm font-semibold mb-6 shadow-lg"
-                  initial={{ scale: 0 }}
-                  animate={{ scale: 1 }}
-                  transition={{ delay: 0.2, type: 'spring' }}
-                >
-                  <Database size={18} className="mr-2" />
-                  Always On
-                </motion.div>
-
-                <h1 className="text-5xl md:text-7xl font-bold mb-8">
-                  <span className="bg-gradient-to-r from-teal-600 to-green-600 bg-clip-text text-transparent">
-                    Remote Hardware
-                  </span>
-                  <br />
-                  <span className="text-gray-900">Infrastructure</span>
-                </h1>
-
-                <p className="text-xl text-gray-700 leading-relaxed mb-12 max-w-3xl mx-auto">
-                  Remote infrastructure management and hardware support for seamless IT operations.
-                  24/7 monitoring, maintenance, and support to keep your infrastructure running optimally.
-                </p>
-
-
+                <Database size={18} className="mr-2" />
+                Always On
               </motion.div>
-            </div>
+
+              <h1 className="text-5xl md:text-7xl font-bold mb-8">
+                <span className="bg-gradient-to-r from-teal-600 to-green-600 bg-clip-text text-transparent">
+                  Remote Hardware
+                </span>
+                <br />
+                <span className="text-gray-900">Infrastructure</span>
+              </h1>
+
+              <p className="text-xl text-gray-700 leading-relaxed mb-12 max-w-3xl mx-auto">
+                Remote infrastructure management and hardware support for seamless IT operations.
+                24/7 monitoring, maintenance, and support to keep your infrastructure running optimally.
+              </p>
+
+
+            </motion.div>
           </div>
         </section>
 
@@ -176,7 +174,7 @@ export default function RemoteHardwareInfraPage() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: index * 0.1, duration: 0.6 }}
-                    className="bg-gradient-to-br from-teal-50 to-green-50 rounded-2xl p-8 hover:shadow-xl transition-all duration-300"
+                    className="bg-gradient-to-br from-teal-50 to-green-50 rounded-2xl p-8 shadow-md hover:shadow-xl transition-all duration-300"
                   >
                     <div className="w-16 h-16 bg-gradient-to-r from-teal-600 to-green-600 rounded-2xl flex items-center justify-center mb-6 shadow-lg">
                       <IconComponent className="text-white" size={28} />
@@ -319,7 +317,7 @@ export default function RemoteHardwareInfraPage() {
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
                 Ready for Always-On Infrastructure?
               </h2>
-              <p className="text-xl text-teal-100 mb-8">
+              <p className="text-xl   mb-8">
                 Let us manage your hardware infrastructure remotely with 24/7 monitoring and expert support.
                 Get a free infrastructure assessment today.
               </p>
@@ -342,7 +340,7 @@ export default function RemoteHardwareInfraPage() {
           </div>
         </section>
 
-        <ContactInfo />
+
       </main>
       <TechnologyContactModal
         isOpen={isModalOpen}
