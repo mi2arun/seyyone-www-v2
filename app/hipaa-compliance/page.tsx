@@ -58,7 +58,7 @@ export default function HIPAACompliancePage() {
               </h2>
               <div className="space-y-6 text-gray-600 text-lg leading-relaxed">
                 <p>
-                  As a premier Healthcare KPO, Seyyone understands that the security of Personal Health Information (PHI) is critical to our clients' trust. We have built our entire infrastructure and culture around a &quot;Security First&quot; approach.
+                  As a premier Healthcare KPO, Seyyone understands that the security of Personal Health Information (PHI) is critical to our clients&apos; trust. We have built our entire infrastructure and culture around a &quot;Security First&quot; approach.
                 </p>
                 <p>
                   Our HIPAA compliance program is not just a checkbox; it is a continuously evolving system of safeguards designed to stay ahead of emerging threats and changing regulations. Our team is trained periodically, and our systems are audited regularly to ensure total adherence to the Health Insurance Portability and Accountability Act.

@@ -3,6 +3,7 @@
 import { motion, useAnimation } from 'framer-motion'
 import { ArrowRight, Shield, Globe, Award, Sparkles, TrendingUp, Stethoscope, Code, Heart, Brain, Mic, Volume2, Headphones, FileText, Clock, CheckCircle, Search, Database, Activity, Clipboard, Users, Briefcase, Rocket, UserCheck, CreditCard, FileCheck } from 'lucide-react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { useEffect } from 'react'
 
 const Hero = () => {
@@ -1453,7 +1454,13 @@ const Hero = () => {
                         key={`${setIndex}-${idx}`}
                         className="flex items-center justify-center w-52 h-32 bg-white rounded-2xl border border-gray-200 shadow-md hover:shadow-lg transition-shadow p-5"
                       >
-                        <img src={client.img} alt={client.name} className="max-w-full max-h-full object-contain" />
+                        <Image
+                          src={client.img}
+                          alt={client.name}
+                          width={200}
+                          height={120}
+                          className="max-w-full max-h-full object-contain"
+                        />
                       </div>
                     ))}
                   </div>
@@ -1547,9 +1554,11 @@ const Hero = () => {
             {/* Map - Desktop */}
             <div className="hidden md:block relative mb-8">
               <div className="relative h-[350px] overflow-hidden">
-                <img
+                <Image
                   src="https://seyyone.com/wp-content/themes/seyyone/assets/images/contact/01.webp"
                   alt="World Map"
+                  width={1200}
+                  height={350}
                   className="w-full h-auto max-h-[350px] object-contain"
                 />
 
