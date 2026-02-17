@@ -1,8 +1,8 @@
 export const FORMSPREE_CONFIG = {
     ENDPOINTS: {
-        CAREERS: 'manjgerv',
-        CONTACT: 'manjgerv', // Standard client contact
-        MEDICAL: 'manjgerv', // Medical consultation
-        TECHNOLOGY: 'manjgerv', // tech solutions
+        CAREERS: 'mjkeqbpa',
+        CONTACT: 'mqadvkwb', // Standard client contact
+        MEDICAL: 'mqadvkwb', // Medical consultation
+        TECHNOLOGY: 'mqadvkwb', // tech solutions
     }
 };

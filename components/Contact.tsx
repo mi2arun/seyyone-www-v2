@@ -47,11 +47,18 @@ const Contact = () => {
 
     const form = e.currentTarget
     const data = new FormData(form)
+    const selectedService = data.get('Service') as string
+
+    // Determine specific request type based on service
+    let requestType = 'General Client Request'
+    if (selectedService && selectedService !== 'Select a service') {
+      requestType = `Client Request: ${selectedService}`
+    }
 
     // Add metadata
-    data.append('Submission Type', 'General Business Inquiry')
+    data.append('Submission Type', requestType)
     data.append('Source', 'Main Contact Page')
-    data.append('subject', 'New Contact Form Submission')
+    data.append('subject', selectedService ? `Client Request: ${selectedService}` : 'New Client Request')
 
     try {
       const response = await fetch(`https://formspree.io/f/${FORMSPREE_CONFIG.ENDPOINTS.CONTACT}`, {

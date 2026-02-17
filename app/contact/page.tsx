@@ -5,6 +5,8 @@ import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer'
 import { Mail, Phone, MapPin, Clock, Send, Globe, Shield, Award, Users, ArrowRight, Star } from 'lucide-react'
 import { useState } from 'react'
+import { FORMSPREE_CONFIG } from '@/lib/constants'
+import { CheckCircle2, AlertCircle } from 'lucide-react'
 
 export default function ContactPage() {
   const [selectedService, setSelectedService] = useState('')
@@ -17,6 +19,8 @@ export default function ContactPage() {
     service: '',
     message: ''
   })
+  const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle')
+  const [errorMessage, setErrorMessage] = useState('')
 
   const contactInfo = [
     {
@@ -60,6 +64,7 @@ export default function ContactPage() {
     { flag: '🇨🇦', country: 'Canada' },
     { flag: '🇦🇺', country: 'Australia' },
     { flag: '🇮🇪', country: 'Ireland' },
+    { flag: '🇮🇱', country: 'Israel' },
     { flag: '🇩🇪', country: 'Germany' }
   ]
 
@@ -88,10 +93,56 @@ export default function ContactPage() {
     }))
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    // Handle form submission here
-    console.log('Form submitted:', formData)
+    setStatus('submitting')
+
+    const data = new FormData()
+    Object.entries(formData).forEach(([key, value]) => {
+      data.append(key, value)
+    })
+
+    // Determine specific request type based on service
+    let requestType = 'General Client Request'
+    if (formData.service && formData.service !== 'Select a service') {
+      requestType = `Client Request: ${formData.service}`
+    }
+
+    // Add metadata
+    data.append('Submission Type', requestType)
+    data.append('Source', 'Main Contact Page')
+    data.append('subject', formData.service ? `Client Request: ${formData.service}` : 'New Client Request')
+
+    try {
+      const response = await fetch(`https://formspree.io/f/${FORMSPREE_CONFIG.ENDPOINTS.CONTACT}`, {
+        method: 'POST',
+        body: data,
+        headers: {
+          'Accept': 'application/json'
+        }
+      })
+
+      if (response.ok) {
+        setStatus('success')
+        setFormData({
+          firstName: '',
+          lastName: '',
+          email: '',
+          phone: '',
+          organization: '',
+          service: '',
+          message: ''
+        })
+        setTimeout(() => setStatus('idle'), 5000)
+      } else {
+        const responseData = await response.json()
+        setErrorMessage(responseData.errors?.[0]?.message || 'Something went wrong. Please try again.')
+        setStatus('error')
+      }
+    } catch (error) {
+      setErrorMessage('Network error. Please check your connection.')
+      setStatus('error')
+    }
   }
 
   return (
@@ -165,141 +216,173 @@ export default function ContactPage() {
                     </h3>
                   </div>
 
-                  <form onSubmit={handleSubmit} className="space-y-6">
-                    <div className="grid md:grid-cols-2 gap-6">
-                      <div>
-                        <label className="block text-sm font-semibold text-gray-700 mb-2">
-                          First Name *
-                        </label>
-                        <input
-                          type="text"
-                          name="firstName"
-                          value={formData.firstName}
-                          onChange={handleInputChange}
-                          className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
-                          placeholder="John"
-                          required
-                        />
-                      </div>
-                      <div>
-                        <label className="block text-sm font-semibold text-gray-700 mb-2">
-                          Last Name *
-                        </label>
-                        <input
-                          type="text"
-                          name="lastName"
-                          value={formData.lastName}
-                          onChange={handleInputChange}
-                          className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
-                          placeholder="Doe"
-                          required
-                        />
-                      </div>
-                    </div>
-
-                    <div className="grid md:grid-cols-2 gap-6">
-                      <div>
-                        <label className="block text-sm font-semibold text-gray-700 mb-2">
-                          Email Address *
-                        </label>
-                        <input
-                          type="email"
-                          name="email"
-                          value={formData.email}
-                          onChange={handleInputChange}
-                          className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
-                          placeholder="john.doe@company.com"
-                          required
-                        />
-                      </div>
-                      <div>
-                        <label className="block text-sm font-semibold text-gray-700 mb-2">
-                          Phone Number
-                        </label>
-                        <input
-                          type="tel"
-                          name="phone"
-                          value={formData.phone}
-                          onChange={handleInputChange}
-                          className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
-                          placeholder="+1 (555) 123-4567"
-                        />
-                      </div>
-                    </div>
-
-                    <div>
-                      <label className="block text-sm font-semibold text-gray-700 mb-2">
-                        Organization
-                      </label>
-                      <input
-                        type="text"
-                        name="organization"
-                        value={formData.organization}
-                        onChange={handleInputChange}
-                        className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
-                        placeholder="Hospital, Clinic, or Company Name"
-                      />
-                    </div>
-
-                    <div>
-                      <label className="block text-sm font-semibold text-gray-700 mb-2">
-                        Services Interested In
-                      </label>
-                      <select
-                        name="service"
-                        value={selectedService || formData.service}
-                        onChange={handleInputChange}
-                        className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
-                      >
-                        <option value="">Select a service</option>
-                        <optgroup label="Healthcare KPO">
-                          <option value="Medical Transcription">Medical Transcription</option>
-                          <option value="Medical Billing & Coding">Medical Billing & Coding</option>
-                          <option value="Remote Medical Scribe">Remote Medical Scribe</option>
-                          <option value="EHR/EMR Support">EHR/EMR Support</option>
-                          <option value="Medical Record Summarization">Medical Record Summarization</option>
-                        </optgroup>
-                        <optgroup label="Technology Solutions">
-                          <option value="Custom Software Development">Custom Software Development</option>
-                          <option value="AI/ML Solutions">AI/ML Solutions</option>
-                          <option value="Mobile App Development">Mobile App Development</option>
-                          <option value="Cloud Solutions">Cloud Solutions</option>
-                          <option value="Analytics & BI">Analytics & BI</option>
-                        </optgroup>
-                        <option value="Multiple Services">Multiple Services</option>
-                        <option value="Other">Other</option>
-                      </select>
-                    </div>
-
-                    <div>
-                      <label className="block text-sm font-semibold text-gray-700 mb-2">
-                        Message *
-                      </label>
-                      <textarea
-                        name="message"
-                        value={formData.message}
-                        onChange={handleInputChange}
-                        rows={5}
-                        className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 resize-none"
-                        placeholder="Tell us about your requirements, timeline, and any specific questions you have..."
-                        required
-                      />
-                    </div>
-
-                    <motion.button
-                      type="submit"
-                      whileHover={{ scale: 1.02 }}
-                      whileTap={{ scale: 0.98 }}
-                      className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-xl font-semibold hover:shadow-lg transition-all duration-300 flex items-center justify-center space-x-3"
+                  {status === 'success' ? (
+                    <motion.div
+                      initial={{ opacity: 0, scale: 0.9 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      className="py-12 text-center"
                     >
-                      <span>Send Message</span>
-                      <Send size={20} />
-                    </motion.button>
+                      <div className="w-20 h-20 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <CheckCircle2 size={40} />
+                      </div>
+                      <h3 className="text-2xl font-bold text-gray-900 mb-2">Message Sent!</h3>
+                      <p className="text-gray-600">Thank you for your interest. We&apos;ll be in touch soon.</p>
+                    </motion.div>
+                  ) : (
+                    <form onSubmit={handleSubmit} className="space-y-6">
+                      <div className="grid md:grid-cols-2 gap-6">
+                        <div>
+                          <label className="block text-sm font-semibold text-gray-700 mb-2">
+                            First Name *
+                          </label>
+                          <input
+                            type="text"
+                            name="firstName"
+                            value={formData.firstName}
+                            onChange={handleInputChange}
+                            className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
+                            placeholder="John"
+                            required
+                          />
+                        </div>
+                        <div>
+                          <label className="block text-sm font-semibold text-gray-700 mb-2">
+                            Last Name *
+                          </label>
+                          <input
+                            type="text"
+                            name="lastName"
+                            value={formData.lastName}
+                            onChange={handleInputChange}
+                            className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
+                            placeholder="Doe"
+                            required
+                          />
+                        </div>
+                      </div>
 
-                    <p className="text-sm text-gray-500 text-center">
-                      We&rsquo;ll respond within 24 hours • HIPAA Compliant • No spam, ever
-                    </p>
-                  </form>
+                      <div className="grid md:grid-cols-2 gap-6">
+                        <div>
+                          <label className="block text-sm font-semibold text-gray-700 mb-2">
+                            Email Address *
+                          </label>
+                          <input
+                            type="email"
+                            name="email"
+                            value={formData.email}
+                            onChange={handleInputChange}
+                            className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
+                            placeholder="john.doe@company.com"
+                            required
+                          />
+                        </div>
+                        <div>
+                          <label className="block text-sm font-semibold text-gray-700 mb-2">
+                            Phone Number
+                          </label>
+                          <input
+                            type="tel"
+                            name="phone"
+                            value={formData.phone}
+                            onChange={handleInputChange}
+                            className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
+                            placeholder="+1 (555) 123-4567"
+                          />
+                        </div>
+                      </div>
+
+                      <div>
+                        <label className="block text-sm font-semibold text-gray-700 mb-2">
+                          Organization
+                        </label>
+                        <input
+                          type="text"
+                          name="organization"
+                          value={formData.organization}
+                          onChange={handleInputChange}
+                          className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
+                          placeholder="Hospital, Clinic, or Company Name"
+                        />
+                      </div>
+
+                      <div>
+                        <label className="block text-sm font-semibold text-gray-700 mb-2">
+                          Services Interested In
+                        </label>
+                        <select
+                          name="service"
+                          value={selectedService || formData.service}
+                          onChange={handleInputChange}
+                          className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
+                        >
+                          <option value="">Select a service</option>
+                          <optgroup label="Healthcare KPO">
+                            <option value="Medical Transcription">Medical Transcription</option>
+                            <option value="Medical Billing & Coding">Medical Billing & Coding</option>
+                            <option value="Remote Medical Scribe">Remote Medical Scribe</option>
+                            <option value="EHR/EMR Support">EHR/EMR Support</option>
+                            <option value="Medical Record Summarization">Medical Record Summarization</option>
+                          </optgroup>
+                          <optgroup label="Technology Solutions">
+                            <option value="Custom Software Development">Custom Software Development</option>
+                            <option value="AI/ML Solutions">AI/ML Solutions</option>
+                            <option value="Mobile App Development">Mobile App Development</option>
+                            <option value="Cloud Solutions">Cloud Solutions</option>
+                            <option value="Analytics & BI">Analytics & BI</option>
+                          </optgroup>
+                          <option value="Multiple Services">Multiple Services</option>
+                          <option value="Other">Other</option>
+                        </select>
+                      </div>
+
+                      <div>
+                        <label className="block text-sm font-semibold text-gray-700 mb-2">
+                          Message *
+                        </label>
+                        <textarea
+                          name="message"
+                          value={formData.message}
+                          onChange={handleInputChange}
+                          rows={5}
+                          className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 resize-none"
+                          placeholder="Tell us about your requirements, timeline, and any specific questions you have..."
+                          required
+                        />
+                      </div>
+
+                      {status === 'error' && (
+                        <motion.div
+                          initial={{ opacity: 0, height: 0 }}
+                          animate={{ opacity: 1, height: 'auto' }}
+                          className="p-4 bg-red-50 text-red-600 rounded-xl flex items-start space-x-3 text-sm"
+                        >
+                          <AlertCircle className="shrink-0" size={18} />
+                          <span>{errorMessage}</span>
+                        </motion.div>
+                      )}
+
+                      <motion.button
+                        disabled={status === 'submitting'}
+                        type="submit"
+                        whileHover={{ scale: 1.02 }}
+                        whileTap={{ scale: 0.98 }}
+                        className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-xl font-semibold hover:shadow-lg transition-all duration-300 flex items-center justify-center space-x-3 disabled:opacity-50"
+                      >
+                        {status === 'submitting' ? (
+                          <div className="w-6 h-6 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
+                        ) : (
+                          <>
+                            <span>Send Message</span>
+                            <Send size={20} />
+                          </>
+                        )}
+                      </motion.button>
+
+                      <p className="text-sm text-gray-500 text-center">
+                        We&rsquo;ll respond within 24 hours • HIPAA Compliant • No spam, ever
+                      </p>
+                    </form>
+                  )}
                 </div>
               </motion.div>
 
@@ -393,7 +476,7 @@ export default function ContactPage() {
                 </h2>
               </div>
               <p className="text-blue-100 text-xl max-w-3xl mx-auto">
-                We serve clients across 6 countries with comprehensive Healthcare KPO
+                We serve clients across 7 countries with comprehensive Healthcare KPO
                 and Software Development solutions tailored to local market needs.
               </p>
             </motion.div>
@@ -406,10 +489,10 @@ export default function ContactPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1, duration: 0.6 }}
-                  className="bg-white/20 backdrop-blur-sm p-6 rounded-2xl hover:bg-white/30 transition-all duration-300 text-center w-40"
+                  className="bg-white/20 backdrop-blur-sm p-4 rounded-2xl hover:bg-white/30 transition-all duration-300 text-center w-32"
                 >
-                  <div className="text-4xl mb-4">{region.flag}</div>
-                  <div className="font-bold text-white text-lg">{region.country}</div>
+                  <div className="text-3xl mb-3">{region.flag}</div>
+                  <div className="font-bold text-white text-base">{region.country}</div>
                 </motion.div>
               ))}
             </div>

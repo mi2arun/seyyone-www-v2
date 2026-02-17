@@ -159,7 +159,7 @@ export default function TestimonialsPage() {
                         </h2>
                         <p className="max-w-2xl mx-auto text-xl text-gray-400 leading-relaxed">
                             We take pride in our 99.8% accuracy rate and our ability to deliver results that
-                            consistently exceed our clients&apos; expectations across 6 countries.
+                            consistently exceed our clients&apos; expectations across 7 countries.
                         </p>
                     </div>
                 </section>
