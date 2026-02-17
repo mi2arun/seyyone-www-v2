@@ -3,6 +3,7 @@ import Navigation from '@/components/Navigation'
 import { jobPositions } from '@/lib/career/job-data'
 
 import Footer from '@/components/Footer'
+import ApplyButton from '@/components/ApplyButton'
 
 export const metadata = {
   title: 'Careers at Seyyone | Join Our Team of Innovators',
@@ -233,9 +234,11 @@ export default function CareerPage() {
                   We&rsquo;re always looking for talented individuals to join our team.
                   Send us your resume and let us know how you can contribute to our success.
                 </p>
-                <button className="bg-white text-purple-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
-                  Send Your Resume
-                </button>
+                <ApplyButton
+                  jobTitle="General Application"
+                  label="Send Your Resume"
+                  className="bg-white text-purple-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors inline-block"
+                />
               </div>
             </div>
           </div>

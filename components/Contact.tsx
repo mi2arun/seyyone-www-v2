@@ -1,10 +1,15 @@
 'use client'
 
+import React, { useState } from 'react'
 import { motion } from 'framer-motion'
-import { Mail, Phone, MapPin, Clock, Send } from 'lucide-react'
+import { Mail, Phone, MapPin, Clock, Send, CheckCircle2, AlertCircle } from 'lucide-react'
 import GlobalPresence from './GlobalPresence'
+import { FORMSPREE_CONFIG } from '@/lib/constants'
 
 const Contact = () => {
+  const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle')
+  const [errorMessage, setErrorMessage] = useState('')
+
   const contactInfo = [
     {
       icon: Phone,
@@ -35,6 +40,42 @@ const Contact = () => {
       href: '#'
     }
   ]
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    setStatus('submitting')
+
+    const form = e.currentTarget
+    const data = new FormData(form)
+
+    // Add metadata
+    data.append('Submission Type', 'General Business Inquiry')
+    data.append('Source', 'Main Contact Page')
+    data.append('subject', 'New Contact Form Submission')
+
+    try {
+      const response = await fetch(`https://formspree.io/f/${FORMSPREE_CONFIG.ENDPOINTS.CONTACT}`, {
+        method: 'POST',
+        body: data,
+        headers: {
+          'Accept': 'application/json'
+        }
+      })
+
+      if (response.ok) {
+        setStatus('success')
+        form.reset()
+        setTimeout(() => setStatus('idle'), 5000)
+      } else {
+        const responseData = await response.json()
+        setErrorMessage(responseData.errors?.[0]?.message || 'Something went wrong. Please try again.')
+        setStatus('error')
+      }
+    } catch (error) {
+      setErrorMessage('Network error. Please check your connection.')
+      setStatus('error')
+    }
+  }
 
   return (
     <section className="py-20 bg-white">
@@ -73,102 +114,143 @@ const Contact = () => {
                 Send Us a Message
               </h3>
 
-              <form className="space-y-6">
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
-                      First Name *
-                    </label>
-                    <input
-                      type="text"
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
-                      placeholder="John"
-                      required
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
-                      Last Name *
-                    </label>
-                    <input
-                      type="text"
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
-                      placeholder="Doe"
-                      required
-                    />
-                  </div>
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Email Address *
-                  </label>
-                  <input
-                    type="email"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
-                    placeholder="john.doe@hospital.com"
-                    required
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Phone Number
-                  </label>
-                  <input
-                    type="tel"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
-                    placeholder="+1 (555) 123-4567"
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Organization
-                  </label>
-                  <input
-                    type="text"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
-                    placeholder="Hospital or Clinic Name"
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Services Interested In
-                  </label>
-                  <select className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent">
-                    <option>Select a service</option>
-                    <option>Medical Transcription</option>
-                    <option>Medical Billing</option>
-                    <option>Medical Coding</option>
-                    <option>Remote Medical Scribe</option>
-                    <option>EHR/EMR Support</option>
-                    <option>Medical Record Summarization</option>
-                    <option>Multiple Services</option>
-                  </select>
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Message *
-                  </label>
-                  <textarea
-                    rows={4}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
-                    placeholder="Tell us about your requirements..."
-                    required
-                  />
-                </div>
-
-                <button
-                  type="submit"
-                  className="w-full btn-primary justify-center"
+              {status === 'success' ? (
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  className="py-12 text-center"
                 >
-                  Send Message
-                  <Send size={20} />
-                </button>
-              </form>
+                  <div className="w-20 h-20 bg-primary-100 text-primary-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <CheckCircle2 size={40} />
+                  </div>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-2">Message Sent!</h3>
+                  <p className="text-gray-600">Thank you for your interest. We&apos;ll be in touch soon.</p>
+                </motion.div>
+              ) : (
+                <form onSubmit={handleSubmit} className="space-y-6">
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                        First Name *
+                      </label>
+                      <input
+                        name="First Name"
+                        type="text"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent text-gray-900"
+                        placeholder="John"
+                        required
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                        Last Name *
+                      </label>
+                      <input
+                        name="Last Name"
+                        type="text"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent text-gray-900"
+                        placeholder="Doe"
+                        required
+                      />
+                    </div>
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Email Address *
+                    </label>
+                    <input
+                      name="email"
+                      type="email"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent text-gray-900"
+                      placeholder="john.doe@hospital.com"
+                      required
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Phone Number
+                    </label>
+                    <input
+                      name="Phone"
+                      type="tel"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent text-gray-900"
+                      placeholder="+1 (555) 123-4567"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Organization
+                    </label>
+                    <input
+                      name="Organization"
+                      type="text"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent text-gray-900"
+                      placeholder="Hospital or Clinic Name"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Services Interested In
+                    </label>
+                    <select
+                      name="Service"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent text-gray-900"
+                    >
+                      <option>Select a service</option>
+                      <option>Medical Transcription</option>
+                      <option>Medical Billing</option>
+                      <option>Medical Coding</option>
+                      <option>Remote Medical Scribe</option>
+                      <option>EHR/EMR Support</option>
+                      <option>Medical Record Summarization</option>
+                      <option>Multiple Services</option>
+                    </select>
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Message *
+                    </label>
+                    <textarea
+                      name="Message"
+                      rows={4}
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent text-gray-900"
+                      placeholder="Tell us about your requirements..."
+                      required
+                    />
+                  </div>
+
+                  {status === 'error' && (
+                    <motion.div
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: 'auto' }}
+                      className="p-4 bg-red-50 text-red-600 rounded-xl flex items-start space-x-3 text-sm"
+                    >
+                      <AlertCircle className="shrink-0" size={18} />
+                      <span>{errorMessage}</span>
+                    </motion.div>
+                  )}
+
+                  <button
+                    disabled={status === 'submitting'}
+                    type="submit"
+                    className="w-full btn-primary justify-center disabled:opacity-50"
+                  >
+                    {status === 'submitting' ? (
+                      <div className="w-6 h-6 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
+                    ) : (
+                      <>
+                        <span>Send Message</span>
+                        <Send size={20} />
+                      </>
+                    )}
+                  </button>
+                </form>
+              )}
             </div>
           </motion.div>
 

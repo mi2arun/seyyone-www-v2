@@ -5,9 +5,10 @@ import Navigation from '@/components/Navigation'
 
 import Footer from '@/components/Footer'
 import { motion, AnimatePresence } from 'framer-motion'
-import { BookOpen, FileText, FileCheck, MessageSquare, Award, Calendar, ArrowRight, User } from 'lucide-react'
+import { BookOpen, FileText, FileCheck, Award, Calendar, ArrowRight, User } from 'lucide-react'
 import Link from 'next/link'
 import { useSearchParams } from 'next/navigation'
+import { insightPosts } from '@/lib/insights/insight-data'
 
 function InsightsContent() {
   const [activeCategory, setActiveCategory] = useState('all')
@@ -43,75 +44,9 @@ function InsightsContent() {
     { id: 'case-studies', name: 'Case Studies', icon: Award }
   ]
 
-  const insights = [
-    // Blogs
-    {
-      id: 1,
-      category: 'blogs',
-      title: 'The Future of Healthcare KPO in 2025',
-      excerpt: 'Explore emerging trends in healthcare business process outsourcing and how AI is transforming the industry.',
-      author: 'Seyyone Team',
-      date: 'December 15, 2024',
-      readTime: '5 min read',
-      image: '/insights/blog-1.jpg'
-    },
-    {
-      id: 2,
-      category: 'blogs',
-      title: 'HIPAA Compliance Best Practices',
-      excerpt: 'Essential guidelines for maintaining HIPAA compliance in your healthcare operations.',
-      author: 'Seyyone Team',
-      date: 'December 10, 2024',
-      readTime: '7 min read',
-      image: '/insights/blog-2.jpg'
-    },
-    // Articles
-    {
-      id: 3,
-      category: 'articles',
-      title: 'Optimizing Medical Billing Workflows',
-      excerpt: 'A comprehensive guide to streamlining medical billing processes and reducing claim denials.',
-      author: 'Healthcare Experts',
-      date: 'December 5, 2024',
-      readTime: '10 min read',
-      image: '/insights/article-1.jpg'
-    },
-    {
-      id: 4,
-      category: 'articles',
-      title: 'AI/ML in Healthcare: Opportunities and Challenges',
-      excerpt: 'How artificial intelligence and machine learning are revolutionizing healthcare delivery.',
-      author: 'Tech Team',
-      date: 'November 28, 2024',
-      readTime: '12 min read',
-      image: '/insights/article-2.jpg'
-    },
-    // Case Studies
-    {
-      id: 9,
-      category: 'case-studies',
-      title: 'Reducing Claim Denials by 40%',
-      excerpt: 'How we helped a multi-specialty clinic improve their revenue cycle management and reduce claim denials.',
-      author: 'Case Study',
-      date: 'November 10, 2024',
-      readTime: '8 min read',
-      image: '/insights/case-study-1.jpg'
-    },
-    {
-      id: 10,
-      category: 'case-studies',
-      title: 'Cloud Migration Success Story',
-      excerpt: 'A healthcare provider\'s journey to cloud-based infrastructure with 99.9% uptime achievement.',
-      author: 'Case Study',
-      date: 'October 30, 2024',
-      readTime: '10 min read',
-      image: '/insights/case-study-2.jpg'
-    }
-  ]
-
   const filteredInsights = activeCategory === 'all'
-    ? insights
-    : insights.filter(insight => insight.category === activeCategory)
+    ? insightPosts
+    : insightPosts.filter(insight => insight.category === activeCategory)
 
   const getCategoryColor = (category: string) => {
     const colors: { [key: string]: string } = {
@@ -219,7 +154,7 @@ function InsightsContent() {
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: index * 0.1, duration: 0.6 }}
-                        className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 group"
+                        className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 group flex flex-col"
                       >
                         {/* Image Placeholder */}
                         <div className={`relative h-48 bg-gradient-to-br ${getCategoryColor(insight.category)}`}>
@@ -235,7 +170,7 @@ function InsightsContent() {
                         </div>
 
                         {/* Content */}
-                        <div className="p-6">
+                        <div className="p-6 flex-grow flex flex-col">
                           <div className="flex items-center space-x-4 text-sm text-gray-500 mb-4">
                             <div className="flex items-center space-x-1">
                               <Calendar size={14} />
@@ -249,23 +184,26 @@ function InsightsContent() {
                             {insight.title}
                           </h3>
 
-                          <p className="text-gray-600 mb-4 leading-relaxed">
+                          <p className="text-gray-600 mb-4 leading-relaxed line-clamp-3">
                             {insight.excerpt}
                           </p>
 
-                          <div className="flex items-center justify-between">
+                          <div className="mt-auto flex items-center justify-between">
                             <div className="flex items-center space-x-2 text-sm text-gray-500">
                               <User size={16} />
                               <span>{insight.author}</span>
                             </div>
 
-                            <button className="group/btn flex items-center space-x-2 text-blue-600 font-semibold hover:text-blue-700 transition-colors">
+                            <Link
+                              href={`/insights/${insight.id}`}
+                              className="group/btn flex items-center space-x-2 text-blue-600 font-semibold hover:text-blue-700 transition-colors"
+                            >
                               <span>Read More</span>
                               <ArrowRight
                                 size={16}
                                 className="transition-transform group-hover/btn:translate-x-1"
                               />
-                            </button>
+                            </Link>
                           </div>
                         </div>
                       </motion.article>

@@ -279,11 +279,11 @@ export default function PeerReviewSummaryPage() {
                 </div>
                 <div className="space-y-6">
                   <div className="bg-white rounded-xl p-6">
-                    <div className="font-semibold text-gray-900 mb-2">Board-Certified Reviewers</div>
+                    <div className="font-semibold text-gray-900 mb-2">Expert Peer Review Summarizers</div>
                     <div className="text-gray-600">Physicians actively practicing in their specialties</div>
                   </div>
                   <div className="bg-white rounded-xl p-6">
-                    <div className="font-semibold text-gray-900 mb-2">Objective Evaluation</div>
+                    <div className="font-semibold text-gray-900 mb-2">The Ability to Handle Huge Volume</div>
                     <div className="text-gray-600">Unbiased clinical assessment based on evidence</div>
                   </div>
                   <div className="bg-white rounded-xl p-6">

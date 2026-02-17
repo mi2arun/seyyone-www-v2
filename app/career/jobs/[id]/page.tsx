@@ -4,6 +4,7 @@ import Footer from '@/components/Footer'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { ArrowLeft, Clock, MapPin, Briefcase, Calendar } from 'lucide-react'
+import ApplyButton from '@/components/ApplyButton'
 
 interface JobPageProps {
     params: {
@@ -139,12 +140,7 @@ export default function JobPage({ params }: JobPageProps) {
                                         <span className="font-medium text-gray-900">{job.experience}</span>
                                     </div>
                                     <div className="pt-4 mt-4 border-t border-gray-100">
-                                        <a
-                                            href={`mailto:careers@seyyone.com?subject=Application for ${job.title}`}
-                                            className="block w-full bg-purple-600 text-white text-center px-4 py-2 rounded-lg font-semibold hover:bg-purple-700 transition-colors"
-                                        >
-                                            Apply Now
-                                        </a>
+                                        <ApplyButton jobTitle={job.title} />
                                     </div>
                                 </div>
                             </div>
