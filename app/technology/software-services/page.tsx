@@ -231,7 +231,6 @@ export default function SoftwareServicesPage() {
                     <div className="grid grid-cols-2 gap-3">
                       {service.items.map((item, idx) => (
                         <div key={idx} className="flex items-center space-x-2">
-                          <CheckCircle className="text-orange-600 flex-shrink-0" size={16} />
                           <span className="text-sm text-gray-700">{item}</span>
                         </div>
                       ))}
@@ -270,7 +269,6 @@ export default function SoftwareServicesPage() {
                       transition={{ delay: index * 0.1, duration: 0.4 }}
                       className="flex items-start space-x-3"
                     >
-                      <CheckCircle className="text-orange-600 flex-shrink-0 mt-1" size={20} />
                       <span className="text-gray-700">{benefit}</span>
                     </motion.div>
                   ))}
@@ -342,7 +340,6 @@ export default function SoftwareServicesPage() {
                   transition={{ delay: index * 0.05, duration: 0.4 }}
                   className="flex items-center space-x-3 p-4 bg-white rounded-xl border border-orange-200 hover:shadow-md transition-all duration-300"
                 >
-                  <CheckCircle className="text-orange-600 flex-shrink-0" size={24} />
                   <span className="text-gray-700 font-medium">{tech}</span>
                 </motion.div>
               ))}

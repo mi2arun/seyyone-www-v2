@@ -188,7 +188,6 @@ export default function MedicalTranscriptionPage() {
                       transition={{ delay: index * 0.1, duration: 0.4 }}
                       className="flex items-start space-x-3"
                     >
-                      <CheckCircle className="text-blue-600 flex-shrink-0 mt-1" size={20} />
                       <span className="text-gray-700">{benefit}</span>
                     </motion.div>
                   ))}

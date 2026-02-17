@@ -246,7 +246,6 @@ export default function AnalyticsReportingPage() {
                     <div className="grid grid-cols-2 gap-3">
                       {solution.items.map((item, idx) => (
                         <div key={idx} className="flex items-center space-x-2">
-                          <CheckCircle className="text-indigo-600 flex-shrink-0" size={16} />
                           <span className="text-sm text-gray-700">{item}</span>
                         </div>
                       ))}
@@ -285,7 +284,6 @@ export default function AnalyticsReportingPage() {
                       transition={{ delay: index * 0.05, duration: 0.4 }}
                       className="flex items-start space-x-2"
                     >
-                      <CheckCircle className="text-indigo-600 flex-shrink-0 mt-1" size={18} />
                       <span className="text-gray-700 text-sm">{capability}</span>
                     </motion.div>
                   ))}
@@ -308,7 +306,6 @@ export default function AnalyticsReportingPage() {
                   <div className="space-y-4">
                     {benefits.map((benefit, index) => (
                       <div key={index} className="flex items-start space-x-3 p-4 bg-white rounded-lg">
-                        <CheckCircle className="text-indigo-600 flex-shrink-0 mt-1" size={20} />
                         <span className="text-gray-700">{benefit}</span>
                       </div>
                     ))}
@@ -348,7 +345,6 @@ export default function AnalyticsReportingPage() {
                   transition={{ delay: index * 0.05, duration: 0.4 }}
                   className="flex items-center space-x-3 p-4 bg-white rounded-xl border border-indigo-200 hover:shadow-md transition-all duration-300"
                 >
-                  <CheckCircle className="text-indigo-600 flex-shrink-0" size={24} />
                   <span className="text-gray-700 font-medium">{tech}</span>
                 </motion.div>
               ))}

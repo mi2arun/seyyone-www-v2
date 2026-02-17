@@ -254,7 +254,6 @@ export default function APSSummaryPage() {
                       transition={{ delay: index * 0.1, duration: 0.4 }}
                       className="flex items-start space-x-3"
                     >
-                      <CheckCircle className="text-orange-600 flex-shrink-0 mt-1" size={20} />
                       <span className="text-gray-700">{benefit}</span>
                     </motion.div>
                   ))}

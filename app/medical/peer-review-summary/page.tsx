@@ -258,7 +258,6 @@ export default function PeerReviewSummaryPage() {
                       transition={{ delay: index * 0.1, duration: 0.4 }}
                       className="flex items-start space-x-3"
                     >
-                      <CheckCircle className="text-teal-600 flex-shrink-0 mt-1" size={20} />
                       <span className="text-gray-700">{benefit}</span>
                     </motion.div>
                   ))}
@@ -330,7 +329,6 @@ export default function PeerReviewSummaryPage() {
                   transition={{ delay: index * 0.05, duration: 0.4 }}
                   className="flex items-center space-x-3 p-4 bg-white rounded-xl border border-teal-200 hover:shadow-md transition-all duration-300"
                 >
-                  <CheckCircle className="text-teal-600 flex-shrink-0" size={24} />
                   <span className="text-gray-700 font-medium">{application}</span>
                 </motion.div>
               ))}

@@ -13,8 +13,8 @@ export default function AboutPage() {
     <>
       <Navigation />
       <main>
-        {/* Hero Section with Office Interior and Team Photo */}
-        <section className="min-h-screen relative overflow-hidden pt-20 bg-gradient-to-b from-gray-50 to-gray-100">
+        {/* Hero Section */}
+        <section className="relative overflow-hidden pt-32 pb-16 bg-gradient-to-b from-gray-50 to-gray-100">
           {/* Office Background */}
           <div className="absolute inset-0">
             <div className="absolute inset-0 bg-gradient-to-b from-gray-100 to-gray-200" />
@@ -29,76 +29,7 @@ export default function AboutPage() {
             <div className="absolute left-0 top-0 w-1/2 h-full bg-gradient-to-r from-yellow-50/20 via-transparent to-transparent" />
           </div>
 
-          <div className="relative z-10 min-h-screen flex items-center">
-            {/* Team Photo - Framed on Wall with Hanging Thread */}
-            <motion.div
-              className="absolute top-28 right-20"
-              initial={{ opacity: 0, y: -50 }}
-              animate={{
-                opacity: 1,
-                y: 0,
-                rotate: [0, 1, -1, 0.5, 0]
-              }}
-              transition={{
-                delay: 0.5,
-                duration: 2,
-                rotate: {
-                  duration: 4,
-                  ease: "easeInOut",
-                  repeat: Infinity,
-                  repeatType: "reverse"
-                }
-              }}
-              whileHover={{ scale: 1.02, rotate: 0 }}
-            >
-              {/* Hanging Thread/Wire */}
-              <div className="absolute left-1/2 -top-28 transform -translate-x-1/2">
-                <div className="w-2 h-2 bg-gradient-to-b from-gray-600 to-gray-800 rounded-full shadow-md" />
-                <div className="w-px h-28 bg-gradient-to-b from-gray-400 to-gray-600 mx-auto" />
-                <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-px h-28 bg-black/10 blur-sm translate-x-0.5" />
-              </div>
-
-              <div className="absolute inset-0 bg-black/20 blur-xl transform translate-y-4" />
-
-              <div className="relative bg-gradient-to-br from-amber-800 via-amber-700 to-amber-900 p-4 shadow-2xl">
-                <div className="absolute -top-2 left-1/2 transform -translate-x-1/2">
-                  <div className="w-4 h-2 bg-gradient-to-b from-brass-500 to-brass-700 rounded-t-full"
-                    style={{ background: 'linear-gradient(to bottom, #B8860B, #8B6914)' }} />
-                </div>
-
-                <div className="relative bg-gradient-to-br from-amber-600 to-amber-700 p-2">
-                  <div className="bg-white p-4">
-                    <div className="relative w-64 h-40 overflow-hidden">
-                      <Image
-                        src="/Seyyone-Group-Photo-Updated.png"
-                        alt="Seyyone Team"
-                        fill
-                        className="object-cover"
-                      />
-                    </div>
-                    <div className="mt-2 text-center">
-                      <p className="text-xs text-gray-600 font-serif italic">Team Excellence 2024</p>
-                    </div>
-                  </div>
-                </div>
-                <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-amber-400/20 to-transparent" />
-                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-amber-300/50 to-transparent" />
-              </div>
-            </motion.div>
-
-            {/* Office Decorations */}
-            <motion.div
-              className="absolute top-40 left-20"
-              initial={{ opacity: 0, x: -50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.8, duration: 0.6 }}
-            >
-              <div className="bg-white/80 backdrop-blur-sm p-3 shadow-lg transform -rotate-3">
-                <Award className="text-blue-600 mx-auto" size={32} />
-                <p className="text-xs mt-1 text-gray-600">HIPAA Compliant</p>
-              </div>
-            </motion.div>
-
+          <div className="relative z-10 flex items-center">
             {/* Hero Content */}
             <div className="container">
               <motion.div
@@ -107,14 +38,6 @@ export default function AboutPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
               >
-                <motion.div
-                  className="inline-flex items-center px-6 py-3 bg-white/80 backdrop-blur-sm text-blue-700 rounded-full text-sm font-semibold mb-6 shadow-lg"
-                  initial={{ scale: 0 }}
-                  animate={{ scale: 1 }}
-                  transition={{ delay: 0.2, type: "spring" }}
-                >
-                  About Seyyone
-                </motion.div>
 
                 <h1 className="text-5xl md:text-7xl font-bold mb-8">
                   <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
@@ -248,7 +171,7 @@ export default function AboutPage() {
                 Leadership Message
               </h2>
               <div className="bg-gradient-to-r from-blue-50 to-purple-50 p-8 rounded-2xl">
-                <blockquote className="text-lg text-gray-700 leading-relaxed italic mb-6">
+                <blockquote className="text-lg text-gray-700 leading-relaxed mb-6">
                   &ldquo;At Seyyone, we believe in the power of technology and expertise to transform businesses.
                   Our commitment to excellence, innovation, and client success has been the driving force
                   behind our 25+ year journey.&rdquo;
@@ -284,7 +207,7 @@ export default function AboutPage() {
             </div>
 
             <div className="grid md:grid-cols-2 gap-8">
-              <div className="bg-white p-8 rounded-2xl border border-gray-100 italic text-gray-700 text-lg leading-relaxed relative shadow-[0_4px_20px_-10px_rgba(0,0,0,0.1)] hover:shadow-[0_25px_50px_-12px_rgba(0,0,0,0.2)] transition-all duration-500 hover:-translate-y-1">
+              <div className="bg-white p-8 rounded-2xl border border-gray-100 text-gray-700 text-lg leading-relaxed relative shadow-[0_4px_20px_-10px_rgba(0,0,0,0.1)] hover:shadow-[0_25px_50px_-12px_rgba(0,0,0,0.2)] transition-all duration-500 hover:-translate-y-1">
                 <div className="absolute -top-4 -left-4 w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white shadow-lg">
                   <Star fill="currentColor" size={20} />
                 </div>
@@ -294,7 +217,7 @@ export default function AboutPage() {
                   <div className="text-sm text-gray-500">Australia</div>
                 </div>
               </div>
-              <div className="bg-white p-8 rounded-2xl border border-gray-100 italic text-gray-700 text-lg leading-relaxed relative shadow-[0_4px_20px_-10px_rgba(0,0,0,0.1)] hover:shadow-[0_25px_50px_-12px_rgba(0,0,0,0.2)] transition-all duration-500 hover:-translate-y-1">
+              <div className="bg-white p-8 rounded-2xl border border-gray-100 text-gray-700 text-lg leading-relaxed relative shadow-[0_4px_20px_-10px_rgba(0,0,0,0.1)] hover:shadow-[0_25px_50px_-12px_rgba(0,0,0,0.2)] transition-all duration-500 hover:-translate-y-1">
                 <div className="absolute -top-4 -left-4 w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center text-white shadow-lg">
                   <Star fill="currentColor" size={20} />
                 </div>

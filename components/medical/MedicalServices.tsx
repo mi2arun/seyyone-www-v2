@@ -18,22 +18,6 @@ import {
 const MedicalServices = () => {
   const services = [
     {
-      icon: FileText,
-      title: 'Medical Transcription',
-      description: 'Accurate voice-to-text conversion of medical dictations with 99.8% accuracy rate and quick turnaround times.',
-      features: ['Voice Recognition Technology', '24/7 Availability', 'Multi-specialty Support', 'Quality Assurance'],
-      highlight: 'Most Popular',
-      href: '/medical/medical-transcription'
-    },
-    {
-      icon: CreditCard,
-      title: 'Medical Billing',
-      description: 'Comprehensive revenue cycle management to maximize reimbursements and reduce claim denials.',
-      features: ['Claims Processing', 'Denial Management', 'Payment Posting', 'A/R Follow-up'],
-      highlight: 'Revenue Focused',
-      href: '/medical/medical-billing'
-    },
-    {
       icon: FileCheck,
       title: 'Medical Record Summarization',
       description: 'Concise, accurate medical record summaries for legal, insurance, and clinical purposes.',
@@ -50,12 +34,12 @@ const MedicalServices = () => {
       href: '/medical/medical-scribe'
     },
     {
-      icon: Shield,
-      title: 'APS Summary',
-      description: 'Comprehensive Attending Physician Statement summaries for insurance underwriting and claims review.',
-      features: ['Detailed Analysis', 'Quick Turnaround', 'Insurance Ready', 'Quality Assurance'],
-      highlight: 'Insurance',
-      href: '/medical/aps-summary'
+      icon: CreditCard,
+      title: 'Medical Billing',
+      description: 'Comprehensive revenue cycle management to maximize reimbursements and reduce claim denials.',
+      features: ['Claims Processing', 'Denial Management', 'Payment Posting', 'A/R Follow-up'],
+      highlight: 'Revenue Focused',
+      href: '/medical/medical-billing'
     },
     {
       icon: Stethoscope,
@@ -66,12 +50,28 @@ const MedicalServices = () => {
       href: '/medical/peer-review-summary'
     },
     {
+      icon: Shield,
+      title: 'APS Summary',
+      description: 'Comprehensive Attending Physician Statement summaries for insurance underwriting and claims review.',
+      features: ['Detailed Analysis', 'Quick Turnaround', 'Insurance Ready', 'Quality Assurance'],
+      highlight: 'Insurance',
+      href: '/medical/aps-summary'
+    },
+    {
       icon: Database,
       title: 'EHR/EMR',
       description: 'Comprehensive electronic health record management and optimization services.',
       features: ['Data Entry', 'System Optimization', 'Training Support', 'Migration Assistance'],
       highlight: 'Tech Support',
       href: '/medical/ehr-emr'
+    },
+    {
+      icon: FileText,
+      title: 'Medical Transcription',
+      description: 'Accurate voice-to-text conversion of medical dictations with 99.8% accuracy rate and quick turnaround times.',
+      features: ['Voice Recognition Technology', '24/7 Availability', 'Multi-specialty Support', 'Quality Assurance'],
+      highlight: 'Most Popular',
+      href: '/medical/medical-transcription'
     }
   ]
 

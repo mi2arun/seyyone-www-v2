@@ -64,7 +64,7 @@ export default function MedicalScribePage() {
       features: ['Cost-effective', 'Flexible hours', 'No space requirements', 'Telehealth compatible']
     },
     {
-      title: 'On-Site Medical Scribes',
+      title: 'Offline Medical Scribes',
       description: 'In-person scribes who accompany physicians during patient encounters for direct, real-time documentation.',
       icon: Users,
       features: ['Direct interaction', 'Immediate clarification', 'Full integration', 'Emergency dept ready']
@@ -219,7 +219,6 @@ export default function MedicalScribePage() {
                     <div className="grid grid-cols-2 gap-3">
                       {model.features.map((feature, idx) => (
                         <div key={idx} className="flex items-center space-x-2">
-                          <CheckCircle className="text-cyan-600 flex-shrink-0" size={16} />
                           <span className="text-sm text-gray-700">{feature}</span>
                         </div>
                       ))}
@@ -256,9 +255,8 @@ export default function MedicalScribePage() {
                       whileInView={{ opacity: 1, x: 0 }}
                       viewport={{ once: true }}
                       transition={{ delay: index * 0.1, duration: 0.4 }}
-                      className="flex items-start space-x-3"
+                      className="flex items-start"
                     >
-                      <CheckCircle className="text-cyan-600 flex-shrink-0 mt-1" size={20} />
                       <span className="text-gray-700">{benefit}</span>
                     </motion.div>
                   ))}

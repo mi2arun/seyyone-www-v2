@@ -231,7 +231,6 @@ export default function EHREMRPage() {
                     <div className="grid grid-cols-2 gap-3">
                       {service.items.map((item, idx) => (
                         <div key={idx} className="flex items-center space-x-2">
-                          <CheckCircle className="text-indigo-600 flex-shrink-0" size={16} />
                           <span className="text-sm text-gray-700">{item}</span>
                         </div>
                       ))}
@@ -270,7 +269,6 @@ export default function EHREMRPage() {
                       transition={{ delay: index * 0.1, duration: 0.4 }}
                       className="flex items-start space-x-3"
                     >
-                      <CheckCircle className="text-indigo-600 flex-shrink-0 mt-1" size={20} />
                       <span className="text-gray-700">{benefit}</span>
                     </motion.div>
                   ))}

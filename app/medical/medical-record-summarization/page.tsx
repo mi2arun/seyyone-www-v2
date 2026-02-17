@@ -260,7 +260,6 @@ export default function MedicalRecordSummarizationPage() {
                   transition={{ delay: index * 0.05, duration: 0.4 }}
                   className="flex items-center space-x-3 p-4 bg-gradient-to-r from-purple-50 to-indigo-50 rounded-xl border border-purple-200 hover:shadow-md transition-all duration-300"
                 >
-                  <CheckCircle className="text-purple-600 flex-shrink-0" size={24} />
                   <span className="text-gray-700 font-medium">{type}</span>
                 </motion.div>
               ))}
@@ -295,7 +294,6 @@ export default function MedicalRecordSummarizationPage() {
                       transition={{ delay: index * 0.1, duration: 0.4 }}
                       className="flex items-start space-x-3"
                     >
-                      <CheckCircle className="text-purple-600 flex-shrink-0 mt-1" size={20} />
                       <span className="text-gray-700">{benefit}</span>
                     </motion.div>
                   ))}

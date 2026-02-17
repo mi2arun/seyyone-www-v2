@@ -240,7 +240,6 @@ export default function MedicalBillingPage() {
                   transition={{ delay: index * 0.05, duration: 0.4 }}
                   className="flex items-center space-x-3 p-4 bg-gradient-to-r from-green-50 to-emerald-50 rounded-xl border border-green-200 hover:shadow-md transition-all duration-300"
                 >
-                  <CheckCircle className="text-green-600 flex-shrink-0" size={24} />
                   <span className="text-gray-700 font-medium">{service}</span>
                 </motion.div>
               ))}

@@ -10,6 +10,7 @@ const GlobalPresence = () => {
     { flag: '🇨🇦', country: 'Canada' },
     { flag: '🇦🇺', country: 'Australia' },
     { flag: '🇮🇪', country: 'Ireland' },
+    { flag: '🇮🇱', country: 'Israel' },
     { flag: '🇩🇪', country: 'Germany' }
   ]
 
@@ -27,7 +28,7 @@ const GlobalPresence = () => {
       </div>
 
       <p className="text-primary-100 mb-6 text-center">
-        We serve clients across 6 countries with comprehensive
+        We serve clients across 7 countries with comprehensive
         Healthcare KPO and Software Development solutions.
       </p>
 

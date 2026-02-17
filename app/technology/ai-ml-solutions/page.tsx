@@ -231,7 +231,6 @@ export default function AIMLSolutionsPage() {
                     <div className="grid grid-cols-2 gap-3">
                       {solution.useCases.map((useCase, idx) => (
                         <div key={idx} className="flex items-center space-x-2">
-                          <CheckCircle className="text-purple-600 flex-shrink-0" size={16} />
                           <span className="text-sm text-gray-700">{useCase}</span>
                         </div>
                       ))}
@@ -270,7 +269,6 @@ export default function AIMLSolutionsPage() {
                       transition={{ delay: index * 0.1, duration: 0.4 }}
                       className="flex items-start space-x-3"
                     >
-                      <CheckCircle className="text-purple-600 flex-shrink-0 mt-1" size={20} />
                       <span className="text-gray-700">{benefit}</span>
                     </motion.div>
                   ))}
@@ -293,7 +291,6 @@ export default function AIMLSolutionsPage() {
                 <div className="grid grid-cols-2 gap-4">
                   {technologies.map((tech, index) => (
                     <div key={index} className="flex items-center space-x-2 p-3 bg-white rounded-lg">
-                      <CheckCircle className="text-purple-600 flex-shrink-0" size={16} />
                       <span className="text-sm text-gray-700 font-medium">{tech}</span>
                     </div>
                   ))}

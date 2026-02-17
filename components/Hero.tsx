@@ -939,7 +939,7 @@ const Hero = () => {
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 1.0, duration: 0.8 }}
-                  className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"
+                  className="bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent"
                 >
                   Technology & Expertise
                 </motion.span>
@@ -964,7 +964,7 @@ const Hero = () => {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 1.6, duration: 0.8 }}
-                    className="py-1 text-base sm:text-lg md:text-xl text-gray-600 leading-relaxed font-medium italic"
+                    className="py-1 text-base sm:text-lg md:text-xl text-gray-600 leading-relaxed font-medium"
                   >
                     For over 25 years, Seyyone has been delivering innovative solutions in{' '}
                     <motion.span
@@ -993,62 +993,7 @@ const Hero = () => {
                     >
                       HIPAA-compliant services
                     </motion.span>{' '}
-                    and cutting-edge technology solutions help businesses achieve operational excellence.
-                  </motion.p>
-
-                  {/* Domain Cards */}
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 w-full">
-                    <motion.div
-                      whileHover={{ scale: 1.02, y: -2 }}
-                      className="bg-gradient-to-br from-blue-50 to-cyan-50 p-3 sm:p-4 lg:p-6 rounded-lg sm:rounded-xl lg:rounded-2xl border border-blue-100 hover:border-blue-200 transition-all duration-300"
-                    >
-                      <div className="flex items-center space-x-3 mb-3">
-                        <div className="w-10 h-10 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-xl flex items-center justify-center">
-                          <Heart className="text-white" size={20} />
-                        </div>
-                        <div>
-                          <h3 className="text-base sm:text-lg font-bold text-blue-900 leading-tight">Healthcare KPO</h3>
-                          <p className="text-[10px] sm:text-xs font-semibold text-blue-600 uppercase tracking-wider">HIPAA Compliant Services</p>
-                        </div>
-                      </div>
-                      <p className="text-xs sm:text-sm text-blue-700 leading-relaxed mb-3">
-                        Medical transcription, billing, record summarization, medical scribe, APS & peer review, EHR/EMR support.
-                      </p>
-                      <div className="flex items-center space-x-2">
-                        <Shield size={14} className="text-green-600" />
-                        <span className="text-xs font-semibold text-green-700">99.8% Accuracy</span>
-                      </div>
-                    </motion.div>
-
-                    <motion.div
-                      whileHover={{ scale: 1.02, y: -2 }}
-                      className="bg-gradient-to-br from-purple-50 to-pink-50 p-3 sm:p-4 lg:p-6 rounded-lg sm:rounded-xl lg:rounded-2xl border border-purple-100 hover:border-purple-200 transition-all duration-300"
-                    >
-                      <div className="flex items-center space-x-3 mb-3">
-                        <div className="w-10 h-10 bg-gradient-to-r from-purple-600 to-pink-600 rounded-xl flex items-center justify-center">
-                          <Brain className="text-white" size={20} />
-                        </div>
-                        <div>
-                          <h3 className="text-base sm:text-lg font-bold text-purple-900 leading-tight">Technology & Software</h3>
-                          <p className="text-[10px] sm:text-xs font-semibold text-purple-600 uppercase tracking-wider">Innovative Solutions</p>
-                        </div>
-                      </div>
-                      <p className="text-xs sm:text-sm text-purple-700 leading-relaxed mb-3">
-                        Cloud solutions, software services, talent management, AI/ML, mobile solutions, remote hardware, analytics & reporting.
-                      </p>
-                      <div className="flex items-center space-x-2">
-                        <Code size={14} className="text-purple-600" />
-                        <span className="text-xs font-semibold text-purple-700">100+ Projects</span>
-                      </div>
-                    </motion.div>
-                  </div>
-
-                  <motion.p
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 2.2, duration: 0.8 }}
-                    className="text-lg text-gray-500 leading-relaxed max-w-4xl"
-                  >
+                    and cutting-edge technology solutions help businesses achieve operational excellence.{' '}
                     Trusted by{' '}
                     <motion.span
                       animate={{ color: ["#6b7280", "#0ea5e9", "#6b7280"] }}
@@ -1071,94 +1016,83 @@ const Hero = () => {
                       transition={{ duration: 3, repeat: Infinity, delay: 1 }}
                       className="font-bold"
                     >
-                      6 countries
+                      7 countries
                     </motion.span>
                     .
                   </motion.p>
+
+                  {/* Domain Cards */}
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 w-full">
+                    <Link href="/medical" className="block h-full">
+                      <motion.div
+                        whileHover={{ scale: 1.02, y: -2 }}
+                        className="h-full bg-gradient-to-br from-blue-50 to-cyan-50 p-3 sm:p-4 lg:p-6 rounded-lg sm:rounded-xl lg:rounded-2xl border border-blue-100 hover:border-blue-200 transition-all duration-300 flex flex-col"
+                      >
+                        <div className="flex items-center space-x-3 mb-3">
+                          <div className="w-10 h-10 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-xl flex items-center justify-center">
+                            <Heart className="text-white" size={20} />
+                          </div>
+                          <div>
+                            <h3 className="text-base sm:text-lg font-bold text-blue-900 leading-tight">Healthcare KPO</h3>
+                            <p className="text-[10px] sm:text-xs font-semibold text-blue-600 uppercase tracking-wider">HIPAA Compliant Services</p>
+                          </div>
+                        </div>
+                        <p className="text-xs sm:text-sm text-blue-700 leading-relaxed mb-3 flex-grow">
+                          Medical transcription, billing, record summarization, medical scribe, APS & peer review, EHR/EMR support.
+                        </p>
+                        <div className="flex items-center justify-between">
+                          <div className="flex items-center space-x-2">
+                            <Shield size={14} className="text-green-600" />
+                            <span className="text-xs font-semibold text-green-700">98.8% Accuracy</span>
+                          </div>
+                          <motion.div
+                            animate={{ x: [0, 5, 0] }}
+                            transition={{ duration: 1.5, repeat: Infinity }}
+                          >
+                            <ArrowRight size={14} className="text-blue-600 sm:w-4 sm:h-4" />
+                          </motion.div>
+                        </div>
+                      </motion.div>
+                    </Link>
+                    <Link href="/technology" className="block h-full">
+                      <motion.div
+                        whileHover={{ scale: 1.02, y: -2 }}
+                        className="h-full bg-gradient-to-br from-purple-50 to-pink-50 p-3 sm:p-4 lg:p-6 rounded-lg sm:rounded-xl lg:rounded-2xl border border-purple-100 hover:border-purple-200 transition-all duration-300 flex flex-col"
+                      >
+                        <div className="flex items-center space-x-3 mb-3">
+                          <div className="w-10 h-10 bg-gradient-to-r from-purple-600 to-pink-600 rounded-xl flex items-center justify-center">
+                            <Brain className="text-white" size={20} />
+                          </div>
+                          <div>
+                            <h3 className="text-base sm:text-lg font-bold text-purple-900 leading-tight">Technology & Software</h3>
+                            <p className="text-[10px] sm:text-xs font-semibold text-purple-600 uppercase tracking-wider">Innovative Solutions</p>
+                          </div>
+                        </div>
+                        <p className="text-xs sm:text-sm text-purple-700 leading-relaxed mb-3 flex-grow">
+                          Cloud solutions, software services, talent management, AI/ML, mobile solutions, remote hardware, analytics & reporting.
+                        </p>
+                        <div className="flex items-center justify-between">
+                          <div className="flex items-center space-x-2">
+                            <Code size={14} className="text-purple-600" />
+                            <span className="text-xs font-semibold text-purple-700">100+ Projects</span>
+                          </div>
+                          <motion.div
+                            animate={{ x: [0, 5, 0] }}
+                            transition={{ duration: 1.5, repeat: Infinity, delay: 0.5 }}
+                          >
+                            <ArrowRight size={14} className="text-purple-600 sm:w-4 sm:h-4" />
+                          </motion.div>
+                        </div>
+                      </motion.div>
+                    </Link>
+                  </div>
+
+                  {/* Consistently center the description if needed, or keep it left-aligned as it was */}
                 </motion.div>
               </div>
 
-              {/* Enhanced CTA Buttons */}
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 2.8, duration: 0.8 }}
-                className="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full max-w-none"
-              >
-                <motion.div
-                  whileHover={{
-                    scale: 1.05,
-                    boxShadow: "0 20px 40px rgba(59, 130, 246, 0.3)"
-                  }}
-                  whileTap={{ scale: 0.98 }}
-                  transition={{ type: "spring", stiffness: 400, damping: 17 }}
-                >
-                  <Link
-                    href="/medical"
-                    className="group relative inline-flex items-center justify-center px-4 sm:px-6 py-3 text-sm sm:text-base font-semibold text-white bg-gradient-to-r from-blue-600 to-cyan-600 rounded-lg sm:rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden w-full sm:w-auto"
-                  >
-                    <motion.div
-                      className="absolute inset-0 bg-gradient-to-r from-cyan-600 to-blue-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                    />
-                    <span className="relative z-10 flex items-center gap-2 text-center justify-center">
-                      <Stethoscope size={16} className="sm:w-5 sm:h-5" />
-                      <span className="hidden xs:inline">Healthcare</span>
-                      <span className="hidden sm:inline"> Healthcare</span>
-                      <span className="xs:hidden">KPO</span>
-                      <motion.div
-                        animate={{ x: [0, 5, 0] }}
-                        transition={{ duration: 1.5, repeat: Infinity }}
-                      >
-                        <ArrowRight size={14} className="sm:w-4 sm:h-4" />
-                      </motion.div>
-                    </span>
-
-                    {/* Shimmer Effect */}
-                    <motion.div
-                      animate={{ x: [-100, 300] }}
-                      transition={{ duration: 2, repeat: Infinity, repeatDelay: 3 }}
-                      className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent skew-x-12"
-                    />
-                  </Link>
-                </motion.div>
-
-                <motion.div
-                  whileHover={{
-                    scale: 1.05,
-                    boxShadow: "0 20px 40px rgba(147, 51, 234, 0.3)"
-                  }}
-                  whileTap={{ scale: 0.98 }}
-                  transition={{ type: "spring", stiffness: 400, damping: 17 }}
-                >
-                  <Link
-                    href="/technology"
-                    className="group relative inline-flex items-center justify-center px-4 sm:px-6 py-3 text-sm sm:text-base font-semibold text-white bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg sm:rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden w-full sm:w-auto"
-                  >
-                    <motion.div
-                      className="absolute inset-0 bg-gradient-to-r from-pink-600 to-purple-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                    />
-                    <span className="relative z-10 flex items-center gap-2 text-center justify-center">
-                      <Code size={16} className="sm:w-5 sm:h-5" />
-                      <span className="hidden xs:inline">Software</span>
-                      <span className="hidden sm:inline"> Software</span>
-                      <span className="xs:hidden">Solutions</span>
-                      <motion.div
-                        animate={{ x: [0, 5, 0] }}
-                        transition={{ duration: 1.5, repeat: Infinity, delay: 0.5 }}
-                      >
-                        <ArrowRight size={14} className="sm:w-4 sm:h-4" />
-                      </motion.div>
-                    </span>
-
-                    {/* Shimmer Effect */}
-                    <motion.div
-                      animate={{ x: [-100, 300] }}
-                      transition={{ duration: 2, repeat: Infinity, repeatDelay: 3, delay: 0.5 }}
-                      className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent skew-x-12"
-                    />
-                  </Link>
-                </motion.div>
-              </motion.div>
+              {/* Enhanced CTA Buttons Container (Visible if other buttons are added, currently empty or removed) */}
+              <div className="hidden" />
 
               {/* Enhanced Trust Indicators */}
               <motion.div
@@ -1202,7 +1136,7 @@ const Hero = () => {
                     delay: 3.8
                   },
                   {
-                    label: '1000+ Team Members',
+                    label: '150+ Team Members',
                     icon: Briefcase,
                     bg: 'bg-cyan-50',
                     border: 'border-cyan-200',
@@ -1541,8 +1475,8 @@ const Hero = () => {
           >
             {/* Header */}
             <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-10">
-              <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4 sm:mb-0">
-                What they said about us
+              <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4 sm:mb-0 italic">
+                &ldquo;What they said about us&rdquo;
               </h2>
               <Link
                 href="/testimonials"
@@ -1580,7 +1514,7 @@ const Hero = () => {
                   transition={{ delay: idx * 0.1, duration: 0.5 }}
                   className="bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-2xl p-6 flex flex-col h-full hover:border-primary-500/50 transition-colors"
                 >
-                  <p className="text-gray-300 italic leading-relaxed flex-grow mb-6">
+                  <p className="text-gray-300 leading-relaxed flex-grow mb-6">
                     &ldquo;{testimonial.quote}&rdquo;
                   </p>
                   <div className="border-t border-gray-700 pt-4">
@@ -1621,11 +1555,12 @@ const Hero = () => {
 
                 {/* Map Tooltips */}
                 {[
-                  { name: 'United States', top: '35%', left: '28%' },
-                  { name: 'Canada', top: '21%', left: '24%' },
+                  { name: 'United States', top: '35%', left: '31%' },
+                  { name: 'Canada', top: '21%', left: '30%' },
                   { name: 'United Kingdom', top: '23%', left: '47%' },
                   { name: 'Ireland', top: '27%', left: '45%' },
                   { name: 'Germany', top: '28%', left: '50%' },
+                  { name: 'Israel', top: '41%', left: '53%' },
                   { name: 'Australia', top: '72%', left: '70%' },
                 ].map((location, idx) => (
                   <motion.div
@@ -1658,6 +1593,7 @@ const Hero = () => {
                 { name: 'Canada', flag: '🇨🇦' },
                 { name: 'Australia', flag: '🇦🇺' },
                 { name: 'Ireland', flag: '🇮🇪' },
+                { name: 'Israel', flag: '🇮🇱' },
                 { name: 'Germany', flag: '🇩🇪' }
               ].map((country, idx) => (
                 <motion.div
@@ -1681,6 +1617,7 @@ const Hero = () => {
                 { name: 'Canada', flag: '🇨🇦' },
                 { name: 'Australia', flag: '🇦🇺' },
                 { name: 'Ireland', flag: '🇮🇪' },
+                { name: 'Israel', flag: '🇮🇱' },
                 { name: 'Germany', flag: '🇩🇪' }
               ].map((country, idx) => (
                 <motion.div
@@ -1796,7 +1733,7 @@ const Hero = () => {
           }
         }
         .animate-marquee {
-          animation: marquee 25s linear infinite;
+          animation: marquee 20s linear infinite;
         }
       `}</style >
     </>

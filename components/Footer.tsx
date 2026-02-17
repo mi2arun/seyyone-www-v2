@@ -2,42 +2,30 @@
 
 import Link from 'next/link'
 import { motion } from 'framer-motion'
-import { Phone, Mail, MapPin, ArrowUp } from 'lucide-react'
+import { Phone, Mail, MapPin, ArrowUp, Facebook, Twitter, Youtube } from 'lucide-react'
 
 const Footer = () => {
-  const healthcareKPO = [
-    { name: 'Peer Review Summary', href: '/medical#services' },
-    { name: 'Medical Record Summarization', href: '/medical#services' },
-    { name: 'Medical Billing', href: '/medical#services' },
-    { name: 'Medical Transcription', href: '/medical#services' },
-    { name: 'APS Summary', href: '/medical#services' },
-    { name: 'Medical Scribe', href: '/medical#services' },
-    { name: 'EHR/EMR', href: '/medical#services' }
+  const services = [
+    { name: 'Healthcare KPO', href: '/medical' },
+    { name: 'Technology & Service', href: '/technology' }
   ]
 
-  const softwareSolutions = [
-    { name: 'Cloud Solutions', href: '/technology#services' },
-    { name: 'Software Services', href: '/technology#services' },
-    { name: 'Talent Management', href: '/technology#services' },
-    { name: 'AI/ML Solutions', href: '/technology#services' },
-    { name: 'Mobile Solutions', href: '/technology#services' },
-    { name: 'Remote Hardware Infra', href: '/technology#services' },
-    { name: 'Analytics & Reporting', href: '/technology#services' }
-  ]
-
-  const quickLinks = [
+  const company = [
     { name: 'About Us', href: '/about' },
-    { name: 'Healthcare Services', href: '/medical' },
-    { name: 'Technology Solutions', href: '/technology' },
-    { name: 'Career Opportunities', href: '/career' },
+    { name: 'Careers', href: '/career' },
     { name: 'Contact Us', href: '/contact' }
   ]
 
-  const insights = [
-    { name: 'Healthcare KPO', href: '/medical' },
-    { name: 'Technology Solutions', href: '/technology' },
-    { name: 'About Seyyone', href: '/about' },
-    { name: 'Join Our Team', href: '/career' }
+  const insightsLinks = [
+    { name: 'Case Studies', href: '/insights#case-studies' },
+    { name: 'Blogs', href: '/insights#blogs' },
+    { name: 'Articles', href: '/insights#articles' }
+  ]
+
+  const supportLinks = [
+    { name: 'HIPAA Compliance', href: '/hipaa-compliance' },
+    { name: 'Privacy Policy', href: '/privacy-policy' },
+    { name: 'FAQ', href: '/faq' }
   ]
 
   const scrollToTop = () => {
@@ -75,15 +63,14 @@ const Footer = () => {
 
             <p className="text-gray-300 mb-3 leading-relaxed text-sm">
               Transforming businesses through technology and expertise since 1999.
-              Delivering innovative Healthcare KPO and Software Development solutions
-              to 70+ clients across 6 countries with our team of 150+ professionals.
+              Delivering innovative solutions to 70+ clients across 7 countries.
             </p>
 
             <div className="space-y-2">
               <div className="flex items-center space-x-2 text-gray-300 text-sm">
                 <Phone size={14} className="text-primary-400" />
                 <a href="tel:+914222310240" className="hover:text-primary-400 transition-colors">
-                  91 (422) 2310240
+                  +91 (422) 2310240
                 </a>
               </div>
               <div className="flex items-center space-x-2 text-gray-300 text-sm">
@@ -100,13 +87,25 @@ const Footer = () => {
                 </span>
               </div>
             </div>
+
+            <div className="flex items-center space-x-4 mt-6">
+              <a href="#" className="w-8 h-8 bg-secondary-800 rounded-full flex items-center justify-center hover:bg-primary-600 transition-colors" aria-label="Facebook">
+                <Facebook size={16} />
+              </a>
+              <a href="#" className="w-8 h-8 bg-secondary-800 rounded-full flex items-center justify-center hover:bg-primary-600 transition-colors" aria-label="Twitter">
+                <Twitter size={16} />
+              </a>
+              <a href="#" className="w-8 h-8 bg-secondary-800 rounded-full flex items-center justify-center hover:bg-primary-600 transition-colors" aria-label="YouTube">
+                <Youtube size={16} />
+              </a>
+            </div>
           </div>
 
-          {/* Healthcare KPO */}
+          {/* Services */}
           <div>
-            <h3 className="text-base font-semibold mb-3">Healthcare KPO</h3>
+            <h3 className="text-base font-semibold mb-3">Services</h3>
             <ul className="space-y-1">
-              {healthcareKPO.map((service) => (
+              {services.map((service) => (
                 <li key={service.name}>
                   <Link
                     href={service.href}
@@ -119,28 +118,11 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Software Solutions */}
-          <div>
-            <h3 className="text-base font-semibold mb-3">Software Solutions</h3>
-            <ul className="space-y-1">
-              {softwareSolutions.map((service) => (
-                <li key={service.name}>
-                  <Link
-                    href={service.href}
-                    className="text-gray-300 hover:text-primary-400 transition-colors text-sm"
-                  >
-                    {service.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Quick Links */}
+          {/* Company */}
           <div>
             <h3 className="text-base font-semibold mb-3">Company</h3>
             <ul className="space-y-1">
-              {quickLinks.map((link) => (
+              {company.map((link) => (
                 <li key={link.name}>
                   <Link
                     href={link.href}
@@ -156,8 +138,8 @@ const Footer = () => {
           {/* Insights */}
           <div>
             <h3 className="text-base font-semibold mb-3">Insights</h3>
-            <ul className="space-y-1 mb-4">
-              {insights.map((item) => (
+            <ul className="space-y-1">
+              {insightsLinks.map((item) => (
                 <li key={item.name}>
                   <Link
                     href={item.href}
@@ -168,24 +150,23 @@ const Footer = () => {
                 </li>
               ))}
             </ul>
+          </div>
 
-            <Link href="/hipaa-compliance">
-              <div className="bg-secondary-800 rounded-lg p-3 hover:bg-secondary-700 transition-colors cursor-pointer">
-                <h4 className="font-semibold text-green-400 mb-1 text-xs">
-                  HIPAA Compliant
-                </h4>
-                <p className="text-xs text-gray-300">
-                  Ensuring highest standards of data security and compliance.
-                </p>
-              </div>
-            </Link>
-
-            <Link
-              href="/contact"
-              className="bg-primary-600 text-white px-3 py-1.5 rounded-lg font-medium hover:bg-primary-700 transition-colors inline-block text-center w-full mt-3 text-sm"
-            >
-              Get In Touch
-            </Link>
+          {/* Support */}
+          <div>
+            <h3 className="text-base font-semibold mb-3">Support</h3>
+            <ul className="space-y-1">
+              {supportLinks.map((item) => (
+                <li key={item.name}>
+                  <Link
+                    href={item.href}
+                    className="text-gray-300 hover:text-primary-400 transition-colors text-sm"
+                  >
+                    {item.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
 
@@ -197,13 +178,14 @@ const Footer = () => {
             </div>
 
             <div className="flex items-center space-x-4">
-              <span className="text-gray-400 text-xs">Serving 6 Countries:</span>
+              <span className="text-gray-400 text-xs">Serving 7 Countries:</span>
               <div className="flex space-x-1.5 text-sm">
                 <span title="USA">🇺🇸</span>
                 <span title="UK">🇬🇧</span>
                 <span title="Canada">🇨🇦</span>
                 <span title="Australia">🇦🇺</span>
                 <span title="Ireland">🇮🇪</span>
+                <span title="Israel">🇮🇱</span>
                 <span title="Germany">🇩🇪</span>
               </div>
 

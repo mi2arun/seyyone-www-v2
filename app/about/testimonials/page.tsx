@@ -136,7 +136,7 @@ export default function TestimonialsPage() {
                                             ))}
                                         </div>
 
-                                        <p className="mb-8 text-lg font-medium leading-relaxed text-gray-700 italic flex-grow">
+                                        <p className="mb-8 text-lg font-medium leading-relaxed text-gray-700 flex-grow">
                                             &ldquo;{t.quote}&rdquo;
                                         </p>
 
@@ -154,7 +154,7 @@ export default function TestimonialsPage() {
                 {/* Global Impact */}
                 <section className="py-20 bg-gray-900 text-white">
                     <div className="container text-center">
-                        <h2 className="mb-8 text-3xl font-bold md:text-4xl italic">
+                        <h2 className="mb-8 text-3xl font-bold md:text-4xl">
                             &ldquo;Excellence is not an act, but a habit.&rdquo;
                         </h2>
                         <p className="max-w-2xl mx-auto text-xl text-gray-400 leading-relaxed">

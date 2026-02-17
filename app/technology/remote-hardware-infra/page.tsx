@@ -231,7 +231,6 @@ export default function RemoteHardwareInfraPage() {
                     <div className="grid grid-cols-2 gap-3">
                       {service.items.map((item, idx) => (
                         <div key={idx} className="flex items-center space-x-2">
-                          <CheckCircle className="text-teal-600 flex-shrink-0" size={16} />
                           <span className="text-sm text-gray-700">{item}</span>
                         </div>
                       ))}
@@ -270,7 +269,6 @@ export default function RemoteHardwareInfraPage() {
                       transition={{ delay: index * 0.05, duration: 0.4 }}
                       className="flex items-start space-x-2"
                     >
-                      <CheckCircle className="text-teal-600 flex-shrink-0 mt-1" size={18} />
                       <span className="text-gray-700 text-sm">{capability}</span>
                     </motion.div>
                   ))}
@@ -293,7 +291,6 @@ export default function RemoteHardwareInfraPage() {
                   <div className="space-y-4">
                     {benefits.map((benefit, index) => (
                       <div key={index} className="flex items-start space-x-3 p-4 bg-white rounded-lg">
-                        <CheckCircle className="text-teal-600 flex-shrink-0 mt-1" size={20} />
                         <span className="text-gray-700">{benefit}</span>
                       </div>
                     ))}

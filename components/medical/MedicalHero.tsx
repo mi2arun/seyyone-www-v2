@@ -191,19 +191,19 @@ const MedicalHero = ({ onOpenModal }: { onOpenModal: () => void }) => {
                 {/* Services List */}
                 <div className="space-y-3">
                   {[
-                    'Medical Transcription',
+                    'Medical Record Summarization',
                     'Medical Billing & Coding',
                     'EHR/EMR Support',
-                    'Medical Record Summarization'
+                    'Medical Transcription'
+
                   ].map((service, index) => (
                     <motion.div
                       key={service}
                       initial={{ opacity: 0, x: -20 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: 2.5 + index * 0.1, duration: 0.6 }}
-                      className="flex items-center space-x-3"
+                      className="flex items-center"
                     >
-                      <CheckCircle size={16} className="text-green-500" />
                       <span className="text-sm text-gray-700">{service}</span>
                     </motion.div>
                   ))}

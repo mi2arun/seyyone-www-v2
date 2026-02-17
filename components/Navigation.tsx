@@ -56,13 +56,13 @@ const Navigation = () => {
       type: 'dropdown',
       href: '/medical',
       items: [
-        { name: 'Medical Scribe', href: '/medical/medical-scribe' },
         { name: 'Medical Record Summarization', href: '/medical/medical-record-summarization' },
-        { name: 'Medical Transcription', href: '/medical/medical-transcription' },
-        { name: 'Peer Review Summary', href: '/medical/peer-review-summary' },
+        { name: 'Medical Scribe', href: '/medical/medical-scribe' },
         { name: 'Medical Billing', href: '/medical/medical-billing' },
+        { name: 'Peer Review Summary', href: '/medical/peer-review-summary' },
         { name: 'APS Summary', href: '/medical/aps-summary' },
         { name: 'EHR/EMR', href: '/medical/ehr-emr' },
+        { name: 'Medical Transcription', href: '/medical/medical-transcription' },
       ]
     },
     {
