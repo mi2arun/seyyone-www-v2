@@ -103,7 +103,7 @@ export default function RemoteHardwareInfraPage() {
       <Navigation />
       <main>
         {/* Hero */}
-        <section className="relative pt-32 pb-20 overflow-hidden bg-gradient-to-b from-teal-50 to-white">
+        <section className="relative pt-36 pb-20 overflow-hidden bg-gradient-to-b from-teal-50 to-white">
           <div className="absolute inset-0">
             <div className="absolute inset-0 bg-gradient-to-b from-teal-100 to-white" />
             <div className="absolute top-20 right-0 w-96 h-96 bg-gradient-to-br from-teal-200 to-green-100 opacity-30 rounded-full blur-3xl" />
@@ -127,7 +127,7 @@ export default function RemoteHardwareInfraPage() {
                 Always On
               </motion.div>
 
-              <h1 className="text-5xl md:text-7xl font-bold mb-8">
+              <h1 className="text-4xl md:text-6xl font-bold mb-6">
                 <span className="bg-gradient-to-r from-teal-600 to-green-600 bg-clip-text text-transparent">
                   Remote Hardware
                 </span>
@@ -135,7 +135,7 @@ export default function RemoteHardwareInfraPage() {
                 <span className="text-gray-900">Infrastructure</span>
               </h1>
 
-              <p className="text-xl text-gray-700 leading-relaxed mb-12 max-w-3xl mx-auto">
+              <p className="text-xl text-gray-700 leading-relaxed mb-0 max-w-3xl mx-auto">
                 Remote infrastructure management and hardware support for seamless IT operations.
                 24/7 monitoring, maintenance, and support to keep your infrastructure running optimally.
               </p>
@@ -146,7 +146,7 @@ export default function RemoteHardwareInfraPage() {
         </section>
 
         {/* Features */}
-        <section id="features" className="py-20 bg-white">
+        <section id="features" className="pt-8 pb-20 bg-white">
           <div className="container">
             <motion.div
               initial={{ opacity: 0, y: 20 }}

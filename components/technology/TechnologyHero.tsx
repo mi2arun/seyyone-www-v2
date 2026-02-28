@@ -19,7 +19,7 @@ const TechnologyHero = ({ onOpenModal }: { onOpenModal: () => void }) => {
   ]
 
   return (
-    <section className="min-h-screen flex items-center relative overflow-hidden pt-20 pb-16 bg-gradient-to-br from-gray-50 via-white to-purple-50">
+    <section className="min-h-[70vh] flex items-center relative overflow-hidden pt-36 pb-20 bg-gradient-to-br from-gray-50 via-white to-purple-50">
       {/* Background Elements */}
       <div className="absolute inset-0">
         <motion.div

@@ -118,7 +118,7 @@ export default function AnalyticsReportingPage() {
       <Navigation />
       <main>
         {/* Hero */}
-        <section className="relative pt-32 pb-20 overflow-hidden bg-gradient-to-b from-indigo-50 to-white">
+        <section className="relative pt-36 pb-20 overflow-hidden bg-gradient-to-b from-indigo-50 to-white">
           <div className="absolute inset-0">
             <div className="absolute inset-0 bg-gradient-to-b from-indigo-100 to-white" />
             <div className="absolute top-20 right-0 w-96 h-96 bg-gradient-to-br from-indigo-200 to-purple-100 opacity-30 rounded-full blur-3xl" />
@@ -142,7 +142,7 @@ export default function AnalyticsReportingPage() {
                 Data-Driven
               </motion.div>
 
-              <h1 className="text-5xl md:text-7xl font-bold mb-8">
+              <h1 className="text-4xl md:text-6xl font-bold mb-6">
                 <span className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
                   Analytics & Reporting
                 </span>
@@ -150,7 +150,7 @@ export default function AnalyticsReportingPage() {
                 <span className="text-gray-900">Solutions</span>
               </h1>
 
-              <p className="text-xl text-gray-700 leading-relaxed mb-12 max-w-3xl mx-auto">
+              <p className="text-xl text-gray-700 leading-relaxed mb-0 max-w-3xl mx-auto">
                 Data-driven insights through advanced analytics and comprehensive reporting platforms.
                 Transform raw data into actionable intelligence with powerful visualizations and real-time dashboards.
               </p>
@@ -161,7 +161,7 @@ export default function AnalyticsReportingPage() {
         </section>
 
         {/* Features */}
-        <section id="features" className="py-20 bg-white">
+        <section id="features" className="pt-8 pb-20 bg-white">
           <div className="container">
             <motion.div
               initial={{ opacity: 0, y: 20 }}

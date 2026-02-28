@@ -76,7 +76,7 @@ export default function MedicalTranscriptionPage() {
       <Navigation />
       <main>
         {/* Hero Section */}
-        <section className="relative pt-32 pb-20 overflow-hidden bg-gradient-to-b from-blue-50 to-white">
+        <section className="relative pt-36 pb-20 overflow-hidden bg-gradient-to-b from-blue-50 to-white">
           <div className="absolute inset-0">
             <div className="absolute inset-0 bg-gradient-to-b from-blue-100 to-white" />
             <div className="absolute top-20 right-0 w-96 h-96 bg-gradient-to-br from-blue-200 to-cyan-100 opacity-30 rounded-full blur-3xl" />
@@ -100,7 +100,7 @@ export default function MedicalTranscriptionPage() {
                 Healthcare KPO Services
               </motion.div>
 
-              <h1 className="text-5xl md:text-7xl font-bold mb-8">
+              <h1 className="text-4xl md:text-6xl font-bold mb-6">
                 <span className="bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
                   Medical Transcription
                 </span>
@@ -108,7 +108,7 @@ export default function MedicalTranscriptionPage() {
                 <span className="text-gray-900">Services</span>
               </h1>
 
-              <p className="text-xl text-gray-700 leading-relaxed mb-12 max-w-3xl mx-auto">
+              <p className="text-xl text-gray-700 leading-relaxed mb-0 max-w-3xl mx-auto">
                 Accurate voice-to-text conversion of medical dictations with 99.8% accuracy rate and quick turnaround times.
                 Our expert transcriptionists ensure your clinical documentation is precise, compliant, and delivered on time.
               </p>
@@ -119,7 +119,7 @@ export default function MedicalTranscriptionPage() {
         </section>
 
         {/* Features Section */}
-        <section id="features" className="pt-12 pb-20 bg-white">
+        <section id="features" className="pt-8 pb-20 bg-white">
           <div className="container">
             <motion.div
               initial={{ opacity: 0, y: 20 }}

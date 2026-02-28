@@ -102,7 +102,7 @@ const TechnologyServices = ({ onOpenModal }: { onOpenModal: () => void }) => {
   }
 
   return (
-    <section id="services" className="py-20 bg-gradient-to-br from-white to-purple-50">
+    <section id="services" className="pt-8 pb-20 bg-gradient-to-br from-white to-purple-50">
       <div className="container">
         {/* Header */}
         <motion.div

@@ -91,7 +91,7 @@ export default function MedicalScribePage() {
       <Navigation />
       <main>
         {/* Hero Section */}
-        <section className="relative pt-32 pb-20 overflow-hidden bg-gradient-to-b from-cyan-50 to-white">
+        <section className="relative pt-36 pb-20 overflow-hidden bg-gradient-to-b from-cyan-50 to-white">
           <div className="absolute inset-0">
             <div className="absolute inset-0 bg-gradient-to-b from-cyan-100 to-white" />
             <div className="absolute top-20 right-0 w-96 h-96 bg-gradient-to-br from-cyan-200 to-blue-100 opacity-30 rounded-full blur-3xl" />
@@ -115,7 +115,7 @@ export default function MedicalScribePage() {
                 Patient-Centered Care
               </motion.div>
 
-              <h1 className="text-5xl md:text-7xl font-bold mb-8">
+              <h1 className="text-4xl md:text-6xl font-bold mb-6">
                 <span className="bg-gradient-to-r from-cyan-600 to-blue-600 bg-clip-text text-transparent">
                   Medical Scribe
                 </span>
@@ -123,7 +123,7 @@ export default function MedicalScribePage() {
                 <span className="text-gray-900">Services</span>
               </h1>
 
-              <p className="text-xl text-gray-700 leading-relaxed mb-12 max-w-3xl mx-auto">
+              <p className="text-xl text-gray-700 leading-relaxed mb-0 max-w-3xl mx-auto">
                 Real-time documentation support allowing physicians to focus on patient care.
                 Our trained medical scribes handle EHR documentation while you focus on what matters most - your patients.
               </p>
@@ -134,7 +134,7 @@ export default function MedicalScribePage() {
         </section>
 
         {/* Features Section */}
-        <section id="features" className="pt-12 pb-20 bg-white">
+        <section id="features" className="pt-8 pb-20 bg-white">
           <div className="container">
             <motion.div
               initial={{ opacity: 0, y: 20 }}

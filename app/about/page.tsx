@@ -14,7 +14,7 @@ export default function AboutPage() {
       <Navigation />
       <main>
         {/* Hero Section */}
-        <section className="relative overflow-hidden pt-32 pb-16 bg-gradient-to-b from-gray-50 to-gray-100">
+        <section className="relative overflow-hidden pt-36 pb-20 bg-gradient-to-b from-gray-50 to-gray-100">
           {/* Office Background */}
           <div className="absolute inset-0">
             <div className="absolute inset-0 bg-gradient-to-b from-gray-100 to-gray-200" />
@@ -39,7 +39,7 @@ export default function AboutPage() {
                 transition={{ duration: 0.8 }}
               >
 
-                <h1 className="text-5xl md:text-7xl font-bold mb-8">
+                <h1 className="text-4xl md:text-6xl font-bold mb-6">
                   <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
                     25+ Years
                   </span>
@@ -47,7 +47,7 @@ export default function AboutPage() {
                   <span className="text-gray-900">of Excellence</span>
                 </h1>
 
-                <p className="text-xl text-gray-700 leading-relaxed mb-12 max-w-3xl mx-auto bg-white/60 backdrop-blur-sm p-6 rounded-2xl shadow-lg">
+                <p className="text-xl text-gray-700 leading-relaxed mb-0 max-w-3xl mx-auto bg-white/60 backdrop-blur-sm p-6 rounded-2xl shadow-xl">
                   Since 1999, Seyyone has been transforming businesses through innovative Healthcare KPO services
                   and cutting-edge Software Development solutions. We are your trusted partner in digital transformation.
                 </p>
@@ -57,7 +57,7 @@ export default function AboutPage() {
         </section>
 
         {/* Company Overview */}
-        <section className="py-20 bg-white">
+        <section className="pt-8 pb-20 bg-white">
           <div className="container">
             <div className="grid lg:grid-cols-2 gap-16 items-center">
               <motion.div
@@ -164,7 +164,7 @@ export default function AboutPage() {
         </section>
 
         {/* Leadership Message */}
-        <section className="py-20 bg-white">
+        <section className="pt-8 pb-20 bg-white">
           <div className="container">
             <div className="max-w-4xl mx-auto text-center">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
@@ -232,7 +232,7 @@ export default function AboutPage() {
         </section>
 
         {/* Moments at Seyyone */}
-        <section className="py-20 bg-white">
+        <section className="pt-8 pb-20 bg-white">
           <div className="container">
             <motion.div
               initial={{ opacity: 0, y: 20 }}

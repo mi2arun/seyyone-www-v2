@@ -88,7 +88,7 @@ export default function MedicalBillingPage() {
       <Navigation />
       <main>
         {/* Hero Section */}
-        <section className="relative pt-32 pb-20 overflow-hidden bg-gradient-to-b from-green-50 to-white">
+        <section className="relative pt-36 pb-20 overflow-hidden bg-gradient-to-b from-green-50 to-white">
           <div className="absolute inset-0">
             <div className="absolute inset-0 bg-gradient-to-b from-green-100 to-white" />
             <div className="absolute top-20 right-0 w-96 h-96 bg-gradient-to-br from-green-200 to-emerald-100 opacity-30 rounded-full blur-3xl" />
@@ -112,7 +112,7 @@ export default function MedicalBillingPage() {
                 Revenue Cycle Management
               </motion.div>
 
-              <h1 className="text-5xl md:text-7xl font-bold mb-8">
+              <h1 className="text-4xl md:text-6xl font-bold mb-6">
                 <span className="bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent">
                   Medical Billing
                 </span>
@@ -120,7 +120,7 @@ export default function MedicalBillingPage() {
                 <span className="text-gray-900">Services</span>
               </h1>
 
-              <p className="text-xl text-gray-700 leading-relaxed mb-12 max-w-3xl mx-auto">
+              <p className="text-xl text-gray-700 leading-relaxed mb-0 max-w-3xl mx-auto">
                 Comprehensive revenue cycle management to maximize reimbursements and reduce claim denials.
                 Our expert billing specialists ensure faster payments and improved cash flow for your practice.
               </p>
@@ -131,7 +131,7 @@ export default function MedicalBillingPage() {
         </section>
 
         {/* Features Section */}
-        <section id="features" className="pt-12 pb-20 bg-white">
+        <section id="features" className="pt-8 pb-20 bg-white">
           <div className="container">
             <motion.div
               initial={{ opacity: 0, y: 20 }}

@@ -17,14 +17,14 @@ export default function CareerPage() {
       <Navigation />
       <main>
         {/* Hero Section */}
-        <section className="relative pt-32 pb-20 overflow-hidden bg-gradient-to-br from-purple-50 via-white to-blue-50">
+        <section className="relative pt-36 pb-20 overflow-hidden bg-gradient-to-br from-purple-50 via-white to-blue-50">
           <div className="container">
             <div className="max-w-4xl mx-auto text-center">
-              <div className="inline-flex items-center px-6 py-3 bg-purple-100 text-purple-700 rounded-full text-sm font-semibold mb-6">
+              <div className="inline-flex items-center px-6 py-3 bg-purple-100 text-purple-700 rounded-full text-sm font-semibold mb-4">
                 Join Our Team
               </div>
 
-              <h1 className="text-5xl md:text-7xl font-bold mb-8">
+              <h1 className="text-4xl md:text-6xl font-bold mb-6">
                 <span className="text-gray-900">Innovators &</span>
                 <br />
                 <span className="bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
@@ -32,7 +32,7 @@ export default function CareerPage() {
                 </span>
               </h1>
 
-              <p className="text-xl text-gray-600 leading-relaxed mb-12 max-w-3xl mx-auto">
+              <p className="text-xl text-gray-600 leading-relaxed mb-0 max-w-3xl mx-auto bg-white/60 backdrop-blur-sm p-6 rounded-2xl shadow-xl">
                 Join our team of passionate technology professionals dedicated to delivering exceptional
                 IT solutions and Healthcare KPO services. Be part of something extraordinary.
               </p>
@@ -41,7 +41,7 @@ export default function CareerPage() {
         </section>
 
         {/* Work Culture */}
-        <section className="py-20 bg-white">
+        <section className="pt-8 pb-20 bg-white">
           <div className="container">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">

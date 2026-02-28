@@ -916,7 +916,7 @@ const Hero = () => {
               <motion.h1
                 initial={{ opacity: 0 }}
                 animate={titleControls}
-                className="font-outfit text-xl xs:text-2xl sm:text-3xl md:text-3xl lg:text-4xl xl:text-5xl font-black leading-[1.1] w-full text-center"
+                className="font-outfit text-2xl xs:text-3xl sm:text-4xl md:text-4xl lg:text-5xl xl:text-6xl font-semibold leading-[1.1] w-full text-center"
               >
                 <motion.span
                   initial={{ opacity: 0, y: 30 }}

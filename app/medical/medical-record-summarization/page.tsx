@@ -99,7 +99,7 @@ export default function MedicalRecordSummarizationPage() {
       <Navigation />
       <main>
         {/* Hero Section */}
-        <section className="relative pt-32 pb-20 overflow-hidden bg-gradient-to-b from-purple-50 to-white">
+        <section className="relative pt-36 pb-20 overflow-hidden bg-gradient-to-b from-purple-50 to-white">
           <div className="absolute inset-0">
             <div className="absolute inset-0 bg-gradient-to-b from-purple-100 to-white" />
             <div className="absolute top-20 right-0 w-96 h-96 bg-gradient-to-br from-purple-200 to-indigo-100 opacity-30 rounded-full blur-3xl" />
@@ -123,7 +123,7 @@ export default function MedicalRecordSummarizationPage() {
                 Legal & Clinical Support
               </motion.div>
 
-              <h1 className="text-5xl md:text-7xl font-bold mb-8">
+              <h1 className="text-4xl md:text-6xl font-bold mb-6">
                 <span className="bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent">
                   Medical Record
                 </span>
@@ -131,7 +131,7 @@ export default function MedicalRecordSummarizationPage() {
                 <span className="text-gray-900">Summarization</span>
               </h1>
 
-              <p className="text-xl text-gray-700 leading-relaxed mb-12 max-w-3xl mx-auto">
+              <p className="text-xl text-gray-700 leading-relaxed mb-0 max-w-3xl mx-auto">
                 Concise, accurate medical record summaries for legal, insurance, and clinical purposes.
                 Transform hundreds of pages into clear, actionable summaries that save time and support decision-making.
               </p>
@@ -142,7 +142,7 @@ export default function MedicalRecordSummarizationPage() {
         </section>
 
         {/* Features Section */}
-        <section id="features" className="pt-12 pb-20 bg-white">
+        <section id="features" className="pt-8 pb-20 bg-white">
           <div className="container">
             <motion.div
               initial={{ opacity: 0, y: 20 }}

@@ -69,14 +69,14 @@ export default function LifeAtSeyyonePage() {
             <Navigation />
             <main>
                 {/* Hero Section */}
-                <section className="relative pt-32 pb-20 overflow-hidden bg-gradient-to-br from-blue-50 via-white to-purple-50">
+                <section className="relative pt-36 pb-20 overflow-hidden bg-gradient-to-br from-blue-50 via-white to-purple-50">
                     <div className="container relative z-10">
                         <div className="max-w-4xl mx-auto text-center">
                             <motion.div
                                 initial={{ opacity: 0, scale: 0.9 }}
                                 animate={{ opacity: 1, scale: 1 }}
                                 transition={{ duration: 0.5 }}
-                                className="inline-flex items-center px-4 py-2 mb-6 text-sm font-semibold text-blue-700 bg-blue-100 rounded-full"
+                                className="inline-flex items-center px-4 py-2 mb-4 text-sm font-semibold text-blue-700 bg-blue-100 rounded-full"
                             >
                                 <Users size={16} className="mr-2" />
                                 Join Our Family
@@ -85,7 +85,7 @@ export default function LifeAtSeyyonePage() {
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ delay: 0.2, duration: 0.8 }}
-                                className="mb-6 text-5xl font-bold md:text-7xl"
+                                className="mb-6 text-4xl font-bold md:text-6xl"
                             >
                                 Life at <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">Seyyone</span>
                             </motion.h1>
@@ -93,7 +93,7 @@ export default function LifeAtSeyyonePage() {
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ delay: 0.4, duration: 0.8 }}
-                                className="mb-10 text-xl leading-relaxed text-gray-700"
+                                className="mb-0 text-xl leading-relaxed text-gray-700 bg-white/60 backdrop-blur-sm p-6 rounded-2xl shadow-xl"
                             >
                                 Discover a culture of innovation, excellence, and collaboration.
                                 At Seyyone, we&rsquo;re not just employees; we&rsquo;re a team driven by passion.
@@ -103,7 +103,7 @@ export default function LifeAtSeyyonePage() {
                 </section>
 
                 {/* Culture & Perks */}
-                <section className="py-20 bg-white">
+                <section className="pt-8 pb-20 bg-white">
                     <div className="container">
                         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
                             {perks.map((perk, index) => {
