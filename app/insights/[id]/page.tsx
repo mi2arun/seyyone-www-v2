@@ -50,7 +50,7 @@ export default function InsightPage({ params }: InsightPageProps) {
                                 {post.title}
                             </h1>
 
-                            <div className="flex flex-wrap items-center gap-6 text-gray-600 pb-8">
+                            <div className="flex flex-wrap items-center gap-6 text-gray-600 pb-4">
                                 <div className="flex items-center">
                                     <User className="w-5 h-5 mr-2 text-blue-600" />
                                     <span className="font-medium text-gray-900">{post.author}</span>
@@ -65,11 +65,11 @@ export default function InsightPage({ params }: InsightPageProps) {
                 </div>
 
                 {/* Content Section */}
-                <div className="container py-16">
+                <div className="container py-8">
                     <div className="max-w-4xl mx-auto">
                         {/* Article Text */}
                         <article
-                            className="bg-white p-8 md:p-12 rounded-3xl shadow-xl prose prose-lg prose-blue max-w-none"
+                            className="bg-white p-8 md:p-12 rounded-3xl shadow-xl blog-content max-w-none"
                             dangerouslySetInnerHTML={{ __html: post.content }}
                         />
                     </div>

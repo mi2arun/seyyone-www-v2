@@ -1,4 +1,6 @@
-import insightsData from '../../data/insights/posts.json';
+import blogsData from '../../data/insights/blogs.json';
+import articlesData from '../../data/insights/articles.json';
+import caseStudiesData from '../../data/insights/case-studies.json';
 
 export interface InsightPost {
     id: string;
@@ -13,7 +15,11 @@ export interface InsightPost {
     tags?: string[];
 }
 
-export const insightPosts: InsightPost[] = insightsData as InsightPost[];
+export const insightPosts: InsightPost[] = [
+    ...blogsData,
+    ...articlesData,
+    ...caseStudiesData
+].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()) as InsightPost[];
 
 export function getInsightById(id: string): InsightPost | undefined {
     return insightPosts.find(post => post.id === id);
