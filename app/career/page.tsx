@@ -160,7 +160,7 @@ export default function CareerPage() {
                   </div>
                   <div className="flex justify-between items-center py-3 border-b border-gray-100">
                     <span className="text-gray-600">Global Presence</span>
-                    <span className="font-semibold text-gray-900">8 Countries</span>
+                    <span className="font-semibold text-gray-900">7 Countries</span>
                   </div>
                   <div className="flex justify-between items-center py-3 border-b border-gray-100">
                     <span className="text-gray-600">Team Size</span>

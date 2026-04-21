@@ -27,14 +27,14 @@ export default function TestimonialsPage() {
             rating: 5
         },
         {
-            quote: "Thx for all of your help. You&rsquo;re a good teammate. I know that it has saved my practice and enjoyment of medicine.",
+            quote: "Thx for all of your help. You're a good teammate. I know that it has saved my practice and enjoyment of medicine.",
             author: "Plastic Surgeon on the West Coast",
             location: "USA",
             rating: 5
         },
         {
             quote: "We are very pleased with you and your team and thank you for making it an easy transition.",
-            author: "Office Manager &ndash; Plastic Surgeon office",
+            author: "Office Manager – Plastic Surgeon office",
             location: "Oregon, USA",
             rating: 5
         },
@@ -51,7 +51,7 @@ export default function TestimonialsPage() {
             rating: 5
         },
         {
-            quote: "Thank you for continuing to do a wonderful job with our transcription! Great job! I&rsquo;m impressed. Thank you so much! I&rsquo;m excited that this transition is turning out to be easier than I was expecting.",
+            quote: "Thank you for continuing to do a wonderful job with our transcription! Great job! I'm impressed. Thank you so much! I'm excited that this transition is turning out to be easier than I was expecting.",
             author: "Office Manager, Oregon Eye Clinic",
             location: "USA",
             rating: 5

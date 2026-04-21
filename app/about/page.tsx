@@ -74,7 +74,7 @@ export default function AboutPage() {
                     Founded in Coimbatore, India, Seyyone began with a vision to bridge the gap between
                     healthcare providers and technology solutions. Over two decades, we have evolved into
                     a comprehensive service provider serving clients across USA, Canada, Australia, Ireland,
-                    Germany, Netherlands, UK, and India.
+                    Germany, Netherlands, UK.
                   </p>
                   <p>
                     Our journey started with a focus on healthcare back-office services, recognizing the

@@ -1039,7 +1039,7 @@ const Hero = () => {
                           </div>
                         </div>
                         <p className="text-xs sm:text-sm text-blue-700 leading-relaxed mb-3 flex-grow">
-                          Medical transcription, billing, record summarization, medical scribe, APS & peer review, EHR/EMR support.
+                          Medical record summarization, medical scribe, billing, peer review, APS summary, transcription & EHR/EMR support.
                         </p>
                         <div className="flex items-center justify-between">
                           <div className="flex items-center space-x-2">
@@ -1065,12 +1065,12 @@ const Hero = () => {
                             <Brain className="text-white" size={20} />
                           </div>
                           <div>
-                            <h3 className="text-base sm:text-lg font-bold text-purple-900 leading-tight">Technology & Software</h3>
-                            <p className="text-[10px] sm:text-xs font-semibold text-purple-600 uppercase tracking-wider">Innovative Solutions</p>
+                            <h3 className="text-base sm:text-lg font-bold text-purple-900 leading-tight">Technology Solutions</h3>
+                            <p className="text-[10px] sm:text-xs font-semibold text-purple-600 uppercase tracking-wider">Software, Cloud & AI Services</p>
                           </div>
                         </div>
                         <p className="text-xs sm:text-sm text-purple-700 leading-relaxed mb-3 flex-grow">
-                          Cloud solutions, software services, talent management, AI/ML, mobile solutions, remote hardware, analytics & reporting.
+                          Software services, cloud solutions, AI/ML, mobile solutions, talent management, remote hardware & analytics.
                         </p>
                         <div className="flex items-center justify-between">
                           <div className="flex items-center space-x-2">
@@ -1223,16 +1223,10 @@ const Hero = () => {
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                     {[
                       {
-                        name: 'Medical Transcription',
-                        summary: 'Accurate voice-to-text conversion of medical dictations.',
-                        points: ['99.8% Accuracy', 'Quick Turnaround'],
-                        href: '/medical/medical-transcription'
-                      },
-                      {
-                        name: 'Medical Billing',
-                        summary: 'End-to-end revenue cycle management and claims processing.',
-                        points: ['Reduced Denials', 'Faster Payments'],
-                        href: '/medical/medical-billing'
+                        name: 'Record Summarization',
+                        summary: 'Concise summaries of complex medical history.',
+                        points: ['Chronological Order', 'Rapid Review'],
+                        href: '/medical/medical-record-summarization'
                       },
                       {
                         name: 'Medical Scribe',
@@ -1241,16 +1235,10 @@ const Hero = () => {
                         href: '/medical/medical-scribe'
                       },
                       {
-                        name: 'Record Summarization',
-                        summary: 'Concise summaries of complex medical history.',
-                        points: ['Chronological Order', 'Rapid Review'],
-                        href: '/medical/medical-record-summarization'
-                      },
-                      {
-                        name: 'APS Summary',
-                        summary: 'Attending Physician Statement summaries for underwriting.',
-                        points: ['Risk Assessment', 'Clear Insights'],
-                        href: '/medical/aps-summary'
+                        name: 'Medical Billing',
+                        summary: 'End-to-end revenue cycle management and claims processing.',
+                        points: ['Reduced Denials', 'Faster Payments'],
+                        href: '/medical/medical-billing'
                       },
                       {
                         name: 'Peer Review',
@@ -1259,11 +1247,24 @@ const Hero = () => {
                         href: '/medical/peer-review-summary'
                       },
                       {
+                        name: 'APS Summary',
+                        summary: 'Attending Physician Statement summaries for underwriting.',
+                        points: ['Risk Assessment', 'Clear Insights'],
+                        href: '/medical/aps-summary'
+                      },
+                      {
                         name: 'EHR/EMR Support',
                         summary: 'Comprehensive management and support for clinical systems.',
                         points: ['System Optimization', 'User Support'],
                         href: '/medical/ehr-emr'
+                      },
+                      {
+                        name: 'Medical Transcription',
+                        summary: 'Accurate voice-to-text conversion of medical dictations.',
+                        points: ['99.8% Accuracy', 'Quick Turnaround'],
+                        href: '/medical/medical-transcription'
                       }
+
                     ]
                       .map((service, idx) => {
                         return (
@@ -1314,8 +1315,8 @@ const Hero = () => {
                         <Brain className="text-white" size={24} />
                       </div>
                       <div>
-                        <h3 className="font-bold text-2xl text-purple-900">Software Solutions</h3>
-                        <p className="text-sm text-purple-600 font-medium tracking-wide uppercase">Software & Cloud Services</p>
+                        <h3 className="font-bold text-2xl text-purple-900">Technology Solutions</h3>
+                        <p className="text-sm text-purple-600 font-medium tracking-wide uppercase">Software, Cloud & AI Services</p>
                       </div>
                     </div>
                     <div className="hidden sm:block">
@@ -1333,22 +1334,16 @@ const Hero = () => {
                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
                     {[
                       {
-                        name: 'Cloud Solutions',
-                        summary: 'Scalable cloud infrastructure and migration services.',
-                        points: ['AWS/Azure/GCP', 'Cloud Migration'],
-                        href: '/technology/cloud-solutions'
-                      },
-                      {
                         name: 'Software Services',
                         summary: 'Custom software development and maintenance.',
                         points: ['Legacy Modernization', 'API Integration'],
                         href: '/technology/software-services'
                       },
                       {
-                        name: 'Talent Management',
-                        summary: 'Dedicated technical staffing and offshore teams.',
-                        points: ['Expert Hiring', 'Team Augmentation'],
-                        href: '/technology/talent-management'
+                        name: 'Cloud Solutions',
+                        summary: 'Scalable cloud infrastructure and migration services.',
+                        points: ['AWS/Azure/GCP', 'Cloud Migration'],
+                        href: '/technology/cloud-solutions'
                       },
                       {
                         name: 'AI/ML Solutions',
@@ -1362,6 +1357,13 @@ const Hero = () => {
                         points: ['iOS & Android', 'UX/UI Design'],
                         href: '/technology/mobile-solutions'
                       },
+                      {
+                        name: 'Talent Management',
+                        summary: 'Dedicated technical staffing and offshore teams.',
+                        points: ['Expert Hiring', 'Team Augmentation'],
+                        href: '/technology/talent-management'
+                      },
+
                       {
                         name: 'Remote Hardware',
                         summary: 'Virtual hardware and remote infrastructure management.',
