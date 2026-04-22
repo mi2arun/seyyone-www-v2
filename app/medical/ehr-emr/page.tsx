@@ -18,21 +18,13 @@ export default function EHREMRPage() {
       title: 'Data Entry',
       description: 'Accurate and efficient data entry services to maintain current patient records and reduce administrative burden.'
     },
-    {
-      icon: Settings,
-      title: 'System Optimization',
-      description: 'EHR/EMR system configuration and optimization to maximize efficiency and improve clinical workflows.'
-    },
+
     {
       icon: Users,
       title: 'Training Support',
       description: 'Comprehensive training programs for staff to ensure proficiency with EHR/EMR systems and features.'
     },
-    {
-      icon: RefreshCw,
-      title: 'Migration Assistance',
-      description: 'Seamless data migration from legacy systems to modern EHR/EMR platforms with zero data loss.'
-    },
+
     {
       icon: Shield,
       title: 'Security & Compliance',
@@ -164,7 +156,7 @@ export default function EHREMRPage() {
               </p>
             </motion.div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
               {features.map((feature, index) => {
                 const IconComponent = feature.icon
                 return (

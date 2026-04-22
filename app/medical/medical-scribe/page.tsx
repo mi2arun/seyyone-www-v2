@@ -36,7 +36,7 @@ export default function MedicalScribePage() {
     {
       icon: Clock,
       title: 'Flexible Scheduling',
-      description: 'Virtual and on-site scribes available on your schedule, including evenings and weekends.'
+      description: 'Virtual scribes available on your schedule, including evenings and weekends.'
     },
     {
       icon: Award,
