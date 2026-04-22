@@ -1441,16 +1441,16 @@ const Hero = () => {
                 {[...Array(2)].map((_, setIndex) => (
                   <div key={setIndex} className="flex space-x-8 shrink-0">
                     {[
-                      { name: "Seyyone Color Logo", img: "https://seyyone.com/wp-content/themes/seyyone/assets/images/seyyone_clients/logo-color.png" },
-                      { name: "Workday", img: "https://seyyone.com/wp-content/themes/seyyone/assets/images/seyyone_clients/Workday.png" },
-                      { name: "Epic", img: "https://seyyone.com/wp-content/themes/seyyone/assets/images/seyyone_clients/220px-Epic.png" },
-                      { name: "Caretracker Harris 1", img: "https://seyyone.com/wp-content/themes/seyyone/assets/images/seyyone_clients/bkg-login-CaretrackerHarris-1.png" },
-                      { name: "Caretracker Harris 2", img: "https://seyyone.com/wp-content/themes/seyyone/assets/images/seyyone_clients/bkg-login-CaretrackerHarris.png" },
-                      { name: "CureMD", img: "https://seyyone.com/wp-content/themes/seyyone/assets/images/seyyone_clients/curemd-142-52.png" },
-                      { name: "Salesforce", img: "https://seyyone.com/wp-content/themes/seyyone/assets/images/seyyone_clients/salesforce.png" },
-                      { name: "Main Logo", img: "https://seyyone.com/wp-content/themes/seyyone/assets/images/seyyone_clients/main-logo.png" },
-                      { name: "NetSuite", img: "https://seyyone.com/wp-content/themes/seyyone/assets/images/seyyone_clients/netsuite.png" },
-                      { name: "NextGen", img: "https://seyyone.com/wp-content/themes/seyyone/assets/images/seyyone_clients/nextgen-logo-color.png" },
+                      { name: "Seyyone Color Logo", img: "/images/clients/logo-color.png" },
+                      { name: "Workday", img: "/images/clients/Workday.png" },
+                      { name: "Epic", img: "/images/clients/220px-Epic.png" },
+                      { name: "Caretracker Harris 1", img: "/images/clients/bkg-login-CaretrackerHarris-1.png" },
+                      { name: "Caretracker Harris 2", img: "/images/clients/bkg-login-CaretrackerHarris.png" },
+                      { name: "CureMD", img: "/images/clients/curemd-142-52.png" },
+                      { name: "Salesforce", img: "/images/clients/salesforce.png" },
+                      { name: "Main Logo", img: "/images/clients/main-logo.png" },
+                      { name: "NetSuite", img: "/images/clients/netsuite.png" },
+                      { name: "NextGen", img: "/images/clients/nextgen-logo-color.png" },
                     ].map((client, idx) => (
                       <div
                         key={`${setIndex}-${idx}`}
