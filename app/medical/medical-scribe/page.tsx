@@ -65,7 +65,7 @@ export default function MedicalScribePage() {
     },
     {
       title: 'Offline Medical Scribes',
-      description: 'In-person scribes who accompany physicians during patient encounters for direct, real-time documentation.',
+      description: 'Offline medical scribing and documentation.',
       icon: Users,
       features: ['Direct interaction', 'Immediate clarification', 'Full integration', 'Emergency dept ready']
     }
@@ -195,7 +195,7 @@ export default function MedicalScribePage() {
               </p>
             </motion.div>
 
-            <div className="grid lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+            <div className="grid lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
               {serviceModels.map((model, index) => {
                 const IconComponent = model.icon
                 return (

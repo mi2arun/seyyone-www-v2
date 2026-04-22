@@ -44,12 +44,7 @@ export default function EHREMRPage() {
       icon: Database,
       items: ['Patient Registration', 'Medical History Updates', 'Lab Results Entry', 'Prescription Management']
     },
-    {
-      title: 'System Implementation',
-      description: 'Full-service EHR/EMR implementation from planning and configuration to go-live support and optimization.',
-      icon: Settings,
-      items: ['Needs Assessment', 'Vendor Selection', 'System Configuration', 'Go-Live Support']
-    },
+
     {
       title: 'Data Migration',
       description: 'Secure transfer of patient records from paper charts or legacy systems to your new EHR/EMR platform.',
@@ -199,7 +194,7 @@ export default function EHREMRPage() {
               </p>
             </motion.div>
 
-            <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+            <div className="grid lg:grid-cols-3 gap-8 max-w-7xl mx-auto px-4 md:px-0">
               {services.map((service, index) => {
                 const IconComponent = service.icon
                 return (
@@ -209,23 +204,26 @@ export default function EHREMRPage() {
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
                     transition={{ delay: index * 0.1, duration: 0.6 }}
-                    className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300"
+                    className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col h-full"
                   >
-                    <div className="flex items-start space-x-4 mb-6">
+                    <div className="flex flex-col space-y-4 mb-6">
                       <div className="w-14 h-14 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-xl flex items-center justify-center flex-shrink-0">
                         <IconComponent className="text-white" size={28} />
                       </div>
                       <div>
-                        <h3 className="text-2xl font-bold text-gray-900 mb-3">{service.title}</h3>
-                        <p className="text-gray-600 leading-relaxed mb-4">{service.description}</p>
+                        <h3 className="text-xl font-bold text-gray-900 mb-3">{service.title}</h3>
+                        <p className="text-gray-600 leading-relaxed text-sm">{service.description}</p>
                       </div>
                     </div>
-                    <div className="grid grid-cols-2 gap-3">
-                      {service.items.map((item, idx) => (
-                        <div key={idx} className="flex items-center space-x-2">
-                          <span className="text-sm text-gray-700">{item}</span>
-                        </div>
-                      ))}
+                    <div className="mt-auto pt-6 border-t border-gray-100">
+                      <div className="space-y-3">
+                        {service.items.map((item, idx) => (
+                          <div key={idx} className="flex items-start space-x-2">
+                            <span className="w-1.5 h-1.5 rounded-full bg-indigo-500 mt-1.5 flex-shrink-0"></span>
+                            <span className="text-sm text-gray-700">{item}</span>
+                          </div>
+                        ))}
+                      </div>
                     </div>
                   </motion.div>
                 )
