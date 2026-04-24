@@ -1557,7 +1557,7 @@ const Hero = () => {
             <div className="hidden md:block relative mb-8">
               <div className="relative h-[350px] overflow-hidden">
                 <Image
-                  src="https://seyyone.com/wp-content/themes/seyyone/assets/images/contact/01.webp"
+                  src="/images/01.webp"
                   alt="World Map"
                   width={1200}
                   height={350}
