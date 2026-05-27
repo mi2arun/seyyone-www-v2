@@ -11,17 +11,50 @@ export default function FAQPage() {
 
     const faqItems = [
         {
-            question: 'How long has Seyyone been in business?',
-            answer: 'Offers a unified platform that fosters innovation while providing end-to-end data management. See how we help your team solve today’s biggest challenges.'
+            question: 'What medical back-office services does Seyyone provide?',
+            answer: 'Seyyone offers a comprehensive suite of healthcare KPO services, including Medical Scribing, Medical Transcription, EHR/EMR Management, Medical Coding, and Revenue Cycle Management (Billing). We provide highly trained virtual assistants to reduce physician burnout and streamline clinical workflows.'
         },
         {
-            question: 'What types of services does Seyyone offer?',
-            answer: 'Offers a unified platform that fosters innovation while providing end-to-end data management. See how we help your team solve today’s biggest challenges.'
+            question: 'How do virtual medical scribes improve practice efficiency?',
+            answer: 'Our virtual medical scribes listen to patient encounters in near real-time and navigate your EMR/EHR to document the visit directly. This allows physicians to focus 100% on patient care rather than data entry, typically increasing patient throughput and reducing documentation time by hours each day.'
+        },
+        {
+            question: 'Is Seyyone fully HIPAA compliant?',
+            answer: 'Yes, Seyyone is 100% HIPAA compliant. We employ strict physical, administrative, and technical safeguards. All data is encrypted both in transit and at rest, and our virtual scribes operate from secure, access-controlled offshore facilities to guarantee patient data privacy.'
+        },
+        {
+            question: 'Does Seyyone integrate with existing EHR and EMR systems?',
+            answer: 'Absolutely. Our team is proficient in navigating all major EHR and EMR platforms. We seamlessly integrate into your existing clinical workflow without requiring you to change your software infrastructure.'
+        },
+        {
+            question: 'What technology and IT services does Seyyone offer?',
+            answer: 'Beyond healthcare KPO, Seyyone provides robust technology solutions, including custom web application development, healthcare software integration, data management, and IT support services tailored to the specific needs of modern medical practices.'
+        },
+        {
+            question: 'How can outsourcing to Seyyone improve Revenue Cycle Management (RCM)?',
+            answer: 'By outsourcing your billing and coding to Seyyone, you gain access to certified medical coders who ensure accurate coding and rapid claims submission. This drastically reduces claim denials, accelerates cash flow, and maximizes the revenue of your medical practice.'
         }
     ]
 
+    const schemaData = {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": faqItems.map(item => ({
+            "@type": "Question",
+            "name": item.question,
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": item.answer
+            }
+        }))
+    }
+
     return (
         <>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
+            />
             <Navigation />
             <main className="bg-white min-h-screen">
                 {/* Hero Section */}

@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { motion } from 'framer-motion'
-import { Phone, Mail, MapPin, ArrowUp, Facebook, Twitter, Youtube } from 'lucide-react'
+import { Phone, Mail, MapPin, ArrowUp, Facebook, Twitter, Youtube, Linkedin } from 'lucide-react'
 
 const Footer = () => {
   const services = [
@@ -89,13 +89,16 @@ const Footer = () => {
             </div>
 
             <div className="flex items-center space-x-4 mt-6">
-              <a href="#" className="w-8 h-8 bg-secondary-800 rounded-full flex items-center justify-center hover:bg-primary-600 transition-colors" aria-label="Facebook">
-                <Facebook size={16} />
-              </a>
-              <a href="#" className="w-8 h-8 bg-secondary-800 rounded-full flex items-center justify-center hover:bg-primary-600 transition-colors" aria-label="Twitter">
+              <a href="https://twitter.com/Seyyone" target="_blank" rel="noopener noreferrer" className="w-8 h-8 bg-secondary-800 rounded-full flex items-center justify-center hover:bg-primary-600 transition-colors" aria-label="Twitter">
                 <Twitter size={16} />
               </a>
-              <a href="#" className="w-8 h-8 bg-secondary-800 rounded-full flex items-center justify-center hover:bg-primary-600 transition-colors" aria-label="YouTube">
+              <a href="https://in.linkedin.com/company/seyyone-group-of-companies" target="_blank" rel="noopener noreferrer" className="w-8 h-8 bg-secondary-800 rounded-full flex items-center justify-center hover:bg-primary-600 transition-colors" aria-label="LinkedIn">
+                <Linkedin size={16} />
+              </a>
+              <a href="https://www.facebook.com/SeyyoneGroupOfCompanies" target="_blank" rel="noopener noreferrer" className="w-8 h-8 bg-secondary-800 rounded-full flex items-center justify-center hover:bg-primary-600 transition-colors" aria-label="Facebook">
+                <Facebook size={16} />
+              </a>
+              <a href="https://www.youtube.com/@seyyonegroupofcompanies" target="_blank" rel="noopener noreferrer" className="w-8 h-8 bg-secondary-800 rounded-full flex items-center justify-center hover:bg-primary-600 transition-colors" aria-label="YouTube">
                 <Youtube size={16} />
               </a>
             </div>

@@ -3,8 +3,8 @@
 import Navigation from '@/components/Navigation'
 
 import Footer from '@/components/Footer'
-import { motion } from 'framer-motion'
-import { Users, CheckCircle, Search, Award, TrendingUp, ArrowRight, Target, Shield, Briefcase, Star } from 'lucide-react'
+import { motion, AnimatePresence } from 'framer-motion'
+import { Users, CheckCircle, Search, Award, TrendingUp, ArrowRight, Target, Shield, Briefcase, Star , ChevronDown} from 'lucide-react'
 import Link from 'next/link'
 
 import { useState } from 'react'
@@ -12,6 +12,36 @@ import TechnologyContactModal from '@/components/technology/TechnologyContactMod
 
 export default function TalentManagementPage() {
   const [isModalOpen, setIsModalOpen] = useState(false)
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
+
+  const faqItems = [
+    {
+        "question": "How do you vet your technical talent?",
+        "answer": "Our rigorous vetting process includes deep technical interviews, live coding assessments, system design evaluations, and soft-skills screening. Only top-tier candidates make the cut."
+    },
+    {
+        "question": "Can we hire developers on a project or dedicated basis?",
+        "answer": "We offer flexible engagement models. You can hire dedicated full-time developers to augment your team, or engage us on a fixed-bid project basis."
+    },
+    {
+        "question": "How quickly can you onboard new developers to our team?",
+        "answer": "Depending on the technology stack, we can typically onboard dedicated developers to your team within 1 to 3 weeks."
+    }
+];
+
+  const schemaData = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqItems.map(item => ({
+      "@type": "Question",
+      "name": item.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": item.answer
+      }
+    }))
+  };
+
   const features = [
     {
       icon: Search,
@@ -100,6 +130,7 @@ export default function TalentManagementPage() {
 
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }} />
       <Navigation />
       <main>
         {/* Hero Section */}
@@ -297,6 +328,44 @@ export default function TalentManagementPage() {
                   </div>
                 </div>
               </motion.div>
+            </div>
+          </div>
+        </section>
+
+        
+        {/* FAQ Section */}
+        <section className="py-20 bg-gray-50 border-t border-gray-100">
+          <div className="container">
+            <div className="max-w-3xl mx-auto">
+              <div className="text-center mb-16">
+                <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">
+                  Frequently Asked <span className="bg-gradient-to-r from-violet-600 to-violet-600 bg-clip-text text-transparent">Questions</span>
+                </h2>
+              </div>
+              <div className="space-y-4">
+                {faqItems.map((item, index) => (
+                  <div key={index} className="bg-white rounded-2xl border border-gray-200 overflow-hidden transition-all duration-300 hover:border-violet-300 hover:shadow-md">
+                    <button
+                      onClick={() => setOpenFaq(openFaq === index ? null : index)}
+                      className="w-full px-8 py-6 flex items-center justify-between text-left"
+                    >
+                      <span className="text-lg font-bold text-gray-900">{item.question}</span>
+                      <motion.div animate={{ rotate: openFaq === index ? 180 : 0 }} transition={{ duration: 0.3 }}>
+                        <ChevronDown className={`text-violet-600 transition-colors ${openFaq === index ? 'text-violet-700' : ''}`} size={24} />
+                      </motion.div>
+                    </button>
+                    <AnimatePresence>
+                      {openFaq === index && (
+                        <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.3, ease: 'easeInOut' }}>
+                          <div className="px-8 pb-8 text-gray-600 leading-relaxed border-t border-gray-100 pt-6">
+                            {item.answer}
+                          </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </section>

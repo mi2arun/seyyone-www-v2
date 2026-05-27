@@ -3,8 +3,8 @@
 import Navigation from '@/components/Navigation'
 
 import Footer from '@/components/Footer'
-import { motion } from 'framer-motion'
-import { FileCheck, CheckCircle, Clock, Shield, Scale, ArrowRight, FileText, BookOpen, AlertCircle } from 'lucide-react'
+import { motion, AnimatePresence } from 'framer-motion'
+import { FileCheck, CheckCircle, Clock, Shield, Scale, ArrowRight, FileText, BookOpen, AlertCircle, ChevronDown } from 'lucide-react'
 import Link from 'next/link'
 
 import { useState } from 'react'
@@ -12,6 +12,35 @@ import MedicalContactModal from '@/components/medical/MedicalContactModal'
 
 export default function MedicalRecordSummarizationPage() {
   const [isModalOpen, setIsModalOpen] = useState(false)
+  const [openFaq, setOpenFaq] = useState<number | null>(null)
+
+  const faqItems = [
+    {
+      question: 'What types of cases do your medical summaries support?',
+      answer: 'Our summaries support a wide range of legal and clinical scenarios, including personal injury cases, medical malpractice, workers compensation, and life insurance underwriting.'
+    },
+    {
+      question: 'How do you format your medical record summaries?',
+      answer: 'We offer customizable formats, including chronological timelines, narrative summaries, and case-specific reports tailored precisely to the needs of legal firms or insurance companies.'
+    },
+    {
+      question: 'Is patient data secure during the summarization process?',
+      answer: 'Yes, our entire summarization workflow is strictly HIPAA-compliant. We use encrypted file transfers and secure review environments to protect all sensitive patient information.'
+    }
+  ]
+
+  const schemaData = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqItems.map(item => ({
+      "@type": "Question",
+      "name": item.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": item.answer
+      }
+    }))
+  }
   const features = [
     {
       icon: FileCheck,
@@ -96,6 +125,7 @@ export default function MedicalRecordSummarizationPage() {
 
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }} />
       <Navigation />
       <main>
         {/* Hero Section */}
@@ -332,6 +362,43 @@ export default function MedicalRecordSummarizationPage() {
                   </div>
                 </div>
               </motion.div>
+            </div>
+          </div>
+        </section>
+
+        {/* FAQ Section */}
+        <section className="py-20 bg-gray-50 border-t border-gray-100">
+          <div className="container">
+            <div className="max-w-3xl mx-auto">
+              <div className="text-center mb-16">
+                <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">
+                  Frequently Asked <span className="bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent">Questions</span>
+                </h2>
+              </div>
+              <div className="space-y-4">
+                {faqItems.map((item, index) => (
+                  <div key={index} className="bg-white rounded-2xl border border-gray-200 overflow-hidden transition-all duration-300 hover:border-purple-300 hover:shadow-md">
+                    <button
+                      onClick={() => setOpenFaq(openFaq === index ? null : index)}
+                      className="w-full px-8 py-6 flex items-center justify-between text-left"
+                    >
+                      <span className="text-lg font-bold text-gray-900">{item.question}</span>
+                      <motion.div animate={{ rotate: openFaq === index ? 180 : 0 }} transition={{ duration: 0.3 }}>
+                        <ChevronDown className={`text-purple-600 transition-colors ${openFaq === index ? 'text-purple-700' : ''}`} size={24} />
+                      </motion.div>
+                    </button>
+                    <AnimatePresence>
+                      {openFaq === index && (
+                        <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.3, ease: 'easeInOut' }}>
+                          <div className="px-8 pb-8 text-gray-600 leading-relaxed border-t border-gray-100 pt-6">
+                            {item.answer}
+                          </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </section>

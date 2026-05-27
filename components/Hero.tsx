@@ -1488,7 +1488,7 @@ const Hero = () => {
                 &ldquo;What they said about us&rdquo;
               </h2>
               <Link
-                href="/testimonials"
+                href="/about/testimonials"
                 className="inline-flex items-center gap-2 px-5 py-2.5 bg-primary-600 hover:bg-primary-700 text-white rounded-lg font-medium transition-colors text-sm"
               >
                 View More

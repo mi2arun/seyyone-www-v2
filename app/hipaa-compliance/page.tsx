@@ -11,17 +11,42 @@ export default function HIPAACompliancePage() {
 
   const faqItems = [
     {
-      question: 'How long has Seyyone been in business?',
-      answer: 'Offers a unified platform that fosters innovation while providing end-to-end data management. See how we help your team solve today’s biggest challenges.'
+      question: 'Is Seyyone 100% HIPAA compliant?',
+      answer: 'Yes, Seyyone adheres strictly to all HIPAA regulations. We implement comprehensive physical, administrative, and technical safeguards to ensure the complete privacy and security of Protected Health Information (PHI).'
     },
     {
-      question: 'What types of services does Seyyone offer?',
-      answer: 'Offers a unified platform that fosters innovation while providing end-to-end data management. See how we help your team solve today’s biggest challenges.'
+      question: 'How does Seyyone ensure physical security for patient data?',
+      answer: 'Our offshore facilities are access-controlled 24/7 with biometric scanners, CCTV surveillance, and security personnel. Employees are not allowed to bring personal electronics, USBs, or mobile phones onto the production floor.'
+    },
+    {
+      question: 'What technical safeguards does Seyyone use?',
+      answer: 'We utilize enterprise-grade firewalls, secure VPNs, and end-to-end encryption for all data transfers. Workstations are restricted to disable external drives, internet browsing, and screen captures, ensuring data cannot leave our secure environment.'
+    },
+    {
+      question: 'Do Seyyone employees undergo HIPAA training?',
+      answer: 'Absolutely. Every employee, from medical scribes to IT personnel, undergoes mandatory, rigorous HIPAA training upon hiring, followed by periodic refresher courses and audits to maintain strict compliance standards.'
     }
   ]
 
+  const schemaData = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqItems.map(item => ({
+      "@type": "Question",
+      "name": item.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": item.answer
+      }
+    }))
+  }
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
+      />
       <Navigation />
       <main className="bg-white">
         {/* Hero Section */}

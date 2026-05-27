@@ -3,8 +3,8 @@
 import Navigation from '@/components/Navigation'
 
 import Footer from '@/components/Footer'
-import { motion } from 'framer-motion'
-import { UserCheck, CheckCircle, Clock, Shield, Zap, ArrowRight, Heart, Monitor, Users, Award } from 'lucide-react'
+import { motion, AnimatePresence } from 'framer-motion'
+import { UserCheck, CheckCircle, Clock, Shield, Zap, ArrowRight, Heart, Monitor, Users, Award, ChevronDown } from 'lucide-react'
 import Link from 'next/link'
 
 import { useState } from 'react'
@@ -12,6 +12,35 @@ import MedicalContactModal from '@/components/medical/MedicalContactModal'
 
 export default function MedicalScribePage() {
   const [isModalOpen, setIsModalOpen] = useState(false)
+  const [openFaq, setOpenFaq] = useState<number | null>(null)
+
+  const faqItems = [
+    {
+      question: 'What is a virtual medical scribe?',
+      answer: 'A virtual medical scribe is a trained professional who listens to patient encounters securely in near real-time and handles documentation directly in your EMR/EHR system, allowing you to focus on the patient instead of a screen.'
+    },
+    {
+      question: 'How much time can a medical scribe save me?',
+      answer: 'On average, physicians save 2-3 hours per day on documentation by using our scribe services. This eliminates after-hours charting and allows providers to see up to 30% more patients.'
+    },
+    {
+      question: 'Do your scribes know my specialty?',
+      answer: 'Yes, Seyyone provides specialty-specific scribes who are highly trained in the medical terminology, billing codes, and standard workflows specific to your field of practice.'
+    }
+  ]
+
+  const schemaData = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqItems.map(item => ({
+      "@type": "Question",
+      "name": item.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": item.answer
+      }
+    }))
+  }
   const features = [
     {
       icon: Zap,
@@ -88,6 +117,7 @@ export default function MedicalScribePage() {
 
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }} />
       <Navigation />
       <main>
         {/* Hero Section */}
@@ -337,6 +367,43 @@ export default function MedicalScribePage() {
                 </motion.div>
               ))}
             </motion.div>
+          </div>
+        </section>
+
+        {/* FAQ Section */}
+        <section className="py-20 bg-gray-50 border-t border-gray-100">
+          <div className="container">
+            <div className="max-w-3xl mx-auto">
+              <div className="text-center mb-16">
+                <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">
+                  Frequently Asked <span className="bg-gradient-to-r from-cyan-600 to-blue-600 bg-clip-text text-transparent">Questions</span>
+                </h2>
+              </div>
+              <div className="space-y-4">
+                {faqItems.map((item, index) => (
+                  <div key={index} className="bg-white rounded-2xl border border-gray-200 overflow-hidden transition-all duration-300 hover:border-cyan-300 hover:shadow-md">
+                    <button
+                      onClick={() => setOpenFaq(openFaq === index ? null : index)}
+                      className="w-full px-8 py-6 flex items-center justify-between text-left"
+                    >
+                      <span className="text-lg font-bold text-gray-900">{item.question}</span>
+                      <motion.div animate={{ rotate: openFaq === index ? 180 : 0 }} transition={{ duration: 0.3 }}>
+                        <ChevronDown className={`text-cyan-600 transition-colors ${openFaq === index ? 'text-cyan-700' : ''}`} size={24} />
+                      </motion.div>
+                    </button>
+                    <AnimatePresence>
+                      {openFaq === index && (
+                        <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.3, ease: 'easeInOut' }}>
+                          <div className="px-8 pb-8 text-gray-600 leading-relaxed border-t border-gray-100 pt-6">
+                            {item.answer}
+                          </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </section>
 

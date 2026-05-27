@@ -3,8 +3,8 @@
 import Navigation from '@/components/Navigation'
 
 import Footer from '@/components/Footer'
-import { motion } from 'framer-motion'
-import { Brain, CheckCircle, Eye, TrendingUp, MessageSquare, ArrowRight, Cpu, BarChart3, Target, Award } from 'lucide-react'
+import { motion, AnimatePresence } from 'framer-motion'
+import { Brain, CheckCircle, Eye, TrendingUp, MessageSquare, ArrowRight, Cpu, BarChart3, Target, Award , ChevronDown} from 'lucide-react'
 import Link from 'next/link'
 
 import { useState } from 'react'
@@ -12,6 +12,36 @@ import TechnologyContactModal from '@/components/technology/TechnologyContactMod
 
 export default function AIMLSolutionsPage() {
   const [isModalOpen, setIsModalOpen] = useState(false)
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
+
+  const faqItems = [
+    {
+        "question": "What AI/ML models do you specialize in?",
+        "answer": "We specialize in a wide range of AI/ML models including Large Language Models (LLMs), Computer Vision, Predictive Analytics, and Natural Language Processing (NLP) solutions."
+    },
+    {
+        "question": "How do you ensure data privacy when building AI models?",
+        "answer": "We follow strict data anonymization and encryption protocols. All training data is secured, and we offer on-premise deployment options for highly sensitive applications."
+    },
+    {
+        "question": "Can you integrate AI into our existing legacy systems?",
+        "answer": "Yes, we build custom API wrappers and microservices that allow modern AI capabilities to seamlessly interface with your existing legacy infrastructure."
+    }
+];
+
+  const schemaData = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqItems.map(item => ({
+      "@type": "Question",
+      "name": item.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": item.answer
+      }
+    }))
+  };
+
   const features = [
     {
       icon: Eye,
@@ -100,6 +130,7 @@ export default function AIMLSolutionsPage() {
 
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }} />
       <Navigation />
       <main>
         {/* Hero Section */}
@@ -296,6 +327,44 @@ export default function AIMLSolutionsPage() {
                   ))}
                 </div>
               </motion.div>
+            </div>
+          </div>
+        </section>
+
+        
+        {/* FAQ Section */}
+        <section className="py-20 bg-gray-50 border-t border-gray-100">
+          <div className="container">
+            <div className="max-w-3xl mx-auto">
+              <div className="text-center mb-16">
+                <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">
+                  Frequently Asked <span className="bg-gradient-to-r from-purple-600 to-purple-600 bg-clip-text text-transparent">Questions</span>
+                </h2>
+              </div>
+              <div className="space-y-4">
+                {faqItems.map((item, index) => (
+                  <div key={index} className="bg-white rounded-2xl border border-gray-200 overflow-hidden transition-all duration-300 hover:border-purple-300 hover:shadow-md">
+                    <button
+                      onClick={() => setOpenFaq(openFaq === index ? null : index)}
+                      className="w-full px-8 py-6 flex items-center justify-between text-left"
+                    >
+                      <span className="text-lg font-bold text-gray-900">{item.question}</span>
+                      <motion.div animate={{ rotate: openFaq === index ? 180 : 0 }} transition={{ duration: 0.3 }}>
+                        <ChevronDown className={`text-purple-600 transition-colors ${openFaq === index ? 'text-purple-700' : ''}`} size={24} />
+                      </motion.div>
+                    </button>
+                    <AnimatePresence>
+                      {openFaq === index && (
+                        <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.3, ease: 'easeInOut' }}>
+                          <div className="px-8 pb-8 text-gray-600 leading-relaxed border-t border-gray-100 pt-6">
+                            {item.answer}
+                          </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </section>

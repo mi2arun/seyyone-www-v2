@@ -5,14 +5,16 @@ import Navigation from '@/components/Navigation'
 
 import Footer from '@/components/Footer'
 import { motion, AnimatePresence } from 'framer-motion'
-import { BookOpen, FileText, FileCheck, Award, Calendar, ArrowRight, User } from 'lucide-react'
+import { BookOpen, FileText, FileCheck, Award, Calendar, ArrowRight, User, X, Maximize2 } from 'lucide-react'
 import Link from 'next/link'
-import { useSearchParams } from 'next/navigation'
+import { useSearchParams, useRouter } from 'next/navigation'
 import { insightPosts } from '@/lib/insights/insight-data'
 
 function InsightsContent() {
   const [activeCategory, setActiveCategory] = useState('all')
+  const [previewInsight, setPreviewInsight] = useState<string | null>(null)
   const searchParams = useSearchParams()
+  const router = useRouter()
 
   // Handle hash-based category filtering from navigation dropdown
   useEffect(() => {
@@ -158,10 +160,24 @@ function InsightsContent() {
                         transition={{ delay: index * 0.1, duration: 0.6 }}
                         className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 group flex flex-col"
                       >
-                        {/* Image Placeholder */}
-                        <div className={`relative h-48 bg-gradient-to-br ${getCategoryColor(insight.category)}`}>
-                          <div className="absolute inset-0 flex items-center justify-center">
-                            <BookOpen className="text-white/50" size={64} />
+                        {/* Image */}
+                        <div 
+                          className={`relative h-48 bg-gradient-to-br ${getCategoryColor(insight.category)} overflow-hidden cursor-pointer group/image`}
+                          onClick={() => setPreviewInsight(insight.id)}
+                        >
+                          {insight.image ? (
+                            <img src={insight.image} alt={insight.title} className="w-full h-full object-cover transition-transform duration-500 group-hover/image:scale-110" />
+                          ) : (
+                            <div className="absolute inset-0 flex items-center justify-center">
+                              <BookOpen className="text-white/50" size={64} />
+                            </div>
+                          )}
+                          {/* Quick View Overlay */}
+                          <div className="absolute inset-0 bg-black/40 opacity-0 group-hover/image:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <div className="bg-white/20 backdrop-blur-md text-white px-4 py-2 rounded-full font-medium flex items-center space-x-2">
+                              <Maximize2 size={16} />
+                              <span>Quick View</span>
+                            </div>
                           </div>
                           {/* Category Badge */}
                           <div className="absolute top-4 left-4">
@@ -182,9 +198,11 @@ function InsightsContent() {
                             <span>{insight.readTime}</span>
                           </div>
 
-                          <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors">
-                            {insight.title}
-                          </h3>
+                          <Link href={`/insights/${insight.id}`} className="block">
+                            <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors cursor-pointer">
+                              {insight.title}
+                            </h3>
+                          </Link>
 
                           <p className="text-gray-600 mb-4 leading-relaxed line-clamp-3">
                             {insight.excerpt}
@@ -261,6 +279,62 @@ function InsightsContent() {
 
 
       </main>
+
+      {/* Quick View Modal */}
+      <AnimatePresence>
+        {previewInsight && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 flex items-center justify-center px-4 py-6 bg-black/60 backdrop-blur-sm"
+            onClick={() => setPreviewInsight(null)}
+          >
+            <motion.div
+              initial={{ scale: 0.9, y: 20, opacity: 0 }}
+              animate={{ scale: 1, y: 0, opacity: 1 }}
+              exit={{ scale: 0.9, y: 20, opacity: 0 }}
+              transition={{ type: 'spring', damping: 25, stiffness: 300 }}
+              className="bg-white rounded-2xl shadow-2xl w-full max-w-5xl h-[85vh] flex flex-col overflow-hidden relative"
+              onClick={e => e.stopPropagation()}
+            >
+              <div className="flex items-center justify-between p-4 border-b border-gray-100 bg-gray-50/80 backdrop-blur-md shrink-0">
+                <div className="flex items-center space-x-3">
+                  <BookOpen className="text-blue-600" size={20} />
+                  <span className="font-semibold text-gray-900">Quick Preview</span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <Link 
+                    href={`/insights/${previewInsight}`}
+                    className="text-sm font-medium text-blue-600 hover:text-blue-700 bg-blue-50 px-4 py-2 rounded-lg transition-colors flex items-center space-x-2 mr-2"
+                  >
+                    <span>Read Full Page</span>
+                    <ArrowRight size={14} />
+                  </Link>
+                  <button
+                    onClick={() => setPreviewInsight(null)}
+                    className="p-2 text-gray-500 hover:text-red-500 hover:bg-red-50 rounded-full transition-colors"
+                  >
+                    <X size={20} />
+                  </button>
+                </div>
+              </div>
+              <div className="flex-grow bg-white relative">
+                {/* Loader while iframe loads */}
+                <div className="absolute inset-0 flex items-center justify-center bg-gray-50">
+                  <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600"></div>
+                </div>
+                <iframe 
+                  src={`/insights/${previewInsight}?modal=true`} 
+                  className="w-full h-full relative z-10 border-0 bg-white"
+                  title="Blog Preview"
+                />
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
       <Footer />
     </>
   )

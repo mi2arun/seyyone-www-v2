@@ -3,8 +3,8 @@
 import Navigation from '@/components/Navigation'
 
 import Footer from '@/components/Footer'
-import { motion } from 'framer-motion'
-import { BarChart3, CheckCircle, PieChart, TrendingUp, Database, ArrowRight, Eye, Layers, Target, Award } from 'lucide-react'
+import { motion, AnimatePresence } from 'framer-motion'
+import { BarChart3, CheckCircle, PieChart, TrendingUp, Database, ArrowRight, Eye, Layers, Target, Award , ChevronDown} from 'lucide-react'
 import Link from 'next/link'
 
 import { useState } from 'react'
@@ -12,6 +12,36 @@ import TechnologyContactModal from '@/components/technology/TechnologyContactMod
 
 export default function AnalyticsReportingPage() {
   const [isModalOpen, setIsModalOpen] = useState(false)
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
+
+  const faqItems = [
+    {
+        "question": "What BI tools do you work with?",
+        "answer": "We have deep expertise in PowerBI, Tableau, Looker, and custom dashboard development using React and D3.js."
+    },
+    {
+        "question": "Can you handle real-time data streaming?",
+        "answer": "Absolutely. We build robust data pipelines using tools like Apache Kafka and AWS Kinesis to provide real-time analytics and reporting."
+    },
+    {
+        "question": "How do you ensure data accuracy in reports?",
+        "answer": "Our data engineering process includes automated data validation, anomaly detection, and rigorous ETL testing before data ever reaches your dashboards."
+    }
+];
+
+  const schemaData = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqItems.map(item => ({
+      "@type": "Question",
+      "name": item.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": item.answer
+      }
+    }))
+  };
+
   const features = [
     {
       icon: PieChart,
@@ -115,6 +145,7 @@ export default function AnalyticsReportingPage() {
 
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }} />
       <Navigation />
       <main>
         {/* Hero */}
@@ -348,6 +379,44 @@ export default function AnalyticsReportingPage() {
                   <span className="text-gray-700 font-medium">{tech}</span>
                 </motion.div>
               ))}
+            </div>
+          </div>
+        </section>
+
+        
+        {/* FAQ Section */}
+        <section className="py-20 bg-gray-50 border-t border-gray-100">
+          <div className="container">
+            <div className="max-w-3xl mx-auto">
+              <div className="text-center mb-16">
+                <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">
+                  Frequently Asked <span className="bg-gradient-to-r from-emerald-600 to-emerald-600 bg-clip-text text-transparent">Questions</span>
+                </h2>
+              </div>
+              <div className="space-y-4">
+                {faqItems.map((item, index) => (
+                  <div key={index} className="bg-white rounded-2xl border border-gray-200 overflow-hidden transition-all duration-300 hover:border-emerald-300 hover:shadow-md">
+                    <button
+                      onClick={() => setOpenFaq(openFaq === index ? null : index)}
+                      className="w-full px-8 py-6 flex items-center justify-between text-left"
+                    >
+                      <span className="text-lg font-bold text-gray-900">{item.question}</span>
+                      <motion.div animate={{ rotate: openFaq === index ? 180 : 0 }} transition={{ duration: 0.3 }}>
+                        <ChevronDown className={`text-emerald-600 transition-colors ${openFaq === index ? 'text-emerald-700' : ''}`} size={24} />
+                      </motion.div>
+                    </button>
+                    <AnimatePresence>
+                      {openFaq === index && (
+                        <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.3, ease: 'easeInOut' }}>
+                          <div className="px-8 pb-8 text-gray-600 leading-relaxed border-t border-gray-100 pt-6">
+                            {item.answer}
+                          </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </section>

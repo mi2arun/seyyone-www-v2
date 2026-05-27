@@ -3,8 +3,8 @@
 import Navigation from '@/components/Navigation'
 
 import Footer from '@/components/Footer'
-import { motion } from 'framer-motion'
-import { Stethoscope, CheckCircle, FileCheck, Shield, Award, ArrowRight, BookOpen, AlertCircle, TrendingUp } from 'lucide-react'
+import { motion, AnimatePresence } from 'framer-motion'
+import { Stethoscope, CheckCircle, FileCheck, Shield, Award, ArrowRight, BookOpen, AlertCircle, TrendingUp, ChevronDown } from 'lucide-react'
 import Link from 'next/link'
 
 import { useState } from 'react'
@@ -12,6 +12,35 @@ import MedicalContactModal from '@/components/medical/MedicalContactModal'
 
 export default function PeerReviewSummaryPage() {
   const [isModalOpen, setIsModalOpen] = useState(false)
+  const [openFaq, setOpenFaq] = useState<number | null>(null)
+
+  const faqItems = [
+    {
+      question: 'Who conducts the peer reviews?',
+      answer: 'Our peer reviews are strictly conducted by board-certified physicians and clinical experts who actively practice in the relevant specialties for the cases they are reviewing.'
+    },
+    {
+      question: 'What types of peer reviews do you offer?',
+      answer: 'We provide retrospective (post-care), concurrent (during care), prospective (pre-authorization), and focused reviews tailored to identify specific clinical or compliance issues.'
+    },
+    {
+      question: 'How do your peer reviews aid in risk management?',
+      answer: 'By providing objective, third-party clinical evaluations, we help healthcare organizations identify potential quality issues early, ensuring adherence to standards of care and mitigating medical malpractice exposure.'
+    }
+  ]
+
+  const schemaData = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqItems.map(item => ({
+      "@type": "Question",
+      "name": item.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": item.answer
+      }
+    }))
+  }
   const features = [
     {
       icon: FileCheck,
@@ -96,6 +125,7 @@ export default function PeerReviewSummaryPage() {
 
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }} />
       <Navigation />
       <main>
         {/* Hero Section */}
@@ -332,6 +362,43 @@ export default function PeerReviewSummaryPage() {
                   <span className="text-gray-700 font-medium">{application}</span>
                 </motion.div>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* FAQ Section */}
+        <section className="py-20 bg-gray-50 border-t border-gray-100">
+          <div className="container">
+            <div className="max-w-3xl mx-auto">
+              <div className="text-center mb-16">
+                <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">
+                  Frequently Asked <span className="bg-gradient-to-r from-teal-600 to-emerald-600 bg-clip-text text-transparent">Questions</span>
+                </h2>
+              </div>
+              <div className="space-y-4">
+                {faqItems.map((item, index) => (
+                  <div key={index} className="bg-white rounded-2xl border border-gray-200 overflow-hidden transition-all duration-300 hover:border-teal-300 hover:shadow-md">
+                    <button
+                      onClick={() => setOpenFaq(openFaq === index ? null : index)}
+                      className="w-full px-8 py-6 flex items-center justify-between text-left"
+                    >
+                      <span className="text-lg font-bold text-gray-900">{item.question}</span>
+                      <motion.div animate={{ rotate: openFaq === index ? 180 : 0 }} transition={{ duration: 0.3 }}>
+                        <ChevronDown className={`text-teal-600 transition-colors ${openFaq === index ? 'text-teal-700' : ''}`} size={24} />
+                      </motion.div>
+                    </button>
+                    <AnimatePresence>
+                      {openFaq === index && (
+                        <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.3, ease: 'easeInOut' }}>
+                          <div className="px-8 pb-8 text-gray-600 leading-relaxed border-t border-gray-100 pt-6">
+                            {item.answer}
+                          </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </section>
