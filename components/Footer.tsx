@@ -12,7 +12,7 @@ const Footer = () => {
 
   const company = [
     { name: 'About Us', href: '/about' },
-    { name: 'Careers', href: '/career' },
+    { name: 'Careers', href: '/careers' },
     { name: 'Contact Us', href: '/contact' }
   ]
 
@@ -63,20 +63,25 @@ const Footer = () => {
 
             <p className="text-gray-300 mb-3 leading-relaxed text-sm">
               Transforming businesses through technology and expertise since 1999.
-              Delivering innovative solutions to 70+ clients across 7 countries.
+              Delivering innovative solutions to 160+ clients across 7 countries.
             </p>
 
             <div className="space-y-2">
-              <div className="flex items-center space-x-2 text-gray-300 text-sm">
-                <Phone size={14} className="text-primary-400" />
-                <a href="tel:+914222310240" className="hover:text-primary-400 transition-colors">
-                  +91 (422) 2310240
-                </a>
+              <div className="flex items-start space-x-2 text-gray-300 text-sm">
+                <Phone size={14} className="text-primary-400 mt-1 flex-shrink-0" />
+                <div className="flex flex-col">
+                  <a href="tel:+12144326657" className="hover:text-primary-400 transition-colors">
+                    US: +1 (214) 432-6657
+                  </a>
+                  <a href="tel:+914222310240" className="hover:text-primary-400 transition-colors">
+                    IN: +91 (422) 2310240
+                  </a>
+                </div>
               </div>
               <div className="flex items-center space-x-2 text-gray-300 text-sm">
                 <Mail size={14} className="text-primary-400" />
-                <a href="mailto:info@seyyone.com" className="hover:text-primary-400 transition-colors">
-                  info@seyyone.com
+                <a href="mailto:business@seyyone.com" className="hover:text-primary-400 transition-colors">
+                  business@seyyone.com
                 </a>
               </div>
               <div className="flex items-start space-x-2 text-gray-300 text-sm">
@@ -177,7 +182,7 @@ const Footer = () => {
         <div className="border-t border-secondary-800 py-2">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-2 md:space-y-0">
             <div className="text-gray-400 text-xs">
-              © 2024 Seyyone. All rights reserved. | Transforming Businesses Since 1999
+              © 2026 Seyyone. All rights reserved. | Transforming Businesses Since 1999
             </div>
 
             <div className="flex items-center space-x-4">

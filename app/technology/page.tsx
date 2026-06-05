@@ -6,7 +6,6 @@ import { ChevronDown } from 'lucide-react'
 import Navigation from '@/components/Navigation'
 import TechnologyHero from '@/components/technology/TechnologyHero'
 import TechnologyServices from '@/components/technology/TechnologyServices'
-import TechnologyTestimonials from '@/components/technology/TechnologyTestimonials'
 import TechnologyInsights from '@/components/technology/TechnologyInsights'
 import TechnologyCTA from '@/components/technology/TechnologyCTA'
 import TechnologyContactModal from '@/components/technology/TechnologyContactModal'
@@ -18,16 +17,28 @@ export default function TechnologyPage() {
 
   const faqItems = [
     {
-      question: 'What healthcare technology services does Seyyone offer?',
-      answer: 'Seyyone provides custom web and application development, seamless EMR/EHR integrations, healthcare data management, and specialized IT support tailored for modern medical practices.'
+      question: "What healthcare technology services does Seyyone offer?",
+      answer: "Seyyone provides custom web and application development, seamless EMR/EHR integrations, healthcare data management, and specialized IT support tailored for modern medical practices."
     },
     {
-      question: 'How do you ensure the security of your healthcare applications?',
-      answer: 'Security is embedded in our SDLC. We build applications with end-to-end encryption, robust access controls, and regular vulnerability assessments to ensure 100% HIPAA compliance and data protection.'
+      question: "How do you ensure the security of your healthcare applications?",
+      answer: "Security is embedded in our SDLC. We build applications with end-to-end encryption, robust access controls, and regular vulnerability assessments to ensure 100% HIPAA compliance and data protection."
     },
     {
-      question: 'Can you integrate new software with our existing legacy systems?',
-      answer: 'Yes, our engineering team specializes in API development and legacy system integration. We ensure your new applications communicate securely and efficiently with your existing EMR/EHR infrastructure.'
+      question: "Can you integrate new software with our existing legacy systems?",
+      answer: "Yes, our engineering team specializes in API development and legacy system integration. We ensure your new applications communicate securely and efficiently with your existing EMR/EHR infrastructure."
+    },
+    {
+      question: "What software methodologies do you use for development?",
+      answer: "We utilize Agile and Scrum methodologies, ensuring continuous integration, regular sprint reviews, and close collaboration with your project managers to deliver high-quality code on time."
+    },
+    {
+      question: "Do you offer mobile healthcare application development?",
+      answer: "Yes. We build native iOS and Android apps, as well as cross-platform mobile solutions using Flutter and React Native, tailored for telemedicine, patient portals, and health tracking."
+    },
+    {
+      question: "How do you handle post-launch software maintenance and support?",
+      answer: "We provide comprehensive post-launch support and SLAs, covering regular security patches, operating system updates, database optimization, and software feature expansions."
     }
   ]
 
@@ -51,7 +62,6 @@ export default function TechnologyPage() {
       <main>
         <TechnologyHero onOpenModal={() => setIsModalOpen(true)} />
         <TechnologyServices onOpenModal={() => setIsModalOpen(true)} />
-        <TechnologyTestimonials onOpenModal={() => setIsModalOpen(true)} />
         <TechnologyInsights />
         
         {/* FAQ Section */}

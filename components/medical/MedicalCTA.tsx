@@ -20,7 +20,7 @@ const MedicalCTA = ({ onOpenModal }: MedicalCTAProps) => {
                     className="bg-gradient-to-r from-blue-600 to-cyan-600 rounded-2xl p-8 text-white shadow-2xl text-center max-w-5xl mx-auto"
                 >
                     <h3 className="text-2xl md:text-3xl font-bold mb-4">
-                        Join 50+ Healthcare Providers Who Trust Seyyone
+                        Join 60+ Healthcare Providers Who Trust Seyyone
                     </h3>
                     <p className="text-blue-100 mb-8 max-w-2xl mx-auto leading-relaxed">
                         Schedule a no-obligation consultation to discuss your unique needs and how Seyyone can help streamline your operations and technology solutions.

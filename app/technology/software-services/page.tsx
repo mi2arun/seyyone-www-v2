@@ -16,18 +16,30 @@ export default function SoftwareServicesPage() {
 
   const faqItems = [
     {
-        "question": "What is your software development methodology?",
-        "answer": "We follow Agile/Scrum methodologies, ensuring regular sprint deliveries, continuous feedback loops, and transparent communication throughout the project lifecycle."
+      question: "What is your software development methodology?",
+      answer: "We follow Agile/Scrum methodologies, ensuring regular sprint deliveries, continuous feedback loops, and transparent communication throughout the project lifecycle."
     },
     {
-        "question": "Who owns the source code once the project is complete?",
-        "answer": "You do. Upon project completion and final payment, we transfer full intellectual property rights and source code ownership to your organization."
+      question: "Who owns the source code once the project is complete?",
+      answer: "You do. Upon project completion and final payment, we transfer full intellectual property rights and source code ownership to your organization."
     },
     {
-        "question": "Do you provide maintenance after launch?",
-        "answer": "Yes, we offer comprehensive Service Level Agreements (SLAs) that cover bug fixes, security patches, and feature updates post-launch."
+      question: "Do you provide maintenance after launch?",
+      answer: "Yes, we offer comprehensive Service Level Agreements (SLAs) that cover bug fixes, security patches, and feature updates post-launch."
+    },
+    {
+      question: "Do you perform quality assurance (QA) and software testing?",
+      answer: "Yes, we have a dedicated QA team that performs comprehensive manual testing, automated unit and integration tests, performance audits, and security vulnerability scans for every build."
+    },
+    {
+      question: "What technology stack do you specialize in for software services?",
+      answer: "We specialize in modern web technologies including React, Next.js, Node.js, Python, Java, and .NET, choosing the stack that best fits your scale, security, and integration requirements."
+    },
+    {
+      question: "Can you help us scale our existing software to handle more users?",
+      answer: "Yes. We analyze database queries, optimize API endpoints, implement caching (like Redis), and restructure code to support higher concurrent user counts and scale smoothly."
     }
-];
+  ];
 
   const schemaData = {
     "@context": "https://schema.org",

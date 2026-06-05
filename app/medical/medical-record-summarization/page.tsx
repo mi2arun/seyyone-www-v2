@@ -16,16 +16,28 @@ export default function MedicalRecordSummarizationPage() {
 
   const faqItems = [
     {
-      question: 'What types of cases do your medical summaries support?',
-      answer: 'Our summaries support a wide range of legal and clinical scenarios, including personal injury cases, medical malpractice, workers compensation, and life insurance underwriting.'
+      question: "What types of cases do your medical summaries support?",
+      answer: "Our summaries support a wide range of legal and clinical scenarios, including personal injury cases, medical malpractice, workers compensation, and life insurance underwriting."
     },
     {
-      question: 'How do you format your medical record summaries?',
-      answer: 'We offer customizable formats, including chronological timelines, narrative summaries, and case-specific reports tailored precisely to the needs of legal firms or insurance companies.'
+      question: "How do you format your medical record summaries?",
+      answer: "We offer customizable formats, including chronological timelines, narrative summaries, and case-specific reports tailored precisely to the needs of legal firms or insurance companies."
     },
     {
-      question: 'Is patient data secure during the summarization process?',
-      answer: 'Yes, our entire summarization workflow is strictly HIPAA-compliant. We use encrypted file transfers and secure review environments to protect all sensitive patient information.'
+      question: "Is patient data secure during the summarization process?",
+      answer: "Yes, our entire summarization workflow is strictly HIPAA-compliant. We use encrypted file transfers and secure review environments to protect all sensitive patient information."
+    },
+    {
+      question: "How do you handle large medical files with thousands of pages?",
+      answer: "Our team uses advanced indexing techniques to organize and cross-reference extensive medical files. We extract key clinical events and organize them chronologically, ensuring legal and insurance teams can quickly navigate the case."
+    },
+    {
+      question: "Can you identify missing records or gaps in treatment history?",
+      answer: "Yes. As part of our summarization process, we flag any gaps in the chronological medical records, missing physician visits, or outstanding test results, saving your legal or clinical team significant research time."
+    },
+    {
+      question: "Do you offer medical record indexing and hyperlinking?",
+      answer: "Yes, we provide fully indexed summaries with hyperlinks that link directly back to the specific source page in the original medical PDF document, enabling instant source verification."
     }
   ]
 

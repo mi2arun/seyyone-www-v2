@@ -8,7 +8,7 @@ const MedicalHero = ({ onOpenModal }: { onOpenModal: () => void }) => {
   const highlights = [
     { icon: Shield, text: 'HIPAA Compliant', color: 'text-green-600' },
     { icon: Award, text: '25+ Years Experience', color: 'text-blue-600' },
-    { icon: Users, text: '50+ Healthcare Clients', color: 'text-purple-600' },
+    { icon: Users, text: '60+ Healthcare Clients', color: 'text-purple-600' },
     { icon: Clock, text: '24/7 Support', color: 'text-orange-600' }
   ]
 

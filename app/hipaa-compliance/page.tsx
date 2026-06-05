@@ -25,6 +25,22 @@ export default function HIPAACompliancePage() {
     {
       question: 'Do Seyyone employees undergo HIPAA training?',
       answer: 'Absolutely. Every employee, from medical scribes to IT personnel, undergoes mandatory, rigorous HIPAA training upon hiring, followed by periodic refresher courses and audits to maintain strict compliance standards.'
+    },
+    {
+      question: 'Who is responsible for HIPAA oversight at Seyyone?',
+      answer: 'Seyyone has a designated Chief Compliance Officer (CCO) who oversees all HIPAA and data security protocols. The CCO is responsible for conducting regular internal audits, managing risk assessments, and updating security policies to align with federal updates.'
+    },
+    {
+      question: 'Are Business Associate Agreements (BAAs) signed with clients?',
+      answer: 'Yes, Seyyone signs comprehensive Business Associate Agreements (BAAs) with all of our clients before commencing any work. This legal contract guarantees that we assume full responsibility for safeguarding Protected Health Information (PHI) under federal law.'
+    },
+    {
+      question: 'How does Seyyone handle potential security incidents or breaches?',
+      answer: 'We have an established Incident Response Team and policy that guarantees immediate containment, investigation, and reporting of any potential data anomaly. In compliance with HIPAA guidelines, clients are notified immediately upon discovery of any security event, followed by a detailed forensic report.'
+    },
+    {
+      question: 'Is patient data stored on Seyyone local systems permanently?',
+      answer: 'No, Seyyone does not store patient data or PHI permanently on local systems. All medical scribing and back-office operations are conducted directly inside the client\'s secure electronic medical records (EMR) system or via secure cloud-based gateways, with zero local storage retention.'
     }
   ]
 

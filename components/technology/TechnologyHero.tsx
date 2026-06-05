@@ -82,9 +82,9 @@ const TechnologyHero = ({ onOpenModal }: { onOpenModal: () => void }) => {
                 transition={{ delay: 0.4, duration: 0.8 }}
                 className="text-xl text-gray-600 leading-relaxed max-w-2xl"
               >
-                Cutting-edge technology solutions including AI/ML development, cloud services,
-                mobile applications, and custom software. Transform your business with scalable,
-                modern technology architecture.
+                Trusted by 100+ technology companies worldwide, we deliver cutting-edge software
+                solutions including AI/ML development, cloud services, and custom applications
+                tailored to scale your operations.
               </motion.p>
             </div>
 

@@ -16,16 +16,28 @@ export default function MedicalBillingPage() {
 
   const faqItems = [
     {
-      question: 'How can Seyyone improve my medical practice revenue?',
-      answer: 'Our dedicated medical billing specialists ensure accurate charge entry, aggressive denial management, and systematic A/R follow-up. This proactive approach typically reduces claim denials by 50% and improves overall collection rates by up to 30%.'
+      question: "How can Seyyone improve my medical practice revenue?",
+      answer: "Our dedicated medical billing specialists ensure accurate charge entry, aggressive denial management, and systematic A/R follow-up. This proactive approach typically reduces claim denials by 50% and improves overall collection rates by up to 30%."
     },
     {
-      question: 'What medical coding standards do you follow?',
-      answer: 'Our certified medical coders are fully proficient in ICD-10, CPT, and HCPCS coding guidelines. We maintain a 95% first-pass claim acceptance rate by strictly adhering to current compliance standards.'
+      question: "What medical coding standards do you follow?",
+      answer: "Our certified medical coders are fully proficient in ICD-10, CPT, and HCPCS coding guidelines. We maintain a 95% first-pass claim acceptance rate by strictly adhering to current compliance standards."
     },
     {
-      question: 'Do you assist with denial management and appeals?',
-      answer: 'Yes, our team aggressively works denied claims, identifying the root cause, correcting errors, and filing prompt appeals to ensure you receive the reimbursement you are owed.'
+      question: "Do you assist with denial management and appeals?",
+      answer: "Yes, our team aggressively works denied claims, identifying the root cause, correcting errors, and filing prompt appeals to ensure you receive the reimbursement you are owed."
+    },
+    {
+      question: "What is Seyyone's clean claim rate?",
+      answer: "We consistently maintain a clean claim rate (first-pass acceptance) of over 95%. This is achieved through automated scrubbing, manual validation of codes, and rigorous verification of patient eligibility."
+    },
+    {
+      question: "How do you handle patient billing inquiries and statements?",
+      answer: "We manage patient statement generation and handle billing queries professionally. Our support agents provide clear explanations of invoices, deductibles, and co-pays, improving patient satisfaction."
+    },
+    {
+      question: "Can you audit our historical accounts receivable (A/R)?",
+      answer: "Yes, we offer comprehensive A/R recovery services. Our billing team audits outstanding claims older than 30, 60, or 90 days, identifies issues, and resubmits claims to capture previously lost revenue."
     }
   ]
 

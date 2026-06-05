@@ -16,16 +16,28 @@ export default function APSSummaryPage() {
 
   const faqItems = [
     {
-      question: 'What is an APS Summary?',
-      answer: 'An Attending Physician Statement (APS) summary is a concise, comprehensive extraction of critical medical information from a patient\'s medical records, specifically tailored to assist insurance underwriters in evaluating risk.'
+      question: "What is an APS Summary?",
+      answer: "An Attending Physician Statement (APS) summary is a concise, comprehensive extraction of critical medical information from a patient's medical records, specifically tailored to assist insurance underwriters in evaluating risk."
     },
     {
-      question: 'How fast can you deliver an APS summary?',
-      answer: 'Our average turnaround time is 48 hours, but we offer expedited options depending on the volume and urgency of your underwriting requirements.'
+      question: "How fast can you deliver an APS summary?",
+      answer: "Our average turnaround time is 48 hours, but we offer expedited options depending on the volume and urgency of your underwriting requirements."
     },
     {
-      question: 'Do you customize APS summaries for specific insurance products?',
-      answer: 'Yes, we format our APS summaries to align precisely with your specific insurance product underwriting guidelines, whether for life insurance, disability claims, or long-term care.'
+      question: "Do you customize APS summaries for specific insurance products?",
+      answer: "Yes, we format our APS summaries to align precisely with your specific insurance product underwriting guidelines, whether for life insurance, disability claims, or long-term care."
+    },
+    {
+      question: "How does Seyyone ensure the security and privacy of APS summaries?",
+      answer: "Seyyone is 100% HIPAA compliant. We transfer all files via secure, encrypted channels and perform the summaries within access-controlled environments, ensuring complete confidentiality of sensitive patient health data."
+    },
+    {
+      question: "Can you handle bulk requests for APS summaries during peak underwriting periods?",
+      answer: "Yes. Our scalable workforce of medical analysts allows us to absorb large volume spikes during peak insurance periods, delivering consistent quality and meeting tight turnaround deadlines."
+    },
+    {
+      question: "What types of medical records are analyzed for an APS summary?",
+      answer: "We analyze comprehensive medical files including physician notes, laboratory results, radiology reports, diagnostic studies, hospital discharge summaries, and prescription histories to build a clear risk profile."
     }
   ]
 

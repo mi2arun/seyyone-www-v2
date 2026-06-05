@@ -1001,7 +1001,7 @@ const Hero = () => {
                       transition={{ duration: 3, repeat: Infinity }}
                       className="font-bold"
                     >
-                      50+ healthcare providers
+                      60+ healthcare providers
                     </motion.span>{' '}
                     and{' '}
                     <motion.span
@@ -1126,7 +1126,7 @@ const Hero = () => {
                     delay: 3.6
                   },
                   {
-                    label: '500+ Global Clients',
+                    label: '160+ Global Clients',
                     icon: Users,
                     bg: 'bg-orange-50',
                     border: 'border-orange-200',
@@ -1148,7 +1148,7 @@ const Hero = () => {
                     delay: 4.0
                   },
                   {
-                    label: '50k+ Projects Delivered',
+                    label: '12K+ Projects Delivered',
                     icon: Rocket,
                     bg: 'bg-pink-50',
                     border: 'border-pink-200',

@@ -16,16 +16,28 @@ export default function MedicalScribePage() {
 
   const faqItems = [
     {
-      question: 'What is a virtual medical scribe?',
-      answer: 'A virtual medical scribe is a trained professional who listens to patient encounters securely in near real-time and handles documentation directly in your EMR/EHR system, allowing you to focus on the patient instead of a screen.'
+      question: "What is a virtual medical scribe?",
+      answer: "A virtual medical scribe is a trained professional who listens to patient encounters securely in near real-time and handles documentation directly in your EMR/EHR system, allowing you to focus on the patient instead of a screen."
     },
     {
-      question: 'How much time can a medical scribe save me?',
-      answer: 'On average, physicians save 2-3 hours per day on documentation by using our scribe services. This eliminates after-hours charting and allows providers to see up to 30% more patients.'
+      question: "How much time can a medical scribe save me?",
+      answer: "On average, physicians save 2-3 hours per day on documentation by using our scribe services. This eliminates after-hours charting and allows providers to see up to 30% more patients."
     },
     {
-      question: 'Do your scribes know my specialty?',
-      answer: 'Yes, Seyyone provides specialty-specific scribes who are highly trained in the medical terminology, billing codes, and standard workflows specific to your field of practice.'
+      question: "Do your scribes know my specialty?",
+      answer: "Yes, Seyyone provides specialty-specific scribes who are highly trained in the medical terminology, billing codes, and standard workflows specific to your field of practice."
+    },
+    {
+      question: "Do your scribes document patient encounters live or from recordings?",
+      answer: "We support both models. Our scribes can join your patient encounters live via audio/video feed, or document them asynchronously from recorded audio files uploaded securely at the end of the day."
+    },
+    {
+      question: "How does using a virtual scribe affect the patient-provider relationship?",
+      answer: "Using a virtual scribe enhances patient interactions. Because the physician is no longer staring at a computer screen typing notes, they can maintain eye contact, actively listen, and build stronger trust with patients."
+    },
+    {
+      question: "What EHR/EMR platforms can your scribes work within?",
+      answer: "Our scribes are trained in all major EHR platforms including Epic, Cerner, NextGen, eClinicalWorks, and Athenahealth. They input data directly, update fields, and prepare charts for your final review and signature."
     }
   ]
 

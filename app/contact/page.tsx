@@ -22,21 +22,45 @@ export default function ContactPage() {
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle')
   const [errorMessage, setErrorMessage] = useState('')
 
-  const contactInfo = [
+  const contactInfo: {
+    icon: any;
+    title: string;
+    details: string;
+    description: string;
+    href: string;
+    color: string;
+    customRender?: () => React.ReactNode;
+  }[] = [
     {
       icon: Phone,
       title: 'Phone',
-      details: '91 (422) 2310240',
+      details: '',
       description: 'Available 24/7 for immediate assistance',
-      href: 'tel:+914222310240',
-      color: 'blue'
+      href: '#',
+      color: 'blue',
+      customRender: () => (
+        <div className="flex flex-col space-y-1">
+          <div>
+            <span className="text-gray-500 text-sm font-normal">US: </span>
+            <a href="tel:+12144326657" className="hover:text-blue-700 transition-colors font-semibold text-blue-600">
+              +1 (214) 432-6657
+            </a>
+          </div>
+          <div>
+            <span className="text-gray-500 text-sm font-normal">India: </span>
+            <a href="tel:+914222310240" className="hover:text-blue-700 transition-colors font-semibold text-blue-600">
+              +91 (422) 2310240
+            </a>
+          </div>
+        </div>
+      )
     },
     {
       icon: Mail,
       title: 'Email',
-      details: 'info@seyyone.com',
+      details: 'business@seyyone.com',
       description: 'Send us your detailed requirements',
-      href: 'mailto:info@seyyone.com',
+      href: 'mailto:business@seyyone.com',
       color: 'green'
     },
     {
@@ -70,17 +94,17 @@ export default function ContactPage() {
 
   const testimonials = [
     {
-      name: 'Dr. Sarah Johnson',
-      title: 'Chief Medical Officer',
-      organization: 'Regional Medical Center',
-      quote: 'Exceptional service quality and HIPAA compliance. Highly recommended!',
+      name: 'Plastic Surgeon',
+      title: 'West Coast Practice',
+      organization: 'USA',
+      quote: "Thx for all of your help. You're a good teammate. I know that it has saved my practice and enjoyment of medicine.",
       rating: 5
     },
     {
-      name: 'Michael Chen',
-      title: 'IT Director',
-      organization: 'TechCorp Solutions',
-      quote: 'Outstanding software development team. Delivered beyond expectations.',
+      name: 'Office Manager',
+      title: 'Plastic Surgeon office',
+      organization: 'Oregon, USA',
+      quote: "We are very pleased with you and your team and thank you for making it an easy transition.",
       rating: 5
     }
   ]
@@ -415,15 +439,17 @@ export default function ContactPage() {
                           <h4 className="font-bold text-gray-900 mb-1 text-lg">
                             {info.title}
                           </h4>
-                          <p className={`text-${info.color}-600 font-semibold mb-2`}>
-                            {info.href !== '#' ? (
-                              <a href={info.href} className={`hover:text-${info.color}-700 transition-colors`}>
-                                {info.details}
-                              </a>
-                            ) : (
-                              info.details
-                            )}
-                          </p>
+                          {info.customRender ? info.customRender() : (
+                            <p className={`text-${info.color}-600 font-semibold mb-2`}>
+                              {info.href !== '#' ? (
+                                <a href={info.href} className={`hover:text-${info.color}-700 transition-colors`}>
+                                  {info.details}
+                                </a>
+                              ) : (
+                                info.details
+                              )}
+                            </p>
+                          )}
                           <p className="text-gray-600">
                             {info.description}
                           </p>
@@ -521,7 +547,7 @@ export default function ContactPage() {
                     <span>Call Now</span>
                   </a>
                   <a
-                    href="mailto:info@seyyone.com"
+                    href="mailto:business@seyyone.com"
                     className="border-2 border-white text-white px-8 py-3 rounded-xl font-semibold hover:bg-white hover:text-blue-600 transition-colors inline-flex items-center justify-center space-x-2"
                   >
                     <Mail size={20} />

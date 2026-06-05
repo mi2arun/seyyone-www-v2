@@ -10,7 +10,7 @@ export default function TestimonialsPage() {
     const trustBadges = [
         { icon: Award, text: '25+ Years Experience' },
         { icon: ShieldCheck, text: 'HIPAA Compliant' },
-        { icon: Users, text: '500+ Global Clients' }
+        { icon: Users, text: '160+ Global Clients' }
     ]
 
     const testimonials = [

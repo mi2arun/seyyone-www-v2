@@ -20,7 +20,7 @@ function InsightsContent() {
   useEffect(() => {
     const handleHashChange = () => {
       const hash = window.location.hash.replace('#', '')
-      if (hash && ['blogs', 'articles', 'case-studies'].includes(hash)) {
+      if (hash && ['blogs', 'articles', 'case-studies', 'white-papers'].includes(hash)) {
         setActiveCategory(hash)
       } else if (!hash) {
         setActiveCategory('all')
@@ -43,7 +43,8 @@ function InsightsContent() {
     { id: 'all', name: 'All Insights', icon: BookOpen },
     { id: 'blogs', name: 'Blogs', icon: FileText },
     { id: 'articles', name: 'Articles', icon: FileCheck },
-    { id: 'case-studies', name: 'Case Studies', icon: Award }
+    { id: 'case-studies', name: 'Case Studies', icon: Award },
+    { id: 'white-papers', name: 'White Papers', icon: FileText }
   ]
 
   const filteredInsights = activeCategory === 'all'
@@ -54,7 +55,8 @@ function InsightsContent() {
     const colors: { [key: string]: string } = {
       blogs: 'from-blue-500 to-blue-600',
       articles: 'from-purple-500 to-purple-600',
-      'case-studies': 'from-red-500 to-red-600'
+      'case-studies': 'from-red-500 to-red-600',
+      'white-papers': 'from-emerald-500 to-emerald-600'
     }
     return colors[category] || 'from-gray-500 to-gray-600'
   }
@@ -123,7 +125,14 @@ function InsightsContent() {
                   return (
                     <button
                       key={category.id}
-                      onClick={() => setActiveCategory(category.id)}
+                      onClick={() => {
+                        setActiveCategory(category.id)
+                        if (category.id === 'all') {
+                          router.push('/insights')
+                        } else {
+                          router.push(`/insights#${category.id}`)
+                        }
+                      }}
                       className={`flex items-center space-x-1.5 px-4 py-2 rounded-full text-sm font-semibold transition-all duration-300 shadow-md ${activeCategory === category.id
                         ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white scale-105'
                         : 'bg-white text-gray-700 hover:bg-gray-50 hover:shadow-lg'
@@ -230,10 +239,10 @@ function InsightsContent() {
                     ))}
                   </div>
                 ) : (
-                  <div className="text-center py-20">
-                    <BookOpen className="mx-auto text-gray-400 mb-4" size={64} />
-                    <h3 className="text-2xl font-bold text-gray-900 mb-2">No content available</h3>
-                    <p className="text-gray-600">Check back soon for new {activeCategory} content.</p>
+                  <div className="text-center py-20 bg-white rounded-3xl border border-gray-200/60 p-8 shadow-sm">
+                    <BookOpen className="mx-auto text-blue-500/80 mb-6 animate-pulse" size={64} />
+                    <h3 className="text-2xl font-bold text-gray-900 mb-2">Content coming soon</h3>
+                    <p className="text-gray-500 max-w-md mx-auto">We are currently curating and producing high-quality {activeCategory === 'white-papers' ? 'white papers' : activeCategory === 'case-studies' ? 'case studies' : activeCategory === 'articles' ? 'articles' : activeCategory} for you. Check back soon!</p>
                   </div>
                 )}
               </motion.div>

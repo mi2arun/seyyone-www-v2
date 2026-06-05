@@ -16,18 +16,30 @@ export default function MobileSolutionsPage() {
 
   const faqItems = [
     {
-        "question": "Do you build native or cross-platform apps?",
-        "answer": "We offer both. We build native apps using Swift and Kotlin, and cross-platform apps using React Native and Flutter, depending on your project requirements and budget."
+      question: "Do you build native or cross-platform apps?",
+      answer: "We offer both. We build native apps using Swift and Kotlin, and cross-platform apps using React Native and Flutter, depending on your project requirements and budget."
     },
     {
-        "question": "Do you handle the App Store submission process?",
-        "answer": "Yes, we manage the entire lifecycle from development and testing to Apple App Store and Google Play Store submission and approval."
+      question: "Do you handle the App Store submission process?",
+      answer: "Yes, we manage the entire lifecycle from development and testing to Apple App Store and Google Play Store submission and approval."
     },
     {
-        "question": "How do you ensure mobile app security?",
-        "answer": "We implement secure local storage, robust API authentication (like OAuth 2.0), certificate pinning, and regular penetration testing."
+      question: "How do you ensure mobile app security?",
+      answer: "We implement secure local storage, robust API authentication (like OAuth 2.0), certificate pinning, and regular penetration testing."
+    },
+    {
+      question: "Do your mobile apps integrate with wearable health devices?",
+      answer: "Yes, we integrate mobile health apps with wearable devices and sensors via Apple HealthKit, Google Fit, and specialized APIs to track patient vitals, activity, and health indicators."
+    },
+    {
+      question: "Can you build telemedicine features into a mobile app?",
+      answer: "Yes, we integrate secure WebRTC video conferencing, messaging, and appointment scheduling features into custom mobile apps to enable comprehensive telemedicine solutions."
+    },
+    {
+      question: "How do you handle offline functionality for mobile apps?",
+      answer: "We implement local databases (like SQLite) and sync managers that store data locally when offline and synchronize automatically with the cloud server once internet connectivity is restored."
     }
-];
+  ];
 
   const schemaData = {
     "@context": "https://schema.org",

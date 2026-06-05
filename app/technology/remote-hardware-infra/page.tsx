@@ -16,18 +16,30 @@ export default function RemoteHardwareInfraPage() {
 
   const faqItems = [
     {
-        "question": "What kind of remote infrastructure do you manage?",
-        "answer": "We manage servers, networking equipment, remote desktops, VPNs, and endpoint security across distributed global teams."
+      question: "What kind of remote infrastructure do you manage?",
+      answer: "We manage servers, networking equipment, remote desktops, VPNs, and endpoint security across distributed global teams."
     },
     {
-        "question": "How quickly can you provision new hardware?",
-        "answer": "Through our partner networks and automated cloud provisioning, we can typically deploy new virtual hardware within hours and coordinate physical hardware delivery within days."
+      question: "How quickly can you provision new hardware?",
+      answer: "Through our partner networks and automated cloud provisioning, we can typically deploy new virtual hardware within hours and coordinate physical hardware delivery within days."
     },
     {
-        "question": "Is your remote infrastructure compliant with industry standards?",
-        "answer": "Yes, we configure all infrastructure to comply with SOC 2, HIPAA, or ISO 27001 standards depending on your industry requirements."
+      question: "Is your remote infrastructure compliant with industry standards?",
+      answer: "Yes, we configure all infrastructure to comply with SOC 2, HIPAA, or ISO 27001 standards depending on your industry requirements."
+    },
+    {
+      question: "How do you handle hardware failure or server downtime?",
+      answer: "We monitor your hardware 24/7. In case of failure, our automated failover protocols transfer traffic to backup systems, while our technicians coordinate immediate physical repair with local hardware vendors."
+    },
+    {
+      question: "Do you support virtualization and containerized infrastructure?",
+      answer: "Yes, we configure and manage virtual environments using VMware, Hyper-V, and containerized deployments using Docker and Kubernetes to maximize hardware efficiency."
+    },
+    {
+      question: "How do you manage patch management for remote servers?",
+      answer: "We schedule automated security and system updates during off-peak hours to minimize service disruption, performing pre-testing in staging environments to prevent compatibility issues."
     }
-];
+  ];
 
   const schemaData = {
     "@context": "https://schema.org",

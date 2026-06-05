@@ -294,7 +294,7 @@ const MedicalContactModal = ({ isOpen, onClose, initialService }: MedicalContact
                                     </div>
                                     <div className="flex items-center space-x-2">
                                         <Mail size={16} className="text-cyan-600" />
-                                        <span>info@seyyone.com</span>
+                                        <span>business@seyyone.com</span>
                                     </div>
                                 </div>
                             </div>

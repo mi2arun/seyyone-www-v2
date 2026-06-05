@@ -294,7 +294,7 @@ const TechnologyContactModal = ({ isOpen, onClose, initialService }: TechnologyC
                                     </div>
                                     <div className="flex items-center space-x-2">
                                         <Mail size={16} className="text-blue-600" />
-                                        <span>info@seyyone.com</span>
+                                        <span>business@seyyone.com</span>
                                     </div>
                                 </div>
                             </div>

@@ -16,16 +16,28 @@ export default function MedicalTranscriptionPage() {
 
   const faqItems = [
     {
-      question: 'What is your accuracy rate for medical transcription?',
-      answer: 'We maintain an industry-leading accuracy rate of 99.8%. Our process involves advanced voice recognition combined with rigorous multi-level quality checks by experienced human transcriptionists.'
+      question: "What is your accuracy rate for medical transcription?",
+      answer: "We maintain an industry-leading accuracy rate of 99.8%. Our process involves advanced voice recognition combined with rigorous multi-level quality checks by experienced human transcriptionists."
     },
     {
-      question: 'What is the turnaround time for transcribed documents?',
-      answer: 'We offer flexible turnaround times based on your needs, including stat (immediate), same-day, and standard 24-hour delivery.'
+      question: "What is the turnaround time for transcribed documents?",
+      answer: "We offer flexible turnaround times based on your needs, including stat (immediate), same-day, and standard 24-hour delivery."
     },
     {
-      question: 'Are your transcription services HIPAA compliant?',
-      answer: 'Yes, our medical transcription services are 100% HIPAA compliant. We utilize end-to-end encryption and secure, access-controlled facilities to ensure complete patient data privacy.'
+      question: "Are your transcription services HIPAA compliant?",
+      answer: "Yes, our medical transcription services are 100% HIPAA compliant. We utilize end-to-end encryption and secure, access-controlled facilities to ensure complete patient data privacy."
+    },
+    {
+      question: "How do you handle difficult audio quality or accented dictations?",
+      answer: "Our team is highly experienced in transcribing diverse accents and working with complex medical dictations. We use advanced audio processing and double-check audio clips through senior editors to ensure complete precision."
+    },
+    {
+      question: "Can you integrate transcription directly into our EHR?",
+      answer: "Yes. We can upload transcribed documents directly into your EHR system, placing them in the correct patient charts, or send them to you via secure HL7 interfaces and email protocols."
+    },
+    {
+      question: "What dictation methods do you support?",
+      answer: "We support multiple dictation methods, including specialized telephone dictation lines, mobile dictation applications, and digital hand-held recorders."
     }
   ]
 
@@ -353,7 +365,7 @@ export default function MedicalTranscriptionPage() {
                 Ready to Streamline Your Medical Documentation?
               </h2>
               <p className="text-xl   mb-8">
-                Join 50+ healthcare providers who trust Seyyone with their critical medical transcription needs.
+                Join 60+ healthcare providers who trust Seyyone with their critical medical transcription needs.
                 HIPAA-compliant, accurate, and reliable.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">

@@ -1,138 +1,343 @@
 [
     {
         "id": "1",
-        "slug": "it-consultant",
-        "title": "IT Consultant",
-        "department": "Technology",
-        "type": "Full-time",
-        "location": "Coimbatore, India",
-        "description": "We are seeking an experienced IT Consultant to assess client IT needs and develop strategic roadmaps for digital transformation projects. You will work closely with stakeholders to understand business objectives and recommend technology solutions that drive efficiency and growth.",
-        "experience": "5+ years",
-        "requirements": [
-            "Bachelor's degree in Computer Science, Information Technology, or related field",
-            "Strong analytical and problem-solving skills",
-            "Proven experience in IT strategy and consulting",
-            "Excellent communication and presentation skills",
-            "Knowledge of cloud computing (AWS/Azure) and enterprise architecture",
-            "Ability to manage multiple projects simultaneously"
-        ],
-        "responsibilities": [
-            "Analyze client business processes and identify areas for technology improvement",
-            "Develop comprehensive IT strategies and implementation roadmaps",
-            "Collaborate with technical teams to ensure successful project delivery",
-            "Provide expert advice on technology trends and best practices",
-            "Conduct risk assessments and recommend security enhancements",
-            "Facilitate workshops and training sessions for client teams"
-        ],
-        "benefits": [
-            "Competitive salary and performance bonuses",
-            "Health insurance coverage",
-            "Professional development opportunities",
-            "Flexible work arrangements",
-            "Collaborative and innovative work environment"
-        ],
-        "postedDate": "2024-02-15"
-    },
-    {
-        "id": "2",
-        "slug": "help-desk-technician",
-        "title": "Help Desk Technician",
-        "department": "Support",
-        "type": "Full-time",
-        "location": "Coimbatore, India",
-        "description": "Join our support team as a Help Desk Technician, providing technical assistance to clients and resolving IT-related issues efficiently. You will be the first point of contact for technical support, ensuring high customer satisfaction through timely and effective problem resolution.",
-        "experience": "2+ years",
-        "requirements": [
-            "Strong communication and analytical skills",
-            "Experience in technical support or help desk role",
-            "Knowledge of common software (Office 365, Windows) and hardware issues",
-            "Customer service oriented mindset",
-            "Basic networking knowledge (TCP/IP, DNS, DHCP)",
-            "Certification in CompTIA A+ or similar is a plus"
-        ],
-        "responsibilities": [
-            "Respond to user inquiries via phone, email, and ticketing system",
-            "Diagnose and resolve technical hardware and software issues",
-            "Install, configure, and upgrade PC software and operating systems",
-            "Document support activities and resolutions in the ticketing system",
-            "Escalate complex issues to senior technical staff as needed",
-            "Provide basic user training on hardware and software usage"
-        ],
-        "benefits": [
-            "Comprehensive training program",
-            "Medical and dental insurance",
-            "Paid time off",
-            "Career advancement opportunities",
-            "Team building events"
-        ],
-        "postedDate": "2024-02-18"
-    },
-    {
-        "id": "3",
-        "slug": "medical-transcriptionist",
-        "title": "Medical Transcriptionist",
+        "slug": "medical-summarization-specialist",
+        "title": "Medical Summarization Specialist",
         "department": "Healthcare KPO",
         "type": "Full-time",
         "location": "Coimbatore, India",
-        "description": "We are looking for skilled Medical Transcriptionists to convert audio recordings of medical dictations into accurate written reports. Accuracy and attention to detail are paramount in this role to ensure high-quality patient documentation.",
-        "experience": "2+ years",
+        "description": "We are seeking dedicated Medical Summarization Specialists to analyze patient clinical histories and create precise, structured medical records summaries. This role is crucial for helping healthcare providers review and interpret patient charts efficiently.",
+        "experience": "5-10+ years",
         "requirements": [
-            "Knowledge of medical terminology, anatomy, and physiology",
-            "Excellent typing skills (minimum 60 WPM) with high accuracy",
-            "Attention to detail and ability to spot errors",
-            "Healthcare background or certification in medical transcription",
-            "Good listening skills and familiarity with various accents",
-            "Proficiency with transcription software and tools"
+            "Requires transcription and typing experience",
+            "Requires strong comprehension skills and medical terminology knowledge",
+            "Candidates with medical scribe experience are also welcome",
+            "Requires a bachelor's degree in science (e.g. B.Sc., Biotech, Nursing) or a relevant field",
+            "Candidates must have strong written English skills (more so than conversational skills)",
+            "Strong analytical, reading comprehension, and summary synthesis skills"
         ],
         "responsibilities": [
-            "Listen to recorded dictations from healthcare professionals",
-            "Transcribe recordings into accurate medical reports and documents",
-            "Review and edit transcriptions for clarity and grammar",
-            "Ensure compliance with HIPAA regulations and patient confidentiality",
-            "Meet daily productivity and quality targets",
-            "Collaborate with quality assurance team for feedback and improvement"
+            "Review and analyze patient charts, medical records, and physician notes",
+            "Create accurate, concise, and structured summaries of patient clinical histories",
+            "Identify and extract key medical events, diagnoses, treatments, and procedures",
+            "Ensure consistency, accuracy, and completeness of summarized documents",
+            "Maintain strict compliance with HIPAA guidelines and patient privacy protocols",
+            "Collaborate with quality assurance teams to verify summary details"
         ],
         "benefits": [
-            "Performance-based incentives",
-            "Health and wellness programs",
-            "Flexible shift timings",
-            "Work-from-home options (for experienced candidates)",
-            "Continuous learning resources"
+            "Competitive salary and performance incentives",
+            "Health insurance and wellness benefits",
+            "Flexible shift arrangements and specialized training programs",
+            "Excellent work environment in a modern Coimbatore facility"
         ],
-        "postedDate": "2024-02-20"
+        "postedDate": "2026-06-01",
+        "seniority": "Senior"
+    },
+    {
+        "id": "2",
+        "slug": "medical-transcriptionist-junior",
+        "title": "Medical Transcriptionist - Junior",
+        "department": "Healthcare KPO",
+        "type": "Full-time",
+        "location": "Coimbatore, India",
+        "description": "We are looking for skilled Medical Transcriptionists to convert audio dictations from healthcare professionals into accurate written medical reports, clinical summaries, and patient letters.",
+        "experience": "1-5 years",
+        "requirements": [
+            "Requires transcription and typing experience",
+            "Requires strong comprehension skills and medical terminology knowledge",
+            "Candidates with medical scribe experience are also welcome",
+            "Requires a bachelor's degree in science (e.g. B.Sc., Biotech, Nursing) or a relevant field",
+            "Candidates must have strong written English skills (more so than conversational skills)",
+            "Strong listening skills and familiarity with various medical accents",
+            "Minimum typing speed of 60 WPM with high accuracy"
+        ],
+        "responsibilities": [
+            "Listen to recorded dictations from healthcare providers",
+            "Transcribe medical audio files into high-quality written reports and documentation",
+            "Verify medical terminology, drug names, and anatomical terms for precision",
+            "Identify and flag formatting errors, inconsistencies, or unclear dictation",
+            "Ensure compliance with HIPAA regulations and data confidentiality standards",
+            "Work closely with editors and quality analysts to maintain quality standards"
+        ],
+        "benefits": [
+            "Performance-based incentives and rewards",
+            "Health and wellness insurance coverage",
+            "Career progression and senior roles path",
+            "Training programs and skills development workshops"
+        ],
+        "postedDate": "2026-06-01",
+        "seniority": "Junior"
+    },
+    {
+        "id": "3",
+        "slug": "medical-transcriptionist-senior",
+        "title": "Medical Transcriptionist - Senior",
+        "department": "Healthcare KPO",
+        "type": "Full-time",
+        "location": "Coimbatore, India",
+        "description": "We are looking for experienced Senior Medical Transcriptionists to lead transcription workflows, mentor junior transcriptionists, and ensure the highest quality in converting audio dictations into accurate medical documentation.",
+        "experience": "5-10+ years",
+        "requirements": [
+            "Requires extensive transcription and typing experience",
+            "Requires strong comprehension skills and advanced medical terminology knowledge",
+            "Candidates with medical scribe or QA editing experience are highly valued",
+            "Requires a bachelor's degree in science (e.g. B.Sc., Biotech, Nursing) or a relevant field",
+            "Candidates must have strong written English skills (more so than conversational skills)",
+            "Strong listening skills and familiarity with various medical accents and specialties",
+            "Minimum typing speed of 70 WPM with exceptional accuracy"
+        ],
+        "responsibilities": [
+            "Listen to recorded dictations from healthcare providers across multiple specialties",
+            "Transcribe and review medical audio files into high-quality written reports and documentation",
+            "Mentor and train junior transcriptionists on quality standards and best practices",
+            "Perform quality audits on transcribed documents and provide constructive feedback",
+            "Ensure compliance with HIPAA regulations and data confidentiality standards",
+            "Coordinate with editors, quality analysts, and operations leads to maintain turnaround times"
+        ],
+        "benefits": [
+            "Performance-based incentives and rewards",
+            "Health and wellness insurance coverage",
+            "Leadership career progression path",
+            "Training programs and skills development workshops"
+        ],
+        "postedDate": "2026-06-01",
+        "seniority": "Senior"
     },
     {
         "id": "4",
-        "slug": "software-developer",
-        "title": "Software Developer",
-        "department": "Technology",
+        "slug": "data-logistics-coordinator",
+        "title": "Data Logistics Coordinator",
+        "department": "Healthcare KPO",
         "type": "Full-time",
         "location": "Coimbatore, India",
-        "description": "Seyyone is hiring talented Software Developers to design, develop, and maintain software applications using modern technologies. You will be part of an agile team building scalable solutions for our clients in healthcare and other industries.",
-        "experience": "3+ years",
+        "description": "We are hiring a Data Logistics Coordinator to manage the secure receipt, validation, categorization, and routing of medical documentation and client records. This is a foundational role ensuring data pipeline efficiency.",
+        "experience": "3-5 years",
         "requirements": [
-            "Proficiency in programming languages (Java, Python, or JavaScript/TypeScript)",
-            "Experience with web development frameworks (React, Node.js, Spring Boot)",
-            "Strong understanding of database systems (SQL and NoSQL)",
-            "Familiarity with version control (Git) and CI/CD pipelines",
-            "Strong problem-solving abilities and logical thinking",
-            "Bachelor's degree in Computer Science or Engineering"
+            "3-5 years of experience in data management, medical records, or a related field",
+            "Proficiency in computer skills, spreadsheet management, and familiarity with data entry tools",
+            "Strong attention to detail and organizational skills",
+            "Ability to work in shifts and collaborate within a team",
+            "Basic understanding of data security principles and HIPAA compliance"
         ],
         "responsibilities": [
-            "Write clean, maintainable, and efficient code",
-            "Design and implement new features and functionality",
-            "Debug and resolve software defects and performance issues",
-            "Participate in code reviews and contribute to team knowledge sharing",
-            "Collaborate with designers and product managers to define requirements",
-            "Stay updated with emerging technologies and industry trends"
+            "Receive, log, and organize incoming clinical files and documents",
+            "Verify file integrity and validate documents against metadata",
+            "Categorize and index incoming records within the EHR systems",
+            "Monitor data pipeline queues to ensure timely processing and routing",
+            "Troubleshoot missing data or file errors in coordination with client managers",
+            "Ensure compliance with data protection policies and access controls"
         ],
         "benefits": [
-            "Competitive compensation package",
-            "Remote work flexibility",
-            "Latest hardware and software tools",
-            "Stock options (for eligible roles)",
-            "Annual retreat and social gatherings"
+            "Comprehensive hands-on training",
+            "Mentorship and clear career growth path",
+            "Medical insurance coverage",
+            "Vibrant and supportive team environment"
         ],
-        "postedDate": "2024-02-22"
+        "postedDate": "2026-05-01",
+        "seniority": "Junior"
+    },
+    {
+        "id": "5",
+        "slug": "system-administrator",
+        "title": "System Administrator",
+        "department": "Software Services",
+        "type": "Full-time",
+        "location": "Coimbatore, India",
+        "description": "We are seeking a System / IT Administrator to maintain our secure computing environment, monitor network infrastructure, and manage server availability. You will ensure maximum system uptime and enforce HIPAA security compliance across all endpoints.",
+        "experience": "3-5 years",
+        "requirements": [
+            "Bachelor's degree in Computer Science, IT, Network Engineering, or a related field",
+            "3-5 years of hands-on experience with system administration (Windows/Linux servers)",
+            "Familiarity with network configuration, firewalls, routing, and switches",
+            "Knowledge of virtual machine environments (VMware/Hyper-V) and cloud platforms (AWS)",
+            "Certifications such as MCSA, CCNA, or Security+ are highly desirable",
+            "Understanding of enterprise security protocols and compliance audits"
+        ],
+        "responsibilities": [
+            "Install, configure, and maintain servers, network hardware, and client systems",
+            "Monitor system performance, perform backups, and execute disaster recovery plans",
+            "Enforce user access management, group policies, and biometric security controls",
+            "Implement endpoint security, anti-virus updates, firewall rules, and patch management",
+            "Troubleshoot hardware, software, and connectivity issues for local and remote users",
+            "Audit systems regularly to ensure alignment with HIPAA security regulations"
+        ],
+        "benefits": [
+            "Competitive remuneration packages",
+            "Health insurance and wellness incentives",
+            "Continuous technical certifications support",
+            "High exposure to modern secure network infrastructure"
+        ],
+        "postedDate": "2026-02-01",
+        "seniority": "Junior"
+    },
+    {
+        "id": "6",
+        "slug": "virtual-medical-scribe",
+        "title": "Virtual Medical Scribe",
+        "department": "Healthcare KPO",
+        "type": "Full-time",
+        "location": "Coimbatore, India",
+        "description": "Join our team as a Virtual Medical Scribe. In this role, you will assist US-based physicians in real-time or near real-time, document patient encounters, enter patient history, and update Electronic Health Record (EHR) systems.",
+        "experience": "5-10+ years",
+        "requirements": [
+            "Excellent listening skills and fluent verbal and written English (to understand physician-patient interactions)",
+            "Strong knowledge of medical terminology, anatomy, physiology, and pharmacology",
+            "Proficiency in navigation of Electronic Health Record (EHR) software",
+            "Minimum typing speed of 50 WPM with excellent spelling and grammar",
+            "Strong multitasking skills and cognitive ability to summarize clinical discussions",
+            "Bachelor's degree in a life sciences field or equivalent healthcare experience"
+        ],
+        "responsibilities": [
+            "Listen to real-time clinical encounters or audio recordings",
+            "Accurately document clinical evaluations, diagnoses, prescriptions, and follow-up plans",
+            "Navigate and update electronic charts during patient visits",
+            "Ensure compliance with HIPAA security standards for patient health information",
+            "Verify documentation with the physician before final signing",
+            "Participate in continuous specialty training to stay updated on clinical standards"
+        ],
+        "benefits": [
+            "Premium salary package with specialty pay incentives",
+            "Dedicated medical scribe academy certification training",
+            "Comprehensive medical coverage",
+            "Opportunities to work directly with international medical consultants"
+        ],
+        "postedDate": "2026-02-01",
+        "seniority": "Senior"
+    },
+    {
+        "id": "7",
+        "slug": "ai-ml-engineer-junior",
+        "title": "AI / ML Engineer - Junior",
+        "department": "Software Services",
+        "type": "Full-time",
+        "location": "Coimbatore, India",
+        "description": "We are looking for a Junior AI/ML Engineer to contribute to the design, training, and deployment of machine learning systems and Large Language Model (LLM) workflows. You will work alongside senior engineers building intelligent NLP pipelines and semantic analysis tools for healthcare data.",
+        "experience": "3-5 years",
+        "requirements": [
+            "3-5 years of experience in the AI/ML field and related technologies",
+            "Strong knowledge of Python, PyTorch, TensorFlow, and deep learning frameworks",
+            "Hands-on experience with Natural Language Processing (NLP), Large Language Models (LLMs), and prompt design",
+            "Knowledge of machine learning deployment strategies, cloud hosting platforms (AWS/Azure), and containers (Docker)",
+            "Strong mathematical foundation in statistics, probability, linear algebra, and machine learning theory",
+            "Bachelor's or Master's degree in Computer Science, Engineering, or a highly quantitative field"
+        ],
+        "responsibilities": [
+            "Assist in designing, training, testing, and optimizing machine learning models",
+            "Build and integrate LLM applications and Retrieval-Augmented Generation (RAG) frameworks under guidance",
+            "Collaborate with database and software engineers to deploy algorithms in cloud and EHR environments",
+            "Ensure strict data security and compliance (HIPAA) throughout the model training pipeline",
+            "Analyze model output quality and implement feedback loops to refine model accuracy",
+            "Stay up-to-date with emerging research and transfer academic advancements to production systems"
+        ],
+        "benefits": [
+            "Competitive salary package with technology bonuses",
+            "Flexible hybrid working options in Coimbatore",
+            "Subsidized continuous learning and online training certification courses",
+            "Comprehensive medical and health insurance coverage"
+        ],
+        "postedDate": "2026-02-01",
+        "seniority": "Junior"
+    },
+    {
+        "id": "8",
+        "slug": "ai-ml-engineer-senior",
+        "title": "AI / ML Engineer - Senior",
+        "department": "Software Services",
+        "type": "Full-time",
+        "location": "Coimbatore, India",
+        "description": "We are looking for an experienced Senior AI/ML Engineer to lead the design, training, and deployment of advanced machine learning systems and Large Language Model (LLM) workflows. You will spearhead building intelligent natural language processing pipelines and semantic analysis tools for healthcare data.",
+        "experience": "5-10+ years",
+        "requirements": [
+            "5-10+ years of vast experience in the AI/ML field and related technologies",
+            "Vast knowledge stack including Python, PyTorch, TensorFlow, and deep learning frameworks",
+            "Hands-on experience with Natural Language Processing (NLP), Large Language Models (LLMs), and prompt design",
+            "Knowledge of machine learning deployment strategies, cloud hosting platforms (AWS/Azure), and containers (Docker)",
+            "Strong mathematical foundation in statistics, probability, linear algebra, and machine learning theory",
+            "Bachelor's or Master's degree in Computer Science, Engineering, or a highly quantitative field"
+        ],
+        "responsibilities": [
+            "Lead the design, training, testing, and optimization of state-of-the-art machine learning models",
+            "Architect and integrate production-grade LLM applications and Retrieval-Augmented Generation (RAG) frameworks",
+            "Collaborate with database and software engineers to deploy algorithms in cloud and EHR environments",
+            "Ensure strict data security and compliance (HIPAA) throughout the model training pipeline",
+            "Analyze model output quality and implement feedback loops to continuously refine model accuracy",
+            "Stay up-to-date with emerging research and transfer academic advancements to production systems"
+        ],
+        "benefits": [
+            "Premium salary package with targeted technology bonuses",
+            "Flexible hybrid working options in Coimbatore",
+            "Subsidized continuous learning and online training certification courses",
+            "Comprehensive medical and health insurance coverage"
+        ],
+        "postedDate": "2026-02-01",
+        "seniority": "Senior"
+    },
+    {
+        "id": "9",
+        "slug": "software-developer-junior",
+        "title": "Software Developer - Junior",
+        "department": "Software Services",
+        "type": "Full-time",
+        "location": "Coimbatore, India",
+        "description": "We are looking for a Junior Software Developer to join our engineering team and contribute to building scalable web applications, healthcare integrations, and cloud-based platforms. You will work on full-stack development projects supporting our healthcare KPO and technology service offerings.",
+        "experience": "3-5 years",
+        "requirements": [
+            "3-5 years of experience in software development using modern frameworks and languages",
+            "Proficiency in one or more of: JavaScript/TypeScript, React, Next.js, Node.js, Python, or Java",
+            "Experience with relational databases (PostgreSQL, MySQL) and NoSQL databases (MongoDB)",
+            "Familiarity with RESTful API design, version control (Git), and CI/CD pipelines",
+            "Understanding of cloud platforms (AWS, Azure, or GCP) and containerization (Docker)",
+            "Bachelor's degree in Computer Science, Software Engineering, or a related field"
+        ],
+        "responsibilities": [
+            "Develop, test, and maintain web applications and internal tools across the technology stack",
+            "Build and integrate RESTful APIs and microservices for healthcare data workflows",
+            "Write clean, well-documented, and testable code following coding standards and best practices",
+            "Collaborate with cross-functional teams including QA, DevOps, and product management",
+            "Participate in code reviews, sprint planning, and agile development ceremonies",
+            "Troubleshoot and resolve software defects, performance issues, and deployment challenges"
+        ],
+        "benefits": [
+            "Competitive salary and performance bonuses",
+            "Flexible working arrangements and hybrid options",
+            "Access to the latest tools, technologies, and learning platforms",
+            "Comprehensive medical and health insurance coverage"
+        ],
+        "postedDate": "2026-02-01",
+        "seniority": "Junior"
+    },
+    {
+        "id": "10",
+        "slug": "software-developer-senior",
+        "title": "Software Developer - Senior",
+        "department": "Software Services",
+        "type": "Full-time",
+        "location": "Coimbatore, India",
+        "description": "We are seeking an experienced Senior Software Developer to lead the architecture and development of scalable web applications, healthcare integrations, and cloud-native platforms. You will mentor junior developers and drive engineering excellence across our technology service offerings.",
+        "experience": "5-10+ years",
+        "requirements": [
+            "5-10+ years of hands-on experience in full-stack software development",
+            "Expert-level proficiency in JavaScript/TypeScript, React, Next.js, Node.js, Python, or Java",
+            "Deep experience with relational databases (PostgreSQL, MySQL) and NoSQL databases (MongoDB)",
+            "Strong expertise in system design, scalable architecture, and microservices patterns",
+            "Proficiency in cloud platforms (AWS, Azure, or GCP), containerization (Docker/Kubernetes), and CI/CD",
+            "Bachelor's or Master's degree in Computer Science, Software Engineering, or a related field"
+        ],
+        "responsibilities": [
+            "Architect, develop, and maintain complex web applications and distributed systems",
+            "Lead technical design reviews, code architecture decisions, and engineering best practices",
+            "Mentor junior and mid-level developers through code reviews, pair programming, and knowledge sharing",
+            "Build and integrate production-grade APIs, microservices, and healthcare data pipelines",
+            "Drive DevOps and deployment automation strategies for continuous delivery",
+            "Collaborate with product, QA, and stakeholders to translate business requirements into technical solutions"
+        ],
+        "benefits": [
+            "Premium salary package with leadership bonuses",
+            "Flexible working arrangements and hybrid options",
+            "Access to the latest tools, technologies, and learning platforms",
+            "Comprehensive medical and health insurance coverage"
+        ],
+        "postedDate": "2026-02-01",
+        "seniority": "Senior"
     }
 ]

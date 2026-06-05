@@ -16,16 +16,28 @@ export default function EHREMRPage() {
 
   const faqItems = [
     {
-      question: 'Which EHR/EMR platforms do you support?',
-      answer: 'We support all major platforms including Epic, Cerner, Allscripts, athenahealth, eClinicalWorks, NextGen, and more. Our team is trained to quickly adapt to any specialized or legacy system.'
+      question: "Which EHR/EMR platforms do you support?",
+      answer: "We support all major platforms including Epic, Cerner, Allscripts, athenahealth, eClinicalWorks, NextGen, and more. Our team is trained to quickly adapt to any specialized or legacy system."
     },
     {
-      question: 'How do you ensure accurate data migration to a new EHR?',
-      answer: 'Our data migration process includes rigorous data extraction, secure format conversion, and multi-level quality validation. We ensure 100% data integrity with zero downtime during the transition.'
+      question: "How do you ensure accurate data migration to a new EHR?",
+      answer: "Our data migration process includes rigorous data extraction, secure format conversion, and multi-level quality validation. We ensure 100% data integrity with zero downtime during the transition."
     },
     {
-      question: 'Do you provide training for our clinic staff?',
-      answer: 'Yes, we offer comprehensive training programs designed to accelerate your staff\'s proficiency with new EHR/EMR systems, reducing workflow interruptions and maximizing the software\'s value.'
+      question: "Do you provide training for our clinic staff?",
+      answer: "Yes, we offer comprehensive training programs designed to accelerate your staff's proficiency with new EHR/EMR systems, reducing workflow interruptions and maximizing the software's value."
+    },
+    {
+      question: "How do you handle custom configurations or templates in our EHR?",
+      answer: "Our EHR specialists adapt to your custom clinical templates, macro buttons, and charting preferences. We conduct initial configuration reviews to align our support with your specific layout and workflow."
+    },
+    {
+      question: "What security measures protect patient data during remote EHR access?",
+      answer: "We access your EHR via secure VPNs, multifactor authentication, and encrypted terminal environments. No patient data is stored locally on our devices, ensuring strict HIPAA compliance."
+    },
+    {
+      question: "Does Seyyone offer post-migration support for legacy EHR data access?",
+      answer: "Yes, we support dual-system documentation and historical record access during transition periods, helping your clinic maintain administrative continuity while fully migrating to the new system."
     }
   ]
 

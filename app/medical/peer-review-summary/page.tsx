@@ -16,16 +16,28 @@ export default function PeerReviewSummaryPage() {
 
   const faqItems = [
     {
-      question: 'Who conducts the peer reviews?',
-      answer: 'Our peer reviews are strictly conducted by board-certified physicians and clinical experts who actively practice in the relevant specialties for the cases they are reviewing.'
+      question: "Who conducts the peer reviews?",
+      answer: "Our peer reviews are strictly conducted by board-certified physicians and clinical experts who actively practice in the relevant specialties for the cases they are reviewing."
     },
     {
-      question: 'What types of peer reviews do you offer?',
-      answer: 'We provide retrospective (post-care), concurrent (during care), prospective (pre-authorization), and focused reviews tailored to identify specific clinical or compliance issues.'
+      question: "What types of peer reviews do you offer?",
+      answer: "We provide retrospective (post-care), concurrent (during care), prospective (pre-authorization), and focused reviews tailored to identify specific clinical or compliance issues."
     },
     {
-      question: 'How do your peer reviews aid in risk management?',
-      answer: 'By providing objective, third-party clinical evaluations, we help healthcare organizations identify potential quality issues early, ensuring adherence to standards of care and mitigating medical malpractice exposure.'
+      question: "How do your peer reviews aid in risk management?",
+      answer: "By providing objective, third-party clinical evaluations, we help healthcare organizations identify potential quality issues early, ensuring adherence to standards of care and mitigating medical malpractice exposure."
+    },
+    {
+      question: "What is the typical turnaround time for a peer review summary?",
+      answer: "Our standard peer review summaries are delivered within 5 to 7 business days. For urgent cases, we offer expedited reviews completed within 24 to 48 hours."
+    },
+    {
+      question: "How do you ensure the objectivity of your peer review reports?",
+      answer: "We guarantee complete objectivity by matching cases with board-certified peer reviewers who have no conflict of interest with the treating physician, facility, or patient, providing unbiased clinical opinions."
+    },
+    {
+      question: "Are your peer review summaries legally defensible?",
+      answer: "Yes, our reports are structured following standard regulatory guidelines and evidence-based medicine guidelines, ensuring they are robust and defensible in administrative appeals and legal proceedings."
     }
   ]
 

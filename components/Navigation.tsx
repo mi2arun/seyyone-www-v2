@@ -87,14 +87,15 @@ const Navigation = () => {
         { name: 'Blogs', href: '/insights#blogs' },
         { name: 'Articles', href: '/insights#articles' },
         { name: 'Case Studies', href: '/insights#case-studies' },
+        { name: 'White Papers', href: '/insights#white-papers' },
       ]
     },
     {
       name: 'Careers',
       type: 'dropdown',
-      href: '/career',
+      href: '/careers',
       items: [
-        { name: 'Current Openings', href: '/career#open-positions' },
+        { name: 'Current Openings', href: '/careers#current-openings' },
       ]
     }
   ]
@@ -356,7 +357,7 @@ const Navigation = () => {
                       </div>
                       <div className="flex items-center space-x-3 text-sm text-gray-600">
                         <Mail size={16} className="text-primary-600" />
-                        <span>info@seyyone.com</span>
+                        <span>business@seyyone.com</span>
                       </div>
                     </div>
                   </div>

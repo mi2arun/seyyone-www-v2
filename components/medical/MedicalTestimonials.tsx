@@ -6,44 +6,44 @@ import { Quote, Star, Building, User, CheckCircle } from 'lucide-react'
 const MedicalTestimonials = ({ onOpenModal }: { onOpenModal: () => void }) => {
   const testimonials = [
     {
-      name: "Dr. Sarah Johnson",
-      title: "Chief Medical Officer",
-      organization: "Regional Medical Center",
-      location: "California, USA",
-      image: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=100&h=100&fit=crop&crop=face",
-      quote: "Seyyone has transformed our documentation workflow. Their medical scribes are incredibly accurate and professional, allowing our physicians to focus entirely on patient care.",
+      name: "IME Transcription Client",
+      title: "Medical Transcription Client",
+      organization: "IME Services",
+      location: "USA",
+      image: "",
+      quote: "I just got off the phone with the doctor and he asked that I pass along a compliment and some feedback. He was very impressed with the transcription. He said it was a complex dictation and he was a bit all over the place when he dictated. He was nervous about how it was going to come back. He was very happy with the job transcription did.",
       rating: 5,
-      services: ["Medical Scribe", "EHR Support"],
-      results: "40% reduction in documentation time"
+      services: ["Medical Transcription"],
+      results: "Excellent complex transcription job"
     },
     {
-      name: "Michael Chen",
-      title: "Practice Administrator",
-      organization: "Metro Health Group",
-      location: "Texas, USA",
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face",
-      quote: "The medical billing and coding services have significantly improved our revenue cycle. Claims processing is faster and denial rates have dropped dramatically.",
+      name: "Surgeon from the west coast",
+      title: "Busy Physician & Surgeon",
+      organization: "Orthopedic Practice",
+      location: "USA",
+      image: "",
+      quote: "We have been using a service in India named Seyyone Solutions for over 10 years. They have proved very useful in some of our EHR interfaces with NextGen. I cannot say enough good about the quality of their service, the time-saving nature of what they do for us as busy physicians, and the reasonableness of their pricing.",
       rating: 5,
-      services: ["Medical Billing", "Medical Coding"],
-      results: "25% increase in revenue collection"
+      services: ["EHR Support", "NextGen Interface"],
+      results: "10+ Years of Trusted Partnership"
     },
     {
-      name: "Dr. Emily Rodriguez",
-      title: "Family Physician",
-      organization: "Community Healthcare",
-      location: "Florida, USA",
-      image: "https://images.unsplash.com/photo-1594824072264-6a2c3ab545b2?w=100&h=100&fit=crop&crop=face",
-      quote: "Outstanding medical transcription services with incredible accuracy. The turnaround time is excellent and the quality is consistently high. Highly recommended!",
+      name: "Plastic Surgeon",
+      title: "Medical Practitioner",
+      organization: "Private Practice",
+      location: "West Coast, USA",
+      image: "",
+      quote: "Thx for all of your help. You're a good teammate. I know that it has saved my practice and enjoyment of medicine.",
       rating: 5,
-      services: ["Medical Transcription", "Record Summarization"],
-      results: "99.8% accuracy rate maintained"
+      services: ["Medical Scribe", "Practice Support"],
+      results: "Saved practice & physician enjoyment"
     }
   ]
 
   const stats = [
     { number: "99.8%", label: "Accuracy Rate", icon: CheckCircle },
     { number: "24/7", label: "Support Available", icon: Building },
-    { number: "50+", label: "Healthcare Clients", icon: User },
+    { number: "60+", label: "Healthcare Providers", icon: User },
     { number: "25+", label: "Years Experience", icon: Star }
   ]
 

@@ -16,18 +16,30 @@ export default function AIMLSolutionsPage() {
 
   const faqItems = [
     {
-        "question": "What AI/ML models do you specialize in?",
-        "answer": "We specialize in a wide range of AI/ML models including Large Language Models (LLMs), Computer Vision, Predictive Analytics, and Natural Language Processing (NLP) solutions."
+      question: "What AI/ML models do you specialize in?",
+      answer: "We specialize in a wide range of AI/ML models including Large Language Models (LLMs), Computer Vision, Predictive Analytics, and Natural Language Processing (NLP) solutions."
     },
     {
-        "question": "How do you ensure data privacy when building AI models?",
-        "answer": "We follow strict data anonymization and encryption protocols. All training data is secured, and we offer on-premise deployment options for highly sensitive applications."
+      question: "How do you ensure data privacy when building AI models?",
+      answer: "We follow strict data anonymization and encryption protocols. All training data is secured, and we offer on-premise deployment options for highly sensitive applications."
     },
     {
-        "question": "Can you integrate AI into our existing legacy systems?",
-        "answer": "Yes, we build custom API wrappers and microservices that allow modern AI capabilities to seamlessly interface with your existing legacy infrastructure."
+      question: "Can you integrate AI into our existing legacy systems?",
+      answer: "Yes, we build custom API wrappers and microservices that allow modern AI capabilities to seamlessly interface with your existing legacy infrastructure."
+    },
+    {
+      question: "Do you build customized AI solutions for clinical decision support?",
+      answer: "Yes, we develop custom Machine Learning models that analyze clinical datasets to support diagnosis, predict patient risk, and optimize treatment workflows under physician oversight."
+    },
+    {
+      question: "What cloud platforms do you use for AI/ML training and deployment?",
+      answer: "We deploy and train models on AWS (SageMaker), Microsoft Azure (Azure ML), and Google Cloud (Vertex AI), choosing the best environment based on your security and computing budget."
+    },
+    {
+      question: "How do you handle bias and model drift in AI applications?",
+      answer: "We implement rigorous dataset curation and evaluation steps to minimize bias. Once deployed, we set up automated monitoring to check for model drift and schedule periodic retraining using fresh validated datasets."
     }
-];
+  ];
 
   const schemaData = {
     "@context": "https://schema.org",

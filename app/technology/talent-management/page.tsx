@@ -16,18 +16,30 @@ export default function TalentManagementPage() {
 
   const faqItems = [
     {
-        "question": "How do you vet your technical talent?",
-        "answer": "Our rigorous vetting process includes deep technical interviews, live coding assessments, system design evaluations, and soft-skills screening. Only top-tier candidates make the cut."
+      question: "How do you vet your technical talent?",
+      answer: "Our rigorous vetting process includes deep technical interviews, live coding assessments, system design evaluations, and soft-skills screening. Only top-tier candidates make the cut."
     },
     {
-        "question": "Can we hire developers on a project or dedicated basis?",
-        "answer": "We offer flexible engagement models. You can hire dedicated full-time developers to augment your team, or engage us on a fixed-bid project basis."
+      question: "Can we hire developers on a project or dedicated basis?",
+      answer: "We offer flexible engagement models. You can hire dedicated full-time developers to augment your team, or engage us on a fixed-bid project basis."
     },
     {
-        "question": "How quickly can you onboard new developers to our team?",
-        "answer": "Depending on the technology stack, we can typically onboard dedicated developers to your team within 1 to 3 weeks."
+      question: "How quickly can you onboard new developers to our team?",
+      answer: "Depending on the technology stack, we can typically onboard dedicated developers to your team within 1 to 3 weeks."
+    },
+    {
+      question: "Do you provide replacement developers if a team member leaves?",
+      answer: "Yes, we guarantee resource continuity. If a dedicated developer leaves the project, we provide a qualified replacement with transition training at no additional cost to you."
+    },
+    {
+      question: "How do you manage timezone differences for offshore developers?",
+      answer: "Our developers work flexible hours to ensure a daily overlap (typically 3 to 5 hours) with your core timezone, enabling seamless daily standups, planning, and collaborative work."
+    },
+    {
+      question: "What technical skills do your talent pools specialize in?",
+      answer: "Our talent pool includes front-end developers, full-stack engineers, cloud DevOps specialists, UI/UX designers, mobile app developers, and certified QA engineers."
     }
-];
+  ];
 
   const schemaData = {
     "@context": "https://schema.org",

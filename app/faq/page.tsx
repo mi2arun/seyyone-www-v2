@@ -33,6 +33,22 @@ export default function FAQPage() {
         {
             question: 'How can outsourcing to Seyyone improve Revenue Cycle Management (RCM)?',
             answer: 'By outsourcing your billing and coding to Seyyone, you gain access to certified medical coders who ensure accurate coding and rapid claims submission. This drastically reduces claim denials, accelerates cash flow, and maximizes the revenue of your medical practice.'
+        },
+        {
+            question: 'What is Seyyone\'s average turnaround time for transcription and billing services?',
+            answer: 'Our standard turnaround time is 24 hours. However, we offer customized SLAs, including expedited stat options (under 4 hours) or overnight processing, to match your clinical and administrative schedules.'
+        },
+        {
+            question: 'How does Seyyone ensure quality and accuracy in its clinical documentation?',
+            answer: 'We implement a multi-tier quality assurance framework. Each document or chart completed by our transcriptionists or scribes undergoes secondary audit by medical editors and QA managers, ensuring a consistent 99.8% accuracy rate.'
+        },
+        {
+            question: 'Does Seyyone work with specialized medical practices or general practitioners?',
+            answer: 'Yes. Our team is trained across 30+ medical and surgical specialties. This includes cardiology, orthopedic surgery, dermatology, oncology, pediatrics, and family medicine, ensuring accurate usage of specialty-specific terminology.'
+        },
+        {
+            question: 'What engagement models does Seyyone offer for healthcare and IT services?',
+            answer: 'We offer flexible models tailored to your requirements, including dedicated full-time equivalent (FTE) staffing, transactional/pay-per-line pricing, and hourly IT support contracts with no hidden fees.'
         }
     ]
 

@@ -41,23 +41,23 @@ export default function TechnologyInsights() {
                                 title: "Case Studies",
                                 icon: Award,
                                 description: "Explore how our cutting-edge software and cloud solutions have driven digital transformation for leading enterprises.",
-                                href: "/insights#tech-case-studies",
+                                href: "/insights#case-studies",
                                 gradient: "from-purple-600 to-pink-600",
                                 bgGradient: "from-purple-50 to-pink-50"
                             },
                             {
-                                title: "Tech Blogs",
+                                title: "Blogs",
                                 icon: FileText,
                                 description: "Insights on the latest technologies including AI, Machine Learning, Cloud Computing, and Cybersecurity.",
-                                href: "/insights#tech-blogs",
+                                href: "/insights#blogs",
                                 gradient: "from-blue-600 to-cyan-600",
                                 bgGradient: "from-blue-50 to-cyan-50"
                             },
                             {
-                                title: "Whitepapers",
+                                title: "White Papers",
                                 icon: FileCheck,
                                 description: "Technical deep dives and research papers on emerging technology trends and architectural best practices.",
-                                href: "/insights#whitepapers",
+                                href: "/insights#white-papers",
                                 gradient: "from-orange-500 to-amber-500",
                                 bgGradient: "from-orange-50 to-amber-50"
                             }

@@ -10,20 +10,37 @@ const Contact = () => {
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle')
   const [errorMessage, setErrorMessage] = useState('')
 
-  const contactInfo = [
+  const contactInfo: {
+    icon: any;
+    title: string;
+    details: string;
+    description: string;
+    href: string;
+    customRender?: () => React.ReactNode;
+  }[] = [
     {
       icon: Phone,
       title: 'Phone',
-      details: '91 (422) 2310240',
+      details: '',
       description: 'Call us for immediate assistance',
-      href: 'tel:+914222310240'
+      href: '#',
+      customRender: () => (
+        <div className="flex flex-col text-primary-600 font-medium text-sm">
+          <a href="tel:+12144326657" className="hover:text-primary-700">
+            US: +1 (214) 432-6657
+          </a>
+          <a href="tel:+914222310240" className="hover:text-primary-700">
+            India: +91 (422) 2310240
+          </a>
+        </div>
+      )
     },
     {
       icon: Mail,
       title: 'Email',
-      details: 'info@seyyone.com',
+      details: 'business@seyyone.com',
       description: 'Send us your requirements',
-      href: 'mailto:info@seyyone.com'
+      href: 'mailto:business@seyyone.com'
     },
     {
       icon: MapPin,
@@ -289,15 +306,17 @@ const Contact = () => {
                       <h4 className="font-semibold text-gray-900 mb-1">
                         {info.title}
                       </h4>
-                      <p className="text-primary-600 font-medium mb-1">
-                        {info.href !== '#' ? (
-                          <a href={info.href} className="hover:text-primary-700">
-                            {info.details}
-                          </a>
-                        ) : (
-                          info.details
-                        )}
-                      </p>
+                      {info.customRender ? info.customRender() : (
+                        <p className="text-primary-600 font-medium mb-1">
+                          {info.href !== '#' ? (
+                            <a href={info.href} className="hover:text-primary-700">
+                              {info.details}
+                            </a>
+                          ) : (
+                            info.details
+                          )}
+                        </p>
+                      )}
                       <p className="text-sm text-gray-600">
                         {info.description}
                       </p>

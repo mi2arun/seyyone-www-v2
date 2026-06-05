@@ -16,18 +16,30 @@ export default function CloudSolutionsPage() {
 
   const faqItems = [
     {
-        "question": "Which cloud providers do you support?",
-        "answer": "We are certified partners and have extensive experience with AWS, Microsoft Azure, and Google Cloud Platform (GCP)."
+      question: "Which cloud providers do you support?",
+      answer: "We are certified partners and have extensive experience with AWS, Microsoft Azure, and Google Cloud Platform (GCP)."
     },
     {
-        "question": "How do you handle cloud migration with zero downtime?",
-        "answer": "We use blue-green deployment strategies, database replication, and meticulous traffic routing to ensure seamless migrations with zero or minimal disruption."
+      question: "How do you handle cloud migration with zero downtime?",
+      answer: "We use blue-green deployment strategies, database replication, and meticulous traffic routing to ensure seamless migrations with zero or minimal disruption."
     },
     {
-        "question": "Do you offer ongoing cloud management?",
-        "answer": "Yes, we provide 24/7 cloud monitoring, cost optimization, and managed DevOps services to keep your infrastructure running efficiently."
+      question: "Do you offer ongoing cloud management?",
+      answer: "Yes, we provide 24/7 cloud monitoring, cost optimization, and managed DevOps services to keep your infrastructure running efficiently."
+    },
+    {
+      question: "How do you help us optimize cloud infrastructure costs?",
+      answer: "We conduct thorough resource utilization audits, set up auto-scaling, implement serverless architectures, and configure reserved instances to reduce your monthly cloud spending by up to 30%."
+    },
+    {
+      question: "What security measures do you implement in the cloud?",
+      answer: "We implement a multi-layered security architecture, including firewalls, VPCs, network isolation, identity and access management (IAM), data encryption at rest/in transit, and continuous vulnerability scanning."
+    },
+    {
+      question: "Do you support hybrid cloud environments?",
+      answer: "Yes, we design hybrid solutions that bridge your on-premise servers with public cloud environments (AWS, Azure, GCP), ensuring secure and reliable data flow between locations."
     }
-];
+  ];
 
   const schemaData = {
     "@context": "https://schema.org",

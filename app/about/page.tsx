@@ -3,12 +3,40 @@
 import Navigation from '@/components/Navigation'
 import ContactInfo from '@/components/ContactInfo'
 import Footer from '@/components/Footer'
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 import Image from 'next/image'
-import { Monitor, Coffee, BookOpen, Laptop, Phone, Clock, Award, Target, ShieldCheck, Lightbulb, Users, FileText, Lock, GraduationCap, ArrowRight, Star } from 'lucide-react'
+import { Monitor, Coffee, BookOpen, Laptop, Phone, Clock, Award, Target, ShieldCheck, Lightbulb, Users, FileText, Lock, GraduationCap, ArrowRight, Star, X, ChevronLeft, ChevronRight } from 'lucide-react'
 import Link from 'next/link'
+import { useState, useEffect } from 'react'
 
 export default function AboutPage() {
+  const [activeImageIndex, setActiveImageIndex] = useState<number | null>(null)
+
+  const moments = [
+    { title: 'Medical Scribes Training', description: 'Comprehensive training for virtual scribes', image: '/images/medical_scribe_training.png' },
+    { title: 'Healthcare BPO Operations', description: 'Our state-of-the-art medical transcription and RCM billing floor', image: '/images/healthcare_bpo_ops.png' },
+    { title: 'Software & AI Engineering', description: 'Building custom integrations and AI models', image: '/images/software_development_team.png' },
+    { title: 'Thanksgiving Team Lunch', description: 'Thanksgiving team lunch at Four Cups', image: '/images/team_outing_1.jpg' },
+    { title: 'Team Gathering', description: 'Team gathering and dinner celebration inside the restaurant', image: '/images/team_gathering.jpg' },
+    { title: 'Vice President Ravi Chinnathambi', description: 'Vice President Ravi Chinnathambi addressing the team', image: '/images/ravi_chinnathambi.jpg' },
+    { title: 'President Karupannan Sabapathy', description: 'President Karupannan Sabapathy addressing the team', image: '/images/karupannan_sabapathy.jpg' },
+    { title: 'Annual Celebration', description: 'Celebrating milestones and employee achievements together', image: '/Seyyone-Group-Photo-Updated.png' }
+  ]
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (activeImageIndex === null) return
+      if (e.key === 'Escape') {
+        setActiveImageIndex(null)
+      } else if (e.key === 'ArrowRight') {
+        setActiveImageIndex((prev) => (prev! + 1) % moments.length)
+      } else if (e.key === 'ArrowLeft') {
+        setActiveImageIndex((prev) => (prev! - 1 + moments.length) % moments.length)
+      }
+    }
+    window.addEventListener('keydown', handleKeyDown)
+    return () => window.removeEventListener('keydown', handleKeyDown)
+  }, [activeImageIndex, moments.length])
   return (
     <>
       <Navigation />
@@ -83,7 +111,7 @@ export default function AboutPage() {
                     AI/ML solutions, and cloud services.
                   </p>
                   <p>
-                    With a team of 150+ dedicated professionals, we&rsquo;ve successfully completed over 100+
+                    With a team of 150+ dedicated professionals, we&rsquo;ve successfully completed over 160+
                     projects, maintaining our commitment to integrity, innovation, collaboration, excellence,
                     customer focus, and accountability.
                   </p>
@@ -102,11 +130,11 @@ export default function AboutPage() {
                   <div className="text-sm text-gray-700">Employees</div>
                 </div>
                 <div className="bg-green-50 p-6 rounded-2xl text-center">
-                  <div className="text-3xl font-bold text-green-600 mb-2">8</div>
+                  <div className="text-3xl font-bold text-green-600 mb-2">7</div>
                   <div className="text-sm text-gray-700">Countries</div>
                 </div>
                 <div className="bg-purple-50 p-6 rounded-2xl text-center">
-                  <div className="text-3xl font-bold text-purple-600 mb-2">100+</div>
+                  <div className="text-3xl font-bold text-purple-600 mb-2">160+</div>
                   <div className="text-sm text-gray-700">Projects</div>
                 </div>
                 <div className="bg-orange-50 p-6 rounded-2xl text-center">
@@ -145,14 +173,14 @@ export default function AboutPage() {
                 return (
                   <motion.div
                     key={value.title}
-                    className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300"
+                    className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 group"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: index * 0.1, duration: 0.6 }}
                   >
-                    <div className={`w-16 h-16 bg-gradient-to-r ${value.gradient} rounded-xl flex items-center justify-center mb-6 shadow-lg`}>
-                      <IconComponent className="text-white" size={28} />
+                    <div className={`w-16 h-16 bg-gradient-to-r ${value.gradient} rounded-xl flex items-center justify-center mb-6 shadow-lg transition-all duration-300 group-hover:shadow-[0_0_25px_rgba(0,0,0,0.3)] group-hover:scale-110`}>
+                      <IconComponent className="text-white transition-transform duration-300 group-hover:scale-110" size={28} />
                     </div>
                     <h3 className="text-xl font-bold text-gray-900 mb-4">{value.title}</h3>
                     <p className="text-gray-600 leading-relaxed">{value.description}</p>
@@ -257,22 +285,19 @@ export default function AboutPage() {
             </motion.div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {[
-                { title: 'Team Collaboration', description: 'Working together towards excellence', image: '/perks/team-collaboration.jpg' },
-                { title: 'Annual Celebration', description: 'Celebrating our achievements together', image: '/perks/annual-celebration.jpg' },
-                { title: 'Team Building', description: 'Building stronger connections', image: '/perks/team-building.jpg' }
-              ].map((moment, index) => (
+              {moments.slice(0, 3).map((moment, index) => (
                 <motion.div
                   key={moment.title}
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1, duration: 0.6 }}
-                  className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 h-64"
+                  onClick={() => setActiveImageIndex(index)}
+                  className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 h-64 cursor-pointer"
                 >
                   <div className="relative h-full w-full bg-blue-100">
                     <Image
-                      src="/Seyyone-Group-Photo-Updated.png"
+                      src={moment.image}
                       alt={moment.title}
                       fill
                       className="object-cover group-hover:scale-110 transition-transform duration-500"
@@ -291,6 +316,86 @@ export default function AboutPage() {
         <ContactInfo />
       </main>
       <Footer />
+
+      {/* Lightbox Modal */}
+      <AnimatePresence>
+        {activeImageIndex !== null && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/90 backdrop-blur-md"
+            onClick={() => setActiveImageIndex(null)}
+          >
+            <button
+              onClick={() => setActiveImageIndex(null)}
+              className="absolute top-6 right-6 z-50 p-3 bg-white/10 hover:bg-white/20 text-white rounded-full transition-colors focus:outline-none"
+              title="Close Lightbox (Esc)"
+            >
+              <X size={24} />
+            </button>
+
+            {/* Left Button */}
+            <button
+              onClick={(e) => {
+                e.stopPropagation()
+                setActiveImageIndex((prev) => (prev! - 1 + moments.length) % moments.length)
+              }}
+              className="absolute left-4 md:left-8 z-50 p-3 bg-white/10 hover:bg-white/20 text-white rounded-full transition-colors focus:outline-none"
+              title="Previous Image"
+            >
+              <ChevronLeft size={32} />
+            </button>
+
+            {/* Right Button */}
+            <button
+              onClick={(e) => {
+                e.stopPropagation()
+                setActiveImageIndex((prev) => (prev! + 1) % moments.length)
+              }}
+              className="absolute right-4 md:right-8 z-50 p-3 bg-white/10 hover:bg-white/20 text-white rounded-full transition-colors focus:outline-none"
+              title="Next Image"
+            >
+              <ChevronRight size={32} />
+            </button>
+
+            {/* Media Area */}
+            <motion.div
+              initial={{ scale: 0.95, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.95, opacity: 0 }}
+              transition={{ type: 'spring', damping: 25, stiffness: 300 }}
+              className="w-full max-w-4xl max-h-[85vh] flex flex-col items-center justify-center relative p-2"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <div className="relative w-full aspect-[4/3] max-h-[65vh] bg-neutral-950 rounded-2xl overflow-hidden flex items-center justify-center shadow-2xl border border-neutral-800">
+                <Image
+                  src={moments[activeImageIndex].image}
+                  alt={moments[activeImageIndex].title}
+                  fill
+                  className="object-contain cursor-pointer"
+                  sizes="(max-width: 1024px) 100vw, 1024px"
+                  priority
+                  onClick={() => setActiveImageIndex((prev) => (prev! + 1) % moments.length)}
+                />
+              </div>
+
+              {/* Title & Description & Pagination */}
+              <div className="mt-6 text-center text-white max-w-2xl px-4">
+                <h4 className="text-xl font-bold">{moments[activeImageIndex].title}</h4>
+                <p className="text-sm text-neutral-300 mt-2">
+                  {moments[activeImageIndex].description}
+                </p>
+                <div className="mt-4 inline-flex items-center space-x-2 bg-neutral-800/80 px-4 py-1.5 rounded-full text-xs text-neutral-400 font-semibold">
+                  <span>Shared Moments</span>
+                  <span className="text-neutral-600">•</span>
+                  <span>{activeImageIndex + 1} of {moments.length}</span>
+                </div>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   )
 }

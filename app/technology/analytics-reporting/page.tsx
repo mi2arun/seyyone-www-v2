@@ -16,18 +16,30 @@ export default function AnalyticsReportingPage() {
 
   const faqItems = [
     {
-        "question": "What BI tools do you work with?",
-        "answer": "We have deep expertise in PowerBI, Tableau, Looker, and custom dashboard development using React and D3.js."
+      question: "What BI tools do you work with?",
+      answer: "We have deep expertise in PowerBI, Tableau, Looker, and custom dashboard development using React and D3.js."
     },
     {
-        "question": "Can you handle real-time data streaming?",
-        "answer": "Absolutely. We build robust data pipelines using tools like Apache Kafka and AWS Kinesis to provide real-time analytics and reporting."
+      question: "Can you handle real-time data streaming?",
+      answer: "Absolutely. We build robust data pipelines using tools like Apache Kafka and AWS Kinesis to provide real-time analytics and reporting."
     },
     {
-        "question": "How do you ensure data accuracy in reports?",
-        "answer": "Our data engineering process includes automated data validation, anomaly detection, and rigorous ETL testing before data ever reaches your dashboards."
+      question: "How do you ensure data accuracy in reports?",
+      answer: "Our data engineering process includes automated data validation, anomaly detection, and rigorous ETL testing before data ever reaches your dashboards."
+    },
+    {
+      question: "Can you consolidate data from multiple different EHR and billing systems?",
+      answer: "Yes. We build unified data warehouses that aggregate data from disparate EHR, billing, and pharmacy databases, offering your leadership a single, complete source of truth."
+    },
+    {
+      question: "Do you offer custom dashboard design for clinical performance?",
+      answer: "Yes, we design custom interactive dashboards using Tableau, Power BI, and web frameworks, highlighting key metrics like patient wait times, readmission rates, and billing performance."
+    },
+    {
+      question: "Is your data analytics platform HIPAA compliant?",
+      answer: "Absolutely. All data warehousing, ETL processes, and reporting dashboards are configured with encrypted databases, role-based access controls, and activity logs to ensure complete compliance."
     }
-];
+  ];
 
   const schemaData = {
     "@context": "https://schema.org",
